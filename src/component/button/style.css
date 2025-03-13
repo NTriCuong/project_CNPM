@@ -1,0 +1,16 @@
+button {
+    background: inherit; /* Kế thừa màu nền từ phần tử cha */
+    color: #6A7B89;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: poppins, sans-serif;
+    border-radius: 8px;
+    border: none;
+    height: 40px;
+    transition: all 0.3s ease;
+}
+button:hover{
+    background-color: #223A60;
+    color: white;
+    cursor: pointer;
+}
