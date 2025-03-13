@@ -1,0 +1,238 @@
+/* FlightBookingLogin.css */
+
+/* Main container */
+.login-container {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: poppins, sans-serif;
+    color: #fff;
+    padding: 1rem;
+    overflow: hidden;
+  }
+  
+  /* Background image with blur effect */
+  .background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Màu đen với độ trong suốt 50% */
+    backdrop-filter: blur(10px); /* Làm mờ nền phía sau */
+    -webkit-backdrop-filter: blur(10px); /* Hỗ trợ Safari */
+    z-index: -1; /* Để nền ở phía sau các phần tử khác */
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.7) blur(2px);
+    z-index: 0;
+    transform: scale(1.03); /* Prevents blur edges showing */
+  }
+  
+  /* Search bar in background */
+  .search-bar {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 0 20px;
+    z-index: 10;
+    opacity: 0.6;
+  }
+  
+  .search-inner {
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+  }
+  
+  .search-placeholder {
+    height: 30px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    flex: 1;
+  }
+  
+  /* Close button */
+  .close-button {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    z-index: 50;
+    background-color: white;
+    border: 1px #608BCF solid;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease;
+  }
+  
+  .close-button:hover {
+    background-color: #f8f8f8;
+    transform: scale(1.05);
+  }
+  
+  /* Welcome title */
+  .welcome-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-top: 0px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    z-index: 20;
+    text-align: center;
+  }
+  
+  /* Login box */
+  .login-box {
+    background-color: #223A60;
+    border-radius: 20px;
+    width: 25%;
+    padding: 2rem;
+    max-width: 420px;
+    z-index: 20;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(4px);
+  }
+  
+  .login-header {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+  }
+  
+  .login-subheader {
+    font-size: 0.9rem;
+    text-align: center;
+    color: #EAF0F0;
+  }
+  
+  /* Form styles */
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .form-group label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #EAF0F0;
+  }
+  
+  .password-header {
+    display: flex;
+    height: 30px;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* icon ege */
+  .icon-ege{
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: 45px;
+    top: 63%;
+  }
+  .none-eye{
+    display: none;
+  }
+  .forgot-password:hover {
+    color: #ffcccc;
+    text-decoration: underline;
+  }
+  
+  .form-group input {
+    padding: 0.75rem 1rem;
+    border-radius: 12px;
+    border: 1px solid #77A1E4;
+    background-color: #2D4468;
+    font-size: 1rem;
+    color: #EAF0F0;
+    transition: all 0.3s;
+  }
+  
+  .form-group input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(100, 150, 255, 0.5);
+  }
+  
+  .form-group input::placeholder {
+    color: #EAF0F0;
+  }
+  
+  /* Login button */
+  .login-button {
+    background-color: #5856D7;
+    color: #EAF0F0;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .login-button:hover {
+    background-color: #2855b0;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  .login-button:active {
+    transform: translateY(0);
+  }
+  
+  .forgot-password {
+    font-size: 0.9rem;
+    height: 10px;
+    color: #FE9791;
+    cursor: pointer;
+    background-color: #233A60;
+    border: none;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .welcome-title {
+      font-size: 2rem;
+      margin-top: 3rem;
+    }
+    
+  }
+  
+  @media (max-width: 480px) {
+    .login-box {
+      padding: 1.5rem;
+    }
+    
+    .welcome-title {
+      font-size: 1.75rem;
+    }
+  }
