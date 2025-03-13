@@ -1,0 +1,50 @@
+header {
+    position: fixed;
+    top: 20px; /* Cách top 20px */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.menu{
+    position: relative;
+    width: 80%;
+    height: 50px;
+    display:flex;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px); /* Làm mờ nền phía sau */
+    -webkit-backdrop-filter: blur(10px); /* Hỗ trợ cho Safari */
+    border-radius: 10px; /* Bo góc */
+}
+.left, .right{
+    width: 50%;
+    display: flex;
+    align-items: center;
+}
+.right{
+    justify-content: end;
+}
+.left>ul{
+    margin-left: 20px;
+    padding: 0px;
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+.left>ul>li{
+    font-size: 16px;
+    font-weight: bold;
+    font-family: poppins, sans-serif;
+    color: #6A7B89;
+}
+.left>ul>li:hover{
+    color: #233A60;
+    cursor: pointer;
+}
+.right>ul{
+    margin-right: 20px;
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    justify-content: end;
+}
