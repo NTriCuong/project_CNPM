@@ -77,7 +77,7 @@
     height: 100%;
 }
 .input-select{
-    /* display: none; */
+    display: none;
     width: 290px ;
     height: 290px;
     border-radius: 8px;

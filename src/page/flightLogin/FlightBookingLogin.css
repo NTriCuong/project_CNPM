@@ -21,7 +21,6 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.5); /* Màu đen với độ trong suốt 50% */
     backdrop-filter: blur(10px); /* Làm mờ nền phía sau */
     -webkit-backdrop-filter: blur(10px); /* Hỗ trợ Safari */
     z-index: -1; /* Để nền ở phía sau các phần tử khác */
@@ -30,6 +29,9 @@
     filter: brightness(0.7) blur(2px);
     z-index: 0;
     transform: scale(1.03); /* Prevents blur edges showing */
+    background: rgba(0, 0, 0, 0.5); /* Màu đen với độ trong suốt 50% */
+    border: 1px solid rgba(255, 255, 255, 0.07); /* Viền trắng với opacity 7% */
+
   }
   
   /* Search bar in background */
@@ -87,7 +89,7 @@
   
   /* Welcome title */
   .welcome-title {
-    font-size: 2.5rem;
+    font-size: 12px;
     font-weight: 700;
     margin-top: 0px;
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
@@ -109,13 +111,15 @@
   
   .login-header {
     margin: 0;
-    font-size: 1.5rem;
+    font-size: 12px;
     font-weight: 600;
     text-align: center;
   }
   
   .login-subheader {
-    font-size: 0.9rem;
+    font-size: 12px;
+    margin-top: 0;
+    margin-bottom: 30px;
     text-align: center;
     color: #EAF0F0;
   }
@@ -134,7 +138,7 @@
   }
   
   .form-group label {
-    font-size: 0.9rem;
+    font-size: 12px;
     font-weight: 500;
     color: #EAF0F0;
   }
@@ -147,7 +151,7 @@
   }
   
   .forgot-password {
-    font-size: 0.8rem;
+    font-size: 12px !important;
     color: #FE9792;
     cursor: pointer;
     background-color: #233A60;
@@ -177,7 +181,7 @@
     border-radius: 12px;
     border: 1px solid #77A1E4;
     background-color: #2D4468;
-    font-size: 1rem;
+    font-size: 12px;
     color: #EAF0F0;
     transition: all 0.3s;
   }
@@ -198,7 +202,7 @@
     padding: 0.75rem;
     border: none;
     border-radius: 10px;
-    font-size: 1rem;
+    font-size: 12px;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s;
@@ -218,14 +222,16 @@
   /* Sign-up option */
   .signup-option {
     text-align: center;
-    font-size: 0.9rem;
+    font-size: 12px;
   }
   .signup-option > span{
     color: #EAF0F0;
   }
   .signup-option>button{
     background-color: #223A60;
+    font-size: 12px;
     border: none;
+    text-decoration: underline;
     color: #FE9792;
     cursor: pointer;
   }
@@ -245,59 +251,60 @@
     text-decoration: underline;
   }
   
-  /* Footer section */
-  .footer-info {
-    border-radius: 10px;
-    padding: 1rem;
-    margin-top: 1rem;
-    width: 70%;
-    max-width: 700px;
-    background: linear-gradient(to bottom, rgba(44, 44, 44, 0.3), rgba(44, 44, 44, 0.8));
-    opacity: 0.8; /* Opacity tổng thể 40% */
-    mix-blend-mode: multiply; /* Blend mode Multiply */
-    backdrop-filter: blur(10px); /* Làm mờ nền phía sau */
-    -webkit-backdrop-filter: blur(10px); /* Hỗ trợ Safari */
-    border: 1px solid rgba(255, 255, 255, 1);
-  }
-  
-  .flight-options {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-  .option {
-    display: flex;
-    align-items: center;
-    width: 250px;
-    padding: 0.5rem 1rem;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 6px;
-    transition: all 0.3s;
-  }
-  
   .option:hover {
     background-color: rgba(255, 255, 255, 0.2);
     transform: translateY(-2px);
   }
-  
-  .company-description {
+  .footer-info {
+    background: rgba(44, 44, 44, 0.4); /* Opacity 40% */
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 30px;
     text-align: center;
-    font-size: 0.80rem;
-    line-height: 1.5;
-    color: rgba(255, 255, 255, 0.8);
+    color: #EAF0F0;
+    width: 690px;
+    backdrop-filter: blur(5px);
   }
   
-  /* Company brand */
-  .company-brand {
+  .flight-options {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  
+  .flight-options div {
+    position: relative;
+    width: 220px;
+    text-align: end;
+  }
+  
+  .flight-options img {
+    width: 20px;
     position: absolute;
-    bottom: 1.5rem;
-    left: 2.5rem;
-    font-size: 1.75rem;
-    font-weight: 700;
-    color: rgba(255, 255, 255, 0.9);
-    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-    z-index: 20;
+    left: 40px;
+    top: 2px;
+  }
+  
+  .flight-options hr {
+    width: 2px;
+    height: 30px;
+    border: none;
+    background: linear-gradient(to bottom, transparent, #EAF0F0, transparent);
+    margin: 10px;
+  }
+  
+  .footer-info p {
+    margin-top: 10px;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+  
+  .footer-info hr {
+    margin: 10px auto;
+    height: 2px;
+    width: 90%;
+    border: none;
+    background: linear-gradient(to right, transparent, #EAF0F0, transparent);
   }
   
   /* Responsive adjustments */
