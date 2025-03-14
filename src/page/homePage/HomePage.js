@@ -31,7 +31,7 @@ function HomePage(){
     return <div class="constainer">
         <Menu onLogin={handleLogin} onRegister={handleRegister}/>
         <Banner/>
-        <FlightSearchBox className={"search-box"}/>
+        {/* <FlightSearchBox className={"search-box"}/> */}
         <FlightBookingLogin className={`form-login ${onLogin?"on-login":""}`} onLogin={handleCloseLogin} create={handleCreate}/>
         <FlightRegister className={`form-login ${onRegister?"on-login":""}`} onRegister={handleCloseRegister} login={handleLg}/>
     </div>

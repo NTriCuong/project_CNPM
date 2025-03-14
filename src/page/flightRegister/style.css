@@ -20,8 +20,9 @@
     top: 0;
     left: 0;
     right: 0;
-    bottom: 0;
+    bottom: 0; 
     background: rgba(0, 0, 0, 0.5); /* Màu đen với độ trong suốt 50% */
+    border: 1px solid rgba(255, 255, 255, 0.07); /* Viền trắng với opacity 7% */
     backdrop-filter: blur(10px); /* Làm mờ nền phía sau */
     -webkit-backdrop-filter: blur(10px); /* Hỗ trợ Safari */
     z-index: -1; /* Để nền ở phía sau các phần tử khác */

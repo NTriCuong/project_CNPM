@@ -108,13 +108,13 @@ const [radioBnt,setRadioBnt] = useState(false);
             {/* ege */}
             <img src={closeEge} alt="icon" className={password!==""?'icon-ege':'none-eye'} onClick={handleShowPassword}/>
           </div>
-          <p style={{fontSize:'0.9rem',margin:'0 0 0 20px',position:'relative'}}>
+          <p style={{fontSize:'12px',margin:'0 0 0 20px',position:'relative'}}>
             <img src={radioBnt?checkBoxTrue:checkBox} alt=''
             onClick={handleCheckBox} 
             style={radioBnt?{position:'absolute',bottom:'-20px',left:'-33px',cursor:'pointer'}:
             {position:'absolute',bottom:'0px',left:'-23px',cursor:'pointer'}}/>
-          Tôi chấp nhận <u style={{fontSize:'0.9rem',color:'#FE9792'}} 
-          >Điều khoảng</u> & <u style={{fontSize:'0.9rem',color:'#FE9792'}}>Điều kiện</u></p>
+          Tôi chấp nhận <u style={{fontSize:'12px',color:'#FE9792'}} 
+          >Điều khoản</u> & <u style={{fontSize:'12px',color:'#FE9792'}}>Điều kiện</u></p>
 
           <hr style={{margin:'10px', height:'0.5px', border:'none',
             background: 'linear-gradient(to right, transparent, #EAF0F0, transparent)'}}/>
