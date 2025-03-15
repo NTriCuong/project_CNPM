@@ -3,10 +3,10 @@
     position: relative;
 }
 .search-box{
-    position: absolute;
-    left: 50%;  
+   position: absolute;
+     left: 50%;  
     top: 230px;
-    transform: translateX(-50%); /* Căn giữa */
+    transform: translateX(-50%);/*  Căn giữa */
 }
 .form-login{
     position: absolute;

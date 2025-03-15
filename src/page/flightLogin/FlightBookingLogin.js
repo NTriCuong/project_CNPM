@@ -71,7 +71,7 @@ const FlightBookingLogin = ({className, onLogin, create}) => {
               style={{position:'relative'}}
             />
             {/* ege */}
-            <img src={closeEge} alt="icon" style={{top:'54%'}} className={password!==""?'icon-ege':'none-eye'} onClick={handleShowPassword}/>
+            <img src={closeEge} alt="icon" style={{top:'55%'}} className={password!==""?'icon-ege':'none-eye'} onClick={handleShowPassword}/>
             
           </div>
           <hr style={{margin:'10px', height:'0.5px', border:'none',
