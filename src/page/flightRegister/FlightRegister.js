@@ -24,6 +24,7 @@ const [radioBnt,setRadioBnt] = useState(false);
     setEmail('');
     setPassword('');
     setShowPassword(false);
+    setRadioBnt(false);
   }
   const handleShowPassword=()=>{
     setShowPassword(!showPassword);
@@ -109,10 +110,12 @@ const [radioBnt,setRadioBnt] = useState(false);
             <img src={closeEge} alt="icon" className={password!==""?'icon-ege':'none-eye'} onClick={handleShowPassword}/>
           </div>
           <p style={{fontSize:'12px',margin:'0 0 0 20px',position:'relative'}}>
+
             <img src={radioBnt?checkBoxTrue:checkBox} alt=''
             onClick={handleCheckBox} 
             style={radioBnt?{position:'absolute',bottom:'-20px',left:'-33px',cursor:'pointer'}:
             {position:'absolute',bottom:'0px',left:'-23px',cursor:'pointer'}}/>
+
           Tôi chấp nhận <u style={{fontSize:'12px',color:'#FE9792'}} 
           >Điều khoản</u> & <u style={{fontSize:'12px',color:'#FE9792'}}>Điều kiện</u></p>
 
