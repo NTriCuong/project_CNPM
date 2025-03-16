@@ -24,7 +24,7 @@ function Menu({className,onLogin, onRegister}){
         }
     ]
     return <header >
-        <div class="menu" className={className}>
+        <div className={`menu ${className}`}>
             <div class="left">
                 <ul>
                 {menuItems.map((item)=>{

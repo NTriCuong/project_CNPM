@@ -51,9 +51,9 @@ function FlightSearchBox({className}){
                 },
         ]
     }
-    return <div class={`searchBox ${className}`}>
-        <form class="flight-search" onSubmit={handleSubmit}>
-            <div class="top">
+    return <div className={`searchBox ${className}`}>
+        <form className="flight-search" onSubmit={handleSubmit}>
+            <div className="top">
             <Button 
              text={<><img src={icon1chieu} alt="icon" class="icon"/><pre 
              style={{fontFamily: 'inherit'}}> Một Chiều</pre></>} 
@@ -69,8 +69,8 @@ function FlightSearchBox({className}){
              type="button"
             />
             </div>
-            <div class="bottom">
-                <div class="bottom-left">
+            <div className="bottom">
+                <div className="bottom-left">
                     <SearchItem textTop="Điểm Khởi Hành" 
                     textCenter={departurePoint.city} 
                     textBottom={
@@ -82,7 +82,7 @@ function FlightSearchBox({className}){
                         </div>
                         }/>
                 </div>
-                <div class="bottom-right">right</div>
+                <div className="bottom-right">right</div>
                 <Button 
                 text="Tìm Chuyến Bay" 
                 type="submit"
