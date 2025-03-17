@@ -15,7 +15,7 @@ const FlightRegister = ({className, onRegister, login}) => {
 const [radioBnt,setRadioBnt] = useState(false);
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Logging in with:',name,  email, password, numberPhone);
+    handleLogin();
   };
   const handleClose=()=>{
     onRegister(false);

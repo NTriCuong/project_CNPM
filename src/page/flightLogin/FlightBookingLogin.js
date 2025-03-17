@@ -4,14 +4,13 @@ import closeEge from '../../image/Icon/Login/closeEye.svg';
 import closeLogo from '../../image/Icon/Login/closelogo.png';
 import history from '../../image/Icon/Login/history.svg';
 import calendar from '../../image/Icon/Login/calen.svg'
-const FlightBookingLogin = ({className, onLogin, create}) => {
+const FlightBookingLogin = ({className, onLogin, create, onForgot}) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const handleLogin = (e) => {
     e.preventDefault();
- 
-    console.log('Logging in with:', email, password);
+    handleClose();
   };
   const handleClose=()=>{
     onLogin(false);
@@ -25,6 +24,10 @@ const FlightBookingLogin = ({className, onLogin, create}) => {
   const handleCreate=()=>{
     handleClose();
     create(true);
+  }
+  const handleForgot=()=>{
+    handleClose();
+    onForgot(true)
   }
   return (
     <div className={className}>
@@ -60,7 +63,7 @@ const FlightBookingLogin = ({className, onLogin, create}) => {
           <div className="form-group">
             <div className="password-header">
               <label>Mật Khẩu</label>
-              <button className="forgot-password">Quên mật khẩu?</button>
+              <button className="forgot-password" onClick={handleForgot}>Quên mật khẩu?</button>
             </div>
             <input 
               type={showPassword?"text":"password"}

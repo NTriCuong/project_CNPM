@@ -1,3 +1,4 @@
+
 .footer {
   background-color: #1a1a1a;
   color: #ffffff;
@@ -168,11 +169,15 @@
   text-decoration: underline;
 }
 
-img,
+/* img,
 picture,
 video,
 canvas,
 svg {
+  display: block;
+  max-width: 100%;
+} */
+.social-icon >img{
   display: block;
   max-width: 100%;
 }
