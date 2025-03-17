@@ -1,3 +1,4 @@
+
 .constainer{
     width: 100%;
     position: relative;
@@ -7,14 +8,16 @@
      left: 50%;  
     top: 230px;
     transform: translateX(-50%);/*  Căn giữa */
+    z-index: 1;
 }
 .form-login{
-    position: absolute;
+    position: fixed;
     left: 0;
-    top: 0;
+    top: -20px;
     width: 100%;
     transition: opacity 0.3s ease, transform 0.3s ease;
     display: none;
+    z-index: 999;
 }
 /* login */
 @keyframes fadeInScale {
