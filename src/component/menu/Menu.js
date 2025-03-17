@@ -25,17 +25,17 @@ function Menu({className,onLogin, onRegister}){
     ]
     return <header >
         <div className={`menu ${className}`}>
-            <div class="left">
+            <div className="left">
                 <ul>
                 {menuItems.map((item)=>{
-                    return <li key={item.key} class="menu-item">{item.label}</li>
+                    return <li key={item.key} className="menu-item">{item.label}</li>
                 })}
                 </ul>
             </div>
-            <div class="right">
+            <div className="right">
                 <ul>
                 {menuButton.map(item=>{
-                        return <li key={item.key} class="menu-item">{item.button}</li>
+                        return <li key={item.key} className="menu-item">{item.button}</li>
                     })}
                 </ul>
             </div>

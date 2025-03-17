@@ -55,14 +55,14 @@ function FlightSearchBox({className}){
         <form className="flight-search" onSubmit={handleSubmit}>
             <div className="top">
             <Button 
-             text={<><img src={icon1chieu} alt="icon" class="icon"/><pre 
+             text={<><img src={icon1chieu} alt="icon" className="icon"/><pre 
              style={{fontFamily: 'inherit'}}> Một Chiều</pre></>} 
              className={tickerType===true?'top-item top-item-click':'top-item'}
              onClick={()=>{setTickerType(true)}}
              type="button"
             />
             <Button 
-             text={<><img src={icon2chieu} alt="icon" class="icon" 
+             text={<><img src={icon2chieu} alt="icon" className="icon" 
              style={{width:'30px', height:'30px'}}/><pre style={{fontFamily: 'inherit'}} > Khứ Hồi</pre></>} 
              className={tickerType===false?'top-item top-item-click':'top-item'}
              onClick={()=>{setTickerType(false)}}
