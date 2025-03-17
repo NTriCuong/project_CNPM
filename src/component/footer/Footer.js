@@ -1,8 +1,5 @@
 // Footer.jsx
 import React from 'react';
-import fb from '../Icons/Icon/HomePage/fb.png'
-import tt from '../Icons/Icon/HomePage/twitter.png'
-import zl from '../Icons/Icon/HomePage/zalo.png'
 import '../footer/Footer.css';
 
 const Footer = () => {
@@ -17,9 +14,9 @@ const Footer = () => {
             Xin chào, chúng tôi là Nhóm 3. Mục tiêu của chúng tôi là chuyên hóa những tiến trình liên quan tới việc tối ưu sự trải nghiệm của người dùng, từ đó cải thiện khách hàng và đối ngũ của họ.
           </p>
           <div className="social-icons">
-            <a href="#" className="social-icon facebook"><img src={fb} alt="facebook"/></a>
+            {/* <a href="#" className="social-icon facebook"><img src={fb} alt="facebook"/></a>
             <a href="#" className="social-icon twitter"><img src={tt} alt="twitter"/></a>
-            <a href="#" className="social-icon zalo"><img src={zl} alt="zalo"/></a>
+            <a href="#" className="social-icon zalo"><img src={zl} alt="zalo"/></a> */}
           </div>
         </div>
         

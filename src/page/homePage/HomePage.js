@@ -5,6 +5,7 @@ import FlightBookingLogin from '../flightLogin/FlightBookingLogin';
 import Banner from './component/banner/Banner';
 import './style.css';
 import FlightRegister from '../flightRegister/FlightRegister';
+import Footer from '../../component/footer/Footer';
 
 function HomePage(){
     const [onLogin,setOnLogin] = useState(false);
@@ -31,9 +32,10 @@ function HomePage(){
     return <div class="constainer">
         <Menu onLogin={handleLogin} onRegister={handleRegister}/>
         <Banner/>
-        <FlightSearchBox  className={"search-box"}/>
+        {/* <FlightSearchBox  className={"search-box"}/> */}
         <FlightBookingLogin className={`form-login ${onLogin?"on-login":""}`} onLogin={handleCloseLogin} create={handleCreate}/>
         <FlightRegister className={`form-login ${onRegister?"on-login":""}`} onRegister={handleCloseRegister} login={handleLg}/>
+        <Footer/>
     </div>
 }
 export default HomePage;
