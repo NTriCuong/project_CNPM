@@ -1,14 +1,17 @@
-.searchBox{
+.searchBox {
     width: 1080px;
     height: 200px;
+    z-index: 10;
 }
-.flight-search{
+
+.flight-search {
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
 }
-.top{
+
+.top {
     background-color: #EAF0F0;
     width: 25%;
     height: 40%;
@@ -19,7 +22,7 @@
     border-top-right-radius: 10px;
 }
 
-.top-item{
+.top-item {
     color: #233A60;
     display: flex;
     align-items: center;
@@ -27,29 +30,40 @@
     width: 120px;
     height: 50px;
 }
-.top-item:hover{
-    background-color: inherit; /* Giữ nguyên màu nền */
-    text-decoration: none; /* Xóa gạch chân nếu có */
+
+.top-item:hover {
+    background-color: inherit;
+    /* Giữ nguyên màu nền */
+    text-decoration: none;
+    /* Xóa gạch chân nếu có */
     color: #223A60;
 }
-.top-item-click:hover{
-    background-color: inherit; /* Giữ nguyên màu nền */
+
+.top-item-click:hover {
+    background-color: inherit;
+    /* Giữ nguyên màu nền */
     color: white;
 }
-.icon{
+
+.icon {
     width: 25px;
     height: 25px;
     transition: filter 0.3s ease-in-out;
 }
-.top-item-click, .bottom-item{
+
+.top-item-click,
+.bottom-item {
     background-color: #223A60 !important;
     color: white;
 }
-.top-item-click >img{
+
+.top-item-click>img {
     color: white;
-    filter: brightness(0) invert(1); /* Chuyển thành màu trắng */
+    filter: brightness(0) invert(1);
+    /* Chuyển thành màu trắng */
 }
-.bottom{
+
+.bottom {
     width: 100%;
     height: 60%;
     border-top-right-radius: 10px;
@@ -59,37 +73,44 @@
     position: relative;
     display: flex;
 }
-.bottom-item{
+
+.bottom-item {
     width: 170px;
     height: 40px;
     border-radius: 10px;
     position: absolute;
-    left: 50%;  
+    left: 50%;
     bottom: -20px;
-    transform: translateX(-50%); /* Căn giữa */
+    transform: translateX(-50%);
+    /* Căn giữa */
 }
-.bottom-left{
+
+.bottom-left {
     width: 60%;
     height: 100%;
 }
-.bottom-right{
+
+.bottom-right {
     width: 40%;
     height: 100%;
 }
-.input-select{
+
+.input-select {
     display: none;
-    width: 290px ;
+    width: 290px;
     height: 290px;
     border-radius: 8px;
     border: #DFE1E7 2px solid;
     background-color: white;
 }
-.bottom-left-r{
+
+.bottom-left-r {
     left: -10px;
     top: -40px;
     position: absolute;
 }
-.bottom-left-r input{
+
+.bottom-left-r input {
     width: 89%;
     height: 30px;
     border-top-left-radius: 6px;
@@ -97,5 +118,141 @@
     padding: 2px;
     padding-left: 30px;
     border: none;
-    border-bottom:#DFE1E7 2px solid;
+    border-bottom: #DFE1E7 2px solid;
+}
+
+@media screen and (max-width: 1200px) {
+    .searchBox {
+        width: 90%;
+        height: auto;
+    }
+
+    .top {
+        width: 30%;
+        height: auto;
+    }
+
+    .bottom-item {
+        width: 160px;
+        height: 38px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .searchBox {
+        width: 95%;
+    }
+
+    .top {
+        width: 40%;
+    }
+
+    .top-item {
+        width: 100px;
+        height: 45px;
+    }
+
+    .bottom {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .bottom-left {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .flight-search {
+        height: 170px;
+        margin-top: -145px;
+    }
+
+
+    .top {
+        width: 30%;
+        padding: 6px 0px
+    }
+
+    .top-item {
+        width: 80px;
+        height: 35px;
+        font-size: 8px
+    }
+
+    .item-center {
+        font-size: 10px;
+    }
+
+
+    .bottom-item {
+        width: 140px;
+        height: 35px;
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .flight-search {
+        height: 110px;
+        width: 95%;
+        padding-left: 12px;
+        margin-top: -165px;
+    }
+
+    .searchBox {
+        width: 100%;
+    }
+
+    .top {
+        height: 35%;
+        width: 30%;
+        padding-left: 15px;
+    }
+
+    .top-item {
+        width: 70px;
+        height: 28px;
+        font-size: 5px;
+    }
+
+    .bottom-item {
+        width: 90px;
+        height: 30px;
+        font-size: 9px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .top {
+        width: 33%;
+        height: 20%;
+    }
+
+    .bottom {
+        height: 45%;
+    }
+
+    .icon {
+        width: 20px;
+    }
+
+    .top-item {
+        width: 60px;
+        height: 25px;
+        font-size: 4px;
+    }
+
+    .top-item {
+        width: 70px;
+        height: 25px;
+        font-size: 6px;
+    }
+
+    .bottom-item {
+        width: 65px;
+        height: 25px;
+        font-size: 5px
+    }
 }

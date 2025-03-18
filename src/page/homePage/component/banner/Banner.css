@@ -1,0 +1,52 @@
+/* Banner.css */
+.banner {
+    width: 100%;
+    overflow: hidden;
+    position: relative; /* Để Menu có thể được đặt lên trên banner */
+}
+
+.banner img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+/* Media queries cho các kích thước màn hình khác nhau */
+
+/* Kích thước màn hình lớn (desktop) */
+@media screen and (max-width: 1200px) {
+    .banner {
+        margin-top: 0; /* Để tính đến header fixed */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .banner {
+        margin-top: 0;
+    }
+
+    .banner img {
+        min-height: 250px;
+        object-position: center;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .banner {
+        margin-top: 0;
+    }
+
+    .banner img {
+        min-height: 200px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .banner {
+        margin-top: 0;
+    }
+
+    .banner img {
+        min-height: 150px;
+    }
+}

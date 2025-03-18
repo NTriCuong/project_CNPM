@@ -1,51 +1,166 @@
+/* Menu CSS */
 header {
     position: fixed;
-    top: 20px; /* Cách top 20px */
+    top: 20px;
+    /* Cách top 20px */
     width: 100%;
     display: flex;
     justify-content: center;
-    z-index: 2;
+    z-index: 2; /* Đảm bảo Menu luôn nằm trên Banner */
 }
 
-.menu{
+.menu {
     position: relative;
     width: 80%;
     height: 50px;
-    display:flex;
+    display: flex;
     background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(10px); /* Làm mờ nền phía sau */
     -webkit-backdrop-filter: blur(10px); /* Hỗ trợ cho Safari */
     border-radius: 10px; /* Bo góc */
+    z-index: 100;
 }
-.left, .right{
+
+.left,
+.right {
     width: 50%;
     display: flex;
     align-items: center;
 }
-.right{
+
+.right {
     justify-content: end;
 }
-.left>ul{
+
+.left > ul {
     margin-left: 20px;
     padding: 0px;
     list-style: none;
     display: flex;
     gap: 25px;
 }
-.left>ul>li{
+
+.left > ul > li {
     font-size: 16px;
     font-weight: bold;
     font-family: poppins, sans-serif;
     color: #6A7B89;
 }
-.left>ul>li:hover{
+
+.left > ul > li:hover {
     color: #233A60;
     cursor: pointer;
 }
-.right>ul{
+
+.right > ul {
     margin-right: 20px;
     list-style: none;
     display: flex;
     gap: 10px;
     justify-content: end;
+}
+
+/* CSS Responsive - thêm vào cuối file style.css hiện tại */
+
+@media screen and (max-width: 992px) {
+    .menu {
+        width: 90%;
+    }
+
+    .left > ul {
+        gap: 15px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .menu {
+        width: 95%;
+        flex-direction: row;
+        height: 50px;
+    }
+
+    .left,
+    .right {
+        width: 50%;
+    }
+
+    .left > ul {
+        gap: 10px;
+        margin-left: 10px;
+    }
+
+    .right > ul {
+        margin-right: 10px;
+        gap: 8px;
+    }
+
+    .btn-login,
+    .btn-signup {
+        font-size: 10px;
+        padding: 8px 16px;
+    }
+
+    .left > ul > li,
+    .right > ul > li {
+        font-size: 9px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    header {
+        top: 10px;
+    }
+
+    .btn-login,
+    .btn-signup {
+        font-size: 8px;
+        padding: 6px 12px;
+    }
+
+    .menu {
+        border-radius: 8px;
+        padding: 0 5px;
+    }
+
+    .left > ul {
+        gap: 8px;
+        margin-left: 5px;
+    }
+
+    .right > ul {
+        margin-right: 5px;
+        gap: 5px;
+    }
+
+    .left > ul > li {
+        font-size: 8px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .menu {
+        width: 93%;
+    }
+
+    .left {
+        width: 60%;
+    }
+
+    .right {
+        width: 40%;
+    }
+
+    .left > ul {
+        gap: 6px;
+    }
+
+    .btn-login,
+    .btn-signup {
+        font-size: 8px;
+        padding: 6px 10px;
+    }
+
+    .left > ul > li {
+        font-size: 7px;
+    }
 }
