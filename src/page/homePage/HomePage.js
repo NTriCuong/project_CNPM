@@ -51,7 +51,7 @@ function HomePage(){
         <FlightRegister className={`form-login ${onRegister?"on-login":""}`} onRegister={handleCloseRegister} login={handleLg}/>
         <ForgotPassword className={`form-login ${onForgot?"on-login":""}`} onForgot={handleForgotPw} onLogin={handleLg} onConfirm={handleOnConfirm}/>
         <ConfirmOTP className={`form-login ${onConfirm?"on-login":""}`} onConfirm={handleOnConfirm} onLogin={handleLg}/>
-        <Footer/>
+        {/* <Footer/> */}
     </div>
 }
 export default HomePage;

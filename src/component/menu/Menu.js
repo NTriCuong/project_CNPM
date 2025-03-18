@@ -16,10 +16,10 @@ function Menu({className,onLogin, onRegister}){
     ];
     const menuButton =[
         {
-            button: <Button text="Đăng Nhập" onClick={handleLogin}/>,
+            button: <Button text="Đăng Nhập" onClick={handleLogin} className='btn-login'/>,
             key:"dn"
         },{
-            button: <Button text="Đăng Ký" onClick={handleRegister}/>,
+            button: <Button text="Đăng Ký" onClick={handleRegister} className='btn-signup'/>,
             key:"dy"
         }
     ]

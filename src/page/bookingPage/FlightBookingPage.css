@@ -1,13 +1,18 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+}
 
-
-.booking-header{
-    background-color: #FFFFFF;
+.booking-page {
+    width: 1000px;
 }
 
 .booking-menu {
     background-color: #EAF0F0;
 }
 
-.booking-search-fly{
-    padding-top: 200px;
+.booking-container {
+    background-color: #EAF0F0;
 }

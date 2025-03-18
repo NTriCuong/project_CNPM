@@ -6,14 +6,13 @@ import './FlightBookingPage.css';
 
 
 function FlightBookingPage() {
-    return <div>
-        {/* <div className="booking-header">
+    return <div className="booking-page">
+        <div className="booking-header">
             <Menu className='booking-menu' />
         </div>
-        <div className="booking-search-fly">
-            <FlightSearchBox/>
-        </div> */}
-        <Footer/>
+        <div className="booking-container">
+
+        </div>
     </div>
 }
 export default FlightBookingPage;
