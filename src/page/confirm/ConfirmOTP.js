@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import closeLogo from '../../image/Icon/Login/closelogo.png';
 import history from '../../image/Icon/Login/history.svg';
 import calendar from '../../image/Icon/Login/calen.svg'
-const ConfirmOTP = ({className, onConfirm, onLogin}) => {
+const ConfirmOTP = ({className}) => {
   const [otp, setOtp] = useState('');
   const handleLogin = (e) => {
     e.preventDefault();
@@ -10,13 +10,11 @@ const ConfirmOTP = ({className, onConfirm, onLogin}) => {
     setOtp('');
   };
   const handleClose=()=>{
-    onConfirm(false);
     setOtp('');
   }
   
   const handleOnLogin=()=>{
     handleClose();
-    onLogin(true)
   }
   return (
     <div className={className}>

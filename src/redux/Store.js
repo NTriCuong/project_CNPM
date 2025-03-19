@@ -1,12 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit';
-import counterReducer from '../features/counterSlice';
+import formAuth from './counterSlice';
 
-export const store = configureStore({
+const store = configureStore({
   reducer: {
     // nơi thêm các reducer vào store
     //folder features là nơi chứa các reducer mỗi reducer là 1 state
     // counter: counterReducer, // Thêm reducer vào store
+    auth: formAuth,
   },
 });
 
+export const SelecAuth = (state)=>state.auth.formStatus;
 export default store;

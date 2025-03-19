@@ -4,7 +4,10 @@ import closeEge from '../../image/Icon/Login/closeEye.svg'
 import closeLogo from '../../image/Icon/Login/closelogo.png';
 import checkBox from '../../image/Icon/Login/checkbox & Radio.svg';
 import checkBoxTrue from '../../image/Icon/Login/checkbox & RadioTrue.svg';
-const FlightRegister = ({className, onRegister, login}) => {
+import { useDispatch } from 'react-redux';
+import { onLogin, reset } from '../../redux/counterSlice';
+const FlightRegister = ({className}) => {
+  const Dispath = useDispatch();
   // dữ liệu form
   const [name,setName] = useState('');
   const [numberPhone, setNumberPhone] = useState('');
@@ -15,10 +18,13 @@ const FlightRegister = ({className, onRegister, login}) => {
 const [radioBnt,setRadioBnt] = useState(false);
   const handleSubmit = (e) => {
     e.preventDefault();
-    handleLogin();
+    handleLogin()
   };
   const handleClose=()=>{
-    onRegister(false);
+    Dispath(reset());
+    resetInputField()
+  }
+  const resetInputField=()=>{
     setName('');
     setNumberPhone('');
     setEmail('');
@@ -34,8 +40,8 @@ const [radioBnt,setRadioBnt] = useState(false);
     setRadioBnt(!radioBnt);
   }
   const handleLogin=()=>{
-    handleClose();
-    login(true);
+    handleClose()
+    Dispath(onLogin());
   }
   return (
     <div className={className}>
@@ -49,7 +55,7 @@ const [radioBnt,setRadioBnt] = useState(false);
       </button>
       
     
-      <h1 className="welcome-title">Chào Mừng Đến Với Nhóm 3</h1>
+      <h1 className="welcome-title" style={{margin:'10px'}}>Chào Mừng Đến Với Nhóm 3</h1>
       
      
       <div className="login-box">
