@@ -5,7 +5,7 @@ import closeLogo from '../../image/Icon/Login/closelogo.png';
 import checkBox from '../../image/Icon/Login/checkbox & Radio.svg';
 import checkBoxTrue from '../../image/Icon/Login/checkbox & RadioTrue.svg';
 import { useDispatch } from 'react-redux';
-import { onLogin, reset } from '../../redux/counterSlice';
+import { onLogin, reset } from '../../redux/Slice';
 const FlightRegister = ({className}) => {
   const Dispath = useDispatch();
   // dữ liệu form

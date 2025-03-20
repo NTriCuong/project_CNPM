@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import Menu from '../../component/menu/Menu';
 import FlightSearchBox from '../../component/search/FlightSearchBox';
 import FlightBookingLogin from '../flightLogin/FlightBookingLogin';

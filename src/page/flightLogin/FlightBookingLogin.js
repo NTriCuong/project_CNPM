@@ -4,9 +4,8 @@ import closeEge from '../../image/Icon/Login/closeEye.svg';
 import closeLogo from '../../image/Icon/Login/closelogo.png';
 import history from '../../image/Icon/Login/history.svg';
 import calendar from '../../image/Icon/Login/calen.svg'
-import { useDispatch, useSelector } from 'react-redux';
-import { SelecAuth } from '../../redux/Store';
-import { onForgotPassword, onRegister, reset } from '../../redux/counterSlice';
+import { useDispatch } from 'react-redux';
+import { onForgotPassword, onRegister, reset } from '../../redux/Slice';
 const FlightBookingLogin = ({className}) => {
   const Dispath = useDispatch();
 

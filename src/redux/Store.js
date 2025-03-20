@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import formAuth from './counterSlice';
+import formAuth from './Slice';
 
 const store = configureStore({
   reducer: {

@@ -27,5 +27,6 @@ const formAuth = createSlice({
         }
     }
 })
+// auth
 export const {onLogin,onRegister,onForgotPassword,onConfirmOTP,onResetpassword,reset} = formAuth.actions;
 export default formAuth.reducer;
