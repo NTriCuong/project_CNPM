@@ -27,7 +27,7 @@ function HomePage(){
         <ForgotPassword className={`form-login ${auth==='auth-forgotpassword'?"on-login":""}`} />
         <ConfirmOTP className={`form-login ${auth==='auth-confirmotp'?"on-login":""}`} />
         <ResetPassword className={`form-login ${auth==='auth-resetpassword'?"on-login":""}`}/>
-        {/* <Footer/> */}
+        <Footer/>
     </div>
 }
 export default HomePage;
