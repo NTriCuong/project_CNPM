@@ -2,22 +2,29 @@ import React, { useState } from 'react';
 import closeLogo from '../../image/Icon/Login/closelogo.png';
 import history from '../../image/Icon/Login/history.svg';
 import calendar from '../../image/Icon/Login/calen.svg'
-const ForgotPassword = ({className, onForgot, onLogin, onConfirm}) => {
+import { useDispatch } from 'react-redux';
+import { onLogin, onResetpassword, reset } from '../../redux/counterSlice';
+const ForgotPassword = ({className}) => {
+  const Dispath = useDispatch();
+
   const [email, setEmail] = useState('');
+
   const handleLogin = (e) => {
     e.preventDefault();
-    setEmail('');
-    onConfirm(true);
+    Dispath(onResetpassword());
+    resetInputField()
   };
-  const handleClose=()=>{
-    onForgot(false);
+  const resetInputField=()=>{
     setEmail('');
+  }
+  const handleClose=()=>{
+    Dispath(reset());
+    resetInputField()
   }
   
   const handleOnLogin=()=>{
-    handleClose();
-    setEmail('');
-    onLogin(true)
+    Dispath(onLogin());
+    resetInputField()
   }
   return (
     <div className={className}>
@@ -31,7 +38,7 @@ const ForgotPassword = ({className, onForgot, onLogin, onConfirm}) => {
       </button>
       
     
-      <h1 className="welcome-title">Chào Mừng Đến Với Nhóm 3</h1>
+      <h1 className="welcome-title" style={{margin:'60px'}}>Chào Mừng Đến Với Nhóm 3</h1>
       
      
       <div className="login-box">

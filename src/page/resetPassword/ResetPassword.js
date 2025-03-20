@@ -1,42 +1,44 @@
 import React, { useState } from 'react';
-import './FlightBookingLogin.css'; 
+import './style.css'
 import closeEge from '../../image/Icon/Login/closeEye.svg';
 import closeLogo from '../../image/Icon/Login/closelogo.png';
 import history from '../../image/Icon/Login/history.svg';
 import calendar from '../../image/Icon/Login/calen.svg'
-import { useDispatch, useSelector } from 'react-redux';
-import { SelecAuth } from '../../redux/Store';
-import { onForgotPassword, onRegister, reset } from '../../redux/counterSlice';
-const FlightBookingLogin = ({className}) => {
+import { useDispatch } from 'react-redux';
+import {  onLogin, reset } from '../../redux/counterSlice';
+const ResetPassword = ({className}) => {
   const Dispath = useDispatch();
 
-  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
-  const handleLogin = (e) => {
+  const [password2, setPassword2] = useState('');
+  const [showPassword2, setShowPassword2] = useState(false);
+
+  const handleSubmit = (e) => {
     e.preventDefault();
-    handleClose()
+    handleClose();
+    Dispath(onLogin())
   };
   const handleClose=()=>{
-    Dispath(reset());
-    resetInputField();
+    resetInputField()
   }
-  const resetInputField = ()=>{
-    setEmail('');
+  const resetInputField=()=>{
+    Dispath(reset())
     setPassword('');
-    setShowPassword(false);
+    setPassword2('')
+    setShowPassword(false)
+    setShowPassword2(false)
   }
   const handleShowPassword=()=>{
     setShowPassword(!showPassword);
   }
-  const handleCreate=()=>{
-    Dispath(onRegister());
-    resetInputField()
+  const handleShowPassword2=()=>{
+    setShowPassword2(!showPassword2);
   }
-  const handleForgot=()=>{
-    Dispath(onForgotPassword());
-    resetInputField()
-
+ 
+  const handleLogin=()=>{
+    handleClose();
+    Dispath(onLogin())
   }
   return (
     <div className={className}>
@@ -50,29 +52,33 @@ const FlightBookingLogin = ({className}) => {
       </button>
       
     
-      <h1 className="welcome-title" style={{margin:'20px'}}>Chào Mừng Đến Với Nhóm 3</h1>
+      <h1 className="welcome-title" style={{margin:'40px'}}>Chào Mừng Đến Với Nhóm 3</h1>
       
      
       <div className="login-box">
-        <h2 className="login-header">Đăng Nhập</h2>
-        <p className="login-subheader">Điền địa chỉ email và mật khẩu để đăng nhập</p>
+        <h2 className="login-header">Đặt lại mật khẩu</h2>
+        <p className="login-subheader">Điền mật khẩu mới của bạn và xác nhận</p>
         
-        <form onSubmit={handleLogin} className="login-form">
+        <form onSubmit={handleSubmit} className="login-form">
           <div className="form-group">
-            <label>Địa Chỉ Email</label>
+            <label>Mật khẩu mới</label>
             <input 
-              type="email" 
-              placeholder="Nhập email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              type={showPassword2?"text":"password"}
+              placeholder="Nhập mật khẩu"
+              value={password2}
+              onChange={(e) => setPassword2(e.target.value)}
               required
+              style={{position:'relative'}}
             />
+            {/* ege */}
+            <img src={closeEge} alt="icon" style={{top:'174px', left:'358px', position:'absolute'}} 
+            className={password2!==""?'icon-ege2':'none-eye'} 
+            onClick={handleShowPassword2}/>
           </div>
           
           <div className="form-group">
             <div className="password-header">
-              <label>Mật Khẩu</label>
-              <button className="forgot-password" onClick={handleForgot}>Quên mật khẩu?</button>
+              <label>Xác nhận mật khẩu</label>
             </div>
             <input 
               type={showPassword?"text":"password"}
@@ -90,12 +96,12 @@ const FlightBookingLogin = ({className}) => {
           <hr style={{margin:'10px', height:'0.5px', border:'none',
             background: 'linear-gradient(to right, transparent, #EAF0F0, transparent)'}}/>
           <button type="submit" className="login-button">
-            Đăng nhập
+            Xác nhận
           </button>
           
           <div className="signup-option">
-            <span>Chưa có tài khoản? </span>
-            <button onClick={handleCreate}>Tạo tài khoản</button>
+            <span>Trở về đăng nhập ? </span>
+            <button onClick={handleLogin}>Đăng nhập</button>
           </div>
         </form>
       </div>
@@ -129,4 +135,4 @@ const FlightBookingLogin = ({className}) => {
   );
 };
 
-export default FlightBookingLogin;
+export default ResetPassword;
