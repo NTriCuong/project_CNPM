@@ -6,7 +6,8 @@ header {
     width: 100%;
     display: flex;
     justify-content: center;
-    z-index: 2; /* Đảm bảo Menu luôn nằm trên Banner */
+    z-index: 2;
+    /* Đảm bảo Menu luôn nằm trên Banner */
 }
 
 .menu {
@@ -15,9 +16,12 @@ header {
     height: 50px;
     display: flex;
     background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px); /* Làm mờ nền phía sau */
-    -webkit-backdrop-filter: blur(10px); /* Hỗ trợ cho Safari */
-    border-radius: 10px; /* Bo góc */
+    backdrop-filter: blur(10px);
+    /* Làm mờ nền phía sau */
+    -webkit-backdrop-filter: blur(10px);
+    /* Hỗ trợ cho Safari */
+    border-radius: 10px;
+    /* Bo góc */
     z-index: 100;
 }
 
@@ -32,7 +36,7 @@ header {
     justify-content: end;
 }
 
-.left > ul {
+.left>ul {
     margin-left: 20px;
     padding: 0px;
     list-style: none;
@@ -40,19 +44,19 @@ header {
     gap: 25px;
 }
 
-.left > ul > li {
+.left>ul>li {
     font-size: 16px;
     font-weight: bold;
     font-family: poppins, sans-serif;
     color: #6A7B89;
 }
 
-.left > ul > li:hover {
+.left>ul>li:hover {
     color: #233A60;
     cursor: pointer;
 }
 
-.right > ul {
+.right>ul {
     margin-right: 20px;
     list-style: none;
     display: flex;
@@ -61,14 +65,28 @@ header {
 }
 
 /* CSS Responsive - thêm vào cuối file style.css hiện tại */
+@media screen and (max-width: 1200px) {
+    .left>ul>li {
+        font-size: 12px;
+    }
+    .btn-login,
+    .btn-signup {
+        font-size: 12px;
+    }
+}
 
 @media screen and (max-width: 992px) {
     .menu {
         width: 90%;
     }
 
-    .left > ul {
-        gap: 15px;
+    .left>ul>li {
+        font-size: 10px;
+    }
+
+    .btn-login,
+    .btn-signup {
+        font-size: 10px;
     }
 }
 
@@ -84,12 +102,12 @@ header {
         width: 50%;
     }
 
-    .left > ul {
+    .left>ul {
         gap: 10px;
         margin-left: 10px;
     }
 
-    .right > ul {
+    .right>ul {
         margin-right: 10px;
         gap: 8px;
     }
@@ -100,8 +118,8 @@ header {
         padding: 8px 16px;
     }
 
-    .left > ul > li,
-    .right > ul > li {
+    .left>ul>li,
+    .right>ul>li {
         font-size: 9px;
     }
 }
@@ -122,17 +140,17 @@ header {
         padding: 0 5px;
     }
 
-    .left > ul {
+    .left>ul {
         gap: 8px;
         margin-left: 5px;
     }
 
-    .right > ul {
+    .right>ul {
         margin-right: 5px;
         gap: 5px;
     }
 
-    .left > ul > li {
+    .left>ul>li {
         font-size: 8px;
     }
 }
@@ -140,6 +158,7 @@ header {
 @media screen and (max-width: 480px) {
     .menu {
         width: 93%;
+        height: 100%;
     }
 
     .left {
@@ -150,7 +169,7 @@ header {
         width: 40%;
     }
 
-    .left > ul {
+    .left>ul {
         gap: 6px;
     }
 
@@ -160,7 +179,7 @@ header {
         padding: 6px 10px;
     }
 
-    .left > ul > li {
+    .left>ul>li {
         font-size: 7px;
     }
 }

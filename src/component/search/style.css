@@ -122,6 +122,10 @@
 }
 
 @media screen and (max-width: 1200px) {
+    .flight-search {
+        margin-top: -55px;
+    }
+
     .searchBox {
         width: 90%;
         height: auto;
@@ -129,7 +133,7 @@
 
     .top {
         width: 30%;
-        height: auto;
+        height: 71px;
     }
 
     .bottom-item {
@@ -139,17 +143,23 @@
 }
 
 @media screen and (max-width: 992px) {
+    .flight-search {
+        margin-top: -78px;
+    }
+
     .searchBox {
         width: 95%;
     }
 
     .top {
-        width: 40%;
+        width: 35%;
+        height: 65px;
     }
 
     .top-item {
-        width: 100px;
-        height: 45px;
+        width: 113px;
+        height: 44px;
+        font-size: 12px;
     }
 
     .bottom {
@@ -207,8 +217,8 @@
 
     .top {
         height: 35%;
-        width: 30%;
-        padding-left: 15px;
+        width: 38%;
+        padding-right: 10px;
     }
 
     .top-item {
@@ -226,8 +236,9 @@
 
 @media screen and (max-width: 400px) {
     .top {
-        width: 33%;
+        width: 35%;
         height: 20%;
+        padding-right: 10px;
     }
 
     .bottom {
@@ -245,7 +256,7 @@
     }
 
     .top-item {
-        width: 70px;
+        width: 60px;
         height: 25px;
         font-size: 6px;
     }
