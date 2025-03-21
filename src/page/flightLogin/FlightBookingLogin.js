@@ -6,6 +6,7 @@ import history from '../../image/Icon/Login/history.svg';
 import calendar from '../../image/Icon/Login/calen.svg'
 import { useDispatch } from 'react-redux';
 import { onForgotPassword, onRegister, reset } from '../../redux/Slice';
+import { authLogin } from '../../api/axiosClient';
 const FlightBookingLogin = ({className}) => {
   const Dispath = useDispatch();
 
@@ -14,7 +15,7 @@ const FlightBookingLogin = ({className}) => {
   const [showPassword, setShowPassword] = useState(false);
   const handleLogin = (e) => {
     e.preventDefault();
-    handleClose()
+    Api();
   };
   const handleClose=()=>{
     Dispath(reset());
@@ -35,7 +36,16 @@ const FlightBookingLogin = ({className}) => {
   const handleForgot=()=>{
     Dispath(onForgotPassword());
     resetInputField()
-
+  }
+  // API
+  const Api = async()=>{
+    try {
+      const respon = await authLogin.post(email,password)
+      console.log("check respon: ",respon)
+    } catch (error) {
+      console.log("check error: ",error)
+    }
+    
   }
   return (
     <div className={className}>
