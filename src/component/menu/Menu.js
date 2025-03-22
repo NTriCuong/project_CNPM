@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux';
 import Button from '../button/Button';
 import './style.css';
-import { onLogin, onRegister } from '../../redux/Slice';
+import { onLogin, onRegister } from '../../redux/authSlice';
 import { useNavigate } from 'react-router-dom';
 
 function Menu({className}){

@@ -3,8 +3,8 @@ import closeLogo from '../../image/Icon/Login/closelogo.png';
 import history from '../../image/Icon/Login/history.svg';
 import calendar from '../../image/Icon/Login/calen.svg'
 import { useDispatch } from 'react-redux';
-import { onLogin, onResetpassword, reset } from '../../redux/Slice';
-const ForgotPassword = ({className}) => {
+import { onLogin, onResetpassword, reset } from '../../redux/authSlice';
+const ForgotPassword = ({className, }) => {
   const Dispath = useDispatch();
 
   const [email, setEmail] = useState('');

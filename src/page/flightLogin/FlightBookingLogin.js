@@ -5,7 +5,7 @@ import closeLogo from '../../image/Icon/Login/closelogo.png';
 import history from '../../image/Icon/Login/history.svg';
 import calendar from '../../image/Icon/Login/calen.svg'
 import { useDispatch } from 'react-redux';
-import { onForgotPassword, onRegister, reset } from '../../redux/Slice';
+import { onForgotPassword, onRegister, reset } from '../../redux/authSlice';
 import { authLogin } from '../../api/axiosClient';
 const FlightBookingLogin = ({className}) => {
   const Dispath = useDispatch();
@@ -40,10 +40,13 @@ const FlightBookingLogin = ({className}) => {
   // API
   const Api = async()=>{
     try {
-      const respon = await authLogin.post(email,password)
+      const respon = await authLogin.post('/',{
+        email:email,
+        password:password})
       console.log("check respon: ",respon)
+       Dispath(reset())
     } catch (error) {
-      console.log("check error: ",error)
+      console.log("check error: ",error.response.data.detail)
     }
     
   }
@@ -57,11 +60,7 @@ const FlightBookingLogin = ({className}) => {
       <button className="close-button" onClick={handleClose}>
         <img src={closeLogo} alt='close'/>
       </button>
-      
-    
       <h1 className="welcome-title" style={{margin:'20px'}}>Chào Mừng Đến Với Nhóm 3</h1>
-      
-     
       <div className="login-box">
         <h2 className="login-header">Đăng Nhập</h2>
         <p className="login-subheader">Điền địa chỉ email và mật khẩu để đăng nhập</p>

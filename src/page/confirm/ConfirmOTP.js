@@ -1,20 +1,55 @@
-import React, { useState } from 'react';
+import React, {  useState } from 'react';
 import closeLogo from '../../image/Icon/Login/closelogo.png';
 import history from '../../image/Icon/Login/history.svg';
 import calendar from '../../image/Icon/Login/calen.svg'
+import { useDispatch, useSelector } from 'react-redux';
+import { selecDataClient } from '../../redux/Store';
+import { resentOtp, verifyOtp } from '../../api/axiosClient';
+import { reset } from '../../redux/authSlice';
 const ConfirmOTP = ({className}) => {
   const [otp, setOtp] = useState('');
+  const Dispath = useDispatch();
+  const email = useSelector(selecDataClient);
+
+    
   const handleLogin = (e) => {
     e.preventDefault();
-    handleOnLogin();
+    Api();
+   
     setOtp('');
   };
   const handleClose=()=>{
+    Dispath(reset());
     setOtp('');
   }
   
   const handleOnLogin=()=>{
     handleClose();
+  }
+  //api
+  const Api = async()=>{
+    try {
+      console.log("tesst email: ",email,"otp: ",otp)
+      const respon = await verifyOtp.post('/',{
+        email: email,
+        otp: otp
+      })
+      console.log("successful!", respon);
+      handleOnLogin();
+    } catch (error) {
+      console.log("check api error ", error)
+    }
+  }
+  const ApiResent = async()=>{
+    try {
+      const respon = await resentOtp.post('/',{email:email})
+      console.log("successful",respon);
+    } catch (error) {
+      console.log("check api error ", error)
+    }
+  }
+  const handleResent=()=>{
+    ApiResent()
   }
   return (
     <div className={className}>
@@ -45,6 +80,7 @@ const ConfirmOTP = ({className}) => {
               onChange={(e) => setOtp(e.target.value)}
               required
             />
+            <p onClick={handleResent} style={{fontSize:'12px',cursor:'pointer', }}>Gửi lại mã</p>
           </div>
           
           <hr style={{margin:'10px', height:'0.5px', border:'none',

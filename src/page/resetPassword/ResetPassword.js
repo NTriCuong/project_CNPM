@@ -5,7 +5,8 @@ import closeLogo from '../../image/Icon/Login/closelogo.png';
 import history from '../../image/Icon/Login/history.svg';
 import calendar from '../../image/Icon/Login/calen.svg'
 import { useDispatch } from 'react-redux';
-import {  onLogin, reset } from '../../redux/Slice';
+import {  onLogin, reset } from '../../redux/authSlice';
+import { resetPassword } from '../../api/axiosClient';
 const ResetPassword = ({className}) => {
   const Dispath = useDispatch();
 
