@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, {  useState } from 'react';
 import './style.css'; 
 import closeEge from '../../image/Icon/Login/closeEye.svg'
 import closeLogo from '../../image/Icon/Login/closelogo.png';
 import checkBox from '../../image/Icon/Login/checkbox & Radio.svg';
 import checkBoxTrue from '../../image/Icon/Login/checkbox & RadioTrue.svg';
 import { useDispatch } from 'react-redux';
-import { onLogin, reset } from '../../redux/Slice';
+import { onConfirmOTP, onLogin, reset } from '../../redux/authSlice';
+import { authRegister } from '../../api/axiosClient';
+import { setDataClient } from '../../redux/dataClientSlice';
 const FlightRegister = ({className}) => {
   const Dispath = useDispatch();
   // dữ liệu form
@@ -18,11 +20,12 @@ const FlightRegister = ({className}) => {
 const [radioBnt,setRadioBnt] = useState(false);
   const handleSubmit = (e) => {
     e.preventDefault();
-    handleLogin()
+    Api();
+    
   };
   const handleClose=()=>{
     Dispath(reset());
-    resetInputField()
+    resetInputField();
   }
   const resetInputField=()=>{
     setName('');
@@ -43,6 +46,20 @@ const [radioBnt,setRadioBnt] = useState(false);
     handleClose()
     Dispath(onLogin());
   }
+  //call api
+  const Api = async()=>{
+    try{
+      const response = await authRegister.post('/',{
+        email:email,
+        password:password})
+        console.log("successful!",response) // dang ky thanh cong
+        Dispath(setDataClient(email))
+        Dispath(onConfirmOTP());// hien form nhap otp
+    } catch (error) {
+      console.log("check api register error ",error.response.data.detail)// mesage call api loi
+    }
+  }
+  
   return (
     <div className={className}>
     <div className="login-container">

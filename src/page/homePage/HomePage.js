@@ -8,14 +8,14 @@ import Footer from '../../component/footer/Footer';
 import ForgotPassword from '../forgotPassword/ForgotPassword';
 import ConfirmOTP from '../confirm/ConfirmOTP';
 import { useDispatch, useSelector } from 'react-redux';
-import store, {  SelecAuth } from '../../redux/Store';
+import  {  SelecAuth } from '../../redux/Store';
 import ResetPassword from '../resetPassword/ResetPassword';
+import { upload } from '@testing-library/user-event/dist/upload';
+import { data } from 'react-router-dom';
+import { useState } from 'react';
 
 function HomePage(){
     const auth = useSelector(SelecAuth);
-    const Dispath = useDispatch();
-    console.log("check:: ",auth)
-   
     
     return <div class="constainer">
         <Menu />
@@ -25,7 +25,7 @@ function HomePage(){
         <FlightRegister className={`form-login ${auth==='auth-register'?"on-login":""}`} />
         <ForgotPassword className={`form-login ${auth==='auth-forgotpassword'?"on-login":""}`} />
         <ConfirmOTP className={`form-login ${auth==='auth-confirmotp'?"on-login":""}`} />
-        <ResetPassword className={`form-login ${auth==='auth-resetpassword'?"on-login":""}`}/>
+        <ResetPassword className={`form-login ${auth==='auth-resetpassword'?"on-login":""}`} />
         <Footer/>
     </div>
 }
