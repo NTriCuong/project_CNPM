@@ -4,9 +4,10 @@ import closeEge from '../../image/Icon/Login/closeEye.svg';
 import closeLogo from '../../image/Icon/Login/closelogo.png';
 import history from '../../image/Icon/Login/history.svg';
 import calendar from '../../image/Icon/Login/calen.svg'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import {  onLogin, reset } from '../../redux/authSlice';
 import { resetPassword } from '../../api/axiosClient';
+import { selecDataClient } from '../../redux/Store';
 const ResetPassword = ({className}) => {
   const Dispath = useDispatch();
 
@@ -14,12 +15,27 @@ const ResetPassword = ({className}) => {
   const [showPassword, setShowPassword] = useState(false);
   const [password2, setPassword2] = useState('');
   const [showPassword2, setShowPassword2] = useState(false);
-
+  const email =useSelector(selecDataClient);
   const handleSubmit = (e) => {
     e.preventDefault();
-    handleClose();
-    Dispath(onLogin())
+    Api()
+    
   };
+  //api
+  const Api= async()=>{
+    try {
+      const respon = await resetPassword.post('/',{
+        email: email,
+        new_password: password,
+        confirm_password: password2
+      });
+      console.log("check api reset password: ",respon)
+      handleClose();
+      Dispath(onLogin())
+    } catch (error) {
+      console.log("check api reset password error: ",error)
+    }
+  }
   const handleClose=()=>{
     resetInputField()
   }

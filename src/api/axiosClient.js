@@ -1,6 +1,6 @@
 import axios from "axios";
 // api đăng nhập
-const root = 'http://api.dcwizard.net/flight_api';
+const root = 'https://api.dcwizard.net/flight_api';
 // instan
 export const authLogin = axios.create({
     baseURL:`${root}/auth/login`,
