@@ -3,50 +3,60 @@ import closeLogo from '../../image/Icon/Login/closelogo.png';
 import history from '../../image/Icon/Login/history.svg';
 import calendar from '../../image/Icon/Login/calen.svg'
 import { useDispatch, useSelector } from 'react-redux';
-import { selecDataClient } from '../../redux/Store';
+import { selecDataClient, selecStatusOtp } from '../../redux/Store';
 import { resentOtp, verifyOtp } from '../../api/axiosClient';
-import { reset } from '../../redux/authSlice';
+import { onLogin, onResetpassword, reset } from '../../redux/authSlice';
 import danger from '../../image/Icon/Login/danger.svg'
 const ConfirmOTP = ({className}) => {
   const [otp, setOtp] = useState('');
   const [isDanger,setIsDanger] = useState(false)
   const Dispath = useDispatch();
   const email = useSelector(selecDataClient);
+  const status = useSelector(selecStatusOtp);
 
     
   const handleLogin = (e) => {
     e.preventDefault();
     Api();
     setOtp('');
+    setIsDanger(false);
   };
   const handleClose=()=>{
     Dispath(reset());
+    setIsDanger(false);
     setOtp('');
   }
   
   const handleOnLogin=()=>{
     handleClose();
+    Dispath(onLogin());
   }
   //api
   const Api = async()=>{
     try {
-      console.log("tesst email: ",email,"otp: ",otp)
-      const respon = await verifyOtp.post('/',{
+      await verifyOtp.post('/',{
         email: email,
         otp: otp
       })
-      handleOnLogin();
+      // nhập OTP thành công
+      alert("✈️ Xác thực OTP thành công!")
+      // nếu đang đặt lại mk
+      if(status)//true la vao trang chu
+        handleOnLogin();
+      else{// nếu đang xác thực bình thường
+        Dispath(onResetpassword())
+        handleClose()
+      }
+      
     } catch (error) {
       setIsDanger(true);
-      console.log("check api error ", error)
     }
   }
   const ApiResent = async()=>{
     try {
-      const respon = await resentOtp.post('/',{email:email})
-      console.log("successful",respon);
+      await resentOtp.post('/',{email:email})
     } catch (error) {
-      console.log("check api error ", error)
+      alert("Gửi lại OTP không thành công! hãy thử lại")
     }
   }
   const handleResent=()=>{

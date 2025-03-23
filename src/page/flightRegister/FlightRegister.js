@@ -8,6 +8,8 @@ import { useDispatch } from 'react-redux';
 import { onConfirmOTP, onLogin, reset } from '../../redux/authSlice';
 import { authRegister } from '../../api/axiosClient';
 import { setDataClient } from '../../redux/dataClientSlice';
+import { setStOtp } from '../../redux/stOtpSlice';
+
 const FlightRegister = ({className}) => {
   const Dispath = useDispatch();
   // dữ liệu form
@@ -21,7 +23,7 @@ const [radioBnt,setRadioBnt] = useState(false);
   const handleSubmit = (e) => {
     e.preventDefault();
     Api();
-    
+    handleClose()
   };
   const handleClose=()=>{
     Dispath(reset());
@@ -49,14 +51,18 @@ const [radioBnt,setRadioBnt] = useState(false);
   //call api
   const Api = async()=>{
     try{
-      const response = await authRegister.post('/',{
+      await authRegister.post('/',{
         email:email,
         password:password})
-        console.log("successful!",response) // dang ky thanh cong
+        // dang ky thanh cong
+        alert("✈️ Đăng ký thành công!");
         Dispath(setDataClient(email))
+        Dispath(setStOtp(true))
         Dispath(onConfirmOTP());// hien form nhap otp
     } catch (error) {
-      console.log("check api register error ",error.response.data.detail)// mesage call api loi
+        console.log(error)
+        if(error.status === 400)
+          alert("email đã được xử dụng, vui lòng thử với 1 email khác!")
     }
   }
   
@@ -136,9 +142,9 @@ const [radioBnt,setRadioBnt] = useState(false);
 
             <img src={radioBnt?checkBoxTrue:checkBox} alt=''
             onClick={handleCheckBox} 
+            className={radioBnt?'bntCheckBox-true':'bntCheckBox-false'}
             style={radioBnt?{position:'absolute',bottom:'-20px',left:'-33px',cursor:'pointer'}:
             {position:'absolute',bottom:'0px',left:'-23px',cursor:'pointer'}}/>
-
           Tôi chấp nhận <u style={{fontSize:'12px',color:'#FE9792'}} 
           >Điều khoản</u> & <u style={{fontSize:'12px',color:'#FE9792'}}>Điều kiện</u></p>
 

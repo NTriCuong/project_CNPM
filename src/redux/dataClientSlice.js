@@ -9,10 +9,8 @@ export const dataClient = createSlice({
         setDataClient:(state,actions)=>{
             state.email=actions.payload
         },
-        resetDataClient:(state)=>{
-            state.email=''
-        }
+        
     }
 })
-export const {setDataClient, resetDataClient} = dataClient.actions
+export const {setDataClient} = dataClient.actions
 export default dataClient.reducer;

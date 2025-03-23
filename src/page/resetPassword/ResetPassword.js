@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import {  onLogin, reset } from '../../redux/authSlice';
 import { resetPassword } from '../../api/axiosClient';
 import { selecDataClient } from '../../redux/Store';
+import danger from '../../image/Icon/Login/danger.svg'
 const ResetPassword = ({className}) => {
   const Dispath = useDispatch();
 
@@ -15,25 +16,28 @@ const ResetPassword = ({className}) => {
   const [showPassword, setShowPassword] = useState(false);
   const [password2, setPassword2] = useState('');
   const [showPassword2, setShowPassword2] = useState(false);
+  const [isDanger,setIsDanger] = useState(false)
   const email =useSelector(selecDataClient);
   const handleSubmit = (e) => {
     e.preventDefault();
-    Api()
-    
+    if(password === password2)
+      Api()
+    else
+      setIsDanger(true);
   };
   //api
   const Api= async()=>{
     try {
-      const respon = await resetPassword.post('/',{
+      await resetPassword.post('/',{
         email: email,
         new_password: password,
         confirm_password: password2
       });
-      console.log("check api reset password: ",respon)
+      alert("✈️ Đặt mập khẩu mới thành công!")
       handleClose();
       Dispath(onLogin())
     } catch (error) {
-      console.log("check api reset password error: ",error)
+      console.log(error)
     }
   }
   const handleClose=()=>{
@@ -87,6 +91,7 @@ const ResetPassword = ({className}) => {
               required
               style={{position:'relative'}}
             />
+              
             {/* ege */}
             <img src={closeEge} alt="icon" style={{top:'174px', left:'358px', position:'absolute'}} 
             className={password2!==""?'icon-ege2':'none-eye'} 
@@ -105,6 +110,8 @@ const ResetPassword = ({className}) => {
               required
               style={{position:'relative'}}
             />
+            <p className={isDanger?' danger':'danger danger-none'} >
+            <img src={danger} alt='danger'/>Hãy đảm bảo bạn xác thực mật khẩu đúng</p>
             {/* ege */}
             <img src={closeEge} alt="icon" style={{top:'55%'}} className={password!==""?'icon-ege':'none-eye'} 
             onClick={handleShowPassword}/>
