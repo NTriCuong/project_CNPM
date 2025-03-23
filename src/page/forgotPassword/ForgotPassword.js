@@ -4,13 +4,15 @@ import history from '../../image/Icon/Login/history.svg';
 import calendar from '../../image/Icon/Login/calen.svg'
 import { useDispatch } from 'react-redux';
 import { onLogin, onResetpassword, reset } from '../../redux/authSlice';
-const ForgotPassword = ({className, }) => {
+import { setDataClient } from '../../redux/dataClientSlice';
+const ForgotPassword = ({className}) => {
   const Dispath = useDispatch();
 
   const [email, setEmail] = useState('');
 
-  const handleLogin = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
+    Dispath(setDataClient(email));
     Dispath(onResetpassword());
     resetInputField()
   };
@@ -45,7 +47,7 @@ const ForgotPassword = ({className, }) => {
         <h2 className="login-header">Quên Mật Khẩu</h2>
         <p className="login-subheader">Điền địa chỉ email và chúng tôi sẻ gửi cho bạn mã OTP để xác nhận</p>
         
-        <form onSubmit={handleLogin} className="login-form">
+        <form onSubmit={handleSubmit} className="login-form">
           <div className="form-group">
             <label>Địa Chỉ Email</label>
             <input 

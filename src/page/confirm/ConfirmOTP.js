@@ -6,8 +6,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selecDataClient } from '../../redux/Store';
 import { resentOtp, verifyOtp } from '../../api/axiosClient';
 import { reset } from '../../redux/authSlice';
+import danger from '../../image/Icon/Login/danger.svg'
 const ConfirmOTP = ({className}) => {
   const [otp, setOtp] = useState('');
+  const [isDanger,setIsDanger] = useState(false)
   const Dispath = useDispatch();
   const email = useSelector(selecDataClient);
 
@@ -15,7 +17,6 @@ const ConfirmOTP = ({className}) => {
   const handleLogin = (e) => {
     e.preventDefault();
     Api();
-   
     setOtp('');
   };
   const handleClose=()=>{
@@ -34,9 +35,9 @@ const ConfirmOTP = ({className}) => {
         email: email,
         otp: otp
       })
-      console.log("successful!", respon);
       handleOnLogin();
     } catch (error) {
+      setIsDanger(true);
       console.log("check api error ", error)
     }
   }
@@ -81,6 +82,8 @@ const ConfirmOTP = ({className}) => {
               required
             />
             <p onClick={handleResent} style={{fontSize:'12px',cursor:'pointer', }}>Gửi lại mã</p>
+            <p className={isDanger?' danger':'danger danger-none'} ><
+              img src={danger} alt='danger'/>Xác thực OTP không thành công</p>
           </div>
           
           <hr style={{margin:'10px', height:'0.5px', border:'none',

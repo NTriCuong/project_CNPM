@@ -4,15 +4,19 @@ import closeEge from '../../image/Icon/Login/closeEye.svg';
 import closeLogo from '../../image/Icon/Login/closelogo.png';
 import history from '../../image/Icon/Login/history.svg';
 import calendar from '../../image/Icon/Login/calen.svg'
+import danger from '../../image/Icon/Login/danger.svg'
 import { useDispatch } from 'react-redux';
-import { onForgotPassword, onRegister, reset } from '../../redux/authSlice';
-import { authLogin } from '../../api/axiosClient';
+import { onConfirmOTP, onForgotPassword, onRegister, reset } from '../../redux/authSlice';
+import { authLogin, resentOtp } from '../../api/axiosClient';
+import { setDataClient } from '../../redux/dataClientSlice';
 const FlightBookingLogin = ({className}) => {
   const Dispath = useDispatch();
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
+  // danger
+  const [isDanger, setIsDanger] = useState(false);
   const handleLogin = (e) => {
     e.preventDefault();
     Api();
@@ -25,6 +29,7 @@ const FlightBookingLogin = ({className}) => {
     setEmail('');
     setPassword('');
     setShowPassword(false);
+    setIsDanger(false);
   }
   const handleShowPassword=()=>{
     setShowPassword(!showPassword);
@@ -43,13 +48,28 @@ const FlightBookingLogin = ({className}) => {
       const respon = await authLogin.post('/',{
         email:email,
         password:password})
-      console.log("check respon: ",respon)
-       Dispath(reset())
+        alert("✈️ Đăng nhập thành công!");
+        Dispath(reset())//ve trang home
     } catch (error) {
-      console.log("check error: ",error.response.data.detail)
+      if(error.status === 401)// sai mật khẩu
+        setIsDanger(true);
+      else if (error.status === 403){//email chưa dược xác thực
+        Dispath(setDataClient(email));
+        ApiResent();// gui otp vao tk và yêu cầu sang cònirmOTP để xác thực
+        Dispath(onConfirmOTP());
+      }else
+        console.log('kiem tra lai mang', error)
     }
     
   }
+  const ApiResent = async()=>{
+      try {
+        const respon = await resentOtp.post('/',{email:email})
+        console.log("successful",respon);
+      } catch (error) {
+        console.log("check api error ", error)
+      }
+    }
   return (
     <div className={className}>
     <div className="login-container">
@@ -75,6 +95,7 @@ const FlightBookingLogin = ({className}) => {
               onChange={(e) => setEmail(e.target.value)}
               required
             />
+            <p className={isDanger?' danger':'danger danger-none'} ><img src={danger} alt='danger'/>vui lòng nhập địa chỉ email hợp lệ</p>
           </div>
           
           <div className="form-group">
@@ -90,6 +111,7 @@ const FlightBookingLogin = ({className}) => {
               required
               style={{position:'relative'}}
             />
+            <p className={isDanger?' danger':'danger danger-none'}><img src={danger} alt='danger'/>vui lòng nhập password hợp lệ</p>
             {/* ege */}
             <img src={closeEge} alt="icon" style={{top:'55%'}} className={password!==""?'icon-ege':'none-eye'} 
             onClick={handleShowPassword}/>
