@@ -3,8 +3,10 @@ import closeLogo from '../../image/Icon/Login/closelogo.png';
 import history from '../../image/Icon/Login/history.svg';
 import calendar from '../../image/Icon/Login/calen.svg'
 import { useDispatch } from 'react-redux';
-import { onLogin, onResetpassword, reset } from '../../redux/authSlice';
+import { onConfirmOTP, onLogin, reset } from '../../redux/authSlice';
 import { setDataClient } from '../../redux/dataClientSlice';
+import { resentOtp } from '../../api/axiosClient';
+import { setStOtp } from '../../redux/stOtpSlice';
 const ForgotPassword = ({className}) => {
   const Dispath = useDispatch();
 
@@ -12,8 +14,10 @@ const ForgotPassword = ({className}) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    ApiResent();
     Dispath(setDataClient(email));
-    Dispath(onResetpassword());
+    Dispath(setStOtp(false))
+    Dispath(onConfirmOTP());
     resetInputField()
   };
   const resetInputField=()=>{
@@ -28,6 +32,14 @@ const ForgotPassword = ({className}) => {
     Dispath(onLogin());
     resetInputField()
   }
+  // api
+  const ApiResent = async()=>{
+        try {
+          await resentOtp.post('/',{email:email})
+        } catch (error) {
+          alert('Không thể gửi OTP!')
+        }
+      }
   return (
     <div className={className}>
     <div className="login-container">

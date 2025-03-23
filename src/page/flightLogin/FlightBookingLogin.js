@@ -9,6 +9,7 @@ import { useDispatch } from 'react-redux';
 import { onConfirmOTP, onForgotPassword, onRegister, reset } from '../../redux/authSlice';
 import { authLogin, resentOtp } from '../../api/axiosClient';
 import { setDataClient } from '../../redux/dataClientSlice';
+import { setStOtp } from '../../redux/stOtpSlice';
 const FlightBookingLogin = ({className}) => {
   const Dispath = useDispatch();
 
@@ -45,7 +46,7 @@ const FlightBookingLogin = ({className}) => {
   // API
   const Api = async()=>{
     try {
-      const respon = await authLogin.post('/',{
+        await authLogin.post('/',{
         email:email,
         password:password})
         alert("✈️ Đăng nhập thành công!");
@@ -58,16 +59,16 @@ const FlightBookingLogin = ({className}) => {
         ApiResent();// gui otp vao tk và yêu cầu sang cònirmOTP để xác thực
         Dispath(onConfirmOTP());
       }else
-        console.log('kiem tra lai mang', error)
+      alert('kiem tra lai mang!')
     }
     
   }
   const ApiResent = async()=>{
       try {
-        const respon = await resentOtp.post('/',{email:email})
-        console.log("successful",respon);
+        await resentOtp.post('/',{email:email})
+        Dispath(setStOtp(true))
       } catch (error) {
-        console.log("check api error ", error)
+        alert('Không thể gửi OTP!')
       }
     }
   return (
