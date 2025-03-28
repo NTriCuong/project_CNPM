@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
 import formAuth from './authSlice';
 import  dataClient  from './dataClientSlice';
-import { stOtp } from './stOtpSlice';
-import { statusClient } from './statusClient';
+import  stOtp  from './stOtpSlice';
+import  statusClient  from './statusClient';
 
 const store = configureStore({
   reducer: {
@@ -13,11 +13,11 @@ const store = configureStore({
     client: dataClient,
     statusOtp:stOtp,
     statusClient:statusClient
-  },
+  }
 });
 
 export const SelecAuth = (state)=>state.auth.formStatus;
 export const selecDataClient = (state)=>state.client?.email||''
-export const selecStatusOtp = (state)=>state.statusOtp?.flag || true
-export const selecStatusClient = (state)=>state.statusClient?.status || false
+export const selecStatusOtp = (state)=>state.statusOtp.flag
+export const selecStatusClient = (state)=>state.statusClient?.status || ''
 export default store;
