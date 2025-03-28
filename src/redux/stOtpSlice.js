@@ -8,6 +8,7 @@ export const stOtp = createSlice({
     reducers:{
         setStOtp:(state,actions)=>{
             state.flag=actions.payload
+            console.log ("check ben trong", state.flag)
         },
         
     }

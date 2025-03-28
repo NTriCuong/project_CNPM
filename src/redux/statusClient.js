@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 export const statusClient = createSlice({
     name:'data client',
     initialState:{
-        status: false
+        status: ''
     },
     reducers:{
         setStatusClient:(state,actions)=>{

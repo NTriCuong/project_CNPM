@@ -7,12 +7,10 @@ import FlightRegister from '../flightRegister/FlightRegister';
 import Footer from '../../component/footer/Footer';
 import ForgotPassword from '../forgotPassword/ForgotPassword';
 import ConfirmOTP from '../confirm/ConfirmOTP';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import  {  SelecAuth } from '../../redux/Store';
 import ResetPassword from '../resetPassword/ResetPassword';
-import { upload } from '@testing-library/user-event/dist/upload';
-import { data } from 'react-router-dom';
-import { useState } from 'react';
+import ChatBox from '../../component/chatBox/ChatBox';
 
 function HomePage(){
     const auth = useSelector(SelecAuth);
@@ -26,6 +24,7 @@ function HomePage(){
         <ForgotPassword className={`form-login ${auth==='auth-forgotpassword'?"on-login":""}`} />
         <ConfirmOTP className={`form-login ${auth==='auth-confirmotp'?"on-login":""}`} />
         <ResetPassword className={`form-login ${auth==='auth-resetpassword'?"on-login":""}`} />
+        <ChatBox/>
         <Footer/>
     </div>
 }

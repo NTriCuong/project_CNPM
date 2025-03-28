@@ -50,7 +50,7 @@ const FlightBookingLogin = ({className}) => {
         email:email,
         password:password})
         alert("✈️ Đăng nhập thành công!");
-        Dispath(reset())//ve trang home
+        handleClose()
     } catch (error) {
       if(error.status === 401)// sai mật khẩu
         setIsDanger(true);
@@ -102,7 +102,7 @@ const FlightBookingLogin = ({className}) => {
           <div className="form-group">
             <div className="password-header">
               <label>Mật Khẩu</label>
-              <button className="forgot-password" onClick={handleForgot}>Quên mật khẩu?</button>
+              <a className="forgot-password" onClick={handleForgot}>Quên mật khẩu?</a>
             </div>
             <input 
               type={showPassword?"text":"password"}

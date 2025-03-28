@@ -156,6 +156,8 @@
     cursor: pointer;
     background-color: #233A60;
     border: none;
+    font-size: 12px;
+    font-weight: 600;
     text-decoration: none;
     transition: all 0.2s;
   }
