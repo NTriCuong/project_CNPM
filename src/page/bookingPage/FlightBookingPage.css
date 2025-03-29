@@ -1,18 +1,33 @@
-* {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-}
-
-.booking-page {
-    width: 1000px;
-}
-
-.booking-menu {
-    background-color: #EAF0F0;
-}
-
-.booking-container {
-    background-color: #EAF0F0;
-}
+.app-container {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #f4f5f9;
+    padding: 20px;
+  }
+  
+  .content-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .filters-wrapper {
+    width: 280px;
+    flex-shrink: 0;
+  }
+  
+  .flight-list-wrapper {
+    flex: 1;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 992px) {
+    .content-container {
+      flex-direction: column;
+    }
+    
+    .filters-wrapper {
+      width: 100%;
+    }
+  }
