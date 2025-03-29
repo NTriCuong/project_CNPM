@@ -33,7 +33,7 @@ const ResetPassword = ({className}) => {
         new_password: password,
         confirm_password: password2
       });
-      alert("✈️ Đặt mập khẩu mới thành công!")
+      alert("✈️ Đặt mật khẩu mới thành công!")
       handleClose();
       Dispath(onLogin())
     } catch (error) {
