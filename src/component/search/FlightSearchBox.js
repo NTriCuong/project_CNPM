@@ -132,8 +132,8 @@ function FlightSearchBox({ className }) {
                 </div>
               }
             />
-            <img src={iconswap} alt="Swap Icon" width={450} height={30} style={{ cursor: "pointer", position: "absolute", zIndex: 10 }} />
-            <div className="divider"></div>
+            {/* <img src={iconswap} alt="Swap Icon" width={450} height={30} style={{ cursor: "pointer", position: "absolute", zIndex: 10 }} />
+            <div className="divider"></div> */}
             <SearchItem
               textTop="Điểm đến"
               textCenter={arrivalPoint.city}

@@ -1,13 +1,14 @@
 .chatbox{
     display: block;
     width: 300px;
-    height: 390px;
+    height: 403px;
     z-index: 1000;
     position: fixed;
     bottom: 110px;
     right: 110px;
     border-radius: 10px;
     background-color: white;
+    border: 2px solid #D4D3C7;
 }
 .chatbox > .title{
     font-family:  poppins sans-serif;
@@ -52,15 +53,19 @@
     padding-left: 10px;
     font-family:  poppins sans-serif;
     font-size: 16px;
+    border: 0px;
 }
 .mic{
     width: 25px;
     height: 25px;
+    cursor: pointer;
 }
 .sent{
     width: 24px;
     height: 24px;
     margin-left: 5px;
+    cursor: pointer;
+
 }
 .massage{
     max-width: 60%;
@@ -97,6 +102,7 @@
     width: 70px;
     height: 70px;
     cursor: pointer;
+    border: 2px solid #D4D3C7;
 }
 .bot>img{
     width: 100%;
@@ -115,4 +121,5 @@
 }
 .bot-hover:hover + .title-bot{
     display: block;
+    border: 2px solid #D4D3C7;
 }
