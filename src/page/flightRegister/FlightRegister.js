@@ -115,7 +115,7 @@ const [radioBnt,setRadioBnt] = useState(false);
             <input 
               style={{paddingLeft:'50px' }}
               type="tel" 
-              pattern="[0-9]{10}" // chỉ cho phép nhập đúng 10 chữ số
+              pattern="[0-9]{9}" // chỉ cho phép nhập đúng 9 chữ số
               placeholder="Nhập số điện thoại"
               value={numberPhone}
               onChange={(e) => setNumberPhone(e.target.value)}
