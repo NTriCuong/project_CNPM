@@ -1,6 +1,3 @@
-import Footer from "../../component/footer/Footer";
-import Menu from "../../component/menu/Menu";
-import FlightSearchBox from "../../component/search/FlightSearchBox";
 import FlightFilters from "./component/filter/FlightFilters";
 import './FlightBookingPage.css';
 import FlightList from "./component/FlightList";

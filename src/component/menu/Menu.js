@@ -3,7 +3,6 @@ import Button from '../button/Button';
 import './style.css';
 import { onLogin, onRegister } from '../../redux/authSlice';
 import { useNavigate } from 'react-router-dom';
-import Auth from '../auth/Auth';
 
 function Menu({className}){
     const Dispath = useDispatch();
@@ -14,7 +13,7 @@ function Menu({className}){
     }
    
     const handleFlight=()=>{
-        console.log('ban da nhan vao Chuyến Bay');
+        Navigate('/booking')
     }
     const handleMyFlight=()=>{
         console.log('ban da nhan vao Chuyến Bay Của Tôi');
