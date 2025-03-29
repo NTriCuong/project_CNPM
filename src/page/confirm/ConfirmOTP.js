@@ -41,11 +41,10 @@ const ConfirmOTP = ({className}) => {
       // nhập OTP thành công
       alert("✈️ Xác thực OTP thành công!")
       // nếu đang đặt lại mk
-      if(status)//true la vao trang chu
+      if(status===true)//true la vao trang chu
         handleOnLogin();
       else{// nếu đang xác thực bình thường
         Dispath(onResetpassword())
-        handleClose()
       }
       
     } catch (error) {

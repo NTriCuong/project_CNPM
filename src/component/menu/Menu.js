@@ -3,6 +3,7 @@ import Button from '../button/Button';
 import './style.css';
 import { onLogin, onRegister } from '../../redux/authSlice';
 import { useNavigate } from 'react-router-dom';
+import Auth from '../auth/Auth';
 
 function Menu({className}){
     const Dispath = useDispatch();
@@ -48,6 +49,7 @@ function Menu({className}){
                 </ul>
             </div>
             <div className="right">
+                {/* <Auth/> */}
                 <ul>
                 {menuButton.map(item=>{
                         return <li key={item.key} className="menu-item">{item.button}</li>

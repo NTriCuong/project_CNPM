@@ -181,6 +181,7 @@ function FlightSearchBox({ className }) {
                 <div style={{ position: "relative" }}>
                   <span style={{ color: "#233A60", fontWeight: "bold", fontFamily: "poppins, sans-serif" }}>
                     {customersandseats.code}
+                  </span>
                   {customersandseats.airport}
                   <InputSelect className="bottom-right-r input-select" data={data} />
                 </div>
