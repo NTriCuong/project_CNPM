@@ -1,17 +1,20 @@
 import './style.css'
+import anh1 from'../../../../image/Icon/HomePage/anh1.jpg'
+import anh2 from'../../../../image/Icon/HomePage/anh2.png'
+
 function Discovery(){
     const discoverDestinations = [
         {
           id: 1,
           name: "Glenfinn viaduct",
           location: "United Kingdom",
-          image: "/path/to/unsplash_itM5EI3VnOk.jpg"
+          image: anh1
         },
         {
           id: 2,
           name: "Linh Sơn Bưu",
           location: "Vietnam",
-          image: "/path/to/linh-son-bu-image.jpg"
+          image: anh2
         },
         {
           id: 3,
