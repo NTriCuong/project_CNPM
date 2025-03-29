@@ -48,6 +48,7 @@ const ConfirmOTP = ({className}) => {
       }
       
     } catch (error) {
+      console.log(error);
       setIsDanger(true);
     }
   }

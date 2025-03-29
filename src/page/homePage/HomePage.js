@@ -11,6 +11,7 @@ import { useSelector } from 'react-redux';
 import  {  SelecAuth } from '../../redux/Store';
 import ResetPassword from '../resetPassword/ResetPassword';
 import ChatBox from '../../component/chatBox/ChatBox';
+import Discovery from './component/discovery/Discovery';
 
 function HomePage(){
     const auth = useSelector(SelecAuth);
@@ -25,6 +26,7 @@ function HomePage(){
         <ConfirmOTP className={`form-login ${auth==='auth-confirmotp'?"on-login":""}`} />
         <ResetPassword className={`form-login ${auth==='auth-resetpassword'?"on-login":""}`} />
         <ChatBox/>
+        <Discovery/>
         <Footer/>
     </div>
 }

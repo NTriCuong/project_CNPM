@@ -131,6 +131,7 @@ const [radioBnt,setRadioBnt] = useState(false);
               type={showPassword?"text":"password"}
               placeholder="Nhập mật khẩu"
               value={password}
+              minLength='8'
               onChange={(e) => setPassword(e.target.value)}
               required
               style={{position:'relative'}}
