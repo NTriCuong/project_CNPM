@@ -5,7 +5,7 @@ const flights = [
   {
     id: 1,
     airline: "Bamboo Airways",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/5/5d/Bamboo_Airways_logo.svg",
+    logo: "",
     flightCode: "QH202",
     departureTime: "05:10",
     departureCode: "SGN",
@@ -18,7 +18,7 @@ const flights = [
   {
     id: 2,
     airline: "Vietjet Air",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/d/db/VietJet_Air_logo.svg",
+    logo: "",
     flightCode: "VJ198",
     departureTime: "05:20",
     departureCode: "SGN",
@@ -31,7 +31,7 @@ const flights = [
   {
     id: 3,
     airline: "Bamboo Airways",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/5/5d/Bamboo_Airways_logo.svg",
+    logo: "",
     flightCode: "QH204",
     departureTime: "07:35",
     departureCode: "SGN",
@@ -44,7 +44,7 @@ const flights = [
   {
     id: 4,
     airline: "Vietjet Air",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/d/db/VietJet_Air_logo.svg",
+    logo: "",
     flightCode: "VJ120",
     departureTime: "06:00",
     departureCode: "SGN",
@@ -56,7 +56,7 @@ const flights = [
   },
 ];
 
-const FlightList = () => {
+const FlightDetails = () => {
   return (
     <div className="flight-list">
       {flights.map((flight) => (
@@ -83,11 +83,12 @@ const FlightList = () => {
             </div>
             <div className="price">
               <span>{flight.price.toLocaleString()} VND</span>
-              <button className="book-button">CHỌN</button>
+              <span className="price-child">Tổng thành tiền</span>
             </div>
           </div>
           <div className="flight-details">
-            <span>∨ Chi tiết</span>
+            <button className="detail-button">∨ Chi tiết</button>
+            <button className="book-button">CHỌN</button>
           </div>
         </div>
       ))}
@@ -95,4 +96,4 @@ const FlightList = () => {
   );
 };
 
-export default FlightList;
+export default FlightDetails;
