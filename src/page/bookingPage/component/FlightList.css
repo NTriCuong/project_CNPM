@@ -1,7 +1,7 @@
 .flight-list-container {
     font-family: poppins, sans-serif;
     background-color: #f5f5f5;
-    max-width: 100%;
+    width: 95%;
 }
 
 /* Route header styles */
