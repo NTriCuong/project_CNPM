@@ -1,6 +1,6 @@
 /* Menu CSS */
 header {
-    position: fixed;
+    position: absolute;
     top: 20px;
     /* Cách top 20px */
     width: 100%;
