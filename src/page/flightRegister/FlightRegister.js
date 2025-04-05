@@ -1,10 +1,17 @@
-import React, { useState } from 'react';
+import React, {  useState } from 'react';
 import './style.css'; 
 import closeEge from '../../image/Icon/Login/closeEye.svg'
 import closeLogo from '../../image/Icon/Login/closelogo.png';
 import checkBox from '../../image/Icon/Login/checkbox & Radio.svg';
 import checkBoxTrue from '../../image/Icon/Login/checkbox & RadioTrue.svg';
-const FlightRegister = ({className, onRegister, login}) => {
+import { useDispatch } from 'react-redux';
+import { onConfirmOTP, onLogin, reset } from '../../redux/authSlice';
+import { authRegister } from '../../api/axiosClient';
+import { setDataClient } from '../../redux/dataClientSlice';
+import { setStOtp } from '../../redux/stOtpSlice';
+
+const FlightRegister = ({className}) => {
+  const Dispath = useDispatch();
   // dữ liệu form
   const [name,setName] = useState('');
   const [numberPhone, setNumberPhone] = useState('');
@@ -15,10 +22,14 @@ const FlightRegister = ({className, onRegister, login}) => {
 const [radioBnt,setRadioBnt] = useState(false);
   const handleSubmit = (e) => {
     e.preventDefault();
-    handleLogin();
+    Api();
+    handleClose()
   };
   const handleClose=()=>{
-    onRegister(false);
+    Dispath(reset());
+    resetInputField();
+  }
+  const resetInputField=()=>{
     setName('');
     setNumberPhone('');
     setEmail('');
@@ -34,9 +45,27 @@ const [radioBnt,setRadioBnt] = useState(false);
     setRadioBnt(!radioBnt);
   }
   const handleLogin=()=>{
-    handleClose();
-    login(true);
+    handleClose()
+    Dispath(onLogin());
   }
+  //call api
+  const Api = async()=>{
+    try{
+      await authRegister.post('/',{
+        email:email,
+        password:password})
+        // dang ky thanh cong
+        alert("✈️ Đăng ký thành công!");
+        Dispath(setDataClient(email))
+        Dispath(setStOtp(true))
+        Dispath(onConfirmOTP());// hien form nhap otp
+    } catch (error) {
+        console.log(error)
+        if(error.status === 400)
+          alert("email đã được xử dụng, vui lòng thử với 1 email khác!")
+    }
+  }
+  
   return (
     <div className={className}>
     <div className="login-container">
@@ -49,7 +78,7 @@ const [radioBnt,setRadioBnt] = useState(false);
       </button>
       
     
-      <h1 className="welcome-title">Chào Mừng Đến Với Nhóm 3</h1>
+      <h1 className="welcome-title" style={{margin:'10px'}}>Chào Mừng Đến Với Nhóm 3</h1>
       
      
       <div className="login-box">
@@ -86,7 +115,7 @@ const [radioBnt,setRadioBnt] = useState(false);
             <input 
               style={{paddingLeft:'50px' }}
               type="tel" 
-              pattern="[0-9]{10}" // chỉ cho phép nhập đúng 10 chữ số
+              pattern="[0-9]{9}" // chỉ cho phép nhập đúng 9 chữ số
               placeholder="Nhập số điện thoại"
               value={numberPhone}
               onChange={(e) => setNumberPhone(e.target.value)}
@@ -102,6 +131,7 @@ const [radioBnt,setRadioBnt] = useState(false);
               type={showPassword?"text":"password"}
               placeholder="Nhập mật khẩu"
               value={password}
+              minLength='8'
               onChange={(e) => setPassword(e.target.value)}
               required
               style={{position:'relative'}}
@@ -113,9 +143,9 @@ const [radioBnt,setRadioBnt] = useState(false);
 
             <img src={radioBnt?checkBoxTrue:checkBox} alt=''
             onClick={handleCheckBox} 
+            className={radioBnt?'bntCheckBox-true':'bntCheckBox-false'}
             style={radioBnt?{position:'absolute',bottom:'-20px',left:'-33px',cursor:'pointer'}:
             {position:'absolute',bottom:'0px',left:'-23px',cursor:'pointer'}}/>
-
           Tôi chấp nhận <u style={{fontSize:'12px',color:'#FE9792'}} 
           >Điều khoản</u> & <u style={{fontSize:'12px',color:'#FE9792'}}>Điều kiện</u></p>
 

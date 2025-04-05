@@ -156,6 +156,8 @@
     cursor: pointer;
     background-color: #233A60;
     border: none;
+    font-size: 12px;
+    font-weight: 600;
     text-decoration: none;
     transition: all 0.2s;
   }
@@ -194,7 +196,20 @@
   .form-group input::placeholder {
     color: #EAF0F0;
   }
-  
+  /* danger khi nhập sai */
+  .form-group > .danger{
+    position: relative;
+    margin-left: 20px;
+    color: #E28B8B;
+  }
+  .form-group> .danger > img{
+    position: absolute;
+    left: -20px;
+    bottom: 4px;
+  }
+  .danger-none{
+    display: none;
+  }
   /* Login button */
   .login-button {
     background-color: #5856D7;

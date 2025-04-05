@@ -1,24 +1,55 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import closeLogo from '../../image/Icon/Login/closelogo.png';
 import history from '../../image/Icon/Login/history.svg';
 import calendar from '../../image/Icon/Login/calen.svg'
-const ForgotPassword = ({className, onForgot, onLogin, onConfirm}) => {
+import { useDispatch, useSelector } from 'react-redux';
+import { onConfirmOTP, onLogin, reset } from '../../redux/authSlice';
+import { setDataClient } from '../../redux/dataClientSlice';
+import { resentOtp } from '../../api/axiosClient';
+import { setStOtp } from '../../redux/stOtpSlice';
+import { selecStatusOtp } from '../../redux/Store';
+const ForgotPassword = ({className}) => {
+  const Dispath = useDispatch();
+  const flag = useSelector(selecStatusOtp)
   const [email, setEmail] = useState('');
-  const handleLogin = (e) => {
+  // state xu ly bat dong bo
+  const [flagLocal, setFlagLocal] = useState(false)
+
+  const handleSubmit = (e) => {
     e.preventDefault();
-    setEmail('');
-    onConfirm(true);
+    ApiResent();
+    Dispath(setDataClient(email));
+    setFlagLocal(true)
+    
+    Dispath(onConfirmOTP());
+    resetInputField()
   };
-  const handleClose=()=>{
-    onForgot(false);
+// bat dong bo
+useEffect(()=>{
+  Dispath(setStOtp(false))
+},[flagLocal])
+
+
+  const resetInputField=()=>{
     setEmail('');
+  }
+  const handleClose=()=>{
+    Dispath(reset());
+    resetInputField()
   }
   
   const handleOnLogin=()=>{
-    handleClose();
-    setEmail('');
-    onLogin(true)
+    Dispath(onLogin());
+    resetInputField()
   }
+  // api
+  const ApiResent = async()=>{
+        try {
+          await resentOtp.post('/',{email:email})
+        } catch (error) {
+          alert('Không thể gửi OTP!')
+        }
+      }
   return (
     <div className={className}>
     <div className="login-container">
@@ -31,14 +62,14 @@ const ForgotPassword = ({className, onForgot, onLogin, onConfirm}) => {
       </button>
       
     
-      <h1 className="welcome-title">Chào Mừng Đến Với Nhóm 3</h1>
+      <h1 className="welcome-title" style={{margin:'60px'}}>Chào Mừng Đến Với Nhóm 3</h1>
       
      
       <div className="login-box">
         <h2 className="login-header">Quên Mật Khẩu</h2>
         <p className="login-subheader">Điền địa chỉ email và chúng tôi sẻ gửi cho bạn mã OTP để xác nhận</p>
         
-        <form onSubmit={handleLogin} className="login-form">
+        <form onSubmit={handleSubmit} className="login-form">
           <div className="form-group">
             <label>Địa Chỉ Email</label>
             <input 

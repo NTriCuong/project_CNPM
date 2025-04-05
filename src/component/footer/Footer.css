@@ -185,3 +185,71 @@ svg {
 .button {
   border-radius: 0%;
 }
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 40px 30px 40px;
+  }
+
+  .footer-left {
+    margin-right: 0;
+    right: 0;
+  }
+
+  .footer-columns {
+    flex-direction: column;
+    align-items: center;
+    left: 0;
+  }
+
+  .footer-column,
+  .footer-column-feedback {
+    text-align: center;
+    width: 100%;
+    text-align: -webkit-center;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    padding: 0 20px 20px 20px;
+  }
+
+  .footer-left {
+    max-width: 100%;
+  }
+
+  .footer-columns {
+    width: 100%;
+  }
+
+  .footer-column-feedback {
+    width: 90%;
+    padding: 15px;
+    text-align: -webkit-center;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 10px 20px 10px;
+  }
+
+  .footer-columns {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

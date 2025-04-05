@@ -1,18 +1,34 @@
-* {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
+.app-container {
+  min-height: 100vh;
+  background-color: #f4f5f9;
+  padding: 30px 60px; /* Giảm padding để gần giống hình */
+  display: flex;
+  justify-content: center;
 }
 
-.booking-page {
-    width: 1000px;
+.content-container {
+  max-width: 1200px;
+  display: flex;
+  gap: 40px; /* Giảm khoảng cách giữa bộ lọc và danh sách chuyến bay */
+  width: 100%;
 }
 
-.booking-menu {
-    background-color: #EAF0F0;
+
+/* Danh sách chuyến bay */
+.flight-list-wrapper {
+  flex: 1;
+  margin-left: 0; /* Loại bỏ margin-left thừa */
 }
 
-.booking-container {
-    background-color: #EAF0F0;
+/* Responsive styles */
+@media (max-width: 992px) {
+  .content-container {
+      flex-direction: column;
+      align-items: center;
+  }
+  
+  .filters-wrapper {
+      width: 100%;
+      margin-bottom: 20px;
+  }
 }

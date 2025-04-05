@@ -1,0 +1,219 @@
+/* Main container */
+.discovery-main-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Horizontal title section - 10% height */
+.horizontal-title-section {
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.discover-title-horizontal {
+    text-decoration: none;
+    font-size: 48px;
+    display: inline-block;
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    right: 920px; /* Có thể thay đổi tùy thuộc vào bố cục */
+    color: #223A60;
+}
+
+.horizontal-title-underline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 733px;
+    height: 2px;
+    background-color: #223A60;
+}
+
+/* Main content section - 90% height */
+.content-section {
+    display: flex;
+    height: 90%;
+    overflow: hidden;
+}
+
+/* Vertical title section - 5% width */
+.vertical-title-section {
+    width: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.discover-title-vertical {
+    text-decoration: none;
+    display: inline-block;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    position: relative;
+    left: 40px;
+    color: #223A60;
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    font-size: 115px;
+}
+
+/* Destination title section - 25% width */
+.destination-title-section {
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.destination-title {
+    font-family: 'Ingrid Darling', cursive;
+    font-weight: 400;
+    font-size: 80px;
+    margin-right: 0px;
+    color: #607084;
+}
+
+/* Cards container section - 70% width */
+.cards-container-section {
+    width: 70%;
+    display: flex;
+    justify-content: flex-end;
+    overflow: hidden;
+}
+
+.discover-destinations {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    overflow-x: scroll;
+    flex-wrap: nowrap;
+    scrollbar-width: thin;
+    scrollbar-color: #223A60 #f0f0f0;
+}
+
+.discover-destinations::-webkit-scrollbar {
+    height: 8px;
+}
+
+.discover-destinations::-webkit-scrollbar-track {
+    background: #f0f0f0;
+}
+
+.discover-destinations::-webkit-scrollbar-thumb {
+    background-color: #223A60;
+    border-radius: 4px;
+}
+
+/* Individual destination cards */
+.destination-card {
+    position: relative;
+    flex: 0 0 auto;
+    width: 467px;
+    height: 744px;
+    margin: 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.image-wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+.destination-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Giữ ảnh không bị biến dạng */
+    border-radius: 10px;
+}
+
+.destination-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(3px);
+    display: flex;
+    flex-direction: column; /* Cấu trúc cột cho các phần tử bên trong */
+    justify-content: flex-end; /* Các phần tử ở dưới cùng */
+}
+
+.destination-name {
+    display: flex;
+    align-items: center;
+    font-size: 42px;
+    margin-bottom: 8px;
+    position: relative; /* Thêm thuộc tính position để sử dụng top */
+    top: -70px; /* Đẩy 'name' lên trên 10px */
+    order: 1;  /* Tên sẽ xuất hiện đầu tiên */
+}
+
+.destination-location {
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    margin-bottom: 12px;
+    position: relative; /* Thêm thuộc tính position để sử dụng top */
+    top: -90px; /* Đẩy 'name' lên trên 10px */
+    color: #607084;
+    order: 2;  /* Đảm bảo location xuất hiện sau */
+}
+
+
+.icon-phu {
+    width: 21px !important;
+    height: 31px !important;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+
+
+/* Đảm bảo icon có khoảng cách hợp lý với location */
+.destination-location .icon-phu {
+    margin-right: 8px;
+}
+
+/* Thay đổi kích thước ảnh 1 */
+#destination-1 .destination-image,
+#destination-2 .destination-image,
+#destination-3 .destination-image,
+#destination-4 .destination-image,
+#destination-5 .destination-image,
+#destination-6 .destination-image {
+    width: 467px;
+    height: 504px; /* Chiều cao mới cho ảnh */
+}
+
+.go-button {
+    background-color: #223A60;
+    color: white;
+    border: none;
+    padding: 0; /* Loại bỏ padding mặc định */
+    width: 139px; /* Chiều rộng của nút */
+    height: 78px; /* Chiều cao của nút */
+    cursor: pointer;
+    border-radius: 50px;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Căn giữa nội dung trong nút */
+    font-size: 32px; /* Kích thước chữ bên trong nút */
+    position: absolute;  /* Để có thể di chuyển nút tự do trong destination-info */
+    bottom: 15px;        /* Cách dưới cùng của container 15px */
+    left: 50%;           /* Căn giữa nút theo chiều ngang */
+    transform: translateX(-50%);  /* Đảm bảo căn giữa hoàn hảo */
+}
+
+.go-button:hover {
+    background-color: #d07878;
+}

@@ -1,22 +1,66 @@
-import React, { useState } from 'react';
+import React, {  useState } from 'react';
 import closeLogo from '../../image/Icon/Login/closelogo.png';
 import history from '../../image/Icon/Login/history.svg';
 import calendar from '../../image/Icon/Login/calen.svg'
-const ConfirmOTP = ({className, onConfirm, onLogin}) => {
+import { useDispatch, useSelector } from 'react-redux';
+import { selecDataClient, selecStatusOtp } from '../../redux/Store';
+import { resentOtp, verifyOtp } from '../../api/axiosClient';
+import { onLogin, onResetpassword, reset } from '../../redux/authSlice';
+import danger from '../../image/Icon/Login/danger.svg'
+const ConfirmOTP = ({className}) => {
   const [otp, setOtp] = useState('');
+  const [isDanger,setIsDanger] = useState(false)
+  const Dispath = useDispatch();
+  const email = useSelector(selecDataClient);
+  const status = useSelector(selecStatusOtp);
+
+    
   const handleLogin = (e) => {
     e.preventDefault();
-    handleOnLogin();
+    Api();
     setOtp('');
+    setIsDanger(false);
   };
   const handleClose=()=>{
-    onConfirm(false);
+    Dispath(reset());
+    setIsDanger(false);
     setOtp('');
   }
   
   const handleOnLogin=()=>{
     handleClose();
-    onLogin(true)
+    Dispath(onLogin());
+  }
+  //api
+  const Api = async()=>{
+    try {
+      await verifyOtp.post('/',{
+        email: email,
+        otp: otp
+      })
+      // nhập OTP thành công
+      alert("✈️ Xác thực OTP thành công!")
+      // nếu đang đặt lại mk
+      if(status===true)//true la vao trang chu
+        handleOnLogin();
+      else{// nếu đang xác thực bình thường
+        Dispath(onResetpassword())
+      }
+      
+    } catch (error) {
+      console.log(error);
+      setIsDanger(true);
+    }
+  }
+  const ApiResent = async()=>{
+    try {
+      await resentOtp.post('/',{email:email})
+    } catch (error) {
+      alert("Gửi lại OTP không thành công! hãy thử lại")
+    }
+  }
+  const handleResent=()=>{
+    ApiResent()
   }
   return (
     <div className={className}>
@@ -47,6 +91,9 @@ const ConfirmOTP = ({className, onConfirm, onLogin}) => {
               onChange={(e) => setOtp(e.target.value)}
               required
             />
+            <p onClick={handleResent} style={{fontSize:'12px',cursor:'pointer', }}>Gửi lại mã</p>
+            <p className={isDanger?' danger':'danger danger-none'} ><
+              img src={danger} alt='danger'/>Xác thực OTP không thành công</p>
           </div>
           
           <hr style={{margin:'10px', height:'0.5px', border:'none',

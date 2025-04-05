@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import Menu from '../../component/menu/Menu';
 import FlightSearchBox from '../../component/search/FlightSearchBox';
 import FlightBookingLogin from '../flightLogin/FlightBookingLogin';
@@ -8,50 +7,27 @@ import FlightRegister from '../flightRegister/FlightRegister';
 import Footer from '../../component/footer/Footer';
 import ForgotPassword from '../forgotPassword/ForgotPassword';
 import ConfirmOTP from '../confirm/ConfirmOTP';
+import { useSelector } from 'react-redux';
+import  {  SelecAuth } from '../../redux/Store';
+import ResetPassword from '../resetPassword/ResetPassword';
+import ChatBox from '../../component/chatBox/ChatBox';
+import Discovery from './component/discovery/Discovery';
 
 function HomePage(){
-    const [onLogin,setOnLogin] = useState(false);
-    const [onRegister,setOnRegister]= useState(false);
-    const [onForgot, setOnForgot] =useState(false);
-    const [onConfirm, setOnConfirm] = useState(false)
-    const handleLogin=(data)=>{
-        setOnLogin(data);
-    }
-    const handleCloseLogin=(data)=>{
-        setOnLogin(data);
-    }
-    //register
-    const handleRegister=(data)=>{
-        setOnRegister(data)
-    }
-    const handleCloseRegister=(data)=>{
-        setOnRegister(data)
-    }
-    const handleCreate=(data)=>{
-        if(data)setOnRegister(true)
-    }
-    const handleLg=(data)=>{
-        if(data)setOnLogin(true)
-    }
-    //forgot password
-    const handleForgotPw=(data)=>{
-        setOnForgot(data);
-        setOnLogin(false)
-    }
-    // confirm otp
-    const handleOnConfirm=(data)=>{
-        setOnConfirm(data)
-        setOnForgot(false);
-    }
+    const auth = useSelector(SelecAuth);
+    
     return <div class="constainer">
-        <Menu onLogin={handleLogin} onRegister={handleRegister}/>
+        <Menu />
         <Banner/>
         <FlightSearchBox  className={"search-box"}/>
-        <FlightBookingLogin className={`form-login ${onLogin?"on-login":""}`} onForgot={handleForgotPw} onLogin={handleCloseLogin} create={handleCreate}/>
-        <FlightRegister className={`form-login ${onRegister?"on-login":""}`} onRegister={handleCloseRegister} login={handleLg}/>
-        <ForgotPassword className={`form-login ${onForgot?"on-login":""}`} onForgot={handleForgotPw} onLogin={handleLg} onConfirm={handleOnConfirm}/>
-        <ConfirmOTP className={`form-login ${onConfirm?"on-login":""}`} onConfirm={handleOnConfirm} onLogin={handleLg}/>
-        {/* <Footer/> */}
+        <FlightBookingLogin className={`form-login ${auth === 'auth-login'?"on-login":""}`} />
+        <FlightRegister className={`form-login ${auth==='auth-register'?"on-login":""}`} />
+        <ForgotPassword className={`form-login ${auth==='auth-forgotpassword'?"on-login":""}`} />
+        <ConfirmOTP className={`form-login ${auth==='auth-confirmotp'?"on-login":""}`} />
+        <ResetPassword className={`form-login ${auth==='auth-resetpassword'?"on-login":""}`} />
+        <ChatBox/>
+        <Discovery/>
+        <Footer/>
     </div>
 }
 export default HomePage;
