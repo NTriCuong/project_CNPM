@@ -12,9 +12,9 @@ function FlightBookingPage() {
             <div className="header-container">
                 <Menu className="header-booking" />
             </div>
-            {/* <div className="flight-search-container">
+            <div className="flight-search-container">
                 <FlightSearchBox className="flight-search-booking" />
-            </div> */}
+            </div>
             <div className="content-container">
                 <div className="filters-wrapper">
                     <FlightFilters />
