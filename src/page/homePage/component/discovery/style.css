@@ -2,7 +2,8 @@
 .discovery-main-container {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    height: 90%;
+    margin: 50px;
     overflow: hidden;
 }
 
@@ -16,7 +17,7 @@
 
 .discover-title-horizontal {
     text-decoration: none;
-    font-size: 48px;
+    font-size: 30px;
     display: inline-block;
     position: relative;
     font-family: 'Poppins', sans-serif;
@@ -48,7 +49,13 @@
     align-items: center;
     justify-content: center;
 }
-
+.title{
+    color: #223A60;
+    font-size: 50px;
+    font-family: Poppins sans-serif;
+    font-weight: 300;
+    padding: 0;
+}
 .discover-title-vertical {
     text-decoration: none;
     display: inline-block;
@@ -59,7 +66,7 @@
     color: #223A60;
     writing-mode: vertical-lr;
     transform: rotate(180deg);
-    font-size: 115px;
+    font-size: 100px;
 }
 
 /* Destination title section - 25% width */
@@ -73,24 +80,26 @@
 .destination-title {
     font-family: 'Ingrid Darling', cursive;
     font-weight: 400;
-    font-size: 80px;
+    font-size: 60px;
     margin-right: 0px;
     color: #607084;
 }
 
 /* Cards container section - 70% width */
 .cards-container-section {
-    width: 70%;
+    width: 90%;
     display: flex;
     justify-content: flex-end;
+    gap: 0px;
     overflow: hidden;
 }
 
 .discover-destinations {
     width: 100%;
+    height: 550px;
     display: flex;
-    gap: 20px;
-    padding: 20px;
+    padding: 10px;
+    gap:30px;
     overflow-x: scroll;
     flex-wrap: nowrap;
     scrollbar-width: thin;
@@ -107,31 +116,31 @@
 
 .discover-destinations::-webkit-scrollbar-thumb {
     background-color: #223A60;
-    border-radius: 4px;
 }
 
 /* Individual destination cards */
 .destination-card {
     position: relative;
     flex: 0 0 auto;
-    width: 467px;
-    height: 744px;
+    width: 30%;
+    height: 100%;
     margin: 0;
-    border-radius: 10px;
+    border-radius: 30px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     overflow: hidden;
 }
 
 .image-wrapper {
     width: 100%;
-    height: 100%;
+    height: 70%;
 }
 
 .destination-image {
     width: 100%;
-    height: 100%;
+    height: 100% !important;
     object-fit: cover; /* Giữ ảnh không bị biến dạng */
-    border-radius: 10px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
 }
 
 .destination-info {
@@ -139,6 +148,7 @@
     bottom: 0;
     left: 0;
     width: 100%;
+    height: 30%;
     padding: 15px;
     background-color: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(3px);
@@ -148,22 +158,23 @@
 }
 
 .destination-name {
+    font-family:  'Balsamiq Sans';
     display: flex;
     align-items: center;
-    font-size: 42px;
+    font-size: 30px;
     margin-bottom: 8px;
     position: relative; /* Thêm thuộc tính position để sử dụng top */
-    top: -70px; /* Đẩy 'name' lên trên 10px */
+    top: -50px; /* Đẩy 'name' lên trên 10px */
     order: 1;  /* Tên sẽ xuất hiện đầu tiên */
 }
 
 .destination-location {
     display: flex;
     align-items: center;
-    font-size: 30px;
+    font-size: 20px;
     margin-bottom: 12px;
     position: relative; /* Thêm thuộc tính position để sử dụng top */
-    top: -90px; /* Đẩy 'name' lên trên 10px */
+    top: -50px; /* Đẩy 'name' lên trên 10px */
     color: #607084;
     order: 2;  /* Đảm bảo location xuất hiện sau */
 }
@@ -183,31 +194,24 @@
     margin-right: 8px;
 }
 
-/* Thay đổi kích thước ảnh 1 */
-#destination-1 .destination-image,
-#destination-2 .destination-image,
-#destination-3 .destination-image,
-#destination-4 .destination-image,
-#destination-5 .destination-image,
-#destination-6 .destination-image {
-    width: 467px;
-    height: 504px; /* Chiều cao mới cho ảnh */
-}
+
 
 .go-button {
     background-color: #223A60;
     color: white;
     border: none;
     padding: 0; /* Loại bỏ padding mặc định */
-    width: 139px; /* Chiều rộng của nút */
-    height: 78px; /* Chiều cao của nút */
+    width: 80px; /* Chiều rộng của nút */
+    height: 40px; /* Chiều cao của nút */
     cursor: pointer;
     border-radius: 50px;
+    font-family: 'Balsamiq Sans';
+    font-weight: 300;
     transition: background-color 0.3s;
     display: flex;
     align-items: center;
     justify-content: center; /* Căn giữa nội dung trong nút */
-    font-size: 32px; /* Kích thước chữ bên trong nút */
+    font-size: 20px; /* Kích thước chữ bên trong nút */
     position: absolute;  /* Để có thể di chuyển nút tự do trong destination-info */
     bottom: 15px;        /* Cách dưới cùng của container 15px */
     left: 50%;           /* Căn giữa nút theo chiều ngang */

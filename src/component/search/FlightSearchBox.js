@@ -15,38 +15,19 @@ function FlightSearchBox({ className }) {
     airport: "Sân Bay Quốc Tế Nội Bài",
   });
   const [arrivalPoint, setArrivalPoint] = useState({
-    city: "TP. Hồ Chí Minh", 
+    city: "TP. Hồ Chí Minh",
     codeCity: "[SGN]",
     airport: "Sân Bay Quốc Tế Tân Sơn Nhất",
   });
-  const [departuredate, setDepartureDate] = useState({
-    date: "02-05-2024",
-    airport: "Thứ 3",
-  });
-  const [returndate, setReturnDate] = useState({
-    date: "Chọn Ngày",
-    airport: "Đặt chuyến khứ hồi",
-  });
-  const [customersandseats, setCustomerAndSeats] = useState({
-    date: "03 Hành Khách", 
-    airport: "Premium Economy"
-  });
-  const [errorMessage, setErrorMessage] = useState(""); 
+  const [errorMessage, setErrorMessage] = useState("");
 
   // Discover destinations data
-  
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
-    // Validate required fields
-    if (!departurePoint.city || !arrivalPoint.city || !departuredate.date) {
-      setErrorMessage("Vui lòng điền đầy đủ thông tin!");
-      return;
-    }
 
     console.log("Đã bấm submit");
-    setErrorMessage(""); 
+    setErrorMessage("");
 
     // Here you can add API call to fetch flight data based on user input
   };
@@ -83,7 +64,9 @@ function FlightSearchBox({ className }) {
                   <pre style={{ fontFamily: "inherit" }}> Một Chiều</pre>
                 </>
               }
-              className={tickerType === true ? "top-item top-item-click" : "top-item"}
+              className={
+                tickerType === true ? "top-item top-item-click" : "top-item"
+              }
               onClick={() => setTickerType(true)}
               type="button"
             />
@@ -94,87 +77,89 @@ function FlightSearchBox({ className }) {
                   <pre style={{ fontFamily: "inherit" }}> Khứ Hồi</pre>
                 </>
               }
-              className={tickerType === false ? "top-item top-item-click" : "top-item"}
+              className={
+                tickerType === false ? "top-item top-item-click" : "top-item"
+              }
               onClick={() => setTickerType(false)}
               type="button"
             />
           </div>
           <div className="bottom">
+            <div className="left-field">
+              <SearchItem
+                className='field'
+                textTop="Điểm Khởi Hành"
+                textCenter={departurePoint.city}
+                textBottom={
+                  <div style={{ position: "relative" }}>
+                    <span
+                      style={{
+                        color: "#233A60",
+                        fontWeight: "bold",
+                        fontFamily: "poppins, sans-serif",
+                      }}
+                    >
+                      {departurePoint.codeCity}
+                    </span>
+                    {departurePoint.airport}
+                    <InputSelect
+                      className="bottom-left-r input-select"
+                      data={data}
+                    />
+                  </div>
+                }
+              />
+              <SearchItem
+                className='field'
+                textTop="Điểm đến"
+                textCenter={arrivalPoint.city}
+                textBottom={
+                  <div style={{ position: "relative" }}>
+                    <span
+                      style={{
+                        color: "#233A60",
+                        fontWeight: "bold",
+                        fontFamily: "poppins, sans-serif",
+                      }}
+                    >
+                      {arrivalPoint.codeCity}
+                    </span>
+                    {arrivalPoint.airport}
+                    <InputSelect
+                      className="bottom-left-r input-select"
+                      data={data}
+                    />
+                  </div>
+                }
+              />
+              <div />
+              <img className="icon-swap" src={iconswap} />
+            </div>
+            <div className="right-field">
             <SearchItem
-              textTop="Điểm Khởi Hành"
-              textCenter={departurePoint.city}
-              textBottom={
-                <div style={{ position: "relative" }}>
-                  <span style={{ color: "#233A60", fontWeight: "bold", fontFamily: "poppins, sans-serif" }}>
-                    {departurePoint.codeCity}
-                  </span>
-                  {departurePoint.airport}
-                  <InputSelect className="bottom-left-r input-select" data={data} />
-                </div>
-              }
-            />
-            {/* <img src={iconswap} alt="Swap Icon" width={450} height={30} style={{ cursor: "pointer", position: "absolute", zIndex: 10 }} />
-            <div className="divider"></div> */}
-            <SearchItem
-              textTop="Điểm đến"
-              textCenter={arrivalPoint.city}
-              textBottom={
-                <div style={{ position: "relative" }}>
-                  <span style={{ color: "#233A60", fontWeight: "bold", fontFamily: "poppins, sans-serif" }}>
-                    {arrivalPoint.codeCity}
-                  </span>
-                  {arrivalPoint.airport}
-                  <InputSelect className="bottom-left-r input-select" data={data} />
-                </div>
-              }
-            />
-            <SearchItem
-              textTop="Ngày đi"
-              textCenter={departuredate.date}
-              textBottom={
-                <div style={{ position: "relative" }}>
-                  <span style={{ color: "#233A60", fontWeight: "bold", fontFamily: "poppins, sans-serif" }}>
-                    {departuredate.code}
-                  </span>
-                  {departuredate.airport}
-                  <InputSelect className="bottom-right-r input-select" data={data} />
-                </div>
-              }
-            />
-            
-            <SearchItem
-              textTop="Ngày về"
-              textCenter={returndate.date}
-              textBottom={
-                <div style={{ position: "relative" }}>
-                  <span style={{ color: "#233A60", fontWeight: "bold", fontFamily: "poppins, sans-serif" }}>
-                    {returndate.code}
-                  </span>
-                  {returndate.airport}
-                  <InputSelect className="bottom-right-r input-select" data={data} />
-                </div>
-              }
-            />
-            <SearchItem
-              textTop="Khách hàng & hạng ghế"
-              textCenter={customersandseats.date}
-              textBottom={
-                <div style={{ position: "relative" }}>
-                  <span style={{ color: "#233A60", fontWeight: "bold", fontFamily: "poppins, sans-serif" }}>
-                    {customersandseats.code}
-                  </span>
-                  {customersandseats.airport}
-                  <InputSelect className="bottom-right-r input-select" data={data} />
-                </div>
-              }
-            />
+                className='field'
+                textTop="Ngày đi"
+                textCenter="1-1-2025"
+                textBottom="Thứ 2"
+              />
+              <SearchItem
+                className='field'
+                textTop="Ngày về"
+                textCenter="Chọn ngày"
+                textBottom="Chuyến khứ hồi"
+              />
+              <SearchItem
+                className='field'
+                textTop="Hành Khách"
+                textCenter="1 Hành khách"
+                textBottom="Premium economy"
+              />
+            </div>
+            <Button text="Tìm Chuyến Bay" type="submit" className="bottom-item" />
           </div>
-          {errorMessage && <div className="error-message">{errorMessage}</div>}
-          <Button text="Tìm Chuyến Bay" type="submit" className="bottom-item" />
+          
         </form>
       </div>
-
-      
     </div>
   );
 }

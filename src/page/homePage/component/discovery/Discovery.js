@@ -11,62 +11,44 @@ function Discovery() {
       name: "Glenfinan viaduct",
       location: "United Kingdom",
       image: anh1,
-      width: 467,
-      height: 735
     },
     {
       id: 2,
       name: "Linh Sơn Bưu",
       location: "Vietnam",
       image: anh2,
-      width: 467,
-      height: 735
     },
     {
       id: 3,
       name: "Ginos Baifern",
       location: "Turkey",
       image: anh3,
-      width: 467,
-      height: 735
     },
     {
       id: 4,
       name: "Ginos Baifern",
       location: "Germany",
-      image: anh3,
-      width: 467,
-      height: 735
+      image: anh2,
     },
     {
       id: 5,
       name: "Ginos Baifern",
       location: "Germany",
       image: anh3,
-      width: 467,
-      height: 735
     },
     {
       id: 6,
       name: "Ginos Baifern",
       location: "Germany",
       image: anh3,
-      width: 467,
-      height: 735
     }
   ];
 
   return (
     <div className="discovery-main-container">
-      {/* Thẻ div chứa chữ "Khám Phá" ngang chiếm 10% chiều cao */}
-      <div className="horizontal-title-section">
-        <h2 className="discover-title-horizontal">
-          Khám Phá
-          <div className="horizontal-title-underline"></div>
-        </h2>
+      <div style={{width:"40%", borderBottom:'1px solid black', marginBottom:'60px'}}>
+        <p className='title'> Khám Phá</p>
       </div>
-  
-      {/* Thẻ div thứ hai chứa các destination cards, chiếm phần còn lại (90%) */}
       <div className="content-section">
         {/* Thẻ div chứa chữ "Khám Phá" dọc, chiếm 5% chiều rộng trái */}
         <div className="vertical-title-section">
@@ -96,8 +78,6 @@ function Discovery() {
                     src={destination.image} 
                     alt={destination.name} 
                     className={`destination-image img-${destination.id}`}
-                    width={destination.width}
-                    height={destination.height}
                   />
                 </div>
                 <div className="destination-info">
@@ -111,6 +91,7 @@ function Discovery() {
             ))}
           </div>
         </div>
+        
       </div>
     </div>
   );
