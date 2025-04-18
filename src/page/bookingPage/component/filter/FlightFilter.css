@@ -1,130 +1,152 @@
 .filters-container {
-    border-radius: 8px;
-    width: 290px;
-    padding: 20px;
-    border-right: 1px solid #ccc;
-    font-family: poppins, sans-serif;
-  }
-  
-  .filters-container h2 {
-    font-size: 18px;
-    margin-bottom: 20px;
-  }
-  
-  .filter-section {
-    margin-bottom: 20px;
-    padding-bottom: 15px;
-    border-bottom: 1px solid #eaeaea;
-  }
-  
-  .filter-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 15px;
-    cursor: pointer;
-  }
-  
-  .filter-header h3 {
-    font-size: 16px;
-    font-weight: 500;
-  }
-  
-  .chevron {
-    color: #999;
-    transform: rotate(180deg);
-  }
-  
+  border-radius: 8px;
+  width: 290px;
+  padding: 20px;
+  border-right: 1px solid #ccc;
+  font-family: poppins, sans-serif;
+}
 
-  .price-slider, .time-slider {
-    padding: 0 10px;
-  }
-  
-  .slider-track {
-    position: relative;
-    height: 4px;
-    background-color: #eaeaea;
-    border-radius: 2px;
-    margin: 15px 0;
-    cursor: pointer;
-  }
-  
-  .slider-thumb {
-    position: absolute;
-    width: 16px;
-    height: 16px;
-    background-color: white;
-    border: 2px solid #0ea5e9;
-    border-radius: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    cursor: grab;
-    z-index: 2;
-  }
-  
-  .slider-thumb:hover, .slider-thumb:active {
-    box-shadow: 0 0 0 5px rgba(14, 165, 233, 0.2);
-  }
-  
-  .slider-thumb:active {
-    cursor: grabbing;
-  }
-  
-  .slider-progress {
-    position: absolute;
-    height: 100%;
-    background-color: #0ea5e9;
-    border-radius: 2px;
-    z-index: 1;
-  }
-  
-  .slider-labels {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 8px;
-    font-size: 14px;
-    color: #666;
-  }
-  
-  .rating-options {
-    display: flex;
-    gap: 8px;
-  }
-  
-  .rating-button {
-    padding: 6px 12px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    background-color: white;
-    cursor: pointer;
-    font-size: 14px;
-  }
-  
-  .rating-button.active {
-    background-color: #e0f2fe;
-    border-color: #0ea5e9;
-    color: #0369a1;
-  }
+.filters-container h2 {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
 
-  .checkbox-option {
-    display: flex;
-    align-items: center;
-    margin-bottom: 8px;
-  }
-  
-  .checkbox-option input[type="checkbox"] {
-    margin-right: 10px;
-    width: 16px;
-    height: 16px;
-    cursor: pointer;
-  }
-  
-  .checkbox-option label {
-    font-size: 14px;
-    cursor: pointer;
-  }
+.filter-section {
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eaeaea;
+}
 
-  .airlines-options, .trips-options {
-    display: flex;
-    flex-direction: column;
-  }
+.filter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+.filter-header h3 {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.chevron {
+  color: #999;
+  transform: rotate(180deg);
+}
+
+
+.price-slider,
+.time-slider {
+  padding: 0 10px;
+}
+
+.slider-track {
+  position: relative;
+  height: 4px;
+  background-color: #eaeaea;
+  border-radius: 2px;
+  margin: 15px 0;
+  cursor: pointer;
+}
+
+.slider-thumb {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background-color: #223A60;
+  border-radius: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  cursor: grab;
+  z-index: 2;
+}
+
+.slider-thumb:hover,
+.slider-thumb:active {
+  box-shadow: 0 0 0 5px rgba(14, 165, 233, 0.2);
+}
+
+.slider-thumb:active {
+  cursor: grabbing;
+}
+
+.slider-progress {
+  position: absolute;
+  height: 100%;
+  background-color: #223A60;
+  border-radius: 2px;
+  z-index: 1;
+}
+
+.slider-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+  font-size: 14px;
+  color: #666;
+}
+
+.checkbox-option input[type="checkbox"],
+.checkbox-option input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: #fff;
+  margin-right: 10px;
+  font: inherit;
+  color: #223A60;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #223A60;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+}
+
+.checkbox-option input[type="radio"] {
+  border-radius: 50%;
+}
+
+/* Dấu chọn */
+.checkbox-option input[type="checkbox"]::before,
+.checkbox-option input[type="radio"]::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  transform: translate(-50%, -50%);
+  background-color: transparent;
+  border-radius: inherit;
+}
+
+/* Khi được chọn */
+.checkbox-option input[type="checkbox"]:checked::before{
+  background-color: #223A60;
+  content: '✔';
+  color: #fff;
+  font-size: 13px;
+  width: 15px;
+  height: 18px;
+  padding-left: 3px;
+}
+.checkbox-option input[type="radio"]:checked::before {
+  background-color: #223A60;
+  height: 10px;
+  width: 9px;
+  border: 2px solid white;
+}
+
+.checkbox-option label {
+  font-size: 15px;
+  color: #333;
+  cursor: pointer;
+}
+
+.airlines-options,
+.trips-options {
+  display: flex;
+  flex-direction: column;
+}
