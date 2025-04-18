@@ -10,7 +10,6 @@ export const authLogin = axios.create({
       },
 })
 // api đăng ký
-
 export const authRegister = axios.create({
     baseURL:`${root}/auth/register`,
     timeout: 10000,

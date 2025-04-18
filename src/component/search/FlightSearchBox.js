@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Button from "../button/Button";
 import "./style.css";
 import iconswap from "../../image/Icon/HomePage/iconswap.svg";
@@ -6,9 +6,17 @@ import icon1chieu from "../../image/Icon/HomePage/icon1chieu.svg";
 import icon2chieu from "../../image/Icon/HomePage/icon2chieu.svg";
 import SearchItem from "./component/searchItem/SearchItem";
 import InputSelect from "./component/inputSelect/InputSelect";
+import thailand from "../../image/national/thailand.svg"
+import DatePickerCustom from "./component/datefield/DatePickerCustom";
 
 function FlightSearchBox({ className }) {
   const [tickerType, setTickerType] = useState(true);
+  // trạng thái người dùng đang nhấn vào field chọn điểm đến và điểm đi hay chưa
+  const [statusDP, setStatusDP] = useState(false);
+  const [statusArP, setStatusArP] = useState(false);
+  const departureRef = useRef(null);
+  const arrivalRef = useRef(null);
+
   const [departurePoint, setDeparturePoint] = useState({
     city: "Hà Nội",
     codeCity: "[HN]",
@@ -19,39 +27,93 @@ function FlightSearchBox({ className }) {
     codeCity: "[SGN]",
     airport: "Sân Bay Quốc Tế Tân Sơn Nhất",
   });
-  const [errorMessage, setErrorMessage] = useState("");
 
-  // Discover destinations data
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     console.log("Đã bấm submit");
-    setErrorMessage("");
 
-    // Here you can add API call to fetch flight data based on user input
   };
 
   const data = {
     recentSearches: {
+      img:thailand,
       city: "Hà Nội",
       codeCity: "HN",
       airport: "Sân Bay Quốc Tế Nội Bài",
+      national:"Viet Nam"
     },
     popular: [
       {
+        img:thailand,
         city: "Hà Nội",
         codeCity: "HN",
         airport: "Sân Bay Quốc Tế Nội Bài",
+        national:"Viet Nam"
       },
       {
+        img:thailand,
         city: "TP. Hồ Chí Minh",
         codeCity: "SGN",
         airport: "Sân Bay Quốc Tế Tân Sơn Nhất",
+        national:"Viet Nam"
+      }, {
+        img:thailand,
+        city: "Hà Nội",
+        codeCity: "HN",
+        airport: "Sân Bay Quốc Tế Nội Bài",
+        national:"Viet Nam"
+      },
+      {
+        img:thailand,
+        city: "TP. Hồ Chí Minh",
+        codeCity: "SGN",
+        airport: "Sân Bay Quốc Tế Tân Sơn Nhất",
+        national:"Viet Nam"
+      }, {
+        img:thailand,
+        city: "Hà Nội",
+        codeCity: "HN",
+        airport: "Sân Bay Quốc Tế Nội Bài",
+        national:"Viet Nam"
+      },
+      {
+        img:thailand,
+        city: "TP. Hồ Chí Minh",
+        codeCity: "SGN",
+        airport: "Sân Bay Quốc Tế Tân Sơn Nhất",
+        national:"Viet Nam"
       },
     ],
   };
 
+  // click
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      // Nếu click không nằm trong vùng departure
+      if (departureRef.current && !departureRef.current.contains(event.target)) {
+        setStatusDP(false);
+      }
+  
+      // Nếu click không nằm trong vùng arrival
+      if (arrivalRef.current && !arrivalRef.current.contains(event.target)) {
+        setStatusArP(false);
+      }
+    };
+  
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+  
+  const handlePoint=()=>{
+    setStatusDP(true);
+  }
+  const handleArP=()=>{
+    setStatusArP(true);
+  }
   return (
     <div className="home-container">
       <div className={`searchBox ${className}`}>
@@ -89,9 +151,9 @@ function FlightSearchBox({ className }) {
               <SearchItem
                 className='field'
                 textTop="Điểm Khởi Hành"
-                textCenter={departurePoint.city}
+                textCenter={<div onClick={handlePoint}> {departurePoint.city}</div>}
                 textBottom={
-                  <div style={{ position: "relative" }}>
+                  <div ref={departureRef} style={{ position: "relative" }}>
                     <span
                       style={{
                         color: "#233A60",
@@ -103,7 +165,7 @@ function FlightSearchBox({ className }) {
                     </span>
                     {departurePoint.airport}
                     <InputSelect
-                      className="bottom-left-r input-select"
+                      className={`bottom-left-r ${statusDP?"input-select":"select-none"}`}
                       data={data}
                     />
                   </div>
@@ -112,9 +174,9 @@ function FlightSearchBox({ className }) {
               <SearchItem
                 className='field'
                 textTop="Điểm đến"
-                textCenter={arrivalPoint.city}
+                textCenter={<div onClick={handleArP}> {arrivalPoint.city}</div>}
                 textBottom={
-                  <div style={{ position: "relative" }}>
+                  <div ref={arrivalRef} style={{ position: "relative" }}>
                     <span
                       style={{
                         color: "#233A60",
@@ -126,7 +188,7 @@ function FlightSearchBox({ className }) {
                     </span>
                     {arrivalPoint.airport}
                     <InputSelect
-                      className="bottom-left-r input-select"
+                      className={`bottom-left-r ${statusArP?"input-select":"select-none"}`}
                       data={data}
                     />
                   </div>
@@ -139,13 +201,13 @@ function FlightSearchBox({ className }) {
             <SearchItem
                 className='field'
                 textTop="Ngày đi"
-                textCenter="1-1-2025"
+                textCenter ={<DatePickerCustom  />}
                 textBottom="Thứ 2"
               />
               <SearchItem
                 className='field'
                 textTop="Ngày về"
-                textCenter="Chọn ngày"
+                textCenter ={<DatePickerCustom />}
                 textBottom="Chuyến khứ hồi"
               />
               <SearchItem

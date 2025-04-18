@@ -1,0 +1,115 @@
+/* Nền tổng thể */
+.react-datepicker {
+    border: none;
+    border-radius: 16px;
+    padding: 10px;
+    background: linear-gradient(to bottom, #f4f7fb, #e9eff5);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    font-family: "Poppins", sans-serif;
+  }
+  
+  /* Header tháng */
+  .react-datepicker__current-month {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1e2a56;
+  }
+  
+  /* Tuần */
+  .react-datepicker__day-names {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    margin-top: 10px;
+    color: #1e2a56;
+    font-weight: 600;
+  }
+  
+  /* Ngày */
+  .react-datepicker__day {
+    width: 40px;
+    height: 40px;
+    margin: 4px;
+    border-radius: 10px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    color: #1e2a56;
+  }
+  
+  /* Ngày được chọn */
+  .react-datepicker__day--selected {
+    background-color: #1e2a56;
+    color: white;
+    border-radius: 12px;
+  }
+  
+
+  /* Định dạng ngày ngoài tháng */
+  .react-datepicker__day--outside-month {
+    color: #ccc;
+  }
+  
+  /* Nút prev/next */
+  .react-datepicker__navigation {
+    top: 10px;
+  }
+  h2.react-datepicker__current-month{
+    text-align: left;
+    font-size: 16px;
+  }  
+  .react-datepicker__header{
+    background-color: #F0F4FA;
+  }
+  .react-datepicker__navigation--previous{
+    right: 10px;
+    margin: 5px 20px;
+  }
+  .react-datepicker__navigation--next{
+    right: 0px;
+    margin: 5px 10px;
+  }
+  /* Loại bỏ hiệu ứng hover cho nút chuyển tháng trong react-datepicker */
+.react-datepicker__navigation:hover {
+    background-color: inherit !important;
+    color: inherit !important;
+    filter: none !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+  .react-datepicker__input-container>input{
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    font-weight: 900;
+    font-size: 16px;
+    font-family: poppins, sans-serif;
+    color: #233A60 ;
+    user-select: "none";
+}
+/* css cho placeholder */
+
+.react-datepicker__input-container input::placeholder {
+    color: #233A60;
+}
+/*  bỏ hightlight khi focus vào ô input */
+.react-datepicker__input-container input {
+    border: none;
+    outline: none;  /* Loại bỏ outline khi focus */
+  }
+  
+  .react-datepicker__input-container input:focus {
+    border: none;   /* Loại bỏ border khi focus */
+    outline: none;  /* Loại bỏ outline khi focus */
+  }
+  .date-picker-customy{
+    position: relative;
+  }
+  .date-picker-customy>img{
+    position: absolute;
+    width: 16px;
+    z-index: 10;
+    height: 16px;
+    right: 5px;
+    top: 3px;
+  }
