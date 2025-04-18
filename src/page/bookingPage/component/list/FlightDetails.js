@@ -5,7 +5,7 @@ const flights = [
   {
     id: 1,
     airline: "Bamboo Airways",
-    logo: "",
+    logo: "https://cdn.haitrieu.com/wp-content/uploads/2022/01/Icon-Bamboo-Airways.png",
     flightCode: "QH202",
     departureTime: "05:10",
     departureCode: "SGN",
@@ -18,7 +18,7 @@ const flights = [
   {
     id: 2,
     airline: "Vietjet Air",
-    logo: "",
+    logo: "https://seeklogo.com/images/V/vietjet-aviation-logo-A823494846-seeklogo.com.png",
     flightCode: "VJ198",
     departureTime: "05:20",
     departureCode: "SGN",
@@ -31,7 +31,7 @@ const flights = [
   {
     id: 3,
     airline: "Bamboo Airways",
-    logo: "",
+    logo: "https://cdn.haitrieu.com/wp-content/uploads/2022/01/Icon-Bamboo-Airways.png",
     flightCode: "QH204",
     departureTime: "07:35",
     departureCode: "SGN",
@@ -44,7 +44,7 @@ const flights = [
   {
     id: 4,
     airline: "Vietjet Air",
-    logo: "",
+    logo: "https://seeklogo.com/images/V/vietjet-aviation-logo-A823494846-seeklogo.com.png",
     flightCode: "VJ120",
     departureTime: "06:00",
     departureCode: "SGN",
