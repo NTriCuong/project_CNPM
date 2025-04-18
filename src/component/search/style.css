@@ -147,7 +147,7 @@
 }
 
 .input-select {
-    display: none;
+    /* display: none; */
     width: 290px;
     height: 290px;
     border-radius: 8px;
@@ -170,11 +170,19 @@
     border-top-left-radius: 6px;
     border-top-right-radius: 7px;
     padding: 2px;
-    padding-left: 30px;
+    padding-left: 20px;
     border: none;
     border-bottom: #DFE1E7 2px solid;
 }
-
+/* calender */
+.field-calender{
+    position: relative;
+    height: 100%;
+}
+.field-calender > img{
+    position: absolute;
+    right: 5px;
+}
 @media screen and (max-width: 1200px) {
     .flight-search {
         margin-top: -55px;

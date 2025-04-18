@@ -1,0 +1,23 @@
+.box-inputselect-item{
+    display: flex;
+    padding-right: 20px;
+    cursor: pointer;
+    padding-bottom: 8px;
+    padding-top: 8px;
+}
+.box-inputselect-item>.right{
+    gap: 5px;
+}
+.label-city{
+    color: #233A60 ;
+    font-weight: 400;
+}
+.box-inputselect-item > .left{
+    width: 80%;
+}
+.inputSelect-boxContent{
+    overflow-y: scroll;
+    /* luôn hiện thanh roll */
+    scrollbar-gutter: stable; 
+    height: 85%;
+}
