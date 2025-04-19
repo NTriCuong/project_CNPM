@@ -1,6 +1,9 @@
+import { useDispatch } from "react-redux";
 import iconflight from "../../../../image/Icon/HomePage/iconflight.svg";
 import "./style.css";
-function InputSelect({ className, data }) {
+import { updateArrivalLocation, updateDepartureLocation } from "../../../../redux/searchDataClice";
+function InputSelect({ className, data, flag }) { //flag true la đang chọn dữ liệu điểm khởi hành false là dữ liệu điểm đến
+  const Dispath = useDispatch();
   const styleHeader = {
     color: "#233A60",
     fontWeight: "bold",
@@ -9,6 +12,25 @@ function InputSelect({ className, data }) {
   };
   const styleTitleCity = { color: "#233A60", fontWeight: "600" };
   const styleTitleAirport = { color: "#6D7E96", fontSize: "10px" };
+
+  // handel
+  const handleChoose = (data)=>{
+    if(flag){ //diem khoi hanh
+      Dispath(updateDepartureLocation(
+        {
+          city: data.city,
+          codeCity: data.codeCity,
+          airport: data.airport,
+        }
+      ));
+  }
+    else 
+      Dispath(updateArrivalLocation({
+        city: data.city,
+        codeCity: data.codeCity,
+        airport: data.airport,
+      }));
+  }
   return (
     <div className={className}>
       <input type="text" placeholder="Điểm Khởi Hành"></input>
@@ -19,14 +41,16 @@ function InputSelect({ className, data }) {
           <div className="left">
             <img src={iconflight} />
             <div className="left-content">
-              <div>
+
+              <div onClick={()=>handleChoose(data.recentSearches)}>
                 <p style={styleTitleCity}>{data.recentSearches.city}</p>
               </div>
               <p style={styleTitleAirport}>{data.recentSearches.airport}</p>
             </div>
+
           </div>
           <div className="right">
-            <img src={data.recentSearches.img} />
+            <img style={{width:"25px"}} src={data.recentSearches.img} />
             <p className="label-city">{data.recentSearches.national}</p>
           </div>
         </div>
@@ -39,14 +63,14 @@ function InputSelect({ className, data }) {
                 <div className="left">
                   <img src={iconflight} />
                   <div className="left-content">
-                    <div>
+                    <div onClick={()=>handleChoose(item)}>
                       <p style={styleTitleCity}>{item.city}</p>
                     </div>
                     <p style={styleTitleAirport}>{item.airport}</p>
                   </div>
                 </div>
                 <div className="right">
-                  <img src={item.img} />
+                  <img style={{width:"25px"}} src={item.img} />
                   <p className="label-city">{item.national}</p>
                 </div>
               </div>
