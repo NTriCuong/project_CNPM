@@ -1,12 +1,21 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import DatePicker, { registerLocale } from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css"; // css mặc định của date picker
 import "./style.css";
 import vi from "date-fns/locale/vi"; // tiếng Việt
 import { format } from "date-fns";
 import iconCalender from"../../../../image/Icon/HomePage/calendarIcon.svg"
-const DatePickerCustom = () => {
-  const [selectedDate, setSelectedDate] = useState(null);
+import { useDispatch } from "react-redux";
+import { updateArrivalDate, updateDepartureDate } from "../../../../redux/searchDataClice";
+const DatePickerCustom = ({flag}) => {//true ngay di false ngay ve
+  const [selectedDate, setSelectedDate] = useState(new Date());
+  const Dispath = useDispatch();
+  useEffect(()=>{
+    if(flag)//ngay di
+      Dispath(updateDepartureDate(selectedDate))
+    else  
+      Dispath(updateArrivalDate(selectedDate))
+  },[selectedDate])
   registerLocale("vi", vi); // đăng ký locale
   return (
     <div className="date-picker-customy">

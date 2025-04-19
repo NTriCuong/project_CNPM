@@ -7,38 +7,33 @@ import icon2chieu from "../../image/Icon/HomePage/icon2chieu.svg";
 import SearchItem from "./component/searchItem/SearchItem";
 import InputSelect from "./component/inputSelect/InputSelect";
 import thailand from "../../image/national/thailand.svg"
+import vietnam from"../../image/national/vietnam.svg"
 import DatePickerCustom from "./component/datefield/DatePickerCustom";
+import { useDispatch, useSelector } from "react-redux";
+import { selectSearchData } from "../../redux/Store";
 
 function FlightSearchBox({ className }) {
+  const Dispath = useDispatch();// dẩy dữa liệu lên 
   const [tickerType, setTickerType] = useState(true);
   // trạng thái người dùng đang nhấn vào field chọn điểm đến và điểm đi hay chưa
   const [statusDP, setStatusDP] = useState(false);
   const [statusArP, setStatusArP] = useState(false);
   const departureRef = useRef(null);
   const arrivalRef = useRef(null);
-
-  const [departurePoint, setDeparturePoint] = useState({
-    city: "Hà Nội",
-    codeCity: "[HN]",
-    airport: "Sân Bay Quốc Tế Nội Bài",
-  });
-  const [arrivalPoint, setArrivalPoint] = useState({
-    city: "TP. Hồ Chí Minh",
-    codeCity: "[SGN]",
-    airport: "Sân Bay Quốc Tế Tân Sơn Nhất",
-  });
-
-
+  // dữ liệu điểm khởi hành
+  const SelectorSearchData = useSelector(selectSearchData);
+  useEffect(()=>{
+    setStatusDP(false);
+    setStatusArP(false);
+  },[SelectorSearchData])
   const handleSubmit = (e) => {
-    e.preventDefault();
-
-    console.log("Đã bấm submit");
+    e.preventDefault(); 
+    console.log("Đã bấm submit",SelectorSearchData);
 
   };
-
   const data = {
     recentSearches: {
-      img:thailand,
+      img:vietnam,
       city: "Hà Nội",
       codeCity: "HN",
       airport: "Sân Bay Quốc Tế Nội Bài",
@@ -46,40 +41,40 @@ function FlightSearchBox({ className }) {
     },
     popular: [
       {
-        img:thailand,
+        img:vietnam,
         city: "Hà Nội",
         codeCity: "HN",
         airport: "Sân Bay Quốc Tế Nội Bài",
         national:"Viet Nam"
       },
       {
-        img:thailand,
+        img:vietnam,
         city: "TP. Hồ Chí Minh",
         codeCity: "SGN",
         airport: "Sân Bay Quốc Tế Tân Sơn Nhất",
         national:"Viet Nam"
       }, {
-        img:thailand,
+        img:vietnam,
         city: "Hà Nội",
         codeCity: "HN",
         airport: "Sân Bay Quốc Tế Nội Bài",
         national:"Viet Nam"
       },
       {
-        img:thailand,
+        img:vietnam,
         city: "TP. Hồ Chí Minh",
         codeCity: "SGN",
         airport: "Sân Bay Quốc Tế Tân Sơn Nhất",
         national:"Viet Nam"
       }, {
-        img:thailand,
+        img:vietnam,
         city: "Hà Nội",
         codeCity: "HN",
         airport: "Sân Bay Quốc Tế Nội Bài",
         national:"Viet Nam"
       },
       {
-        img:thailand,
+        img:vietnam,
         city: "TP. Hồ Chí Minh",
         codeCity: "SGN",
         airport: "Sân Bay Quốc Tế Tân Sơn Nhất",
@@ -87,7 +82,7 @@ function FlightSearchBox({ className }) {
       },
     ],
   };
-
+  
   // click
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -101,7 +96,6 @@ function FlightSearchBox({ className }) {
         setStatusArP(false);
       }
     };
-  
     document.addEventListener('mousedown', handleClickOutside);
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
@@ -151,7 +145,7 @@ function FlightSearchBox({ className }) {
               <SearchItem
                 className='field'
                 textTop="Điểm Khởi Hành"
-                textCenter={<div onClick={handlePoint}> {departurePoint.city}</div>}
+                textCenter={<div onClick={handlePoint}> {SelectorSearchData.departureLocation.city}</div>}
                 textBottom={
                   <div ref={departureRef} style={{ position: "relative" }}>
                     <span
@@ -161,12 +155,13 @@ function FlightSearchBox({ className }) {
                         fontFamily: "poppins, sans-serif",
                       }}
                     >
-                      {departurePoint.codeCity}
+                      {SelectorSearchData.departureLocation.codeCity}
                     </span>
-                    {departurePoint.airport}
+                    {SelectorSearchData.departureLocation.airport}
                     <InputSelect
                       className={`bottom-left-r ${statusDP?"input-select":"select-none"}`}
                       data={data}
+                      flag={true}
                     />
                   </div>
                 }
@@ -174,7 +169,7 @@ function FlightSearchBox({ className }) {
               <SearchItem
                 className='field'
                 textTop="Điểm đến"
-                textCenter={<div onClick={handleArP}> {arrivalPoint.city}</div>}
+                textCenter={<div onClick={handleArP}> {SelectorSearchData.arrivalLocation.city}</div>}
                 textBottom={
                   <div ref={arrivalRef} style={{ position: "relative" }}>
                     <span
@@ -184,12 +179,13 @@ function FlightSearchBox({ className }) {
                         fontFamily: "poppins, sans-serif",
                       }}
                     >
-                      {arrivalPoint.codeCity}
+                      {SelectorSearchData.arrivalLocation.codeCity}
                     </span>
-                    {arrivalPoint.airport}
+                    {SelectorSearchData.arrivalLocation.airport}
                     <InputSelect
                       className={`bottom-left-r ${statusArP?"input-select":"select-none"}`}
                       data={data}
+                      flag={false}
                     />
                   </div>
                 }
@@ -201,13 +197,13 @@ function FlightSearchBox({ className }) {
             <SearchItem
                 className='field'
                 textTop="Ngày đi"
-                textCenter ={<DatePickerCustom  />}
+                textCenter ={<DatePickerCustom flag={true} />}
                 textBottom="Thứ 2"
               />
               <SearchItem
                 className='field'
                 textTop="Ngày về"
-                textCenter ={<DatePickerCustom />}
+                textCenter ={<DatePickerCustom flag={false}/>}
                 textBottom="Chuyến khứ hồi"
               />
               <SearchItem
