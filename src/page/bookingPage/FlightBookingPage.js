@@ -15,6 +15,7 @@ function FlightBookingPage() {
             <div className="flight-search-container">
                 <FlightSearchBox className="flight-search-booking" />
             </div>
+            <div className="wrap-content">
             <div className="content-container">
                 <div className="filters-wrapper">
                     <FlightFilters />
@@ -22,6 +23,7 @@ function FlightBookingPage() {
                 <div className="flight-list-wrapper">
                     <FlightList />
                 </div>
+            </div>
             </div>
             <Footer className="footer-booking" />
         </div>

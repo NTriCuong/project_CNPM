@@ -26,16 +26,21 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px 0 0 70px;
+  padding: 20px 0 45px 70px;
   background-color: #f5f5f5;
 
 }
 
+.wrap-content{
+  width: 100%;
+}
+
+
 .content-container {
   display: flex;
   gap: 35px;
-  width: 100%;
-  padding: 55px 350px 0 350px;
+  width: 65%;
+  margin: 0 auto;
 }
 
 
