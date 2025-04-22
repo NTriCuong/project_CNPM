@@ -6,108 +6,122 @@ import icon1chieu from "../../image/Icon/HomePage/icon1chieu.svg";
 import icon2chieu from "../../image/Icon/HomePage/icon2chieu.svg";
 import SearchItem from "./component/searchItem/SearchItem";
 import InputSelect from "./component/inputSelect/InputSelect";
-import thailand from "../../image/national/thailand.svg"
-import vietnam from"../../image/national/vietnam.svg"
+import vietnam from "../../image/national/vietnam.svg";
 import DatePickerCustom from "./component/datefield/DatePickerCustom";
 import { useDispatch, useSelector } from "react-redux";
 import { selectSearchData } from "../../redux/Store";
+import SelectConsumer from "./component/selectConsumer/SelectConsumer";
 
 function FlightSearchBox({ className }) {
-  const Dispath = useDispatch();// dẩy dữa liệu lên 
+  const Dispath = useDispatch(); // dẩy dữa liệu lên
   const [tickerType, setTickerType] = useState(true);
   // trạng thái người dùng đang nhấn vào field chọn điểm đến và điểm đi hay chưa
   const [statusDP, setStatusDP] = useState(false);
   const [statusArP, setStatusArP] = useState(false);
+  const [statusConsumer, setStatusConsumer] = useState(false);
   const departureRef = useRef(null);
   const arrivalRef = useRef(null);
   // dữ liệu điểm khởi hành
   const SelectorSearchData = useSelector(selectSearchData);
-  useEffect(()=>{
+  useEffect(() => {
     setStatusDP(false);
     setStatusArP(false);
-  },[SelectorSearchData])
+    setStatusConsumer(false);
+  }, [SelectorSearchData]);
   const handleSubmit = (e) => {
-    e.preventDefault(); 
-    console.log("Đã bấm submit",SelectorSearchData);
-
+    e.preventDefault();
+    console.log("Đã bấm submit", SelectorSearchData);
   };
   const data = {
     recentSearches: {
-      img:vietnam,
+      img: vietnam,
       city: "Hà Nội",
       codeCity: "HN",
       airport: "Sân Bay Quốc Tế Nội Bài",
-      national:"Viet Nam"
+      national: "Viet Nam",
     },
     popular: [
       {
-        img:vietnam,
+        img: vietnam,
         city: "Hà Nội",
         codeCity: "HN",
         airport: "Sân Bay Quốc Tế Nội Bài",
-        national:"Viet Nam"
+        national: "Viet Nam",
       },
       {
-        img:vietnam,
+        img: vietnam,
         city: "TP. Hồ Chí Minh",
         codeCity: "SGN",
         airport: "Sân Bay Quốc Tế Tân Sơn Nhất",
-        national:"Viet Nam"
-      }, {
-        img:vietnam,
+        national: "Viet Nam",
+      },
+      {
+        img: vietnam,
         city: "Hà Nội",
         codeCity: "HN",
         airport: "Sân Bay Quốc Tế Nội Bài",
-        national:"Viet Nam"
+        national: "Viet Nam",
       },
       {
-        img:vietnam,
+        img: vietnam,
         city: "TP. Hồ Chí Minh",
         codeCity: "SGN",
         airport: "Sân Bay Quốc Tế Tân Sơn Nhất",
-        national:"Viet Nam"
-      }, {
-        img:vietnam,
+        national: "Viet Nam",
+      },
+      {
+        img: vietnam,
         city: "Hà Nội",
         codeCity: "HN",
         airport: "Sân Bay Quốc Tế Nội Bài",
-        national:"Viet Nam"
+        national: "Viet Nam",
       },
       {
-        img:vietnam,
+        img: vietnam,
         city: "TP. Hồ Chí Minh",
         codeCity: "SGN",
         airport: "Sân Bay Quốc Tế Tân Sơn Nhất",
-        national:"Viet Nam"
+        national: "Viet Nam",
       },
     ],
   };
-  
+
   // click
   useEffect(() => {
     const handleClickOutside = (event) => {
       // Nếu click không nằm trong vùng departure
-      if (departureRef.current && !departureRef.current.contains(event.target)) {
+      if (
+        departureRef.current &&
+        !departureRef.current.contains(event.target)
+      ) {
+        console.log("Click outside setStatusDP");
         setStatusDP(false);
       }
-  
+
       // Nếu click không nằm trong vùng arrival
       if (arrivalRef.current && !arrivalRef.current.contains(event.target)) {
+        console.log("Click outside setStatusArP");
         setStatusArP(false);
       }
+
+    
     };
-    document.addEventListener('mousedown', handleClickOutside);
+
+    document.addEventListener("mousedown", handleClickOutside);
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
-  
-  const handlePoint=()=>{
-    setStatusDP(true);
-  }
-  const handleArP=()=>{
-    setStatusArP(true);
-  }
+
+  const handlePoint = () => {
+    setStatusDP(!statusDP);
+  };
+  const handleArP = () => {
+    setStatusArP(!statusArP);
+  };
+  const handleConsumer = () => {
+    setStatusConsumer(!statusConsumer);
+  };
   return (
     <div className="home-container">
       <div className={`searchBox ${className}`}>
@@ -143,9 +157,14 @@ function FlightSearchBox({ className }) {
           <div className="bottom">
             <div className="left-field">
               <SearchItem
-                className='field'
+                className="field"
                 textTop="Điểm Khởi Hành"
-                textCenter={<div onClick={handlePoint}> {SelectorSearchData.departureLocation.city}</div>}
+                textCenter={
+                  <div onClick={handlePoint}>
+                    {" "}
+                    {SelectorSearchData.departureLocation.city}
+                  </div>
+                }
                 textBottom={
                   <div ref={departureRef} style={{ position: "relative" }}>
                     <span
@@ -155,11 +174,13 @@ function FlightSearchBox({ className }) {
                         fontFamily: "poppins, sans-serif",
                       }}
                     >
-                      {SelectorSearchData.departureLocation.codeCity}
+                      [{SelectorSearchData.departureLocation.codeCity}]
                     </span>
                     {SelectorSearchData.departureLocation.airport}
                     <InputSelect
-                      className={`bottom-left-r ${statusDP?"input-select":"select-none"}`}
+                      className={`bottom-left-r ${
+                        statusDP ? "input-select" : "select-none"
+                      }`}
                       data={data}
                       flag={true}
                     />
@@ -167,9 +188,14 @@ function FlightSearchBox({ className }) {
                 }
               />
               <SearchItem
-                className='field'
+                className="field"
                 textTop="Điểm đến"
-                textCenter={<div onClick={handleArP}> {SelectorSearchData.arrivalLocation.city}</div>}
+                textCenter={
+                  <div onClick={handleArP}>
+                    {" "}
+                    {SelectorSearchData.arrivalLocation.city}
+                  </div>
+                }
                 textBottom={
                   <div ref={arrivalRef} style={{ position: "relative" }}>
                     <span
@@ -179,11 +205,13 @@ function FlightSearchBox({ className }) {
                         fontFamily: "poppins, sans-serif",
                       }}
                     >
-                      {SelectorSearchData.arrivalLocation.codeCity}
+                     [{SelectorSearchData.arrivalLocation.codeCity}]
                     </span>
                     {SelectorSearchData.arrivalLocation.airport}
                     <InputSelect
-                      className={`bottom-left-r ${statusArP?"input-select":"select-none"}`}
+                      className={`bottom-left-r ${
+                        statusArP ? "input-select" : "select-none"
+                      }`}
                       data={data}
                       flag={false}
                     />
@@ -194,28 +222,48 @@ function FlightSearchBox({ className }) {
               <img className="icon-swap" src={iconswap} />
             </div>
             <div className="right-field">
-            <SearchItem
-                className='field'
+              <SearchItem
+                className="field"
                 textTop="Ngày đi"
-                textCenter ={<DatePickerCustom flag={true} />}
+                textCenter={<DatePickerCustom flag={true} />}
                 textBottom="Thứ 2"
               />
               <SearchItem
-                className='field'
+                className="field"
                 textTop="Ngày về"
-                textCenter ={<DatePickerCustom flag={false}/>}
+                textCenter={<DatePickerCustom flag={false} />}
                 textBottom="Chuyến khứ hồi"
               />
               <SearchItem
-                className='field'
+                className="field"
                 textTop="Hành Khách"
-                textCenter="1 Hành khách"
-                textBottom="Premium economy"
+                textCenter={
+                  <div  className="select-consummer">
+                    <div onClick={handleConsumer} style={{ fontSize: "13px", padding:"2px" }}>
+                      {SelectorSearchData.numberAdults +
+                        SelectorSearchData.numberChildren +
+                        SelectorSearchData.numberInfants}{" "}
+                      Hành Khách
+                    </div>
+                    <SelectConsumer
+                      on={handleConsumer}
+                      className={
+                        statusConsumer
+                          ? "select-consummer-show"
+                          : "select-consummer-none"
+                      }
+                    />
+                  </div>
+                }
+                textBottom={SelectorSearchData.ticketClasses}
               />
             </div>
-            <Button text="Tìm Chuyến Bay" type="submit" className="bottom-item" />
+            <Button
+              text="Tìm Chuyến Bay"
+              type="submit"
+              className="bottom-item"
+            />
           </div>
-          
         </form>
       </div>
     </div>
