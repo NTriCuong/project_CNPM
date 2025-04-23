@@ -7,12 +7,12 @@ export const searchDataClice = createSlice({
     data: {
       departureLocation: {
         city: "Hà Nội",
-        codeCity: "[HN]",
+        codeCity: "HN",
         airport: "Sân Bay Quốc Tế Nội Bài",
       }, // bắt đầu
       arrivalLocation: {
         city: "TP Hồ Chí Minh",
-        codeCity: "[SGN]",
+        codeCity: "SGN",
         airport: "Sân Bay Quốc Tế Tân Sơn Nhất",
       }, //điểm đến
       departureDate: format(new Date(), "dd-MM-yyyy"), // ngày đi
