@@ -40,3 +40,11 @@ export const resetPassword = axios.create({
       },
 })
 
+//API SEARCH FLIGHT
+export const searchFlight = axios.create({
+  baseURL:`${root}/flight/search_flight`,
+  timeout: 10000,
+  headers:{
+    "Content-Type": "application/json",
+  }
+})

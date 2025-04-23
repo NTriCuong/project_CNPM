@@ -10,7 +10,7 @@ import ForgotPassword from "../forgotPassword/ForgotPassword";
 import ConfirmOTP from "../confirm/ConfirmOTP";
 import ResetPassword from "../resetPassword/ResetPassword";
 import { useSelector } from "react-redux";
-import { SelecAuth } from "../../redux/Store";
+import { SelecAuth, selectSearchData } from "../../redux/Store";
 
 function FlightBookingPage() {
   const auth = useSelector(SelecAuth);
