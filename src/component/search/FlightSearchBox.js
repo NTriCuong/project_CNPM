@@ -11,6 +11,8 @@ import DatePickerCustom from "./component/datefield/DatePickerCustom";
 import { useDispatch, useSelector } from "react-redux";
 import { selectSearchData } from "../../redux/Store";
 import SelectConsumer from "./component/selectConsumer/SelectConsumer";
+import { searchFlight } from "../../api/axiosClient";
+import { format } from "date-fns";
 
 function FlightSearchBox({ className }) {
   const Dispath = useDispatch(); // dẩy dữa liệu lên
@@ -30,7 +32,8 @@ function FlightSearchBox({ className }) {
   }, [SelectorSearchData]);
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Đã bấm submit", SelectorSearchData);
+    // console.log("Đã bấm submit", SelectorSearchData);
+    Api();
   };
   const data = {
     recentSearches: {
@@ -86,6 +89,28 @@ function FlightSearchBox({ className }) {
     ],
   };
 
+  //GOI API
+  const search_data = useSelector(selectSearchData);
+  const Api = async () => {
+    const formattedDate = format(search_data.departureDate, "yyyy-MM-dd");
+    try {
+      const response = await searchFlight.post("/", {
+        departure_location: search_data.departureLocation.codeCity,
+        arrival_location: search_data.arrivalLocation.codeCity,
+        departure_date: formattedDate,
+        ticket_classes: search_data.ticket_classes,
+        number_adults: search_data.number_adults,
+        number_children: search_data.numberChildren,
+        number_infants: search_data.numberInfants,
+      });
+      console("CO CO CO", response);
+    } catch (error) {
+      console.log("LOI", error);
+    }
+  };
+  // const formattedDate = format(search_data.departureDate, "dd-MM-yyyy");
+  // console.log(formattedDate);
+
   // click
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -103,8 +128,6 @@ function FlightSearchBox({ className }) {
         console.log("Click outside setStatusArP");
         setStatusArP(false);
       }
-
-    
     };
 
     document.addEventListener("mousedown", handleClickOutside);
@@ -205,7 +228,7 @@ function FlightSearchBox({ className }) {
                         fontFamily: "poppins, sans-serif",
                       }}
                     >
-                     [{SelectorSearchData.arrivalLocation.codeCity}]
+                      [{SelectorSearchData.arrivalLocation.codeCity}]
                     </span>
                     {SelectorSearchData.arrivalLocation.airport}
                     <InputSelect
@@ -238,8 +261,11 @@ function FlightSearchBox({ className }) {
                 className="field"
                 textTop="Hành Khách"
                 textCenter={
-                  <div  className="select-consummer">
-                    <div onClick={handleConsumer} style={{ fontSize: "13px", padding:"2px" }}>
+                  <div className="select-consummer">
+                    <div
+                      onClick={handleConsumer}
+                      style={{ fontSize: "13px", padding: "2px" }}
+                    >
                       {SelectorSearchData.numberAdults +
                         SelectorSearchData.numberChildren +
                         SelectorSearchData.numberInfants}{" "}
