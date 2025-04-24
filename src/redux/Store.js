@@ -4,6 +4,7 @@ import  dataClient  from './dataClientSlice';
 import  stOtp  from './stOtpSlice';
 import  statusClient  from './statusClient';
 import searchDataClice from './searchDataClice';
+import flightSearchSlice from './searchFlightSlice';
 
 const store = configureStore({
   reducer: {
@@ -14,13 +15,15 @@ const store = configureStore({
     client: dataClient,
     statusOtp:stOtp,
     statusClient:statusClient,
-    searchDataClice:searchDataClice
+    searchDataClice:searchDataClice,
+    searchFlight: flightSearchSlice
   }
 });
-  
+
 export const SelecAuth = (state)=>state.auth.formStatus;
 export const selecDataClient = (state)=>state.client?.email||''
 export const selecStatusOtp = (state)=>state.statusOtp.flag
 export const selecStatusClient = (state)=>state.statusClient?.status || ''
 export const selectSearchData = (state)=>state.searchDataClice.data;
+export const selectSearchFlight = (state)=>state.searchFlight.data || [];
 export default store;

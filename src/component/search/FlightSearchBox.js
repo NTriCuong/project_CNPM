@@ -13,6 +13,8 @@ import { selectSearchData } from "../../redux/Store";
 import SelectConsumer from "./component/selectConsumer/SelectConsumer";
 import { searchFlight } from "../../api/axiosClient";
 import { format } from "date-fns";
+import { setFlightData } from "../../redux/searchFlightSlice";
+
 
 function FlightSearchBox({ className }) {
   const Dispath = useDispatch(); // dẩy dữa liệu lên
@@ -32,7 +34,6 @@ function FlightSearchBox({ className }) {
   }, [SelectorSearchData]);
   const handleSubmit = (e) => {
     e.preventDefault();
-    // console.log("Đã bấm submit", SelectorSearchData);
     Api();
   };
   const data = {
@@ -91,8 +92,6 @@ function FlightSearchBox({ className }) {
   const search_data = useSelector(selectSearchData);
   //GOI API
   const Api = async () => {
-    console.log("data request", search_data.ticket_classes);
-    
     try {
       const response = await searchFlight.post("/", {
         departure_location: search_data.departureLocation.codeCity,
@@ -103,8 +102,8 @@ function FlightSearchBox({ className }) {
         number_children: search_data.numberChildren,
         number_infants: search_data.numberInfants,
       });
-      console.log("success", response.data);
-
+      console.log("CO CO CO",response.data)
+      Dispath(setFlightData(response.data))
     } catch (error) {
       console.log("LOI", error);
     }

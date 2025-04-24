@@ -11,6 +11,7 @@ import ConfirmOTP from "../confirm/ConfirmOTP";
 import ResetPassword from "../resetPassword/ResetPassword";
 import { useSelector } from "react-redux";
 import { SelecAuth, selectSearchData } from "../../redux/Store";
+import ChatBox from "../../component/chatBox/ChatBox";
 
 function FlightBookingPage() {
   const auth = useSelector(SelecAuth);
@@ -53,6 +54,7 @@ function FlightBookingPage() {
           </div>
         </div>
       </div>
+      <ChatBox/>  
       <Footer className="footer-booking" />
     </div>
   );
