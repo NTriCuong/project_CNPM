@@ -7,7 +7,7 @@ export const searchDataClice = createSlice({
     data: {
       departureLocation: {
         city: "Hà Nội",
-        codeCity: "HN",
+        codeCity: "HAN",
         airport: "Sân Bay Quốc Tế Nội Bài",
       }, // bắt đầu
       arrivalLocation: {

@@ -39,7 +39,7 @@ function FlightSearchBox({ className }) {
     recentSearches: {
       img: vietnam,
       city: "Hà Nội",
-      codeCity: "HN",
+      codeCity: "HAN",
       airport: "Sân Bay Quốc Tế Nội Bài",
       national: "Viet Nam",
     },
@@ -47,7 +47,7 @@ function FlightSearchBox({ className }) {
       {
         img: vietnam,
         city: "Hà Nội",
-        codeCity: "HN",
+        codeCity: "HAN",
         airport: "Sân Bay Quốc Tế Nội Bài",
         national: "Viet Nam",
       },
@@ -61,7 +61,7 @@ function FlightSearchBox({ className }) {
       {
         img: vietnam,
         city: "Hà Nội",
-        codeCity: "HN",
+        codeCity: "HAN",
         airport: "Sân Bay Quốc Tế Nội Bài",
         national: "Viet Nam",
       },
@@ -75,7 +75,7 @@ function FlightSearchBox({ className }) {
       {
         img: vietnam,
         city: "Hà Nội",
-        codeCity: "HN",
+        codeCity: "HAN",
         airport: "Sân Bay Quốc Tế Nội Bài",
         national: "Viet Nam",
       },
@@ -88,28 +88,27 @@ function FlightSearchBox({ className }) {
       },
     ],
   };
-
-  //GOI API
   const search_data = useSelector(selectSearchData);
+  //GOI API
   const Api = async () => {
-    const formattedDate = format(search_data.departureDate, "yyyy-MM-dd");
+    console.log("data request", search_data.ticket_classes);
+    
     try {
       const response = await searchFlight.post("/", {
         departure_location: search_data.departureLocation.codeCity,
         arrival_location: search_data.arrivalLocation.codeCity,
-        departure_date: formattedDate,
-        ticket_classes: search_data.ticket_classes,
-        number_adults: search_data.number_adults,
+        departure_date: format(search_data.departureDate, "yyyy-MM-dd"),
+        ticket_classes: search_data.ticketClasses,
+        number_adults: search_data.numberAdults,
         number_children: search_data.numberChildren,
         number_infants: search_data.numberInfants,
       });
-      console("CO CO CO", response);
+      console.log("success", response.data);
+
     } catch (error) {
       console.log("LOI", error);
     }
   };
-  // const formattedDate = format(search_data.departureDate, "dd-MM-yyyy");
-  // console.log(formattedDate);
 
   // click
   useEffect(() => {

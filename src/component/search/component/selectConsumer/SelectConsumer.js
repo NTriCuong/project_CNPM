@@ -1,4 +1,4 @@
-import { use, useEffect, useState } from "react";
+import {useState } from "react";
 import "./style.css";
 import { useDispatch, useSelector } from "react-redux";
 import { updateNumberAdults, updateNumberChildren, updateNumberInfants, updateTicketClasses } from "../../../../redux/searchDataClice";
@@ -18,7 +18,7 @@ const SelectConsumer = ({ className, on }) => {
     Dispath(updateNumberAdults(dataSelect));
     Dispath(updateNumberChildren(dataSelect1));
     Dispath(updateNumberInfants(dataSelect2));
-    Dispath(updateTicketClasses(data === "Premium" ? "Premium Economy" : data));
+    Dispath(updateTicketClasses(data));
   };
   const classNameSelect = `passenger-class-container ${className}`;
   const handelExit = () => {
