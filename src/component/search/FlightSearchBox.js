@@ -93,12 +93,11 @@ function FlightSearchBox({ className }) {
       },
     ],
   };
-  const search_data = useSelector(selectSearchData);
   //GOI API
   const Api = async () => {
     // console.log("search_data", search_data.departureLocation.codeCity);
     // console.log("search_data", search_data.arrivalLocation.codeCity);
-    // console.log("search_data", format(search_data.departureDate, "yyyy-MM-dd"));
+    //  console.log("search_data", SelectorSearchData.departureDate, "yyyy-MM-dd");
     // console.log("search_data", search_data.ticketClasses);
     // console.log("search_data", search_data.numberAdults);
     // console.log("search_data", search_data.numberChildren);
@@ -106,13 +105,13 @@ function FlightSearchBox({ className }) {
 
     try {
       const response = await searchFlight.post("/", {
-        departure_location: search_data.departureLocation.codeCity,
-        arrival_location: search_data.arrivalLocation.codeCity,
-        departure_date: format(search_data.departureDate, "yyyy-MM-dd"),
-        ticket_classes: search_data.ticketClasses,
-        number_adults: search_data.numberAdults,
-        number_children: search_data.numberChildren,
-        number_infants: search_data.numberInfants,
+        departure_location: SelectorSearchData.departureLocation.codeCity,
+        arrival_location: SelectorSearchData.arrivalLocation.codeCity,
+        departure_date: format(SelectorSearchData.departureDate, "yyyy-MM-dd"),
+        ticket_classes: SelectorSearchData.ticketClasses,
+        number_adults: SelectorSearchData.numberAdults,
+        number_children: SelectorSearchData.numberChildren,
+        number_infants: SelectorSearchData.numberInfants,
       });
 
       console.log("API response:", response.data);
@@ -154,6 +153,19 @@ function FlightSearchBox({ className }) {
   const handleConsumer = () => {
     setStatusConsumer(!statusConsumer);
   };
+
+// thứ trong lịch bay đi
+  const date = new Date(SelectorSearchData.departureDate);
+  // Lấy thứ (0 = Chủ Nhật, 1 = Thứ Hai, ..., 6 = Thứ Bảy)
+  const weekdayNumber = date.getDay();
+  const weekdays = ["Chủ Nhật", "Thứ Hai", "Thứ Ba", "Thứ Tư", "Thứ Năm", "Thứ Sáu", "Thứ Bảy"];
+  const weekdayText = weekdays[weekdayNumber];
+  // thứ trong lịch hay về
+  const date2 = new Date(SelectorSearchData.arrivalDate);
+  // Lấy thứ (0 = Chủ Nhật, 1 = Thứ Hai, ..., 6 = Thứ Bảy)
+  const weekdayNumber2 = date2.getDay();
+  const weekdayText2 = weekdays[weekdayNumber2];
+
   return (
     <div className="home-container">
       <div className={`searchBox ${className}`}>
@@ -260,13 +272,13 @@ function FlightSearchBox({ className }) {
                 className="field"
                 textTop="Ngày đi"
                 textCenter={<DatePickerCustom flag={true} />}
-                textBottom="Thứ 2"
+                textBottom={weekdayText}
               />
               <SearchItem
                 className="field"
                 textTop="Ngày về"
                 textCenter={<DatePickerCustom flag={false} />}
-                textBottom="Chuyến khứ hồi"
+                textBottom={weekdayText2} 
               />
               <SearchItem
                 className="field"
