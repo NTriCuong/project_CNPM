@@ -12,10 +12,16 @@ import { SelecAuth } from "../../redux/Store";
 import ResetPassword from "../resetPassword/ResetPassword";
 import ChatBox from "../../component/chatBox/ChatBox";
 import Discovery from "./component/discovery/Discovery";
+import  apiGeoCode  from "../../api/apiGeoCode";
+import { use, useEffect } from "react";
 
 function HomePage() {
   const auth = useSelector(SelecAuth);
 
+  //location
+  useEffect(() => {
+    apiGeoCode();
+  },[]);
   return (
     <div class="constainer">
       <Menu />
