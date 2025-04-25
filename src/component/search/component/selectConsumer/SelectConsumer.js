@@ -3,7 +3,6 @@ import "./style.css";
 import { useDispatch, useSelector } from "react-redux";
 import { updateNumberAdults, updateNumberChildren, updateNumberInfants, updateTicketClasses } from "../../../../redux/searchDataClice";
 import exit from "../../../../image/Icon/HomePage/exit-field-consumer.svg"
-import { selectSearchData } from "../../../../redux/Store";
 const SelectConsumer = ({ className, on }) => {
   const selectItem = [1, 2, 3, 4, 5, 6, 7, 8, 9];
   const selectItem1 = [0, 1, 2, 3, 4, 5, 6, 7, 8];
@@ -12,17 +11,18 @@ const SelectConsumer = ({ className, on }) => {
   const [dataSelect, setDataSelect] = useState(1);
   const [dataSelect1, setDataSelect1] = useState(0);
   const [dataSelect2, setDataSelect2] = useState(0);
-  const selectData = useSelector(selectSearchData);
+  const [dataSelect3, setDataSelect3] = useState("Economy");
   const Dispath = useDispatch();
-  const handleSubmit=(data) => {
+  const handleSubmit=() => {
+    Dispath(updateTicketClasses(dataSelect3));
     Dispath(updateNumberAdults(dataSelect));
     Dispath(updateNumberChildren(dataSelect1));
     Dispath(updateNumberInfants(dataSelect2));
-    Dispath(updateTicketClasses(data));
   };
   const classNameSelect = `passenger-class-container ${className}`;
   const handelExit = () => {
     on();
+    handleSubmit();
   }
   return (
     <div className={classNameSelect}>
@@ -116,8 +116,8 @@ const SelectConsumer = ({ className, on }) => {
             {selectItem3.map((item) => {
               return (
                 <button
-                  onClick={()=>{handleSubmit(item)}}
-                  className={selectData.ticketClasses !== item ? "" : "active"}
+                  onClick={()=>{setDataSelect3(item)}}
+                  className={dataSelect3 !== item ? "" : "active"}
                   key={item.key}
                 >
                   {item === "Premium Economy" ? "Premium" : item}

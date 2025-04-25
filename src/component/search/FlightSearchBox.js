@@ -14,9 +14,12 @@ import SelectConsumer from "./component/selectConsumer/SelectConsumer";
 import { searchFlight } from "../../api/axiosClient";
 import { format } from "date-fns";
 import { setFlightData } from "../../redux/searchFlightSlice";
+import { useNavigate } from 'react-router-dom';
+
 
 
 function FlightSearchBox({ className }) {
+  const navigate = useNavigate()
   const Dispath = useDispatch(); // dẩy dữa liệu lên
   const [tickerType, setTickerType] = useState(true);
   // trạng thái người dùng đang nhấn vào field chọn điểm đến và điểm đi hay chưa
@@ -35,6 +38,7 @@ function FlightSearchBox({ className }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     Api();
+    navigate("/booking");
   };
   const data = {
     recentSearches: {
@@ -102,8 +106,9 @@ function FlightSearchBox({ className }) {
         number_children: search_data.numberChildren,
         number_infants: search_data.numberInfants,
       });
-      console.log("CO CO CO",response.data)
-      Dispath(setFlightData(response.data))
+      console.log("API response:", response.data);
+      Dispath(setFlightData(response.data));// ép kiểu an toàn));
+
     } catch (error) {
       console.log("LOI", error);
     }
@@ -117,13 +122,10 @@ function FlightSearchBox({ className }) {
         departureRef.current &&
         !departureRef.current.contains(event.target)
       ) {
-        console.log("Click outside setStatusDP");
         setStatusDP(false);
       }
-
       // Nếu click không nằm trong vùng arrival
       if (arrivalRef.current && !arrivalRef.current.contains(event.target)) {
-        console.log("Click outside setStatusArP");
         setStatusArP(false);
       }
     };

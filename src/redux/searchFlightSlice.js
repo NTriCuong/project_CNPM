@@ -4,14 +4,15 @@ import { createSlice } from "@reduxjs/toolkit";
 const flightSearchSlice = createSlice({
   name: "flightSearch",
   initialState: {
-    data: [
-    ],
+    data: [],
   },
   reducers: {
     setFlightData: (state, action) => {
-      state.data = action.payload;
-    },
-  },
+      console.log("flightData :", action.payload);
+      state.data = action.payload
+      console.log("state :", state.data);
+
+      }}
 });
 
 export const { setFlightData } = flightSearchSlice.actions;
