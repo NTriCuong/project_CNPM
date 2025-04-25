@@ -39,14 +39,17 @@
 .content-container {
   display: flex;
   gap: 35px;
-  width: 70%;
+  max-width: 1200px; /* hoặc 100% nếu muốn nó không vượt khỏi màn hình */
+  width: 100%;
   margin: 0 auto;
+  padding: 0 20px; /* cho đẹp */
 }
 
+.filters-wrapper {
+  flex: 0 0 250px; /* cố định sidebar filter 250px */
+}
 
-/* Danh sách chuyến bay */
 .flight-list-wrapper {
-  flex: 1;
-  margin-left: 0;
-  /* Loại bỏ margin-left thừa */
+  flex: 1; /* còn lại cho danh sách chuyến bay */
+  overflow-x: auto; /* tránh tràn */
 }
