@@ -39,14 +39,19 @@
 .content-container {
   display: flex;
   gap: 35px;
-  width: 70%;
+  max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
+  padding: 0 20px;
 }
 
+.filters-wrapper {
+  flex: 0 0 250px;
+}
 
-/* Danh sách chuyến bay */
 .flight-list-wrapper {
   flex: 1;
-  margin-left: 0;
-  /* Loại bỏ margin-left thừa */
+  overflow-x: auto; 
 }
+
+

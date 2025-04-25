@@ -31,7 +31,6 @@ const logoVJ = "https://seeklogo.com/images/V/vietjet-aviation-logo-A823494846-s
 const FlightDetails = () => {
   const searchData = useSelector(selectSearchFlight);
   // }, []);
-console.log("KO KO KO",searchData)
   return (
     <div className="flight-list">
       {searchData.map((flight) => (

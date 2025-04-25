@@ -37,7 +37,8 @@ const SelectConsumer = ({ className, on }) => {
             {selectItem.map((item) => {
               return (
                 <button
-                  onClick={() => {
+                type="button"  
+                onClick={() => {
                     setDataSelect(item);
                   }}
                   className={
@@ -45,7 +46,7 @@ const SelectConsumer = ({ className, on }) => {
                       ? "select-consumer-item"
                       : "select-consumer-item selected-consumer-item"
                   }
-                  key={item.key}
+                  key={item}
                 >
                   {item}
                 </button>
@@ -64,7 +65,8 @@ const SelectConsumer = ({ className, on }) => {
             {selectItem1.map((item) => {
               return (
                 <button
-                  onClick={() => {
+                type="button"  
+                onClick={() => {
                     setDataSelect1(item);
                   }}
                   className={
@@ -72,7 +74,7 @@ const SelectConsumer = ({ className, on }) => {
                       ? "select-consumer-item"
                       : "select-consumer-item selected-consumer-item"
                   }
-                  key={item.key}
+                  key={item}
                 >
                   {item}
                 </button>
@@ -91,7 +93,8 @@ const SelectConsumer = ({ className, on }) => {
             {selectItem2.map((item) => {
               return (
                 <button
-                  onClick={() => {
+                type="button"  
+                onClick={() => {
                     setDataSelect2(item);
                   }}
                   className={
@@ -99,7 +102,7 @@ const SelectConsumer = ({ className, on }) => {
                       ? "select-consumer-item"
                       : "select-consumer-item selected-consumer-item"
                   }
-                  key={item.key}
+                  key={item}
                 >
                   {item}
                 </button>
@@ -116,9 +119,10 @@ const SelectConsumer = ({ className, on }) => {
             {selectItem3.map((item) => {
               return (
                 <button
+                  type="button"
                   onClick={()=>{setDataSelect3(item)}}
                   className={dataSelect3 !== item ? "" : "active"}
-                  key={item.key}
+                  key={item}
                 >
                   {item === "Premium Economy" ? "Premium" : item}
                 </button>

@@ -96,6 +96,14 @@ function FlightSearchBox({ className }) {
   const search_data = useSelector(selectSearchData);
   //GOI API
   const Api = async () => {
+    // console.log("search_data", search_data.departureLocation.codeCity);
+    // console.log("search_data", search_data.arrivalLocation.codeCity);
+    // console.log("search_data", format(search_data.departureDate, "yyyy-MM-dd"));
+    // console.log("search_data", search_data.ticketClasses);
+    // console.log("search_data", search_data.numberAdults);
+    // console.log("search_data", search_data.numberChildren);
+    // console.log("search_data", search_data.numberInfants);
+
     try {
       const response = await searchFlight.post("/", {
         departure_location: search_data.departureLocation.codeCity,
@@ -106,6 +114,7 @@ function FlightSearchBox({ className }) {
         number_children: search_data.numberChildren,
         number_infants: search_data.numberInfants,
       });
+
       console.log("API response:", response.data);
       Dispath(setFlightData(response.data));// ép kiểu an toàn));
 
@@ -180,10 +189,11 @@ function FlightSearchBox({ className }) {
           <div className="bottom">
             <div className="left-field">
               <SearchItem
+                onClick={handlePoint}
                 className="field"
                 textTop="Điểm Khởi Hành"
                 textCenter={
-                  <div onClick={handlePoint}>
+                  <div >
                     {" "}
                     {SelectorSearchData.departureLocation.city}
                   </div>
@@ -211,10 +221,11 @@ function FlightSearchBox({ className }) {
                 }
               />
               <SearchItem
+                onClick={handleArP}
                 className="field"
                 textTop="Điểm đến"
                 textCenter={
-                  <div onClick={handleArP}>
+                  <div >
                     {" "}
                     {SelectorSearchData.arrivalLocation.city}
                   </div>

@@ -10,12 +10,12 @@ const go = [
     diemdi: "Hà Nội",
     code2: "HAN"
   },
-  {
-    diemden: "Hồ Chí Minh",
-    code1: "SGN",
-    diemdi: "Hà Nội",
-    code2: "HAN"
-  }
+  // {
+  //   diemden: "Hồ Chí Minh",
+  //   code1: "SGN",
+  //   diemdi: "Hà Nội",
+  //   code2: "HAN"
+  // }
 ]
 function Flightlist() {
   return (

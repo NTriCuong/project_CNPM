@@ -8,9 +8,7 @@ const flightSearchSlice = createSlice({
   },
   reducers: {
     setFlightData: (state, action) => {
-      console.log("flightData :", action.payload);
       state.data = action.payload
-      console.log("state :", state.data);
 
       }}
 });
