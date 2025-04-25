@@ -39,6 +39,7 @@
 .content-container {
   display: flex;
   gap: 35px;
+<<<<<<< HEAD
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
@@ -52,6 +53,22 @@
 .flight-list-wrapper {
   flex: 1;
   overflow-x: auto; 
+=======
+  max-width: 1200px; /* hoặc 100% nếu muốn nó không vượt khỏi màn hình */
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px; /* cho đẹp */
+>>>>>>> dddc2309a906a20f3a4469f9e8db10dc0aa23730
 }
 
+.filters-wrapper {
+  flex: 0 0 250px; /* cố định sidebar filter 250px */
+}
 
+<<<<<<< HEAD
+=======
+.flight-list-wrapper {
+  flex: 1; /* còn lại cho danh sách chuyến bay */
+  overflow-x: auto; /* tránh tràn */
+}
+>>>>>>> dddc2309a906a20f3a4469f9e8db10dc0aa23730

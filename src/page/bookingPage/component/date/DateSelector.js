@@ -1,18 +1,36 @@
 import React, { useState } from "react";
 import "./DateSelector.css";
 
-const DateSelector = () => {
-  const dates = [
-    { day: "Thứ 7", date: "08/03" },
-    { day: "Chủ nhật", date: "09/03" },
-    { day: "Thứ 2", date: "10/03" },
-    { day: "Thứ 3", date: "11/03" },
-    { day: "Thứ 4", date: "12/03" },
-    { day: "Thứ 5", date: "13/03" },
-    { day: "Thứ 6", date: "14/03" },
+const generateNextDays = (numDays) => {
+  const daysOfWeek = [
+    "Chủ nhật", "Thứ 2", "Thứ 3", "Thứ 4", "Thứ 5", "Thứ 6", "Thứ 7"
   ];
+  
+  const result = [];
+  const today = new Date();
 
-  const [selectedDate, setSelectedDate] = useState("09/03");
+  for (let i = 0; i < numDays; i++) {
+    const nextDate = new Date(today);
+    nextDate.setDate(today.getDate() + i);
+
+    const dayName = daysOfWeek[nextDate.getDay()];
+    const dateStr = nextDate.toLocaleDateString("vi-VN", {
+      day: "2-digit",
+      month: "2-digit"
+    });
+
+    result.push({
+      day: dayName,
+      date: dateStr,
+    });
+  }
+
+  return result;
+};
+
+const DateSelector = () => {
+  const dates = generateNextDays(5);
+  const [selectedDate, setSelectedDate] = useState(dates[0].date); // chọn mặc định là hôm nay
 
   return (
     <div className="date-selector">

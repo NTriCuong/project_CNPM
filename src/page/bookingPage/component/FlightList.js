@@ -2,7 +2,11 @@ import React from "react";
 import "./FlightList.css";
 import DateSelector from "./date/DateSelector";
 import FlightDetails from "./list/FlightDetails"
+import { selectSearchData } from "../../../redux/Store";
+import { useSelector } from "react-redux";
 
+
+<<<<<<< HEAD
 const go = [
   {
     diemden: "Hồ Chí Minh",
@@ -17,7 +21,26 @@ const go = [
   //   code2: "HAN"
   // }
 ]
+=======
+>>>>>>> dddc2309a906a20f3a4469f9e8db10dc0aa23730
 function Flightlist() {
+
+  const searchData = useSelector(selectSearchData);
+
+  if (!searchData?.from || !searchData?.to) {
+    return <div className="no-result">Không tìm thấy chuyến bay. Vui lòng tìm lại!</div>;
+  }
+  const go = searchData?.from && searchData?.to ? [
+    {
+      diemdi: searchData.from.cityName || "",
+      code2: searchData.from.iataCode || "",
+      diemden: searchData.to.cityName || "",
+      code1: searchData.to.iataCode || ""
+    }
+  ] : [];
+
+
+
   return (
     <div>
       {go.map(item => {
