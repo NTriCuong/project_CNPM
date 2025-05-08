@@ -9,7 +9,6 @@ const flightSearchSlice = createSlice({
   reducers: {
     setFlightData: (state, action) => {
       state.data = action.payload
-
       }}
 });
 

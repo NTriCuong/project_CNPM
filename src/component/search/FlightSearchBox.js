@@ -48,7 +48,6 @@ function FlightSearchBox({ className }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     Api();
-    navigate("/booking");
   };
   const data = {
     recentSearches: {
@@ -105,28 +104,21 @@ function FlightSearchBox({ className }) {
   };
   //GOI API
   const Api = async () => {
-    // console.log("search_data", search_data.departureLocation.codeCity);
-    // console.log("search_data", search_data.arrivalLocation.codeCity);
-    //  console.log("search_data", SelectorSearchData.departureDate, "yyyy-MM-dd");
-    // console.log("search_data", search_data.ticketClasses);
-    // console.log("search_data", search_data.numberAdults);
-    // console.log("search_data", search_data.numberChildren);
-    // console.log("search_data", search_data.numberInfants);
-
+    // console.log("SelectorSearchData.departureDate", SelectorSearchData.departureDate);
+    // console.log("SelectorSearchData.arrivalDate", format(SelectorSearchData.departureDate, 'yyyy-MM-dd'));
     try {
       const response = await searchFlight.post("/", {
-        departure_location: SelectorSearchData.departureLocation.codeCity,
-        arrival_location: SelectorSearchData.arrivalLocation.codeCity,
-        departure_date: format(SelectorSearchData.departureDate, "yyyy-MM-dd"),
+        departure_airport_code: SelectorSearchData.departureLocation.codeCity,
+        arrival_airport_code: SelectorSearchData.arrivalLocation.codeCity,
+        departure_time: format(SelectorSearchData.departureDate, 'yyyy-MM-dd'),
         ticket_classes: SelectorSearchData.ticketClasses,
         number_adults: SelectorSearchData.numberAdults,
         number_children: SelectorSearchData.numberChildren,
         number_infants: SelectorSearchData.numberInfants,
       });
-
       console.log("API response:", response.data);
       Dispath(setFlightData(response.data));// ép kiểu an toàn));
-
+      navigate("/booking");
     } catch (error) {
       console.log("LOI", error);
     }

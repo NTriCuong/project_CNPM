@@ -14,8 +14,6 @@ import { selectSearchData } from "../../../../redux/Store";
 const DatePickerCustom = ({ flag }) => {
   //true ngay di false ngay ve
   const selectDatasearch = useSelector(selectSearchData);
-  console.log("departureDate:", selectDatasearch.departureDate);
-  console.log("arrivalDate:", selectDatasearch.arrivalDate);
   const [selectedDate, setSelectedDate] = useState(() => {
     const dateString = flag
       ? selectDatasearch.departureDate
