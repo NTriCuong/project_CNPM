@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { format } from "date-fns";
+import { addDays, format, parse } from "date-fns";
 
 export const searchDataClice = createSlice({
   name: "data_search",
@@ -16,7 +16,7 @@ export const searchDataClice = createSlice({
         airport: "Sân Bay Quốc Tế Tân Sơn Nhất",
       }, //điểm đến
       departureDate: format(new Date(), "dd-MM-yyyy"), // ngày đi
-      arrivalDate:format(new Date(), "dd-MM-yyyy"), //ngay ve
+      arrivalDate:format(addDays(new Date(), 1), "dd-MM-yyyy"), // ngày về
       ticketClasses: "Economy", //hạng vé Premium Economy, Business
       numberAdults: 1, // số khách người lớn
       numberChildren: 0, // só khách trẻ em
@@ -32,6 +32,10 @@ export const searchDataClice = createSlice({
     },
     updateDepartureDate: (state, actions) => {
       state.data.departureDate = actions.payload;
+
+      // Cập nhật arrivalDate = departureDate + 1
+      const departureDateObject = parse(actions.payload, "dd-MM-yyyy", new Date());
+      state.data.arrivalDate = format(addDays(departureDateObject, 1), "dd-MM-yyyy");
     },
     updateArrivalDate:(state, actions) => {
         state.data.arrivalDate = actions.payload;

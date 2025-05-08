@@ -12,7 +12,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectSearchData } from "../../redux/Store";
 import SelectConsumer from "./component/selectConsumer/SelectConsumer";
 import { searchFlight } from "../../api/axiosClient";
-import { format } from "date-fns";
+import { format, parse } from "date-fns";
 import { setFlightData } from "../../redux/searchFlightSlice";
 import { useNavigate } from 'react-router-dom';
 
@@ -30,11 +30,21 @@ function FlightSearchBox({ className }) {
   const arrivalRef = useRef(null);
   // dữ liệu điểm khởi hành
   const SelectorSearchData = useSelector(selectSearchData);
+  const [weekdayText2, setWeekdayText2] = useState("");
+
   useEffect(() => {
     setStatusDP(false);
     setStatusArP(false);
     setStatusConsumer(false);
   }, [SelectorSearchData]);
+
+  useEffect(() => {
+    const date2 = parse(SelectorSearchData.arrivalDate, "dd-MM-yyyy", new Date());
+    const weekdayNumber2 = date2.getDay();
+    const weekdays = ["Chủ Nhật", "Thứ Hai", "Thứ Ba", "Thứ Tư", "Thứ Năm", "Thứ Sáu", "Thứ Bảy"];
+    setWeekdayText2(weekdays[weekdayNumber2]);
+  }, [SelectorSearchData.arrivalDate]);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     Api();
@@ -154,17 +164,12 @@ function FlightSearchBox({ className }) {
     setStatusConsumer(!statusConsumer);
   };
 
-// thứ trong lịch bay đi
-  const date = new Date(SelectorSearchData.departureDate);
-  // Lấy thứ (0 = Chủ Nhật, 1 = Thứ Hai, ..., 6 = Thứ Bảy)
-  const weekdayNumber = date.getDay();
-  const weekdays = ["Chủ Nhật", "Thứ Hai", "Thứ Ba", "Thứ Tư", "Thứ Năm", "Thứ Sáu", "Thứ Bảy"];
-  const weekdayText = weekdays[weekdayNumber];
-  // thứ trong lịch hay về
-  const date2 = new Date(SelectorSearchData.arrivalDate);
-  // Lấy thứ (0 = Chủ Nhật, 1 = Thứ Hai, ..., 6 = Thứ Bảy)
-  const weekdayNumber2 = date2.getDay();
-  const weekdayText2 = weekdays[weekdayNumber2];
+// Thứ trong lịch bay đi
+const date = parse(SelectorSearchData.departureDate, "dd-MM-yyyy", new Date());
+// Lấy thứ (0 = Chủ Nhật, 1 = Thứ Hai, ..., 6 = Thứ Bảy)
+const weekdayNumber = date.getDay();
+const weekdays = ["Chủ Nhật", "Thứ Hai", "Thứ Ba", "Thứ Tư", "Thứ Năm", "Thứ Sáu", "Thứ Bảy"];
+const weekdayText = weekdays[weekdayNumber];
 
   return (
     <div className="home-container">
