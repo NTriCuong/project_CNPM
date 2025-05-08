@@ -9,6 +9,16 @@ import { useSelector } from "react-redux";
 function Flightlist() {
 
   const searchData = useSelector(selectSearchData);
+  // const go = searchData?.from && searchData?.to ? [
+  //   {
+  //     diemdi: searchData.from.cityName || "",
+  //     code2: searchData.from.iataCode || "",
+  //     diemden: searchData.to.cityName || "",
+  //     code1: searchData.to.iataCode || ""
+  //   }
+  // ] : [];
+
+
 
   return (
     <div>
