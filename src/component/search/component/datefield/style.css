@@ -62,7 +62,7 @@
     background-color: #F0F4FA;
   }
   .react-datepicker__navigation--previous{
-    right: 10px;
+    left: 280px;
     margin: 5px 20px;
   }
   .react-datepicker__navigation--next{
