@@ -12,7 +12,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectSearchData } from "../../redux/Store";
 import SelectConsumer from "./component/selectConsumer/SelectConsumer";
 import { searchFlight } from "../../api/axiosClient";
-import { format, parse } from "date-fns";
+import { format, isValid, parse } from "date-fns";
 import { setFlightData } from "../../redux/searchFlightSlice";
 import { useNavigate } from 'react-router-dom';
 
@@ -104,19 +104,19 @@ function FlightSearchBox({ className }) {
   };
   //GOI API
   const Api = async () => {
-    // console.log("SelectorSearchData.departureDate", SelectorSearchData.departureDate);
-    // console.log("SelectorSearchData.arrivalDate", format(SelectorSearchData.departureDate, 'yyyy-MM-dd'));
     try {
       const response = await searchFlight.post("/", {
         departure_airport_code: SelectorSearchData.departureLocation.codeCity,
         arrival_airport_code: SelectorSearchData.arrivalLocation.codeCity,
-        departure_time: format(SelectorSearchData.departureDate, 'yyyy-MM-dd'),
+        departure_time: (() => {
+          const parsedDate = parse(SelectorSearchData.departureDate, 'dd-MM-yyyy', new Date());
+          return format(parsedDate, 'yyyy-MM-dd');
+        })(),        
         ticket_classes: SelectorSearchData.ticketClasses,
         number_adults: SelectorSearchData.numberAdults,
         number_children: SelectorSearchData.numberChildren,
         number_infants: SelectorSearchData.numberInfants,
       });
-      console.log("API response:", response.data);
       Dispath(setFlightData(response.data));// ép kiểu an toàn));
       navigate("/booking");
     } catch (error) {
