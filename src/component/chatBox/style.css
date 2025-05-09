@@ -38,6 +38,7 @@
     height: 40px;
     background-color: white;
     border-top: 2px solid #D4D3C7;
+    border-bottom: 2px solid #D4D3C7;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
     border-bottom-right-radius: 10px;
@@ -122,4 +123,32 @@
 .bot-hover:hover + .title-bot{
     display: block;
     border: 2px solid #D4D3C7;
+}
+
+@media screen and (max-width: 768px) {
+  .bot {
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+  }
+
+  .chatbox {
+    bottom: 90px;
+    right: 10px;
+    width: 90%;
+    height: 400px;
+  }
+
+.chatbox > .bottom {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+
+  .title-bot {
+    bottom: 90px;
+    right: 10px;
+  }
 }

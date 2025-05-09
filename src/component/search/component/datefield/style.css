@@ -112,3 +112,10 @@
     right: 5px;
     top: 3px;
   }
+
+  @media (max-width: 768px) {
+    .react-datepicker{
+      width: 100%;
+      left: 15%;
+    }
+  }

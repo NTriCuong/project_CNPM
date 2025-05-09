@@ -180,7 +180,7 @@ const weekdayText = weekdays[weekdayNumber];
               text={
                 <>
                   <img src={icon1chieu} alt="icon" className="icon" />
-                  <pre style={{ fontFamily: "inherit" }}> Một Chiều</pre>
+                  <pre className="pre-text"> Một Chiều</pre>
                 </>
               }
               className={
@@ -193,7 +193,7 @@ const weekdayText = weekdays[weekdayNumber];
               text={
                 <>
                   <img src={icon2chieu} alt="icon" className="icon" />
-                  <pre style={{ fontFamily: "inherit" }}> Khứ Hồi</pre>
+                  <pre className="pre-text"> Khứ Hồi</pre>
                 </>
               }
               className={
@@ -292,7 +292,7 @@ const weekdayText = weekdays[weekdayNumber];
                   <div className="select-consummer">
                     <div
                       onClick={handleConsumer}
-                      style={{ fontSize: "13px", padding: "2px" }}
+                      style={{ fontSize: "12px", padding: "2px" }}
                     >
                       {SelectorSearchData.numberAdults +
                         SelectorSearchData.numberChildren +

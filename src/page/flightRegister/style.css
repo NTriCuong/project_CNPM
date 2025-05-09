@@ -220,6 +220,7 @@
   /* Responsive adjustments */
   @media (max-width: 768px) {
     .welcome-title {
+      width: 100%;
       font-size: 2rem;
       margin-top: 3rem;
     }
@@ -228,6 +229,7 @@
   
   @media (max-width: 480px) {
     .login-box {
+      width: 100%;
       padding: 1.5rem;
     }
     
