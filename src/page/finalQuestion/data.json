@@ -1,0 +1,450 @@
+[
+{
+    "question": "51. ATAM là viết tắt của: ",
+    "a": "Architecture Testing and Modeling.",
+    "b": "Architecture Tradeoff Analysis Method .",
+    "c": "Application Testing and Analysis Method.",
+    "d": "Advanced Task Allocation Model.",
+    "answer": "B",
+    "theory": "ATAM (Architecture Tradeoff Analysis Method) là một quy trình đánh giá kiến trúc phần mềm do SEI phát triển, nhằm phân tích rủi ro và các đánh đổi giữa nhiều thuộc tính chất lượng (hiệu năng, bảo mật, khả năng thay đổi…)"
+},
+{
+    "question": "52. Trong phương pháp ATAM, việc sử dụng các kịch bản (scenarios) giúp ích gì?",
+    "a": "Chỉ để kiểm tra các lỗ hổng bảo mật.",
+    "b": "Phân tích và đánh giá các quyết định thiết kế kiến trúc ảnh hưởng đến các thuộc tính chất lượng (quality attributes) trong các bối cảnh sử dụng cụ thể.",
+    "c": "Giảm chi phí phát triển phần mềm.",
+    "d": "Tối ưu hóa giao diện người dùng.",
+    "answer": "B",
+    "theory": "Scenarios trong ATAM là các tình huống cụ thể trích xuất từ yêu cầu chất lượng (quality attributes), mô tả kích thích (stimulus) và phản hồi (response) trong ngữ cảnh sử dụng thực tế"
+},{
+    "question": "53.Tactics trong kiến trúc phần mềm là gì?",
+    "a": "Các quy trình để thiết kế giao diện người dùng (UI).",
+    "b": "Các kỹ thuật hoặc mẫu thiết kế cụ thể được sử dụng để đạt được một hoặc nhiều thuộc tính chất lượng (ví dụ: hiệu năng, bảo mật, khả năng thay đổi).",
+    "c": "Các mẫu thiết kế riêng cho cơ sở dữ liệu.",
+    "d": "Một tên gọi khác của các mẫu thiết kế (design patterns) nói chung",
+    "answer": "B",
+    "theory": "Tactics là các quyết định thiết kế cơ bản nhằm đạt được một hoặc nhiều thuộc tính chất lượng (ví dụ: hiệu năng, bảo mật, khả năng thay đổi). Chúng là khối xây dựng nguyên tử của các pattern/phương án kiến trúc phức tạp hơn, cho phép điều khiển chi tiết luồng xử lý và phản ứng hệ thống với kích thích"
+},{
+    "question": "54. Ví dụ nào sau đây là một tactic để cải thiện hiệu năng (performance)? ",
+    "a": "Sử dụng bộ nhớ đệm (Caching).",
+    "b": "Ghi log (Logging) chi tiết.",
+    "c": "Phân quyền người dùng (Authorization).",
+    "d": "Xác thực người dùng (Authentication).",
+    "answer": "A",
+    "theory": "Caching là tactic lưu trữ tạm các dữ liệu hay kết quả đã truy xuất/tính toán gần đây ở vị trí truy cập nhanh hơn, nhằm giảm độ trễ và giảm tải cho hệ thống chính, từ đó tăng throughput và cải thiện thời gian phản hồi"
+},
+{
+    "question": "55. Ví dụ nào sau đây là một \"tactic\" để hỗ trợ tính bảo mật (security)?",
+    "a": "Tăng số lượng các lớp trong hệ thống.",
+    "b": "Phân quyền truy cập (Access Control / Authorization).",
+    "c": "Gộp nhiều chức năng vào một module duy nhất.",
+    "d": "Sử dụng CSS để ẩn thông tin.",
+    "answer": "B",
+    "theory": "Access Control (Phân quyền truy cập) là tactic giới hạn hoặc từ chối truy cập đến tài nguyên dựa trên danh tính hoặc thuộc tính của người dùng, giúp ngăn chặn các hành vi trái phép và bảo vệ dữ liệu"
+},
+{
+    "question": "56. Mục tiêu chính của thiết kế kiến trúc KHÔNG bao gồm",
+    "a": "Đảm bảo bảo mật.",
+    "b": "Viết mã nguồn nhanh hơn.",
+    "c": "Lựa chọn mẫu kiến trúc phù hợp.",
+    "d": "Phản ánh yêu cầu phi chức năng.",
+    "answer": "B",
+    "theory": "Thiết kế kiến trúc tập trung vào cấu trúc tổng thể, đáp ứng yêu cầu chức năng và phi chức năng (như bảo mật, hiệu năng...), không nhằm mục tiêu viết mã nhanh hơn. Viết mã nhanh liên quan đến hiện thực hóa, không phải mục tiêu của kiến trúc."
+},
+{
+    "question": "57. Một lợi ích chính của kiến trúc phần mềm là:",
+    "a": "Giảm bớt kiểm thử.",
+    "b": "Bỏ qua tài liệu hóa.",
+    "c": "Tăng khả năng mở rộng và bảo trì.",
+    "d": "Giảm yêu cầu người dùng.",
+    "answer": "C",
+    "theory": "Kiến trúc rõ ràng giúp hệ thống dễ mở rộng (scalability) và dễ bảo trì (maintainability). Các lựa chọn kiến trúc tốt sẽ hỗ trợ thay đổi hoặc nâng cấp hệ thống dễ dàng hơn."
+},
+{
+    "question": "58. Thiết kế kiến trúc là cầu nối giữa:",
+    "a": "Giao diện người dùng và logic nghiệp vụ.",
+    "b": "Phân tích yêu cầu và thiết kế chi tiết.",
+    "c": "Viết mã và kiểm thử.",
+    "d": "Khách hàng và người kiểm thử.",
+    "answer": "B",
+    "theory": "Thiết kế kiến trúc kết nối giữa việc hiểu yêu cầu (phân tích yêu cầu) và cách xây dựng chi tiết (thiết kế chi tiết/implementation). Nó là bước trung gian để định hình tổng thể hệ thống trước khi đi vào chi tiết."
+},
+{
+    "question": "59. Một bước quan trọng trong quy trình thiết kế kiến trúc là:",
+    "a": "Hiểu yêu cầu.",
+    "b": "Tạo biểu đồ lớp UML.",
+    "c": "Viết giao diện đồ họa.",
+    "d": "Lập kế hoạch kiểm thử.",
+    "answer": "A",
+    "theory": "Không thể thiết kế kiến trúc đúng nếu không hiểu rõ yêu cầu (cả chức năng và phi chức năng). Hiểu yêu cầu là bước đầu tiên và nền tảng để đưa ra các quyết định thiết kế phù hợp."
+},
+{
+    "question": "60. Trong các quyết định kiến trúc, việc phân tách module dựa vào:",
+    "a": "Kích thước mã nguồn.",
+    "b": "Chức năng và khả năng thay đổi độc lập.",
+    "c": "Tên biến sử dụng.",
+    "d": "Ngôn ngữ lập trình.",
+    "answer": "B",
+    "theory": "Việc phân tách module trong kiến trúc dựa trên việc nhóm các chức năng liên quan và đảm bảo mỗi module có khả năng thay đổi độc lập với các module khác. Điều này giúp dễ bảo trì, dễ mở rộng và giảm ảnh hưởng khi có thay đổi."
+},
+{
+    "question": "61. Chiến lược điều phối tập trung thường sử dụng:",
+    "a": "Pipe-and-Filter.",
+    "b": "MVC.",
+    "c": "Controller trung tâm hoặc message queue.",
+    "d": "Client tự điều phối.",
+    "answer": "C",
+    "theory": "Điều phối tập trung (centralized control) thường dùng Controller hoặc Message Queue để quản lý việc truyền/nhận thông điệp."
+},
+{
+    "question": "62. Một kiến trúc tốt giúp:",
+    "a": "Viết code nhanh hơn.",
+    "b": "Tránh mọi lỗi phần mềm.",
+    "c": "Dễ bảo trì và mở rộng.",
+    "d": "Giảm yêu cầu kỹ thuật.",
+    "answer": "C",
+    "theory": "Một kiến trúc tốt tập trung vào các thuộc tính chất lượng như maintainability (bảo trì) và extensibility (mở rộng)."
+},
+{
+    "question": "63. Một yếu tố phi chức năng được kiến trúc phản ánh là:",
+    "a": "Giao diện đồ họa.",
+    "b": "Bảo mật.",
+    "c": "Dữ liệu người dùng.",
+    "d": "Tên hàm.",
+    "answer": "B",
+    "theory": "Các yêu cầu phi chức năng (non-functional requirements) gồm bảo mật, hiệu năng, khả năng mở rộng..."
+},
+{
+    "question": "64. Biểu diễn “Box-and-Line” dùng để:",
+    "a": "Viết thuật toán.",
+    "b": "Minh họa cấu trúc hệ thống bằng hộp và đường kết nối.",
+    "c": "Giao tiếp với hệ điều hành.",
+    "d": "Mô phỏng giao diện.",
+    "answer": "B",
+    "theory": "\"Box-and-Line Diagram\" là cách trình bày sơ đồ thành phần (component diagram) bằng các khối (box) và các đường liên kết (line)."
+},
+{
+    "question": "65. Mô hình 4+1 view có bao nhiêu góc nhìn chính?",
+    "a": "3.",
+    "b": "4.",
+    "c": "5.",
+    "d": "6.",
+    "answer": "C",
+    "theory": "Mô hình 4+1 gồm: Logical View, Development View, Process View, Physical View + Scenarios (Use Case View), tổng cộng 5 view."
+},
+{
+    "question": "66. Logical View thể hiện:",
+    "a": "Chức năng hệ thống với người dùng cuối.",
+    "b": "Mã nguồn.",
+    "c": "Cấu trúc vật lý.",
+    "d": "Kiểm thử.",
+    "answer": "A",
+    "theory": "Logical View mô tả các chức năng hệ thống dưới góc nhìn nghiệp vụ, liên quan đến cách người dùng tương tác."
+},
+{
+    "question": "67. Physical View mô tả:",
+    "a": "Tài liệu hướng dẫn.",
+    "b": "Ánh xạ phần mềm vào phần cứng.",
+    "c": "Biểu đồ lớp.",
+    "d": "Giao diện.",
+    "answer": "B",
+    "theory": "Physical View nói về cách hệ thống phần mềm được triển khai trên phần cứng vật lý."
+},
+{
+    "question": "68. View dùng sơ đồ trạng thái và hoạt động là:",
+    "a": "Logical View.",
+    "b": "Process View.",
+    "c": "Development View.",
+    "d": "Use Case.",
+    "answer": "B",
+    "theory": "Process View tập trung vào hành vi động (dynamic behavior), mô tả bởi State Diagram và Activity Diagram."
+},
+{
+    "question": "69. Mẫu MVC gồm mấy thành phần chính?",
+    "a": "2.",
+    "b": "3.",
+    "c": "4.",
+    "d": "5.",
+    "answer": "B",
+    "theory": "MVC = Model, View, Controller → tổng cộng 3 thành phần."
+},
+{
+    "question": "70. Trong MVC, View đảm nhận:",
+    "a": "Điều phối giữa các phần.",
+    "b": "Lưu dữ liệu.",
+    "c": "Hiển thị dữ liệu và nhận thao tác người dùng.",
+    "d": "Thực thi mã.",
+    "answer": "C",
+    "theory": "Trong MVC, View (giao diện) chỉ hiển thị dữ liệu và nhận thao tác từ người dùng (click, nhập liệu), sau đó gửi về Controller xử lý."
+},
+{
+    "question": "71. Kiến trúc phân tầng (Layered) chia hệ thống theo:",
+    "a": "Người dùng.",
+    "b": "Mức độ trừu tượng và chức năng.",
+    "c": "Ngôn ngữ lập trình.",
+    "d": "Giao thức.",
+    "answer": "B",
+    "theory": "Kiến trúc phân tầng (Layered) chia hệ thống thành các tầng theo mức độ trừu tượng và chức năng (ví dụ tầng Giao diện, tầng Logic, tầng CSDL)."
+},
+{
+    "question": "72. Mẫu kiến trúc nào phù hợp cho hệ thống xử lý âm thanh?",
+    "a": "MVC.",
+    "b": "Layered.",
+    "c": "Client-Server.",
+    "d": "Pipe-and-Filter.",
+    "answer": "D",
+    "theory": "Pipe-and-Filter rất phù hợp cho xử lý tín hiệu liên tục như âm thanh, vì nó chia thành các bước tuần tự: lọc, biến đổi, xử lý."
+},
+{
+    "question": "73. Nhược điểm của Repository là:",
+    "a": "Khó bảo trì.",
+    "b": "Trở thành nút cổ chai và điểm lỗi duy nhất.",
+    "c": "Không lưu được dữ liệu.",
+    "d": "Không dùng được cho web.",
+    "answer": "B",
+    "theory": "Repository (kho dữ liệu chung) có nhược điểm nút cổ chai: nếu lỗi Repository, cả hệ thống ngưng hoạt động."
+},
+{
+    "question": "74. Trong Client-Server, Client thường:",
+    "a": "Cung cấp dịch vụ.",
+    "b": "Không có vai trò.",
+    "c": "Yêu cầu và hiển thị kết quả.",
+    "d": "Lưu trữ dữ liệu chính.",
+    "answer": "C",
+    "theory": "Trong Client-Server, Client gửi yêu cầu, Server xử lý và trả kết quả lại cho Client hiển thị."
+},
+{
+    "question": "75. Mẫu Pipe-and-Filter phù hợp với:",
+    "a": "Hệ thống phi tuần tự.",
+    "b": "Biến đổi dữ liệu theo từng bước.",
+    "c": "Giao tiếp đồng thời.",
+    "d": "Giao diện phức tạp.",
+    "answer": "B",
+    "theory": "Pipe-and-Filter xử lý dữ liệu từng bước (mỗi filter nhận dữ liệu từ filter trước rồi xử lý)."
+},
+{
+    "question": "76. Kiến trúc ứng dụng nhằm:",
+    "a": "Giảm chi phí phần cứng.",
+    "b": "Chuẩn hóa thiết kế cho các hệ thống cùng lĩnh vực.",
+    "c": "Thay thế toàn bộ mã nguồn.",
+    "d": "Giảm thời gian bảo trì.",
+    "answer": "B",
+    "theory": "Việc sử dụng các kiến trúc ứng dụng giúp chuẩn hóa thiết kế và cải thiện khả năng tái sử dụng."
+},
+{
+    "question": "77. TPS thường được dùng trong",
+    "a": "Trò chơi điện tử.",
+    "b": "Phân tích hình ảnh.",
+    "c": "Ngân hàng, thương mại điện tử.",
+    "d": "Hệ thống nhúng.",
+    "answer": "C",
+    "theory": "Hệ thống xử lý giao tác thường được dùng trong các ứng dụng ngân hàng, bán lẻ, thương mại điện tử..."
+},
+{
+    "question": "78. Thuộc tính ACID KHÔNG bao gồm",
+    "a": "Atomicity.",
+    "b": "Consistency.",
+    "c": "Invisibility.",
+    "d": "Durability.",
+    "answer": "C",
+    "theory": "Tác vụ mang tính nguyên tử, nhất quán, cách ly và bền vững (ACID) – tức là Atomicity, Consistency, Isolation, Durability."
+},
+{
+    "question": "79. Hệ thống đặt vé máy bay là ví dụ của:",
+    "a": "Hệ thống xử lý ngôn ngữ.",
+    "b": "Kiến trúc client-side.",
+    "c": "TPS.",
+    "d": "Hệ thống tĩnh.",
+    "answer": "C",
+    "theory": "Hệ thống đặt vé máy bay là điển hình cho TPS: xử lý giao dịch theo thời gian thực, đảm bảo ACID."
+},
+{
+    "question": "80. Các giai đoạn trong hệ xử lý ngôn ngữ gồm",
+    "a": "Lưu trữ → Trình bày → Truy vấn.",
+    "b": "Phân tích từ vựng → Cú pháp → Ngữ nghĩa → Sinh mã.",
+    "c": "Lập trình → Gỡ lỗi → Cài đặt.",
+    "d": "Cấu hình → Biên dịch → Gửi.",
+    "answer": "B",
+    "theory": "Lexical Analyzer (Phân tích từ vựng), Syntax Analyzer (Phân tích cú pháp), Semantic Analyzer (Kiểm tra ngữ nghĩa), Code Generator (Sinh mã trung gian)..."
+},
+{
+    "question": "81. Mẫu kiến trúc phù hợp cho hệ thống NLP:",
+    "a": "Pipe-and-Filter.",
+    "b": "MVC.",
+    "c": "Layered.",
+    "d": "Client-Server.",
+    "answer": "A",
+    "theory": "NLP rất phù hợp Pipe-and-Filter: mỗi bộ lọc xử lý một bước như tokenizing, parsing, semantic analysis."
+},
+{
+    "question": "82. IDE thường sử dụng mẫu kiến trúc nào?",
+    "a": "MVC.",
+    "b": "Pipe-and-Filter.",
+    "c": "Repository.",
+    "d": "Client-Server.",
+    "answer": "A",
+    "theory": "IDE như Eclipse, VSCode... sử dụng MVC để tách giao diện (View), xử lý (Controller) và dữ liệu (Model)."
+},
+{
+    "question": "83. Kiến trúc phần mềm cần đảm bảo các yêu cầu nào sau?",
+    "a": "Chức năng, bảo trì, hiệu suất, bảo mật.",
+    "b": "Giao diện đẹp.",
+    "c": "Phù hợp sở thích người dùng.",
+    "d": "Giao tiếp mạng.",
+    "answer": "A",
+    "theory": "Kiến trúc phải đảm bảo các yêu cầu: chức năng, bảo trì dễ dàng, hiệu suất cao, bảo mật tốt."
+},
+{
+    "question": "84. Nguyên tắc quan trọng trong phân tách module:",
+    "a": "Phân chia theo sở thích cá nhân.",
+    "b": "Tách theo chức năng và khả năng thay đổi độc lập.",
+    "c": "Tách ngẫu nhiên.",
+    "d": "Không cần phân tách.",
+    "answer": "B",
+    "theory": "Module nên tách theo chức năng và khả năng thay đổi độc lập, để dễ bảo trì, mở rộng mà không ảnh hưởng các phần khác."
+},
+{
+    "question": "85. Yếu tố nào KHÔNG ảnh hưởng đến lựa chọn kiến trúc?",
+    "a": "Hiệu năng.",
+    "b": "Thời tiết.",
+    "c": "Mở rộng.",
+    "d": "Bảo trì.",
+    "answer": "B",
+    "theory": "Thời tiết hoàn toàn không liên quan đến quyết định kiến trúc phần mềm."
+},
+{
+    "question": "86. Tài liệu hóa kiến trúc giúp:",
+    "a": "Làm đẹp sơ đồ.",
+    "b": "Lập trình nhanh hơn.",
+    "c": "Truyền đạt và duy trì kiến trúc rõ ràng.",
+    "d": "Giảm tài nguyên hệ thống.",
+    "answer": "C",
+    "theory": "Tài liệu hóa kiến trúc để truyền đạt giữa các nhóm và duy trì kiến trúc rõ ràng trong suốt vòng đời dự án."
+},
+{
+    "question": "87. Cầu nối giữa yêu cầu và hiện thực kỹ thuật là vai trò của?",
+    "a": "UI.",
+    "b": "Database.",
+    "c": "Kiến trúc phần mềm.",
+    "d": "Source code.",
+    "answer": "C",
+    "theory": "Kiến trúc phần mềm là cầu nối giữa yêu cầu kinh doanh và các hiện thực kỹ thuật."
+},
+{
+    "question": "88. Lợi ích của việc có kiến trúc phần mềm rõ ràng là:",
+    "a": "Tăng chi phí phát triển.",
+    "b": "Gây khó khăn trong bảo trì.",
+    "c": "Cầu nối giữa yêu cầu và kỹ thuật.",
+    "d": "Tăng độ phức tạp hệ thống.",
+    "answer": "C",
+    "theory": "Kiến trúc phần mềm giúp chuyển hóa yêu cầu thành giải pháp kỹ thuật, chứ không gây khó khăn hay tăng chi phí."
+},
+{
+    "question": "89. Kiến trúc rõ ràng giúp?",
+    "a": "Phát triển nhanh hơn.",
+    "b": "Giao tiếp hiệu quả giữa các bên liên quan.",
+    "c": "Giảm hiệu suất.",
+    "d": "Tăng sự mâu thuẫn.",
+    "answer": "B",
+    "theory": "Kiến trúc rõ ràng giúp các nhóm phát triển, kiểm thử, khách hàng... giao tiếp hiệu quả, cùng hiểu một cách thống nhất."
+},
+{
+    "question": "90. Bước đầu tiên trong quy trình thiết kế kiến trúc là?",
+    "a": "Lựa chọn công nghệ.",
+    "b": "Hiểu yêu cầu.",
+    "c": "Đánh giá kiến trúc.",
+    "d": "Tài liệu hóa kiến trúc.",
+    "answer": "B",
+    "theory": "Hiểu yêu cầu (business + kỹ thuật) là bước đầu tiên trước khi thiết kế kiến trúc."
+},
+{
+    "question": "91. Công cụ nào thường được sử dụng để mô hình hóa kiến trúc?",
+    "a": "Microsoft Word.",
+    "b": "UML (sơ đồ lớp, sơ đồ triển khai, v.v.).",
+    "c": "Excel.",
+    "d": "PowerPoint.",
+    "answer": "B",
+    "theory": "Công cụ tiêu chuẩn để mô hình hóa kiến trúc là UML (Unified Modeling Language) – như sơ đồ lớp, deployment, component..."
+},
+{
+    "question": "92. Quyết định nào sau đây là quan trọng trong thiết kế kiến trúc?",
+    "a": "Chọn màu sắc giao diện.",
+    "b": "Chọn kiến trúc phân tán hay tập trung.",
+    "c": "Chỉ chọn ngôn ngữ lập trình.",
+    "d": "Không cần chọn công nghệ.",
+    "answer": "B",
+    "theory": "Trong kiến trúc, quyết định rất lớn là chọn kiến trúc phân tán hay tập trung tùy theo yêu cầu dự án."
+},
+{
+    "question": "93. Mục tiêu của việc biểu diễn kiến trúc là gì?",
+    "a": "Chỉ để trang trí.",
+    "b": "Truyền đạt quyết định thiết kế cho các nhóm liên quan và hỗ trợ bảo trì.",
+    "c": "Chỉ để kiểm thử.",
+    "d": "Không liên quan đến nhóm phát triển.",
+    "answer": "B",
+    "theory": "Biểu diễn kiến trúc giúp truyền đạt các quyết định thiết kế cho các nhóm (dev, QA, BA, PM...) và hỗ trợ bảo trì."
+},
+{
+    "question": "94. Ký hiệu \"Box-and-Line\" đại diện cho gì?",
+    "a": "Các hộp là thành phần, đường thẳng là mối quan hệ giữa chúng.",
+    "b": "Các hộp là dữ liệu, đường thẳng là giao diện.",
+    "c": "Các hộp là công cụ, đường thẳng là mã nguồn.",
+    "d": "Các hộp là người dùng, đường thẳng là yêu cầu.",
+    "answer": "A",
+    "theory": "Trong \"Box-and-Line\", Box là các thành phần, Line là quan hệ giữa các thành phần (ví dụ kết nối, giao tiếp)."
+},
+{
+    "question": "95. Nhược điểm của ký hiệu \"Box-and-Line\" là gì?",
+    "a": "Quá chi tiết.",
+    "b": "Thiếu ngữ nghĩa chính xác nếu không giải thích.",
+    "c": "Không phù hợp với giao tiếp.",
+    "d": "Không thể sử dụng trong thiết kế.",
+    "answer": "B",
+    "theory": "Nhược điểm của Box-and-Line là: nếu không giải thích, người đọc sẽ không hiểu rõ nghĩa từng box hoặc line."
+},
+{
+    "question": "96. Mô hình 4+1 view do ai đề xuất?",
+    "a": "Thomas Erl.",
+    "b": "Philippe Kruchten.",
+    "c": "Martin Fowler.",
+    "d": "Robert C. Martin.",
+    "answer": "B",
+    "theory": "Mô hình 4+1 View do Philippe Kruchten đề xuất, gồm Logical, Process, Development, Physical và Use Case view."
+},
+{
+    "question": "97. Khi thiết kế kiến trúc, việc cân bằng giữa các thuộc tính chất lượng (quality attributes) thường đối mặt với thách thức nào?",
+    "a": "Các thuộc tính chất lượng luôn bổ trợ lẫn nhau một cách hoàn hảo.",
+    "b": "Thường phải có sự đánh đổi (trade-offs), vì việc tối ưu một thuộc tính (ví dụ: hiệu năng) có thể ảnh hưởng tiêu cực đến thuộc tính khác (ví dụ: bảo mật, khả năng bảo trì).",
+    "c": "Chỉ cần tập trung vào việc đáp ứng yêu cầu chức năng là đủ, các thuộc tính chất lượng không quan trọng bằng.",
+    "d": "Các thuộc tính chất lượng chỉ quan trọng đối với giao diện người dùng.",
+    "answer": "B",
+    "theory": "Các thuộc tính chất lượng thường mâu thuẫn nhau, cần trade-off (ví dụ: tối ưu performance có thể làm giảm bảo mật)."
+},
+{
+    "question": "98. Việc đánh giá kiến trúc (Architectural Evaluation) nên được thực hiện vào thời điểm nào trong quá trình phát triển để mang lại hiệu quả cao nhất?",
+    "a": "Chỉ sau khi hệ thống đã hoàn thành và sẵn sàng triển khai.",
+    "b": "Chỉ trong giai đoạn kiểm thử cuối cùng.",
+    "c": "Càng sớm càng tốt trong chu trình thiết kế (ngay sau khi có bản phác thảo kiến trúc) và có thể lặp lại khi kiến trúc được tinh chỉnh.",
+    "d": "Chỉ khi có vấn đề nghiêm trọng xảy ra trong quá trình phát triển.",
+    "answer": "C",
+    "theory": "Việc đánh giá kiến trúc nên làm càng sớm càng tốt (early architectural review), chứ không đợi đến cuối dự án."
+},
+{
+    "question": "99. Hiện tượng \"Architectural Drift\" (hay \"Architectural Erosion\" - Xói mòn kiến trúc) mô tả điều gì?",
+    "a": "Việc kiến trúc phần mềm trở nên quá phức tạp không cần thiết.",
+    "b": "Sự sai lệch dần dần của cấu trúc hệ thống thực tế so với thiết kế kiến trúc ban đầu theo thời gian, thường do các thay đổi cục bộ không tuân thủ nguyên tắc kiến trúc.",
+    "c": "Việc thay đổi hoàn toàn mẫu kiến trúc đã chọn giữa chừng dự án.",
+    "d": "Việc thiếu hoàn toàn tài liệu mô tả kiến trúc.",
+    "answer": "B",
+    "theory": "Architectural Drift/Erosion: sự sai lệch dần giữa thiết kế kiến trúc ban đầu và hệ thống thực tế khi phát triển."
+},
+{
+    "question": "100. \"Architectural Style\" (Kiểu kiến trúc) và \"Architectural Pattern\" (Mẫu kiến trúc) thường được phân biệt như thế nào?",
+    "a": "Style là một giải pháp cụ thể, Pattern là một vấn đề chung chung.",
+    "b": "Pattern mô tả một giải pháp đã được chứng minh cho một vấn đề thiết kế cụ thể, lặp đi lặp lại; Style mô tả một cách tiếp cận, một triết lý tổ chức hệ thống ở mức cao hơn, định hình cấu trúc tổng thể (ví dụ: Client-Server là một style, MVC là một pattern).",
+    "c": "Không có sự khác biệt rõ ràng, chúng thường được dùng thay thế cho nhau.",
+    "d": "Style chỉ áp dụng cho các hệ thống phân tán, Pattern áp dụng cho mọi hệ thống.",
+    "answer": "B",
+    "theory": "Style là triết lý tổ chức tổng thể (ví dụ: Client-Server); Pattern là giải pháp cụ thể cho vấn đề lặp đi lặp lại (ví dụ: MVC, Singleton)."
+}
+]
