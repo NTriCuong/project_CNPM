@@ -322,36 +322,3 @@
     background: linear-gradient(to right, transparent, #EAF0F0, transparent);
   }
   
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
-    .welcome-title {
-      font-size: 2rem;
-      margin-top: 3rem;
-    }
-    
-    .footer-info {
-      padding: 1rem;
-    }
-    
-    .flight-options {
-      flex-direction: column;
-      align-items: center;
-    }
-    
-    .company-brand {
-      position: relative;
-      bottom: auto;
-      left: auto;
-      margin-top: 2rem;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .login-box {
-      padding: 1.5rem;
-    }
-    
-    .welcome-title {
-      font-size: 1.75rem;
-    }
-  }

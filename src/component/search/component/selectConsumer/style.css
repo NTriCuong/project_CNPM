@@ -1,146 +1,193 @@
-
 .passenger-class-container {
   position: absolute;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-    width: 350%;
-    padding: 24px;
-    border: 1px solid rgba(34, 58, 96, 0.15);
-    border-radius: 12px;
-    background-color: #FFFFFF;
-    color: #223A60;
-    z-index: 11;
-  }
-  
-  h3 {
-    position: relative;
-    padding-bottom: 10px;
-    margin-bottom: 10px;
-    font-size: 18px;
-    border-bottom: #DDDDDD 1px solid;
-  }
-  .exit{
-    position: absolute;
-    right: -10px;
-  }
-  .section {
-    margin-bottom: 20px;
-  }
-  
-  .label {
-    font-weight: bold;
-    margin-bottom: 8px;
-    position: relative;
-  }
-  
-  .label span {
-    display: block;
-    font-weight: normal;
-    font-size: 12px;
-    color: #7F8B9E;
-  }
-  
-  .options {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-  }
-  
-  .options button {
-    padding: 8px 12px;
-    border-radius: 8px;
-    border: none;
-    color: #06142D;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  .options button:hover {
-    background-color: inherit; /* Giữ nguyên màu nền */
-    color: inherit; /* Giữ nguyên màu chữ */
-  }
-  .options button.selected-consumer-item {
-    background-color: #223A60;
-    color: white;
-    font-weight: bold;
-  }
-  
-  .seat-class {
-    margin-top: 20px;
-  }
-  
-  .seat-class span {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-    color: #06142D;
-  }
-  
-  .seat-options {
-    display: flex;
-    width: 100%;
-  }
-  
- 
-  .seat-options button {
-    padding: 8px 10px;
-    border-radius: 20px;
-    border: none;
-    font-size: 15px;
-    color: #707E92;
-    cursor: pointer;
-  }
-  .seat-options button:hover {
-    background-color: inherit; /* Giữ nguyên màu nền */
-    color: #707E92; /* Giữ nguyên màu chữ */
-  }
-  .seat-options button.active {
-    background-color: #CAD4DA;
-    color: #223A60;
-  }
-  .seat-options .label {
-    padding: 8px;
-    margin-right: 18px;
-    white-space: nowrap; /* Ngăn chữ bị xuống dòng */
-    font-weight: bold;
-  }
- 
-  .select-consumer {
-    position: absolute;
-    left: 120px;
-    width: 100%; /* Đảm bảo chiều rộng phù hợp */
-    padding-bottom: 15px;
-  }
-  
-  .select-consumer::after {
-    content: "";
-    position: absolute;
-    bottom: 0; /* Đặt ở vị trí border-bottom */
-    left: 0;
-    width: 100%;
-    height: 1px; /* Độ dày của border */
-    background: linear-gradient(to right, rgba(34, 58, 96, 0), #CAD4DA, rgba(34, 58, 96, 0)); /* Hiệu ứng mờ dần */
-  }
-  .select-consumer-seat{
-    position: absolute;
-    left: 120px;
-    width: 70%; /* Đảm bảo chiều rộng phù hợp */
-    padding: 0;
+  width: 350%;
+  padding: 24px;
+  border: 1px solid rgba(34, 58, 96, 0.15);
+  border-radius: 12px;
+  background-color: #FFFFFF;
+  color: #223A60;
+  z-index: 11;
+}
 
-  }.select-consumer-seat::before,
-  .select-consumer-seat::after {
-    content: "";
-    position: absolute;
+h3 {
+  position: relative;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  font-size: 18px;
+  border-bottom: #DDDDDD 1px solid;
+}
+
+.exit {
+  position: absolute;
+  right: -10px;
+}
+
+.section {
+  margin-bottom: 20px;
+}
+
+.label {
+  font-weight: bold;
+  margin-bottom: 8px;
+  position: relative;
+}
+
+
+.label span {
+  display: block;
+  font-weight: normal;
+  font-size: 12px;
+  color: #7F8B9E;
+}
+
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.options button {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
+  color: #06142D;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.options button:hover {
+  background-color: inherit;
+  /* Giữ nguyên màu nền */
+  color: inherit;
+  /* Giữ nguyên màu chữ */
+}
+
+.options button.selected-consumer-item {
+  background-color: #223A60;
+  color: white;
+  font-weight: bold;
+}
+
+.seat-class {
+  margin-top: 20px;
+}
+
+.seat-class span {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #06142D;
+}
+
+.seat-options {
+  display: flex;
+  width: 100%;
+}
+
+
+.seat-options button {
+  padding: 8px 10px;
+  border-radius: 20px;
+  border: none;
+  font-size: 15px;
+  color: #707E92;
+  cursor: pointer;
+}
+
+.seat-options button:hover {
+  background-color: inherit;
+  /* Giữ nguyên màu nền */
+  color: #707E92;
+  /* Giữ nguyên màu chữ */
+}
+
+.seat-options button.active {
+  background-color: #CAD4DA;
+  color: #223A60;
+}
+
+.seat-options .label {
+  padding: 8px;
+  margin-right: 18px;
+  white-space: nowrap;
+  /* Ngăn chữ bị xuống dòng */
+  font-weight: bold;
+}
+
+.select-consumer {
+  position: absolute;
+  left: 120px;
+  width: 100%;
+  /* Đảm bảo chiều rộng phù hợp */
+  padding-bottom: 15px;
+}
+
+.select-consumer::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  /* Đặt ở vị trí border-bottom */
+  left: 0;
+  width: 100%;
+  height: 1px;
+  /* Độ dày của border */
+  background: linear-gradient(to right, rgba(34, 58, 96, 0), #CAD4DA, rgba(34, 58, 96, 0));
+  /* Hiệu ứng mờ dần */
+}
+
+.select-consumer-seat {
+  position: absolute;
+  left: 120px;
+  width: 70%;
+  /* Đảm bảo chiều rộng phù hợp */
+  padding: 0;
+
+}
+
+.select-consumer-seat::before,
+.select-consumer-seat::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  /* Độ dày của border */
+  background: linear-gradient(to right, rgba(34, 58, 96, 0), #CAD4DA, rgba(34, 58, 96, 0));
+  /* Hiệu ứng mờ dần */
+}
+
+.select-consumer-seat::before {
+  top: 0;
+  /* Đặt ở vị trí border-top */
+}
+
+.select-consumer-seat::after {
+  bottom: 0;
+  /* Đặt ở vị trí border-bottom */
+}
+
+@media screen and (max-width: 768px) {
+  .passenger-class-container {
+    width: 100%;
+    padding: 16px;
+    height: 285px;
+  }
+
+  .select-consumer-seat {
     left: 0;
     width: 100%;
-    height: 1px; /* Độ dày của border */
-    background: linear-gradient(to right, rgba(34, 58, 96, 0), #CAD4DA, rgba(34, 58, 96, 0)); /* Hiệu ứng mờ dần */
   }
-  
-  .select-consumer-seat::before {
-    top: 0; /* Đặt ở vị trí border-top */
+
+  .select-consumer {
+    right: 0;
+    width: 60%
   }
-  
-  .select-consumer-seat::after {
-    bottom: 0; /* Đặt ở vị trí border-bottom */
-  }
+
+.seat-label{
+  display: none;
+}
+
+}

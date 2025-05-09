@@ -4,9 +4,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { updateNumberAdults, updateNumberChildren, updateNumberInfants, updateTicketClasses } from "../../../../redux/searchDataClice";
 import exit from "../../../../image/Icon/HomePage/exit-field-consumer.svg"
 const SelectConsumer = ({ className, on }) => {
-  const selectItem = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-  const selectItem1 = [0, 1, 2, 3, 4, 5, 6, 7, 8];
-  const selectItem2 = [0, 1, 2, 3, 4];
+  const selectItem = [1, 2, 3, 4, 5];
+  const selectItem1 = [0, 1, 2, 3];
+  const selectItem2 = [0, 1, 2];
   const selectItem3 = ["Economy", "Premium Economy", "Business"];
   const [dataSelect, setDataSelect] = useState(1);
   const [dataSelect1, setDataSelect1] = useState(0);
@@ -114,7 +114,7 @@ const SelectConsumer = ({ className, on }) => {
 
       <div className="seat-class">
         <div className="seat-options">
-          <div className="label">Hạng Ghế</div>
+          <div className="label seat-label">Hạng Ghế</div>
           <div className="select-consumer-seat">
             {selectItem3.map((item) => {
               return (
