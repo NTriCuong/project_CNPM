@@ -121,15 +121,17 @@ function FlightSearchBox({ className }) {
       navigate("/booking");
     } catch (error) {
       if (error.response) {
-        const { status, data } = error.response;
-        if (status === 404) {
-          alert(data);
-        } else {
-          alert("API lỗi. Vui lòng kiểm tra lại mạng hoặc thử lại sau.");
-        }
+          // Nếu có response từ server
+          if (error.response.status === 404) {
+              alert(error.response.data.detail);
+          } else {
+              alert("API lỗi. Vui lòng kiểm tra lại mạng hoặc thử lại sau.");
+          }
+      } else {
+          // Nếu không có response (lỗi mạng hoặc lỗi khác)
+          alert("Không thể kết nối đến server. Vui lòng kiểm tra lại mạng.");
       }
-      console.error("LỖI:", error);
-    }
+  }
   };
 
   // click
