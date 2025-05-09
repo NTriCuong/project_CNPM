@@ -117,7 +117,7 @@ function FlightSearchBox({ className }) {
         number_children: SelectorSearchData.numberChildren,
         number_infants: SelectorSearchData.numberInfants,
       });
-      Dispath(setFlightData(response.data));// ép kiểu an toàn));
+      Dispath(setFlightData(response.data));
       navigate("/booking");
     } catch (error) {
       console.log("LOI", error);
