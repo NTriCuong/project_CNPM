@@ -120,9 +120,15 @@ function FlightSearchBox({ className }) {
       Dispath(setFlightData(response.data));// ép kiểu an toàn));
       navigate("/booking");
     } catch (error) {
-      const errorTime = new Date().toLocaleTimeString();
-      alert(`API lỗi lúc: ${errorTime}. Vui lòng kiểm tra lại mạng!`);
-      console.log("LOI", error);
+      if (error.response) {
+        const { status, data } = error.response;
+        if (status === 404) {
+          alert(data);
+        } else {
+          alert("API lỗi. Vui lòng kiểm tra lại mạng hoặc thử lại sau.");
+        }
+      }
+      console.error("LỖI:", error);
     }
   };
 
