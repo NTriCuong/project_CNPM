@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import data from "./data.json";
 
 const FinalQuestion = () => {
@@ -87,7 +87,18 @@ const FinalQuestion = () => {
     color: "red",
     display: "block",
   };
-  const randomData = data.sort(() => Math.random() - 0.5).slice(0, 50); // Lọc dữ liệu để chỉ lấy những câu hỏi có lý thuyết
+  const [randomData, setRandomData] = useState([]); // Lưu trữ dữ liệu random
+
+  // Random dữ liệu khi vừa truy cập vào trang
+  useEffect(() => {
+    randomizeData();
+  }, []);
+
+  // Hàm random dữ liệu
+  const randomizeData = () => {
+    const shuffledData = data.sort(() => Math.random() - 0.5).slice(0, 50);
+    setRandomData(shuffledData);
+  };
   return (
     <div style={styleContainer}>
       <h1 style={styleH1}>Final Question</h1>
