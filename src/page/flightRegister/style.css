@@ -219,10 +219,13 @@
   
   /* Responsive adjustments */
   @media (max-width: 768px) {
-    .welcome-title {
+    .login-box {
       width: 100%;
-      font-size: 2rem;
-      margin-top: 3rem;
+      padding: 1.5rem;
+    }
+    
+    .welcome-title {
+      font-size: 1.75rem;
     }
     
   }
@@ -233,6 +236,10 @@
       padding: 1.5rem;
     }
     
+    .footer-info {
+      width: 100%;
+    }
+
     .welcome-title {
       font-size: 1.75rem;
     }
