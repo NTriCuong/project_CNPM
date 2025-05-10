@@ -1,0 +1,71 @@
+.custom-form {
+    position: fixed;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 700px;
+    z-index: 10;
+    background: #fff; /* Đảm bảo form có nền trắng */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+/* Lớp phủ nền khi form hiển thị */
+.overlay {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 4;
+}
+
+/* Làm mờ các phần tử khác khi form hiển thị */
+.blur-background {
+    filter: blur(5px);
+    pointer-events: none;
+}
+
+/* Loại bỏ hiệu ứng làm mờ */
+body > * {
+    filter: none;
+    pointer-events: auto;
+}
+
+
+.custom-form input{
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+}
+.custom-form button[type='submit'] {
+    background-color: blue;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.custom-form button[type='submit']:hover {
+    background-color: darkblue;
+}
+.form-none {
+    display: none;
+}
+
+.form-on {
+    display: flex;
+    position: fixed;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
