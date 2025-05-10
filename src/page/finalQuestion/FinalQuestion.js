@@ -87,12 +87,13 @@ const FinalQuestion = () => {
     color: "red",
     display: "block",
   };
+  const randomData = data.sort(() => Math.random() - 0.5).slice(0, 50); // Lọc dữ liệu để chỉ lấy những câu hỏi có lý thuyết
   return (
     <div style={styleContainer}>
       <h1 style={styleH1}>Final Question</h1>
       <form onSubmit={handleSubmit}>
         <ul style={styleUl}>
-          {data.map((item, index) => (
+          {randomData.map((item, index) => (
             <li key={index}>
               <br />
               <strong>{item.question}</strong>
