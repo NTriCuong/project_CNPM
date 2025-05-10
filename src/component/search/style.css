@@ -194,11 +194,11 @@
 }
 
 
-.home-container {
+/* .home-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 15px;
-}
+} */
 
 .divider {
   width: 1px;
@@ -319,14 +319,16 @@
   }
 
   .top {
-    width: 33%;
-    height: 55px;
+    width: 42%;
+    height: 40px;
   }
 
   .top-item {
     width: 113px;
-    height: 44px;
+    height: 35px;
     font-size: 12px;
+    margin-left: 5px;
+    margin-right: 5px;
   }
 
   .bottom {
