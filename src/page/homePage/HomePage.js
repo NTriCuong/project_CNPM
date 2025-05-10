@@ -13,12 +13,12 @@ import ResetPassword from "../resetPassword/ResetPassword";
 import ChatBox from "../../component/chatBox/ChatBox";
 import Discovery from "./component/discovery/Discovery";
 import  apiGeoCode  from "../../api/apiGeoCode";
-import { use, useEffect } from "react";
+import { useEffect } from "react";
 
 function HomePage() {
   const auth = useSelector(SelecAuth);
 
-  //location
+  //location khách hàng
   useEffect(() => {
     apiGeoCode();
   },[]);
