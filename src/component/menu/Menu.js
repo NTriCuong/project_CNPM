@@ -15,14 +15,14 @@ function Menu({ className }) {
 
     const handleHome = () => { navigate('/'); closeMenu(); };
     const handleFlight = () => { navigate('/booking'); closeMenu(); };
-    const handleMyFlight = () => { console.log('Bạn đã nhấn vào Chuyến Bay Của Tôi'); closeMenu(); };
-    const handleMore = () => { console.log('Bạn đã nhấn vào more'); closeMenu(); };
+    // const handleMyFlight = () => { console.log('Bạn đã nhấn vào Chuyến Bay Của Tôi'); closeMenu(); };
+    // const handleMore = () => { console.log('Bạn đã nhấn vào more'); closeMenu(); };
 
     const menuItems = [
         { label: "Trang Chủ", key: "home", onClick: handleHome },
         { label: "Chuyến Bay", key: "flights", onClick: handleFlight },
-        { label: "Chuyến Bay Của Tôi", key: "my-flights", onClick: handleMyFlight },
-        { label: "More", key: "more", onClick: handleMore }
+        // { label: "Chuyến Bay Của Tôi", key: "my-flights", onClick: handleMyFlight },
+        // { label: "More", key: "more", onClick: handleMore }
     ];
 
     const menuButton = [
@@ -51,11 +51,11 @@ function Menu({ className }) {
                     </ul>
                 </div>
                 <div className="right">
-                    <ul>
+                    {/* <ul>
                         {menuButton.map(item => (
                             <li key={item.key} className="menu-item">{item.button}</li>
                         ))}
-                    </ul>
+                    </ul> */}
                 </div>
             </div>
 

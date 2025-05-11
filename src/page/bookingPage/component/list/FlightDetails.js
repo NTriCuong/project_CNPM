@@ -28,12 +28,14 @@ const logoVJ = "https://seeklogo.com/images/V/vietjet-aviation-logo-A823494846-s
 
 
 
-const FlightDetails = () => {
+const FlightDetails = ({classify}) => {
   const searchData = useSelector(selectSearchFlight);
-  // }, []);
+  console.log("searchData", searchData);
+  
+  const data = searchData?.filter((item) => item.departure_airport === classify);
   return (
     <div className="flight-list">
-      {searchData.map((flight) => (
+      {data.map((flight) => (
         <div className="flight-card">
           <div className="flight-info">
             <div className="airline">
