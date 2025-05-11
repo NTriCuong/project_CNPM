@@ -7,13 +7,21 @@ import icon2chieu from "../../image/Icon/HomePage/icon2chieu.svg";
 import SearchItem from "./component/searchItem/SearchItem";
 import InputSelect from "./component/inputSelect/InputSelect";
 import vietnam from "../../image/national/vietnam.svg";
+import thailand from "../../image/national/thailand.svg";
+import malaysia from "../../image/national/malaysia.png";
+import laos from "../../image/national/laos.png";
+import indonesia from "../../image/national/indonesia.png";
+import philippines from "../../image/national/philippines.png";
+import cambodia from "../../image/national/cambodia.png";
+import myanmar from "../../image/national/myanmar.png";
+import brunei from "../../image/national/brunei.png";
 import DatePickerCustom from "./component/datefield/DatePickerCustom";
 import { useDispatch, useSelector } from "react-redux";
 import { selectSearchData } from "../../redux/Store";
 import SelectConsumer from "./component/selectConsumer/SelectConsumer";
 import { searchFlight } from "../../api/axiosClient";
-import { format, isValid, parse } from "date-fns";
-import { setFlightData } from "../../redux/searchFlightSlice";
+import { format, parse } from "date-fns";
+import { appendFlightData, setFlightData } from "../../redux/searchFlightSlice";
 import { useNavigate } from 'react-router-dom';
 
 
@@ -47,7 +55,13 @@ function FlightSearchBox({ className }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    Api();
+    // kiểm tra khứ hồi hay 1 chiều
+    if (tickerType) {// nếu là 1 chiều thì kiểm tra ngày đi
+      Api();
+    }else {
+      Api();
+      Api2();
+    }
   };
   const data = {
     recentSearches: {
@@ -74,34 +88,126 @@ function FlightSearchBox({ className }) {
       },
       {
         img: vietnam,
-        city: "Hà Nội",
-        codeCity: "HAN",
-        airport: "Sân Bay Quốc Tế Nội Bài",
+        city: "Đà Nẵng",
+        codeCity: "DAD",
+        airport: "Sân Bay Quốc Tế Đà Nẵng",
         national: "Viet Nam",
       },
       {
-        img: vietnam,
-        city: "TP. Hồ Chí Minh",
-        codeCity: "SGN",
-        airport: "Sân Bay Quốc Tế Tân Sơn Nhất",
-        national: "Viet Nam",
+        img: thailand,
+        city: "Bangkok",
+        codeCity: "BKK",
+        airport: "Suvarnabhumi Airport",
+        national: "Thailand",
+      },
+      {
+        img: thailand,
+        city: "Chiang Mai",
+        codeCity: "CNX",
+        airport: "Chiang Mai International Airport",
+        national: "Thailand",
+      },
+      {
+        img: malaysia,
+        city: "Kuala Lumpur",
+        codeCity: "KUL",
+        airport: "Kuala Lumpur International Airport",
+        national: "Malaysia",
+      },
+      {
+        img: malaysia,
+        city: "Penang",
+        codeCity: "PEN",
+        airport: "Penang International Airport",
+        national: "Malaysia",
       },
       {
         img: vietnam,
-        city: "Hà Nội",
-        codeCity: "HAN",
-        airport: "Sân Bay Quốc Tế Nội Bài",
-        national: "Viet Nam",
+        city: "Singapore",
+        codeCity: "SIN",
+        airport: "Changi International Airport",
+        national: "Singapore",
       },
       {
-        img: vietnam,
-        city: "TP. Hồ Chí Minh",
-        codeCity: "SGN",
-        airport: "Sân Bay Quốc Tế Tân Sơn Nhất",
-        national: "Viet Nam",
+        img: indonesia,
+        city: "Jakarta",
+        codeCity: "CGK",
+        airport: "Soekarno-Hatta International Airport",
+        national: "Indonesia",
+      },
+      {
+        img: indonesia,
+        city: "Denpasar (Bali)",
+        codeCity: "DPS",
+        airport: "Ngurah Rai International Airport",
+        national: "Indonesia",
+      },
+      {
+        img: philippines,
+        city: "Manila",
+        codeCity: "MNL",
+        airport: "Ninoy Aquino International Airport",
+        national: "Philippines",
+      },
+      {
+        img: philippines,
+        city: "Cebu",
+        codeCity: "CEB",
+        airport: "Mactan-Cebu International Airport",
+        national: "Philippines",
+      },
+      {
+        img: cambodia,
+        city: "Phnom Penh",
+        codeCity: "PNH",
+        airport: "Phnom Penh International Airport",
+        national: "Cambodia",
+      },
+      {
+        img: cambodia,
+        city: "Siem Reap",
+        codeCity: "REP",
+        airport: "Siem Reap International Airport",
+        national: "Cambodia",
+      },
+      {
+        img: laos,
+        city: "Vientiane",
+        codeCity: "VTE",
+        airport: "Wattay International Airport",
+        national: "Laos",
+      },
+      {
+        img: laos,
+        city: "Luang Prabang",
+        codeCity: "LPQ",
+        airport: "Luang Prabang International Airport",
+        national: "Laos",
+      },
+      {
+        img: myanmar,
+        city: "Yangon",
+        codeCity: "RGN",
+        airport: "Yangon International Airport",
+        national: "Myanmar",
+      },
+      {
+        img: myanmar,
+        city: "Naypyidaw",
+        codeCity: "NYT",
+        airport: "Naypyidaw International Airport",
+        national: "Myanmar",
+      },
+      {
+        img: brunei,
+        city: "Bandar Seri Begawan",
+        codeCity: "BWN",
+        airport: "Brunei International Airport",
+        national: "Brunei",
       },
     ],
   };
+
   //GOI API
   const Api = async () => {
     try {
@@ -133,7 +239,37 @@ function FlightSearchBox({ className }) {
       }
   }
   };
-
+//api khứ hồi
+const Api2 = async () => {
+  try {
+    const response = await searchFlight.post("/", {
+      departure_airport_code: SelectorSearchData.arrivalLocation.codeCity,
+      arrival_airport_code:  SelectorSearchData.departureLocation.codeCity,
+      departure_time: (() => {
+        const parsedDate = parse(SelectorSearchData.departureDate, 'dd-MM-yyyy', new Date());
+        return format(parsedDate, 'yyyy-MM-dd');
+      })(),        
+      ticket_classes: SelectorSearchData.ticketClasses,
+      number_adults: SelectorSearchData.numberAdults,
+      number_children: SelectorSearchData.numberChildren,
+      number_infants: SelectorSearchData.numberInfants,
+    });
+    Dispath(appendFlightData(response.data));
+    navigate("/booking");
+  } catch (error) {
+    if (error.response) {
+        // Nếu có response từ server
+        if (error.response.status === 404) {
+            alert(error.response.data.detail);
+        } else {
+            alert("API lỗi. Vui lòng kiểm tra lại mạng hoặc thử lại sau.");
+        }
+    } else {
+        // Nếu không có response (lỗi mạng hoặc lỗi khác)
+        alert("Không thể kết nối đến server. Vui lòng kiểm tra lại mạng.");
+    }
+}
+};
   // click
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -155,6 +291,30 @@ function FlightSearchBox({ className }) {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
+
+const inputSelectRef = useRef(null); // Tạo ref cho InputSelect
+
+useEffect(() => {
+  const handleClickOutside = (event) => {
+    // Nếu click không nằm trong vùng departure, arrival hoặc InputSelect
+    if (
+      departureRef.current &&
+      !departureRef.current.contains(event.target) &&
+      arrivalRef.current &&
+      !arrivalRef.current.contains(event.target) &&
+      inputSelectRef.current &&
+      !inputSelectRef.current.contains(event.target)
+    ) {
+      setStatusDP(false);
+      setStatusArP(false);
+    }
+  };
+
+  document.addEventListener("mousedown", handleClickOutside);
+  return () => {
+    document.removeEventListener("mousedown", handleClickOutside);
+  };
+}, []);
 
   const handlePoint = () => {
     setStatusDP(!statusDP);
@@ -230,6 +390,7 @@ const weekdayText = weekdays[weekdayNumber];
                     </span>
                     {SelectorSearchData.departureLocation.airport}
                     <InputSelect
+                      ref={inputSelectRef} 
                       className={`bottom-left-r ${
                         statusDP ? "input-select" : "select-none"
                       }`}
@@ -262,6 +423,7 @@ const weekdayText = weekdays[weekdayNumber];
                     </span>
                     {SelectorSearchData.arrivalLocation.airport}
                     <InputSelect
+                    ref={inputSelectRef} 
                       className={`bottom-left-r ${
                         statusArP ? "input-select" : "select-none"
                       }`}

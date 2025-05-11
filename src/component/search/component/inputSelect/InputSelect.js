@@ -2,7 +2,7 @@ import { useDispatch } from "react-redux";
 import iconflight from "../../../../image/Icon/HomePage/iconflight.svg";
 import "./style.css";
 import { updateArrivalLocation, updateDepartureLocation } from "../../../../redux/searchDataClice";
-function InputSelect({ className, data, flag }) { //flag true la đang chọn dữ liệu điểm khởi hành false là dữ liệu điểm đến
+function InputSelect({ className, data, flag },ref) { //flag true la đang chọn dữ liệu điểm khởi hành false là dữ liệu điểm đến
   const Dispath = useDispatch();
   const styleHeader = {
     color: "#233A60",
@@ -32,7 +32,7 @@ function InputSelect({ className, data, flag }) { //flag true la đang chọn d�
       }));
   }
   return (
-    <div className={className}>
+    <div className={className} ref={ref}>
       <input type="text" placeholder="Điểm Khởi Hành"></input>
       <div className="inputSelect-boxContent" style={{ paddingLeft: "10px" }}>
         <p style={styleHeader}>Tìm Kiếm Gần Đây</p>
