@@ -72,6 +72,9 @@
 
 
 @media (max-width: 768px) {
+  .content-container{
+    flex-direction: column;
+  }
   .header-container {
     height: 55px; /* Giảm chiều cao header */
   }
