@@ -1,7 +1,41 @@
 import React, { useState, useRef, useEffect } from "react";
 import "./FlightFilter.css";
+import { useDispatch, useSelector } from "react-redux";
+import { selectSearchFlight } from "../../../../redux/Store";
+import { setFlightData } from "../../../../redux/searchFlightSlice";
 
 const FlightFilters = () => {
+   // Thay đổi state airlines để chỉ lưu một giá trị được chọn
+  const [selectedAirline, setSelectedAirline] = useState([]);
+  // data
+  const Dispath = useDispatch();
+  const searchData = useSelector(selectSearchFlight);
+    
+  useEffect(() => {
+    console.log("Selected Airlines:", selectedAirline);
+    console.log("Search Data:", searchData);
+    
+  // const data = searchData.filter((item) => {
+  //   for (let i = 0; i < selectedAirline.length; i++) {
+  //    if(item.airline_name === selectedAirline[i])
+  //     return true;
+  //   }
+  //   return false;
+  // });
+    const data = searchData.filter((item) => selectedAirline.includes(item.airline_name));
+    console.log("Filtered Data:", data);
+   Dispath(setFlightData(data));
+  },[selectedAirline]);
+  
+  
+
+  //test[1,2,3,4]
+  // test.filter((item)=> item %2 == 0)
+  // item = 1 %2 == 0 false
+  //item = 2 %2 == 0 true  [2]
+  //item = 3 %2 == 0 false
+  //item = 4 %2 == 0 true [2,4]
+
   //Thanh kéo giá
   const [priceRange, setPriceRange] = useState([50, 500]);
   const [draggingThumb, setDraggingThumb] = useState(null); // 'min' or 'max' or null
@@ -19,8 +53,7 @@ const FlightFilters = () => {
   // State cho rating
   const [selectedRating, setSelectedRating] = useState(null);
 
-  // Thay đổi state airlines để chỉ lưu một giá trị được chọn
-  const [selectedAirline, setSelectedAirline] = useState([]);
+ 
 
 
   // State cho Sắp xếp
@@ -416,8 +449,8 @@ const FlightFilters = () => {
             <input
               type="checkbox"
               id="vietnam"
-              checked={selectedAirline.includes("vietnam")}
-              onChange={() => handleAirlineChange("vietnam")}
+              checked={selectedAirline.includes("Vietnam Airlines")}
+              onChange={() => handleAirlineChange("Vietnam Airlines")}
             />
             <label htmlFor="vietnam">Vietnam Airlines</label>
           </div>
