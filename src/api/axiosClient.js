@@ -48,3 +48,27 @@ export const searchFlight = axios.create({
     "Content-Type": "application/json",
   }
 })
+
+
+//API GET FLIGHT
+export const getFlight = axios.create({
+  baseURL:`${root}/flight/search_flight_all`,
+  timeout: 10000,
+  headers:{
+    "Content-Type": "application/json",
+  }
+})
+
+// Thêm interceptor cho request
+getFlight.interceptors.request.use(
+  (config) => {
+    const token = sessionStorage.getItem('token');
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`; // thêm token vào header
+    }
+    return config; // trả về config đã chỉnh sửa
+  },
+  (error) => {
+    return Promise.reject(error);
+  }
+);

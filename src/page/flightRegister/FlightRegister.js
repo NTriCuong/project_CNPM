@@ -4,14 +4,14 @@ import closeEge from '../../image/Icon/Login/closeEye.svg'
 import closeLogo from '../../image/Icon/Login/closelogo.png';
 import checkBox from '../../image/Icon/Login/checkbox & Radio.svg';
 import checkBoxTrue from '../../image/Icon/Login/checkbox & RadioTrue.svg';
-import { useDispatch } from 'react-redux';
-import { onConfirmOTP, onLogin, reset } from '../../redux/authSlice';
 import { authRegister } from '../../api/axiosClient';
+import { useNavigate } from 'react-router-dom';
 import { setDataClient } from '../../redux/dataClientSlice';
-import { setStOtp } from '../../redux/stOtpSlice';
+import { useDispatch } from 'react-redux';
 
 const FlightRegister = ({className}) => {
   const Dispath = useDispatch();
+  const navigate = useNavigate();
   // dữ liệu form
   const [name,setName] = useState('');
   const [numberPhone, setNumberPhone] = useState('');
@@ -23,10 +23,9 @@ const [radioBnt,setRadioBnt] = useState(false);
   const handleSubmit = (e) => {
     e.preventDefault();
     Api();
-    handleClose()
+    handleClose();
   };
   const handleClose=()=>{
-    Dispath(reset());
     resetInputField();
   }
   const resetInputField=()=>{
@@ -46,7 +45,8 @@ const [radioBnt,setRadioBnt] = useState(false);
   }
   const handleLogin=()=>{
     handleClose()
-    Dispath(onLogin());
+    // Dispath(onLogin());
+    navigate('/admin-login');
   }
   //call api
   const Api = async()=>{
@@ -57,8 +57,9 @@ const [radioBnt,setRadioBnt] = useState(false);
         // dang ky thanh cong
         alert("✈️ Đăng ký thành công!");
         Dispath(setDataClient(email))
-        Dispath(setStOtp(true))
-        Dispath(onConfirmOTP());// hien form nhap otp
+        // Dispath(setStOtp(true))
+        // Dispath(onConfirmOTP());// hien form nhap otp
+        navigate('/admin-confirmotp');
     } catch (error) {
         console.log(error)
         if(error.status === 400)

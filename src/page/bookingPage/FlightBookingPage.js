@@ -4,17 +4,9 @@ import FlightList from "./component/FlightList";
 import Menu from "../../component/menu/Menu";
 import FlightSearchBox from "../../component/search/FlightSearchBox";
 import Footer from "../../component/footer/Footer";
-import FlightBookingLogin from "../flightLogin/FlightBookingLogin";
-import FlightRegister from "../flightRegister/FlightRegister";
-import ForgotPassword from "../forgotPassword/ForgotPassword";
-import ConfirmOTP from "../confirm/ConfirmOTP";
-import ResetPassword from "../resetPassword/ResetPassword";
-import { useSelector } from "react-redux";
-import { SelecAuth, selectSearchData } from "../../redux/Store";
 import ChatBox from "../../component/chatBox/ChatBox";
 
 function FlightBookingPage() {
-  const auth = useSelector(SelecAuth);
   return (
     <div className="app-container">
       <div className="header-container">
@@ -22,7 +14,7 @@ function FlightBookingPage() {
       </div>
       <div className="flight-search-container">
         <FlightSearchBox className="flight-search-booking" />
-        <FlightBookingLogin
+        {/* <FlightBookingLogin
           className={`form-login ${auth === "auth-login" ? "on-login" : ""}`}
         />
         <FlightRegister
@@ -42,7 +34,7 @@ function FlightBookingPage() {
           className={`form-login ${
             auth === "auth-resetpassword" ? "on-login" : ""
           }`}
-        />
+        /> */}
       </div>
       <div className="wrap-content">
         <div className="content-container">

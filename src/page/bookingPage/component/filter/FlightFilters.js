@@ -12,9 +12,6 @@ const FlightFilters = () => {
   const searchData = useSelector(selectSearchFlight);
     
   useEffect(() => {
-    console.log("Selected Airlines:", selectedAirline);
-    console.log("Search Data:", searchData);
-    
   // const data = searchData.filter((item) => {
   //   for (let i = 0; i < selectedAirline.length; i++) {
   //    if(item.airline_name === selectedAirline[i])
@@ -23,19 +20,8 @@ const FlightFilters = () => {
   //   return false;
   // });
     const data = searchData.filter((item) => selectedAirline.includes(item.airline_name));
-    console.log("Filtered Data:", data);
    Dispath(setFlightData(data));
   },[selectedAirline]);
-  
-  
-
-  //test[1,2,3,4]
-  // test.filter((item)=> item %2 == 0)
-  // item = 1 %2 == 0 false
-  //item = 2 %2 == 0 true  [2]
-  //item = 3 %2 == 0 false
-  //item = 4 %2 == 0 true [2,4]
-
   //Thanh kéo giá
   const [priceRange, setPriceRange] = useState([50, 500]);
   const [draggingThumb, setDraggingThumb] = useState(null); // 'min' or 'max' or null

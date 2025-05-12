@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import AdminForm from "./component/Form";
 import { useNavigate } from "react-router-dom";
+import { getFlight } from "../../api/axiosClient";
 
 const AdminPage = () => {
   const [flights, setFlights] = useState([]);
@@ -11,18 +12,30 @@ const AdminPage = () => {
     const mockFlights = [
       {
         airline_name: "Vietnam Airlines",
-        flight_number: "VN267",
-        departure_airport: "SGN",
-        arrival_airport: "HAN",
-        departure_time: "2025-05-16T00:00:00",
-        arrival_time: "2025-04-26T00:00:00",
-        ticket_class_name: "Economy",
+        arrival_airport_code: "HAN",
+        arrival_time: "2025-06-28T00:00:00",
         available_seats: 120,
-        total_price: 1000,
+        departure_airport_code: "SGN",
+        departure_time: "2025-06-27T00:00:00",
+        flight_id: 10,
+        flight_number: "VN267",
+        ticket_class_name: "Economy",
+        adult_price: 1000,
+        child_price: 1000,
+        infant_price: 1000,
       },
     ];
+    Api();
     setFlights(mockFlights);
   }, []);
+  const Api = async () => {
+    try {
+      const res = await getFlight.get();
+      console.log(res.data);
+    } catch (error) {
+      console.error("Error fetching flights:", error);
+    }
+  };
   const styleTd = { textAlign: "center", padding: "10px" };
   const styleUpdate = {
     backgroundColor: "#4CAF50",
@@ -68,18 +81,20 @@ const AdminPage = () => {
             <th>Arrival Time</th>
             <th>Ticket Class</th>
             <th>Available Seats</th>
-            <th>Total Price</th>
+            <th>Adult Price</th>
+            <th>Child Price</th>
+            <th>Infant Price</th>
             <th>update</th>
             <th>delete</th>
           </tr>
         </thead>
         <tbody>
-          {flights.map((flight, index) => (
-            <tr key={index}>
+          {flights.map((flight) => (
+            <tr key={flight.flight_id}>
               <td style={styleTd}>{flight.airline_name}</td>
               <td style={styleTd}>{flight.flight_number}</td>
-              <td style={styleTd}>{flight.departure_airport}</td>
-              <td style={styleTd}>{flight.arrival_airport}</td>
+              <td style={styleTd}>{flight.departure_airport_code}</td>
+              <td style={styleTd}>{flight.arrival_airport_code}</td>
               <td style={styleTd}>
                 {new Date(flight.departure_time).toLocaleString()}
               </td>
@@ -88,7 +103,10 @@ const AdminPage = () => {
               </td>
               <td style={styleTd}>{flight.ticket_class_name}</td>
               <td style={styleTd}>{flight.available_seats}</td>
-              <td style={styleTd}>${flight.total_price}</td>
+              <td style={styleTd}>${flight.adult_price}</td>
+              <td style={styleTd}>${flight.child_price}</td>
+              <td style={styleTd}>${flight.infant_price}</td>
+
               <td style={styleTd}>
                 {" "}
                 <button
