@@ -9,7 +9,6 @@ function Flightlist() {
 
   const searchData = useSelector(selectSearchData);
   const isSearch = useSelector(selectIsSearch)
-  const isRecover = useSelector(selectIsSearch);
   return (
     <div>
           <div className="flight-list-container">

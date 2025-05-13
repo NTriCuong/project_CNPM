@@ -2,7 +2,6 @@ import React, { useState, useRef, useEffect } from "react";
 import "./FlightFilter.css";
 import { useDispatch, useSelector } from "react-redux";
 import { selectSearchFlight } from "../../../../redux/Store";
-import { setFlightData } from "../../../../redux/searchFlightSlice";
 import { setDataDisplay } from "../../../../redux/dataDisplay";
 
 const FlightFilters = () => {
@@ -17,6 +16,7 @@ const FlightFilters = () => {
 
   //   Dispath(setDataDisplay(data));
   // }, [selectedAirline]);
+
 
   //Thanh kéo giá
   const [priceRange, setPriceRange] = useState([50, 500]);
