@@ -23,7 +23,7 @@ const generateNextDays = (numDays) => {
     nextDate.setDate(today.getDate() + i);
 
     const dayName = daysOfWeek[nextDate.getDay()];
-    const isoDate = nextDate.toISOString().split("T")[0]; // "yyyy-MM-dd"
+    const isoDate = nextDate.toISOString().split("T")[0]; // "yyyy-MM-dd"src/page/adminPage/component/Form.js
     const displayDate = nextDate.toLocaleDateString("vi-VN", {
       day: "2-digit",
       month: "2-digit",
