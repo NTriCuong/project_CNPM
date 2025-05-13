@@ -19,6 +19,34 @@ const Form = () => {
     total_price: data?.total_price || "",
   });
 
+  const airlines = [
+    "HAN",
+    "SGN",
+    "DAD",
+    "BKK",
+    "CNX",
+    "KUL",
+    "PEN",
+    "SIN",
+    "CGK",
+    "DPS",
+    "MNL",
+    "CEB",
+    "PNH",
+    "REP",
+    "VTE",
+    "LPQ",
+    "RGN",
+    "NYT",
+    "BWN",
+  ];
+
+  const ticket = [
+    "Economy",
+    "Premium",
+    "Business",
+  ]
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -50,13 +78,19 @@ const Form = () => {
       <h1>Flight Information Form</h1>
       <div>
         <label htmlFor="airline_name">Airline Name:</label>
-        <input
-          type="text"
+        <select
           id="airline_name"
           name="airline_name"
           value={formData.airline_name}
           onChange={handleChange}
-        />
+        >
+          <option value="">Select Airline</option> {/* Tùy chọn mặc định */}
+          <option value="Vietnam Airlines">Vietnam Airlines</option>
+          <option value="AirAsia">AirAsia</option>
+          <option value="Emirates">Emirates</option>
+          <option value="Qatar Airways">Qatar Airways</option>
+          {/* Bạn có thể thêm các tùy chọn khác ở đây */}
+        </select>
       </div>
       <div>
         <label htmlFor="flight_number">Flight Number:</label>
@@ -70,23 +104,25 @@ const Form = () => {
       </div>
       <div>
         <label htmlFor="departure_airport">Departure Airport:</label>
-        <input
-          type="text"
-          id="departure_airport"
-          name="departure_airport"
-          value={formData.departure_airport}
-          onChange={handleChange}
-        />
+        <select>
+          <option value="">          </option>
+          {airlines.map((airlineCode) => (
+            <option key={airlineCode} value={airlineCode}>
+              {airlineCode}
+            </option>
+          ))}
+        </select>
       </div>
       <div>
         <label htmlFor="arrival_airport">Arrival Airport:</label>
-        <input
-          type="text"
-          id="arrival_airport"
-          name="arrival_airport"
-          value={formData.arrival_airport}
-          onChange={handleChange}
-        />
+        <select>
+          <option value="">          </option>
+          {airlines.map((airlineCode) => (
+            <option key={airlineCode} value={airlineCode}>
+              {airlineCode}
+            </option>
+          ))}
+        </select>
       </div>
       <div>
         <label htmlFor="departure_time">Departure Time:</label>
@@ -110,13 +146,14 @@ const Form = () => {
       </div>
       <div>
         <label htmlFor="ticket_class_name">Ticket Class Name:</label>
-        <input
-          type="text"
-          id="ticket_class_name"
-          name="ticket_class_name"
-          value={formData.ticket_class_name}
-          onChange={handleChange}
-        />
+        <select>
+          <option value="">          </option>
+          {ticket.map((airlineCode) => (
+            <option key={airlineCode} value={airlineCode}>
+              {airlineCode}
+            </option>
+          ))}
+        </select>
       </div>
       <div>
         <label htmlFor="available_seats">Available Seats:</label>
@@ -129,7 +166,27 @@ const Form = () => {
         />
       </div>
       <div>
-        <label htmlFor="total_price">Total Price:</label>
+        <label htmlFor="total_price">Adults Price</label>
+        <input
+          type="number"
+          id="total_price"
+          name="total_price"
+          value={formData.total_price}
+          onChange={handleChange}
+        />
+      </div>
+            <div>
+        <label htmlFor="total_price">Child Price</label>
+        <input
+          type="number"
+          id="total_price"
+          name="total_price"
+          value={formData.total_price}
+          onChange={handleChange}
+        />
+      </div>
+            <div>
+        <label htmlFor="total_price">Infant Price</label>
         <input
           type="number"
           id="total_price"

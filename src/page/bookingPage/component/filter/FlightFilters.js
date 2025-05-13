@@ -87,8 +87,6 @@ const FlightFilters = () => {
       default:
         break;
     }
-
-    console.log("Filtered & Sorted Flights:", filteredData);
     Dispath(setDataDisplay(filteredData));
   }, [selectedAirline, selectedTripType]);
 
