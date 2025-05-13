@@ -8,30 +8,33 @@ const AdminPage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Mock data for flights
-    const mockFlights = [
-      {
-        airline_name: "Vietnam Airlines",
-        arrival_airport_code: "HAN",
-        arrival_time: "2025-06-28T00:00:00",
-        available_seats: 120,
-        departure_airport_code: "SGN",
-        departure_time: "2025-06-27T00:00:00",
-        flight_id: 10,
-        flight_number: "VN267",
-        ticket_class_name: "Economy",
-        adult_price: 1000,
-        child_price: 1000,
-        infant_price: 1000,
-      },
-    ];
     Api();
-    setFlights(mockFlights);
   }, []);
   const Api = async () => {
     try {
       const res = await getFlight.get();
-      console.log(res.data);
+      const rawFlights = res.data;
+
+      // Custom lại thành danh sách chuyến bay theo từng hạng vé
+      const formattedFlights = rawFlights.flatMap((flight) =>
+        flight.price_tables.map((price) => ({
+          airline_name: flight.airline_name,
+          arrival_airport_code: flight.arrival_airport_code,
+          arrival_time: flight.arrival_time,
+          available_seats: flight.available_seats,
+          departure_airport_code: flight.departure_airport_code,
+          departure_time: flight.departure_time,
+          flight_id: flight.flight_id,
+          flight_number: flight.flight_number,
+          ticket_class_name: price.ticket_class_name,
+          adult_price: price.adult_price,
+          child_price: price.child_price,
+          infant_price: price.infant_price,
+        }))
+      );
+
+    setFlights(formattedFlights);
+
     } catch (error) {
       console.error("Error fetching flights:", error);
     }
@@ -88,7 +91,7 @@ const AdminPage = () => {
             <th>delete</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody style={{maxHeight: '800px', overflowY: "scroll"}}>
           {flights.map((flight) => (
             <tr key={flight.flight_id}>
               <td style={styleTd}>{flight.airline_name}</td>
