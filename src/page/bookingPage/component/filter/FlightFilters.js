@@ -3,27 +3,50 @@ import "./FlightFilter.css";
 import { useDispatch, useSelector } from "react-redux";
 import { selectSearchFlight } from "../../../../redux/Store";
 import { setFlightData } from "../../../../redux/searchFlightSlice";
+import { data } from "react-router-dom";
 
 const FlightFilters = () => {
-   // Thay đổi state airlines để chỉ lưu một giá trị được chọn
+  // Thay đổi state airlines để chỉ lưu một giá trị được chọn
   const [selectedAirline, setSelectedAirline] = useState([]);
   // data
   const Dispath = useDispatch();
   const searchData = useSelector(selectSearchFlight);
-    
-  useEffect(() => {
-  // const data = searchData.filter((item) => {
-  //   for (let i = 0; i < selectedAirline.length; i++) {
-  //    if(item.airline_name === selectedAirline[i])
-  //     return true;
-  //   }
-  //   return false;
-  // });
-    const data = searchData.filter((item) => selectedAirline.includes(item.airline_name));
-   Dispath(setFlightData(data));
-  },[selectedAirline]);
+
+  // useEffect(() => {
+  //   // console.log("Selected Airlines:", selectedAirline);
+  //   // console.log("Search Data:", searchData);
+  //   const data = searchData.filter((item) => {
+  //     for (let i = 0; i < selectedAirline.length; i++) {
+  //       if (item.airline_name === selectedAirline[i]) return true;
+  //     }
+  //     return false;
+  //   });
+  //   // const data = searchData.filter((item) => selectedAirline.includes(item.airline_name));
+  //   console.log("Filtered Data:", data);
+  //   Dispath(setFlightData(data));
+  // }, [selectedAirline]);
+
+  //test[1,2,3,4]
+  // test.filter((item)=> item %2 == 0)
+  // item = 1 %2 == 0 false
+  //item = 2 %2 == 0 true  [2]
+  //item = 3 %2 == 0 false
+  //item = 4 %2 == 0 true [2,4]
+
   //Thanh kéo giá
   const [priceRange, setPriceRange] = useState([50, 500]);
+  useEffect(() => {
+    if (!Array.isArray(searchData)) return;
+
+    const filteredData = searchData.filter(
+      (flight) =>
+        flight.total_price > priceRange[0] && flight.total_price < priceRange[1]
+    );
+
+    console.log("Loc du lieu", filteredData); // Xem dữ liệu đã lọc
+    Dispath(setFlightData(filteredData));
+  }, [priceRange]);
+
   const [draggingThumb, setDraggingThumb] = useState(null); // 'min' or 'max' or null
   const [isDragging, setIsDragging] = useState(false);
 
@@ -35,15 +58,64 @@ const FlightFilters = () => {
   const [departureMinutes, setDepartureMinutes] = useState([1, 1439]); // 1 (12:01AM) to 1439 (11:59PM) in minutes
   const [draggingTimeThumb, setDraggingTimeThumb] = useState(null); // 'min' or 'max' or null
   const [isTimeDragging, setIsTimeDragging] = useState(false);
+  useEffect(() => {
+  if (!Array.isArray(searchData)) return;
+
+  const filteredData = searchData.filter((flight) => {
+    const departure = new Date(flight.departure_time);
+    const minutes = departure.getHours() * 60 + departure.getMinutes();
+    return (
+      minutes >= departureMinutes[0] && minutes <= departureMinutes[1]
+    );
+  });
+
+  Dispath(setFlightData(filteredData));
+}, [departureMinutes]);
+
+
 
   // State cho rating
   const [selectedRating, setSelectedRating] = useState(null);
 
- 
+  // State cho Sắp xếp va sort theo gia tien
+  const [selectedTripType, setSelectedTripType] = useState("asc");
+  useEffect(() => {
+    if (!Array.isArray(searchData)) return;
 
+    let filteredData = [...searchData];
 
-  // State cho Sắp xếp
-  const [selectedTripType, setSelectedTripType] = useState("lowtohigh");
+    // Lọc theo hãng hàng không (nếu có chọn)
+    if (selectedAirline.length > 0) {
+      filteredData = filteredData.filter((item) =>
+        selectedAirline.includes(item.airline_name)
+      );
+    }
+
+    // Sắp xếp dữ liệu theo loại chuyến
+    switch (selectedTripType) {
+      case "asc":
+        filteredData.sort((a, b) => a.total_price - b.total_price);
+        break;
+      case "desc":
+        filteredData.sort((a, b) => b.total_price - a.total_price);
+        break;
+      case "early":
+        filteredData.sort(
+          (a, b) => new Date(a.departure_time) - new Date(b.departure_time)
+        );
+        break;
+      case "lately":
+        filteredData.sort(
+          (a, b) => new Date(b.departure_time) - new Date(a.departure_time)
+        );
+        break;
+      default:
+        break;
+    }
+
+    console.log("Filtered & Sorted Flights:", filteredData);
+    Dispath(setFlightData(filteredData));
+  }, [selectedAirline, selectedTripType]);
 
   // Đặt mục cho giá
   const minPrice = 0;
@@ -316,8 +388,38 @@ const FlightFilters = () => {
   const maxTimeThumbPosition = minutesToPercent(departureMinutes[1]);
   const timeProgressWidth = maxTimeThumbPosition - minTimeThumbPosition;
 
+
+  const [showFilters, setShowFilters] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    handleResize(); // chạy lần đầu
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+
   return (
     <div className="filters-container">
+  {isMobile && (
+    <button
+      className="mobile-filter-toggle"
+      onClick={() => setShowFilters((prev) => !prev)}
+    >
+      {showFilters ? "Ẩn bộ lọc ▲" : "Hiện bộ lọc ▼"}
+    </button>
+  )}
+
+  <div
+    className={`filters-content ${
+      isMobile && !showFilters ? "hidden" : ""
+    }`}
+  >
       <h2>Bộ lọc</h2>
 
       {/* Price Filter */}
@@ -366,8 +468,8 @@ const FlightFilters = () => {
             ></div>
           </div>
           <div className="slider-labels">
-            <span>${priceRange[0]}</span>
-            <span>${priceRange[1]}</span>
+            <span>{priceRange[0].toLocaleString()}VND</span>
+            <span>{priceRange[1].toLocaleString()}VND</span>
           </div>
         </div>
       </div>
@@ -434,38 +536,38 @@ const FlightFilters = () => {
           <div className="checkbox-option">
             <input
               type="checkbox"
-              id="vietnam"
+              id="Vietnam Airlines"
               checked={selectedAirline.includes("Vietnam Airlines")}
               onChange={() => handleAirlineChange("Vietnam Airlines")}
             />
-            <label htmlFor="vietnam">Vietnam Airlines</label>
+            <label htmlFor="Vietnam Airlines">Vietnam Airlines</label>
           </div>
           <div className="checkbox-option">
             <input
               type="checkbox"
-              id="jetstar"
-              checked={selectedAirline.includes("jetstar")}
-              onChange={() => handleAirlineChange("jetstar")}
+              id="Jetstar Pacific"
+              checked={selectedAirline.includes("Jetstar Pacific")}
+              onChange={() => handleAirlineChange("Jetstar Pacific")}
             />
-            <label htmlFor="jetstar">Jetstar Pacific</label>
+            <label htmlFor="Jetstar Pacific">Jetstar Pacific</label>
           </div>
           <div className="checkbox-option">
             <input
               type="checkbox"
-              id="vietjet"
-              checked={selectedAirline.includes("vietjet")}
-              onChange={() => handleAirlineChange("vietjet")}
+              id="Vietjet Air"
+              checked={selectedAirline.includes("Vietjet Air")}
+              onChange={() => handleAirlineChange("Vietjet Air")}
             />
-            <label htmlFor="vietjet">Vietjet Air</label>
+            <label htmlFor="Vietjet Air">Vietjet Air</label>
           </div>
           <div className="checkbox-option">
             <input
               type="checkbox"
-              id="bamboo"
-              checked={selectedAirline.includes("bamboo")}
-              onChange={() => handleAirlineChange("bamboo")}
+              id="Bamboo Airways"
+              checked={selectedAirline.includes("Bamboo Airways")}
+              onChange={() => handleAirlineChange("Bamboo Airways")}
             />
-            <label htmlFor="bamboo">Bamboo Airways</label>
+            <label htmlFor="Bamboo Airways">Bamboo Airways</label>
           </div>
         </div>
       </div>
@@ -482,8 +584,8 @@ const FlightFilters = () => {
               type="radio"
               id="lowtohigh"
               name="tripType"
-              checked={selectedTripType === "lowtohigh"}
-              onChange={() => handleTripTypeChange("lowtohigh")}
+              checked={selectedTripType === "asc"}
+              onChange={() => handleTripTypeChange("asc")}
             />
             <label htmlFor="lowtohigh">Thấp đến cao</label>
           </div>
@@ -492,8 +594,8 @@ const FlightFilters = () => {
               type="radio"
               id="hightolow"
               name="tripType"
-              checked={selectedTripType === "hightolow"}
-              onChange={() => handleTripTypeChange("hightolow")}
+              checked={selectedTripType === "desc"}
+              onChange={() => handleTripTypeChange("desc")}
             />
             <label htmlFor="hightolow">Cao đến thấp</label>
           </div>
@@ -519,6 +621,7 @@ const FlightFilters = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };

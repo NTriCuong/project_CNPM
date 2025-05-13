@@ -148,3 +148,38 @@
   display: flex;
   flex-direction: column;
 }
+
+
+/* Nút toggle bộ lọc cho mobile */
+.mobile-filter-toggle {
+  display: none;
+  background-color: #223A60;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  width: 100%;
+  cursor: pointer;
+}
+
+/* Ẩn nội dung filter */
+.filters-content.hidden {
+  display: none !important; /* bắt buộc dùng !important để ghi đè các display khác */
+}
+
+/* Khi ở mobile: hiện nút toggle, sửa lại layout */
+@media screen and (max-width: 768px) {
+  .mobile-filter-toggle {
+    display: block;
+  }
+
+  .filters-container {
+    width: 100%;
+    padding: 15px;
+    border-right: none;
+    border-bottom: 1px solid #ccc;
+  }
+}
+

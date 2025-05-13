@@ -67,8 +67,8 @@ header {
 /* Mobile menu toggle button */
 .menu-toggle {
     display: none;
-    width: 12%;
-    height: 40px;
+    width: 10%;
+    height: 24px;
     font-size: 15px;
     background: none;
     border: none;
@@ -148,5 +148,7 @@ header {
 
     .menu-toggle {
         display: block;
+        padding-top: 0px;
+        top: 0px;
     }
 }
