@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectSearchFlight } from "../../../../redux/Store";
 import { setFlightData } from "../../../../redux/searchFlightSlice";
 import { data } from "react-router-dom";
+import { setDataDisplay } from "../../../../redux/dataDisplay";
 
 const FlightFilters = () => {
   // Thay đổi state airlines để chỉ lưu một giá trị được chọn
@@ -11,20 +12,21 @@ const FlightFilters = () => {
   // data
   const Dispath = useDispatch();
   const searchData = useSelector(selectSearchFlight);
+  useEffect(() => {
+    // console.log("Selected Airlines:", selectedAirline);
+    // console.log("Search Data:", searchData);
+    const data = searchData.filter((item) => {
+      for (let i = 0; i < selectedAirline.length; i++) {
+        if (item.airline_name === selectedAirline[i]) return true;
+      }
+      return false;
+    });
+    // const data = searchData.filter((item) => selectedAirline.includes(item.airline_name));
+    console.log("Filtered Data:", data);
+    Dispath(setDataDisplay(data));
+  }, [selectedAirline]);
 
-  // useEffect(() => {
-  //   // console.log("Selected Airlines:", selectedAirline);
-  //   // console.log("Search Data:", searchData);
-  //   const data = searchData.filter((item) => {
-  //     for (let i = 0; i < selectedAirline.length; i++) {
-  //       if (item.airline_name === selectedAirline[i]) return true;
-  //     }
-  //     return false;
-  //   });
-  //   // const data = searchData.filter((item) => selectedAirline.includes(item.airline_name));
-  //   console.log("Filtered Data:", data);
-  //   Dispath(setFlightData(data));
-  // }, [selectedAirline]);
+
 
   //test[1,2,3,4]
   // test.filter((item)=> item %2 == 0)
@@ -80,17 +82,7 @@ const FlightFilters = () => {
   // State cho Sắp xếp va sort theo gia tien
   const [selectedTripType, setSelectedTripType] = useState("asc");
   useEffect(() => {
-    if (!Array.isArray(searchData)) return;
-
     let filteredData = [...searchData];
-
-    // Lọc theo hãng hàng không (nếu có chọn)
-    if (selectedAirline.length > 0) {
-      filteredData = filteredData.filter((item) =>
-        selectedAirline.includes(item.airline_name)
-      );
-    }
-
     // Sắp xếp dữ liệu theo loại chuyến
     switch (selectedTripType) {
       case "asc":
