@@ -259,6 +259,7 @@ function FlightSearchBox({ className }) {
         number_children: SelectorSearchData.numberChildren,
         number_infants: SelectorSearchData.numberInfants,
       });
+      console.log("dadadada", response);
       Dispath(setFlightData(response.data));
       Dispath(setDataDisplay(response.data));
       navigate("/booking");
