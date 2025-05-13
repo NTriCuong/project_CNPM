@@ -10,27 +10,16 @@ const FlightFilters = () => {
   // data
   const Dispath = useDispatch();
   const searchData = useSelector(selectSearchFlight);
-  
-  useEffect(() => {
-    const data =selectedAirline.length !== 0 ? searchData.filter((item) => selectedAirline.includes(item.airline_name)) : searchData;
-    console.log("Data after filtering by airline:", data); // Xem dữ liệu đã lọc
-    
-    Dispath(setDataDisplay(data));
-  }, [selectedAirline]);
+  // useEffect(() => {
+  //   const data =selectedAirline.length !== 0 ? searchData.filter((item) => selectedAirline.includes(item.airline_name)) : searchData;
+  //   console.log("Data after filtering by airline:", data); // Xem dữ liệu đã lọc
+
+  //   Dispath(setDataDisplay(data));
+  // }, [selectedAirline]);
+
 
   //Thanh kéo giá
   const [priceRange, setPriceRange] = useState([50, 500]);
-  useEffect(() => {
-    if (!Array.isArray(searchData)) return;
-
-    const filteredData = searchData.filter(
-      (flight) =>
-        flight.total_price > priceRange[0] && flight.total_price < priceRange[1]
-    );
-
-    console.log("Loc du lieu", filteredData); // Xem dữ liệu đã lọc
-    Dispath(setDataDisplay(filteredData));
-  }, [priceRange]);
 
   const [draggingThumb, setDraggingThumb] = useState(null); // 'min' or 'max' or null
   const [isDragging, setIsDragging] = useState(false);
@@ -43,21 +32,6 @@ const FlightFilters = () => {
   const [departureMinutes, setDepartureMinutes] = useState([1, 1439]); // 1 (12:01AM) to 1439 (11:59PM) in minutes
   const [draggingTimeThumb, setDraggingTimeThumb] = useState(null); // 'min' or 'max' or null
   const [isTimeDragging, setIsTimeDragging] = useState(false);
-  useEffect(() => {
-  if (!Array.isArray(searchData)) return;
-
-  const filteredData = searchData.filter((flight) => {
-    const departure = new Date(flight.departure_time);
-    const minutes = departure.getHours() * 60 + departure.getMinutes();
-    return (
-      minutes >= departureMinutes[0] && minutes <= departureMinutes[1]
-    );
-  });
-
-  Dispath(setDataDisplay(filteredData));
-}, [departureMinutes]);
-
-
 
   // State cho rating
   const [selectedRating, setSelectedRating] = useState(null);
@@ -65,8 +39,30 @@ const FlightFilters = () => {
   // State cho Sắp xếp va sort theo gia tien
   const [selectedTripType, setSelectedTripType] = useState("asc");
   useEffect(() => {
-    let filteredData = [...searchData];
-    // Sắp xếp dữ liệu theo loại chuyến
+    if (!Array.isArray(searchData)) return;
+    // Bước 1: Lọc theo hãng hàng không
+    let filteredData =
+      selectedAirline.length !== 0
+        ? searchData.filter((item) => {
+            const match = selectedAirline.includes(item.airline_name);
+            return match;
+          })
+        : searchData;
+    // Bước 2: Lọc theo giá
+    filteredData = filteredData.filter(
+      (flight) =>
+        flight.total_price > priceRange[0] && flight.total_price < priceRange[1]
+    );
+
+    // // Bước 3: Lọc theo giờ
+    // filteredData = filteredData.filter((flight) => {
+    //   const departure = new Date(flight.departure_time);
+    //   const minutes = departure.getHours() * 60 + departure.getMinutes();
+    //   return minutes >= departureMinutes[0] && minutes <= departureMinutes[1];
+    // });
+    // console.log("⏰ Sau lọc giờ:", filteredData.length);
+
+    // Bước 4: Sắp xếp
     switch (selectedTripType) {
       case "asc":
         filteredData.sort((a, b) => a.total_price - b.total_price);
@@ -88,7 +84,13 @@ const FlightFilters = () => {
         break;
     }
     Dispath(setDataDisplay(filteredData));
-  }, [selectedAirline, selectedTripType]);
+  }, [
+    selectedAirline,
+    priceRange,
+    departureMinutes,
+    selectedTripType,
+    Dispath,
+  ]);
 
   // Đặt mục cho giá
   const minPrice = 0;
@@ -361,7 +363,6 @@ const FlightFilters = () => {
   const maxTimeThumbPosition = minutesToPercent(departureMinutes[1]);
   const timeProgressWidth = maxTimeThumbPosition - minTimeThumbPosition;
 
-
   const [showFilters, setShowFilters] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -376,225 +377,224 @@ const FlightFilters = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-
   return (
     <div className="filters-container">
-  {isMobile && (
-    <button
-      className="mobile-filter-toggle"
-      onClick={() => setShowFilters((prev) => !prev)}
-    >
-      {showFilters ? "Ẩn bộ lọc ▲" : "Hiện bộ lọc ▼"}
-    </button>
-  )}
+      {isMobile && (
+        <button
+          className="mobile-filter-toggle"
+          onClick={() => setShowFilters((prev) => !prev)}
+        >
+          {showFilters ? "Ẩn bộ lọc ▲" : "Hiện bộ lọc ▼"}
+        </button>
+      )}
 
-  <div
-    className={`filters-content ${
-      isMobile && !showFilters ? "hidden" : ""
-    }`}
-  >
-      <h2>Bộ lọc</h2>
+      <div
+        className={`filters-content ${
+          isMobile && !showFilters ? "hidden" : ""
+        }`}
+      >
+        <h2>Bộ lọc</h2>
 
-      {/* Price Filter */}
-      <div className="filter-section">
-        <div className="filter-header">
-          <h3>Giá</h3>
-          <span className="chevron">ˆ</span>
-        </div>
-        <div className="price-slider">
-          <div
-            className="slider-track"
-            ref={sliderTrackRef}
-            onClick={handleTrackClick}
-          >
-            <div
-              className={`slider-thumb ${
-                draggingThumb === "min" ? "active" : ""
-              }`}
-              style={{
-                left: `${minThumbPosition}%`,
-                transition: isDragging ? "none" : "left 0.1s ease",
-              }}
-              onMouseDown={(e) => handleThumbMouseDown(e, "min")}
-              onTouchStart={(e) => handleThumbTouchStart(e, "min")}
-            ></div>
-            <div
-              className={`slider-thumb ${
-                draggingThumb === "max" ? "active" : ""
-              }`}
-              style={{
-                left: `${maxThumbPosition}%`,
-                transition: isDragging ? "none" : "left 0.1s ease",
-              }}
-              onMouseDown={(e) => handleThumbMouseDown(e, "max")}
-              onTouchStart={(e) => handleThumbTouchStart(e, "max")}
-            ></div>
-            <div
-              className="slider-progress"
-              style={{
-                left: `${minThumbPosition}%`,
-                width: `${progressWidth}%`,
-                transition: isDragging
-                  ? "none"
-                  : "left 0.1s ease, width 0.1s ease",
-              }}
-            ></div>
+        {/* Price Filter */}
+        <div className="filter-section">
+          <div className="filter-header">
+            <h3>Giá</h3>
+            <span className="chevron">ˆ</span>
           </div>
-          <div className="slider-labels">
-            <span>{priceRange[0].toLocaleString()}VND</span>
-            <span>{priceRange[1].toLocaleString()}VND</span>
+          <div className="price-slider">
+            <div
+              className="slider-track"
+              ref={sliderTrackRef}
+              onClick={handleTrackClick}
+            >
+              <div
+                className={`slider-thumb ${
+                  draggingThumb === "min" ? "active" : ""
+                }`}
+                style={{
+                  left: `${minThumbPosition}%`,
+                  transition: isDragging ? "none" : "left 0.1s ease",
+                }}
+                onMouseDown={(e) => handleThumbMouseDown(e, "min")}
+                onTouchStart={(e) => handleThumbTouchStart(e, "min")}
+              ></div>
+              <div
+                className={`slider-thumb ${
+                  draggingThumb === "max" ? "active" : ""
+                }`}
+                style={{
+                  left: `${maxThumbPosition}%`,
+                  transition: isDragging ? "none" : "left 0.1s ease",
+                }}
+                onMouseDown={(e) => handleThumbMouseDown(e, "max")}
+                onTouchStart={(e) => handleThumbTouchStart(e, "max")}
+              ></div>
+              <div
+                className="slider-progress"
+                style={{
+                  left: `${minThumbPosition}%`,
+                  width: `${progressWidth}%`,
+                  transition: isDragging
+                    ? "none"
+                    : "left 0.1s ease, width 0.1s ease",
+                }}
+              ></div>
+            </div>
+            <div className="slider-labels">
+              <span>{priceRange[0].toLocaleString()}VND</span>
+              <span>{priceRange[1].toLocaleString()}VND</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Giờ Filter */}
+        <div className="filter-section">
+          <div className="filter-header">
+            <h3>Giờ</h3>
+            <span className="chevron">ˆ</span>
+          </div>
+          <div className="time-slider">
+            <div
+              className="slider-track"
+              ref={timeSliderTrackRef}
+              onClick={handleTimeTrackClick}
+            >
+              <div
+                className={`slider-thumb ${
+                  draggingTimeThumb === "min" ? "active" : ""
+                }`}
+                style={{
+                  left: `${minTimeThumbPosition}%`,
+                  transition: isTimeDragging ? "none" : "left 0.1s ease",
+                }}
+                onMouseDown={(e) => handleTimeThumbMouseDown(e, "min")}
+                onTouchStart={(e) => handleTimeThumbTouchStart(e, "min")}
+              ></div>
+              <div
+                className={`slider-thumb ${
+                  draggingTimeThumb === "max" ? "active" : ""
+                }`}
+                style={{
+                  left: `${maxTimeThumbPosition}%`,
+                  transition: isTimeDragging ? "none" : "left 0.1s ease",
+                }}
+                onMouseDown={(e) => handleTimeThumbMouseDown(e, "max")}
+                onTouchStart={(e) => handleTimeThumbTouchStart(e, "max")}
+              ></div>
+              <div
+                className="slider-progress"
+                style={{
+                  left: `${minTimeThumbPosition}%`,
+                  width: `${timeProgressWidth}%`,
+                  transition: isTimeDragging
+                    ? "none"
+                    : "left 0.1s ease, width 0.1s ease",
+                }}
+              ></div>
+            </div>
+            <div className="slider-labels">
+              <span>{departureTime[0]}</span>
+              <span>{departureTime[1]}</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Airlines Filter - Giữ nguyên checkbox nhưng chỉ cho phép chọn một */}
+        <div className="filter-section">
+          <div className="filter-header">
+            <h3>Hãng Hàng Không</h3>
+            <span className="chevron">ˆ</span>
+          </div>
+          <div className="airlines-options">
+            <div className="checkbox-option">
+              <input
+                type="checkbox"
+                id="Vietnam Airlines"
+                checked={selectedAirline.includes("Vietnam Airlines")}
+                onChange={() => handleAirlineChange("Vietnam Airlines")}
+              />
+              <label htmlFor="Vietnam Airlines">Vietnam Airlines</label>
+            </div>
+            <div className="checkbox-option">
+              <input
+                type="checkbox"
+                id="Jetstar Pacific"
+                checked={selectedAirline.includes("Jetstar Pacific")}
+                onChange={() => handleAirlineChange("Jetstar Pacific")}
+              />
+              <label htmlFor="Jetstar Pacific">Jetstar Pacific</label>
+            </div>
+            <div className="checkbox-option">
+              <input
+                type="checkbox"
+                id="Vietjet Air"
+                checked={selectedAirline.includes("Vietjet Air")}
+                onChange={() => handleAirlineChange("Vietjet Air")}
+              />
+              <label htmlFor="Vietjet Air">Vietjet Air</label>
+            </div>
+            <div className="checkbox-option">
+              <input
+                type="checkbox"
+                id="Bamboo Airways"
+                checked={selectedAirline.includes("Bamboo Airways")}
+                onChange={() => handleAirlineChange("Bamboo Airways")}
+              />
+              <label htmlFor="Bamboo Airways">Bamboo Airways</label>
+            </div>
+          </div>
+        </div>
+
+        {/* Trips Filter */}
+        <div className="filter-section">
+          <div className="filter-header">
+            <h3>Sắp xếp</h3>
+            <span className="chevron">ˆ</span>
+          </div>
+          <div className="trips-options">
+            <div className="checkbox-option">
+              <input
+                type="radio"
+                id="lowtohigh"
+                name="tripType"
+                checked={selectedTripType === "asc"}
+                onChange={() => handleTripTypeChange("asc")}
+              />
+              <label htmlFor="lowtohigh">Thấp đến cao</label>
+            </div>
+            <div className="checkbox-option">
+              <input
+                type="radio"
+                id="hightolow"
+                name="tripType"
+                checked={selectedTripType === "desc"}
+                onChange={() => handleTripTypeChange("desc")}
+              />
+              <label htmlFor="hightolow">Cao đến thấp</label>
+            </div>
+            <div className="checkbox-option">
+              <input
+                type="radio"
+                id="early"
+                name="tripType"
+                checked={selectedTripType === "early"}
+                onChange={() => handleTripTypeChange("early")}
+              />
+              <label htmlFor="early">Sớm nhất</label>
+            </div>
+            <div className="checkbox-option">
+              <input
+                type="radio"
+                id="lately"
+                name="tripType"
+                checked={selectedTripType === "lately"}
+                onChange={() => handleTripTypeChange("lately")}
+              />
+              <label htmlFor="lately">Muộn nhất</label>
+            </div>
           </div>
         </div>
       </div>
-
-      {/* Giờ Filter */}
-      <div className="filter-section">
-        <div className="filter-header">
-          <h3>Giờ</h3>
-          <span className="chevron">ˆ</span>
-        </div>
-        <div className="time-slider">
-          <div
-            className="slider-track"
-            ref={timeSliderTrackRef}
-            onClick={handleTimeTrackClick}
-          >
-            <div
-              className={`slider-thumb ${
-                draggingTimeThumb === "min" ? "active" : ""
-              }`}
-              style={{
-                left: `${minTimeThumbPosition}%`,
-                transition: isTimeDragging ? "none" : "left 0.1s ease",
-              }}
-              onMouseDown={(e) => handleTimeThumbMouseDown(e, "min")}
-              onTouchStart={(e) => handleTimeThumbTouchStart(e, "min")}
-            ></div>
-            <div
-              className={`slider-thumb ${
-                draggingTimeThumb === "max" ? "active" : ""
-              }`}
-              style={{
-                left: `${maxTimeThumbPosition}%`,
-                transition: isTimeDragging ? "none" : "left 0.1s ease",
-              }}
-              onMouseDown={(e) => handleTimeThumbMouseDown(e, "max")}
-              onTouchStart={(e) => handleTimeThumbTouchStart(e, "max")}
-            ></div>
-            <div
-              className="slider-progress"
-              style={{
-                left: `${minTimeThumbPosition}%`,
-                width: `${timeProgressWidth}%`,
-                transition: isTimeDragging
-                  ? "none"
-                  : "left 0.1s ease, width 0.1s ease",
-              }}
-            ></div>
-          </div>
-          <div className="slider-labels">
-            <span>{departureTime[0]}</span>
-            <span>{departureTime[1]}</span>
-          </div>
-        </div>
-      </div>
-
-      {/* Airlines Filter - Giữ nguyên checkbox nhưng chỉ cho phép chọn một */}
-      <div className="filter-section">
-        <div className="filter-header">
-          <h3>Hãng Hàng Không</h3>
-          <span className="chevron">ˆ</span>
-        </div>
-        <div className="airlines-options">
-          <div className="checkbox-option">
-            <input
-              type="checkbox"
-              id="Vietnam Airlines"
-              checked={selectedAirline.includes("Vietnam Airlines")}
-              onChange={() => handleAirlineChange("Vietnam Airlines")}
-            />
-            <label htmlFor="Vietnam Airlines">Vietnam Airlines</label>
-          </div>
-          <div className="checkbox-option">
-            <input
-              type="checkbox"
-              id="Jetstar Pacific"
-              checked={selectedAirline.includes("Jetstar Pacific")}
-              onChange={() => handleAirlineChange("Jetstar Pacific")}
-            />
-            <label htmlFor="Jetstar Pacific">Jetstar Pacific</label>
-          </div>
-          <div className="checkbox-option">
-            <input
-              type="checkbox"
-              id="Vietjet Air"
-              checked={selectedAirline.includes("Vietjet Air")}
-              onChange={() => handleAirlineChange("Vietjet Air")}
-            />
-            <label htmlFor="Vietjet Air">Vietjet Air</label>
-          </div>
-          <div className="checkbox-option">
-            <input
-              type="checkbox"
-              id="Bamboo Airways"
-              checked={selectedAirline.includes("Bamboo Airways")}
-              onChange={() => handleAirlineChange("Bamboo Airways")}
-            />
-            <label htmlFor="Bamboo Airways">Bamboo Airways</label>
-          </div>
-        </div>
-      </div>
-
-      {/* Trips Filter */}
-      <div className="filter-section">
-        <div className="filter-header">
-          <h3>Sắp xếp</h3>
-          <span className="chevron">ˆ</span>
-        </div>
-        <div className="trips-options">
-          <div className="checkbox-option">
-            <input
-              type="radio"
-              id="lowtohigh"
-              name="tripType"
-              checked={selectedTripType === "asc"}
-              onChange={() => handleTripTypeChange("asc")}
-            />
-            <label htmlFor="lowtohigh">Thấp đến cao</label>
-          </div>
-          <div className="checkbox-option">
-            <input
-              type="radio"
-              id="hightolow"
-              name="tripType"
-              checked={selectedTripType === "desc"}
-              onChange={() => handleTripTypeChange("desc")}
-            />
-            <label htmlFor="hightolow">Cao đến thấp</label>
-          </div>
-          <div className="checkbox-option">
-            <input
-              type="radio"
-              id="early"
-              name="tripType"
-              checked={selectedTripType === "early"}
-              onChange={() => handleTripTypeChange("early")}
-            />
-            <label htmlFor="early">Sớm nhất</label>
-          </div>
-          <div className="checkbox-option">
-            <input
-              type="radio"
-              id="lately"
-              name="tripType"
-              checked={selectedTripType === "lately"}
-              onChange={() => handleTripTypeChange("lately")}
-            />
-            <label htmlFor="lately">Muộn nhất</label>
-          </div>
-        </div>
-      </div>
-    </div>
     </div>
   );
 };
