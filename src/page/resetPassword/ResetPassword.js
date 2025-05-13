@@ -4,13 +4,13 @@ import closeEge from '../../image/Icon/Login/closeEye.svg';
 import closeLogo from '../../image/Icon/Login/closelogo.png';
 import history from '../../image/Icon/Login/history.svg';
 import calendar from '../../image/Icon/Login/calen.svg'
-import { useDispatch, useSelector } from 'react-redux';
-import {  onLogin, reset } from '../../redux/authSlice';
+import { useSelector } from 'react-redux';
 import { resetPassword } from '../../api/axiosClient';
 import { selecDataClient } from '../../redux/Store';
 import danger from '../../image/Icon/Login/danger.svg'
+import { useNavigate } from 'react-router-dom';
 const ResetPassword = ({className}) => {
-  const Dispath = useDispatch();
+  const navigate = useNavigate();
 
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
@@ -35,7 +35,8 @@ const ResetPassword = ({className}) => {
       });
       alert("✈️ Đặt mật khẩu mới thành công!")
       handleClose();
-      Dispath(onLogin())
+      // Dispath(onLogin())
+      navigate('/admin-login');
     } catch (error) {
       console.log(error)
     }
@@ -44,7 +45,6 @@ const ResetPassword = ({className}) => {
     resetInputField()
   }
   const resetInputField=()=>{
-    Dispath(reset())
     setPassword('');
     setPassword2('')
     setShowPassword(false)
@@ -59,7 +59,8 @@ const ResetPassword = ({className}) => {
  
   const handleLogin=()=>{
     handleClose();
-    Dispath(onLogin())
+    // Dispath(onLogin())
+    navigate('/admin-login');
   }
   return (
     <div className={className}>

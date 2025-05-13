@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 export const dataClient = createSlice({
     name:'data client',
     initialState:{
-        email:''
+        email:'',
     },
     reducers:{
         setDataClient:(state,actions)=>{

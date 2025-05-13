@@ -12,19 +12,19 @@ const FlightFilters = () => {
   const Dispath = useDispatch();
   const searchData = useSelector(selectSearchFlight);
 
-  useEffect(() => {
-    // console.log("Selected Airlines:", selectedAirline);
-    // console.log("Search Data:", searchData);
-    const data = searchData.filter((item) => {
-      for (let i = 0; i < selectedAirline.length; i++) {
-        if (item.airline_name === selectedAirline[i]) return true;
-      }
-      return false;
-    });
-    // const data = searchData.filter((item) => selectedAirline.includes(item.airline_name));
-    console.log("Filtered Data:", data);
-    Dispath(setFlightData(data));
-  }, [selectedAirline]);
+  // useEffect(() => {
+  //   // console.log("Selected Airlines:", selectedAirline);
+  //   // console.log("Search Data:", searchData);
+  //   const data = searchData.filter((item) => {
+  //     for (let i = 0; i < selectedAirline.length; i++) {
+  //       if (item.airline_name === selectedAirline[i]) return true;
+  //     }
+  //     return false;
+  //   });
+  //   // const data = searchData.filter((item) => selectedAirline.includes(item.airline_name));
+  //   console.log("Filtered Data:", data);
+  //   Dispath(setFlightData(data));
+  // }, [selectedAirline]);
 
   //test[1,2,3,4]
   // test.filter((item)=> item %2 == 0)
@@ -35,6 +35,18 @@ const FlightFilters = () => {
 
   //Thanh kéo giá
   const [priceRange, setPriceRange] = useState([50, 500]);
+  useEffect(() => {
+    if (!Array.isArray(searchData)) return;
+
+    const filteredData = searchData.filter(
+      (flight) =>
+        flight.total_price > priceRange[0] && flight.total_price < priceRange[1]
+    );
+
+    console.log("Loc du lieu", filteredData); // Xem dữ liệu đã lọc
+    Dispath(setFlightData(filteredData));
+  }, [priceRange]);
+
   const [draggingThumb, setDraggingThumb] = useState(null); // 'min' or 'max' or null
   const [isDragging, setIsDragging] = useState(false);
 
@@ -46,24 +58,64 @@ const FlightFilters = () => {
   const [departureMinutes, setDepartureMinutes] = useState([1, 1439]); // 1 (12:01AM) to 1439 (11:59PM) in minutes
   const [draggingTimeThumb, setDraggingTimeThumb] = useState(null); // 'min' or 'max' or null
   const [isTimeDragging, setIsTimeDragging] = useState(false);
+  useEffect(() => {
+  if (!Array.isArray(searchData)) return;
+
+  const filteredData = searchData.filter((flight) => {
+    const departure = new Date(flight.departure_time);
+    const minutes = departure.getHours() * 60 + departure.getMinutes();
+    return (
+      minutes >= departureMinutes[0] && minutes <= departureMinutes[1]
+    );
+  });
+
+  Dispath(setFlightData(filteredData));
+}, [departureMinutes]);
+
+
 
   // State cho rating
   const [selectedRating, setSelectedRating] = useState(null);
 
-  // State cho Sắp xếp
+  // State cho Sắp xếp va sort theo gia tien
   const [selectedTripType, setSelectedTripType] = useState("asc");
   useEffect(() => {
     if (!Array.isArray(searchData)) return;
 
-    const sortedData = [...searchData].sort((a, b) =>
-      selectedTripType === "asc"
-        ? a.total_price - b.total_price
-        : b.total_price - a.total_price
-    );
+    let filteredData = [...searchData];
 
-    Dispath(setFlightData(sortedData));
-    console.log("Sorted flights:", sortedData);
-  }, [selectedTripType]);
+    // Lọc theo hãng hàng không (nếu có chọn)
+    if (selectedAirline.length > 0) {
+      filteredData = filteredData.filter((item) =>
+        selectedAirline.includes(item.airline_name)
+      );
+    }
+
+    // Sắp xếp dữ liệu theo loại chuyến
+    switch (selectedTripType) {
+      case "asc":
+        filteredData.sort((a, b) => a.total_price - b.total_price);
+        break;
+      case "desc":
+        filteredData.sort((a, b) => b.total_price - a.total_price);
+        break;
+      case "early":
+        filteredData.sort(
+          (a, b) => new Date(a.departure_time) - new Date(b.departure_time)
+        );
+        break;
+      case "lately":
+        filteredData.sort(
+          (a, b) => new Date(b.departure_time) - new Date(a.departure_time)
+        );
+        break;
+      default:
+        break;
+    }
+
+    console.log("Filtered & Sorted Flights:", filteredData);
+    Dispath(setFlightData(filteredData));
+  }, [selectedAirline, selectedTripType]);
 
   // Đặt mục cho giá
   const minPrice = 0;
@@ -336,8 +388,38 @@ const FlightFilters = () => {
   const maxTimeThumbPosition = minutesToPercent(departureMinutes[1]);
   const timeProgressWidth = maxTimeThumbPosition - minTimeThumbPosition;
 
+
+  const [showFilters, setShowFilters] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    handleResize(); // chạy lần đầu
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+
   return (
     <div className="filters-container">
+  {isMobile && (
+    <button
+      className="mobile-filter-toggle"
+      onClick={() => setShowFilters((prev) => !prev)}
+    >
+      {showFilters ? "Ẩn bộ lọc ▲" : "Hiện bộ lọc ▼"}
+    </button>
+  )}
+
+  <div
+    className={`filters-content ${
+      isMobile && !showFilters ? "hidden" : ""
+    }`}
+  >
       <h2>Bộ lọc</h2>
 
       {/* Price Filter */}
@@ -386,8 +468,8 @@ const FlightFilters = () => {
             ></div>
           </div>
           <div className="slider-labels">
-            <span>${priceRange[0]}</span>
-            <span>${priceRange[1]}</span>
+            <span>{priceRange[0].toLocaleString()}VND</span>
+            <span>{priceRange[1].toLocaleString()}VND</span>
           </div>
         </div>
       </div>
@@ -512,8 +594,8 @@ const FlightFilters = () => {
               type="radio"
               id="hightolow"
               name="tripType"
-              checked={selectedTripType === "hightolow"}
-              onChange={() => handleTripTypeChange("hightolow")}
+              checked={selectedTripType === "desc"}
+              onChange={() => handleTripTypeChange("desc")}
             />
             <label htmlFor="hightolow">Cao đến thấp</label>
           </div>
@@ -539,6 +621,7 @@ const FlightFilters = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };

@@ -5,12 +5,12 @@ import calendar from '../../image/Icon/Login/calen.svg'
 import { useDispatch, useSelector } from 'react-redux';
 import { selecDataClient, selecStatusOtp } from '../../redux/Store';
 import { resentOtp, verifyOtp } from '../../api/axiosClient';
-import { onLogin, onResetpassword, reset } from '../../redux/authSlice';
 import danger from '../../image/Icon/Login/danger.svg'
+import { useNavigate } from 'react-router-dom';
 const ConfirmOTP = ({className}) => {
   const [otp, setOtp] = useState('');
   const [isDanger,setIsDanger] = useState(false)
-  const Dispath = useDispatch();
+  const navigate = useNavigate();
   const email = useSelector(selecDataClient);
   const status = useSelector(selecStatusOtp);
 
@@ -22,14 +22,14 @@ const ConfirmOTP = ({className}) => {
     setIsDanger(false);
   };
   const handleClose=()=>{
-    Dispath(reset());
     setIsDanger(false);
     setOtp('');
   }
   
   const handleOnLogin=()=>{
     handleClose();
-    Dispath(onLogin());
+    // Dispath(onLogin());
+    navigate('/admin-login');
   }
   //api
   const Api = async()=>{
@@ -44,7 +44,8 @@ const ConfirmOTP = ({className}) => {
       if(status===true)//true la vao trang chu
         handleOnLogin();
       else{// nếu đang xác thực bình thường
-        Dispath(onResetpassword())
+        // Dispath(onResetpassword())
+        navigate('/admin-resetpassword');
       }
       
     } catch (error) {

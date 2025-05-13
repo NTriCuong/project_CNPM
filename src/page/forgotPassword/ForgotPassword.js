@@ -2,31 +2,27 @@ import React, { useEffect, useState } from 'react';
 import closeLogo from '../../image/Icon/Login/closelogo.png';
 import history from '../../image/Icon/Login/history.svg';
 import calendar from '../../image/Icon/Login/calen.svg'
-import { useDispatch, useSelector } from 'react-redux';
-import { onConfirmOTP, onLogin, reset } from '../../redux/authSlice';
-import { setDataClient } from '../../redux/dataClientSlice';
 import { resentOtp } from '../../api/axiosClient';
-import { setStOtp } from '../../redux/stOtpSlice';
-import { selecStatusOtp } from '../../redux/Store';
+import { useNavigate } from 'react-router-dom';
+import { setDataClient } from '../../redux/dataClientSlice';
+import { useDispatch } from 'react-redux';
 const ForgotPassword = ({className}) => {
-  const Dispath = useDispatch();
-  const flag = useSelector(selecStatusOtp)
   const [email, setEmail] = useState('');
+  const navigate = useNavigate();
   // state xu ly bat dong bo
   const [flagLocal, setFlagLocal] = useState(false)
-
+  const Dispath = useDispatch();
   const handleSubmit = (e) => {
     e.preventDefault();
     ApiResent();
-    Dispath(setDataClient(email));
+
+    navigate('/admin-confirmotp')
     setFlagLocal(true)
-    
-    Dispath(onConfirmOTP());
     resetInputField()
   };
 // bat dong bo
 useEffect(()=>{
-  Dispath(setStOtp(false))
+  Dispath(setDataClient(email))
 },[flagLocal])
 
 
@@ -34,12 +30,11 @@ useEffect(()=>{
     setEmail('');
   }
   const handleClose=()=>{
-    Dispath(reset());
     resetInputField()
   }
   
   const handleOnLogin=()=>{
-    Dispath(onLogin());
+    navigate('/admin-login');
     resetInputField()
   }
   // api

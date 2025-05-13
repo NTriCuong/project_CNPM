@@ -1,12 +1,8 @@
-import { useDispatch } from 'react-redux';
-import Button from '../button/Button';
 import './style.css';
-import { onLogin, onRegister } from '../../redux/authSlice';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 
 function Menu({ className }) {
-    const dispatch = useDispatch();
     const navigate = useNavigate();
     const [isOpen, setIsOpen] = useState(false);
 
@@ -25,16 +21,16 @@ function Menu({ className }) {
         // { label: "More", key: "more", onClick: handleMore }
     ];
 
-    const menuButton = [
-        {
-            button: <Button text="Đăng Nhập" onClick={() => { dispatch(onLogin()); closeMenu(); }} className='btn-login' />,
-            key: "dn"
-        },
-        {
-            button: <Button text="Đăng Ký" onClick={() => { dispatch(onRegister()); closeMenu(); }} className='btn-signup' />,
-            key: "dy"
-        }
-    ];
+    // const menuButton = [
+    //     {
+    //         button: <Button text="Đăng Nhập" onClick={() => { dispatch(onLogin()); closeMenu(); }} className='btn-login' />,
+    //         key: "dn"
+    //     },
+    //     {
+    //         button: <Button text="Đăng Ký" onClick={() => { dispatch(onRegister()); closeMenu(); }} className='btn-signup' />,
+    //         key: "dy"
+    //     }
+    // ];
 
     return (
         <header>
@@ -65,9 +61,9 @@ function Menu({ className }) {
                     {menuItems.map(item => (
                         <li key={item.key} onClick={item.onClick}>{item.label}</li>
                     ))}
-                    {menuButton.map(item => (
+                    {/* {menuButton.map(item => (
                         <li key={item.key}>{item.button}</li>
-                    ))}
+                    ))} */}
                 </ul>
             </div>
         </header>

@@ -62,7 +62,7 @@
 }
 
 .filters-wrapper {
-  flex: 0 0 250px; /* cố định sidebar filter 250px */
+  flex: 0 0 85px; /* cố định sidebar filter 250px */
 }
 
 .flight-list-wrapper {

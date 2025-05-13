@@ -35,4 +35,28 @@
     color: white;
     padding: 0 30px;
   }
+
+@media screen and (max-width: 768px) {
+  .date-selector {
+    gap: 20px;
+    justify-content: flex-start;
+  }
+
+  .date-item {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  .date-item .day {
+    font-size: 6px;
+  }
+
+  .date-item .date {
+    font-size: 6px;
+  }
+
+  .selected {
+    padding: 0 20px;
+  }
+}
   

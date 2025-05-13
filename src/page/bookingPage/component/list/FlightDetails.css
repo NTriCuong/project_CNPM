@@ -93,7 +93,7 @@
   position: relative;
 }
 
-.detail-button{
+.detail-button {
   font-weight: 100;
   color: #0056b3;
 }
@@ -111,3 +111,85 @@
   position: absolute;
   right: 0;
 }
+
+@media screen and (max-width: 768px) {
+  .flight-card {
+    padding: 12px;
+  }
+
+  .flight-info {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .airline {
+    width: 100%;
+    gap: 80px;
+  }
+
+  .airline-logo {
+    width: 40px;
+  }
+
+  .airline-name {
+    font-size: 13px;
+  }
+
+  .time-info {
+    width: 100%;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .departure,
+  .arrival {
+    align-items: flex-start;
+  }
+
+  .time {
+    font-size: 16px;
+  }
+
+  .code {
+    font-size: 11px;
+  }
+
+  .flight-duration {
+    font-size: 13px;
+    margin-top: 8px;
+  }
+
+  .flight-class {
+    font-size: 13px;
+  }
+
+  .price {
+    text-align: left;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+
+  .price-child {
+    font-size: 11px;
+  }
+
+  .flight-details {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 15px;
+  }
+
+  .book-button {
+    position: static;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .detail-button {
+    display: none;
+  }
+}
+
+
