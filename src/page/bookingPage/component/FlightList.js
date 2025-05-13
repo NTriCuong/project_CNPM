@@ -1,13 +1,15 @@
 import "./FlightList.css";
 import DateSelector from "./date/DateSelector";
 import FlightDetails from "./list/FlightDetails"
-import { selectSearchData } from "../../../redux/Store";
+import { selectIsSearch, selectSearchData } from "../../../redux/Store";
 import { useSelector } from "react-redux";
 
 
 function Flightlist() {
 
   const searchData = useSelector(selectSearchData);
+  const isSearch = useSelector(selectIsSearch)
+  const isRecover = useSelector(selectIsSearch);
   return (
     <div>
           <div className="flight-list-container">
@@ -16,13 +18,13 @@ function Flightlist() {
               <div className="route-header">
                 <div className="route-info">
                   <div className="route-location">
-                    <h2>{searchData.departureLocation.city}</h2>
-                    <div className="airport-code">{searchData.departureLocation.codeCity}</div>
+                    <h2>{!isSearch?'City':searchData.departureLocation.city}</h2>
+                    <div className="airport-code">{!isSearch?'Code':searchData.departureLocation.codeCity}</div>
                   </div>
                   <div className="route-arrow">⟶</div>
                   <div className="route-location">
-                    <h2>{searchData.arrivalLocation.city}</h2>
-                    <div className="airport-code">{searchData.arrivalLocation.codeCity}</div>
+                    <h2>{!isSearch?'City':searchData.arrivalLocation.city}</h2>
+                    <div className="airport-code">{!isSearch?'Code':searchData.arrivalLocation.codeCity}</div>
                   </div>
                 </div>
                 <button className="collapse-button">
@@ -30,8 +32,8 @@ function Flightlist() {
               </div>
             </div>
             <DateSelector />
-            <FlightDetails classify={searchData.departureLocation.codeCity} />
-            <div className="flight-section">
+            <FlightDetails className={!isSearch?"is-search":''} classify={searchData.departureLocation.codeCity} />
+           {!isSearch?<></>:<> <div className="flight-section">
               <div className="route-header">
                 <div className="route-info">
                   <div className="route-location">
@@ -48,7 +50,7 @@ function Flightlist() {
                 </button>
               </div>
             </div>
-            <FlightDetails classify={searchData.arrivalLocation.codeCity}/>
+            <FlightDetails classify={searchData.arrivalLocation.codeCity}/></>}
           </div>
     </div>
   );

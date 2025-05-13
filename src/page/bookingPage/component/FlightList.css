@@ -3,7 +3,9 @@
     background-color: #f5f5f5;
     width: 100%;
 }
-
+.is-search{
+    max-height: 500px;
+}
 /* Route header styles */
 .route-header {
     background-color: #4285F4;
