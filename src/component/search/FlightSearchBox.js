@@ -24,6 +24,7 @@ import { format, parse } from "date-fns";
 import { appendFlightData, setFlightData } from "../../redux/searchFlightSlice";
 import { useNavigate } from "react-router-dom";
 import { setDataDisplay } from "../../redux/dataDisplay";
+import { setIsSearch } from "../../redux/isSearch";
 
 function FlightSearchBox({ className }) {
   const navigate = useNavigate();
@@ -66,6 +67,7 @@ function FlightSearchBox({ className }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+      Dispath(setIsSearch(true));
     // kiểm tra khứ hồi hay 1 chiều
     const today = new Date();
     const departureDate = parse(

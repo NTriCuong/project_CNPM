@@ -18,7 +18,6 @@ function AppRouter() {
 const PrivateRoute = ({ children }) => {
   return isAuthenticated() ? children : <Navigate to="/admin-login" replace />;
 };
-          console.log(isAuthenticated());
   return (
     <Router>
       <Routes>

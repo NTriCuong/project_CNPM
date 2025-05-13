@@ -6,7 +6,7 @@ import searchDataClice from './searchDataClice';
 import flightSearchSlice from './searchFlightSlice';
 import dataDisplay from './dataDisplay';
 import { dataClientDisplay } from './dataClientDisplay';
-
+import isSearch from './isSearch';
 const store = configureStore({
   reducer: {
     // nơi thêm các reducer vào store
@@ -18,7 +18,8 @@ const store = configureStore({
     searchDataClice:searchDataClice,
     searchFlight: flightSearchSlice,
     dataClientDisplay:dataClientDisplay,
-    dataDisplay: dataDisplay 
+    dataDisplay: dataDisplay ,
+    isSearch: isSearch,
   }
 });
 
@@ -29,4 +30,5 @@ export const selectSearchData = (state)=>state.searchDataClice.data;
 export const selectSearchFlight = (state)=>state.searchFlight.data || [];
 export const selectDataClientDisplay = (state) => state.dataClientDisplay;
 export const selectDataDisplay = (state) => state.dataDisplay.data;
+export const selectIsSearch = (state) => state.isSearch.data;
 export default store;

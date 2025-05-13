@@ -14,7 +14,6 @@ import { selectSearchData } from "../../../../redux/Store";
 const DatePickerCustom = ({ flag }) => {
   //true ngay di false ngay ve
   const selectDatasearch = useSelector(selectSearchData);
-  console.log("selectDatasearch", selectDatasearch);
   
   const [selectedDate, setSelectedDate] = useState(() => {
     const dateString = flag
@@ -55,7 +54,6 @@ const DatePickerCustom = ({ flag }) => {
     {value || "Chọn ngày"}
   </div>
 ));
-console.log("selectedDate", selectedDate);
 
   return (
     <div className="date-picker-customy">
