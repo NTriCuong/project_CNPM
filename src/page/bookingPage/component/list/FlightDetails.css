@@ -2,6 +2,8 @@
   width: 100%;
   margin: 20px auto;
   font-family: "Roboto", sans-serif;
+  overflow-x: scroll;
+  height: 300px;
 }
 
 .flight-card {

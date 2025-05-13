@@ -3,7 +3,6 @@ import "./FlightFilter.css";
 import { useDispatch, useSelector } from "react-redux";
 import { selectSearchFlight } from "../../../../redux/Store";
 import { setFlightData } from "../../../../redux/searchFlightSlice";
-import { data } from "react-router-dom";
 import { setDataDisplay } from "../../../../redux/dataDisplay";
 
 const FlightFilters = () => {
@@ -13,27 +12,11 @@ const FlightFilters = () => {
   const Dispath = useDispatch();
   const searchData = useSelector(selectSearchFlight);
   useEffect(() => {
-    // console.log("Selected Airlines:", selectedAirline);
-    // console.log("Search Data:", searchData);
-    const data = searchData.filter((item) => {
-      for (let i = 0; i < selectedAirline.length; i++) {
-        if (item.airline_name === selectedAirline[i]) return true;
-      }
-      return false;
-    });
-    // const data = searchData.filter((item) => selectedAirline.includes(item.airline_name));
-    console.log("Filtered Data:", data);
+    const data =selectedAirline.length !== 0 ? searchData.filter((item) => selectedAirline.includes(item.airline_name)) : searchData;
+    console.log("Data after filtering by airline:", data); // Xem dữ liệu đã lọc
+    
     Dispath(setDataDisplay(data));
   }, [selectedAirline]);
-
-
-
-  //test[1,2,3,4]
-  // test.filter((item)=> item %2 == 0)
-  // item = 1 %2 == 0 false
-  //item = 2 %2 == 0 true  [2]
-  //item = 3 %2 == 0 false
-  //item = 4 %2 == 0 true [2,4]
 
   //Thanh kéo giá
   const [priceRange, setPriceRange] = useState([50, 500]);
