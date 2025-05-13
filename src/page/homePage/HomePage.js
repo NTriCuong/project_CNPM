@@ -19,25 +19,6 @@ function HomePage() {
       <Menu />
       <Banner />
       <FlightSearchBox className={"search-box"} />
-      {/* <FlightBookingLogin
-        className={`form-login ${auth === "auth-login" ? "on-login" : ""}`}
-      />
-      <FlightRegister
-        className={`form-login ${auth === "auth-register" ? "on-login" : ""}`}
-      />
-      <ForgotPassword
-        className={`form-login ${
-          auth === "auth-forgotpassword" ? "on-login" : ""
-        }`}
-      />
-      <ConfirmOTP
-        className={`form-login ${auth === "auth-confirmotp" ? "on-login" : ""}`}
-      />
-      <ResetPassword
-        className={`form-login ${
-          auth === "auth-resetpassword" ? "on-login" : ""
-        }`}
-      /> */}
       <ChatBox />
       <Discovery />
       <Footer />
