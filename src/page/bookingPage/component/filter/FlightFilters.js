@@ -2,7 +2,6 @@ import React, { useState, useRef, useEffect } from "react";
 import "./FlightFilter.css";
 import { useDispatch, useSelector } from "react-redux";
 import { selectSearchFlight } from "../../../../redux/Store";
-import { setFlightData } from "../../../../redux/searchFlightSlice";
 import { setDataDisplay } from "../../../../redux/dataDisplay";
 
 const FlightFilters = () => {
@@ -11,6 +10,7 @@ const FlightFilters = () => {
   // data
   const Dispath = useDispatch();
   const searchData = useSelector(selectSearchFlight);
+  
   useEffect(() => {
     const data =selectedAirline.length !== 0 ? searchData.filter((item) => selectedAirline.includes(item.airline_name)) : searchData;
     console.log("Data after filtering by airline:", data); // Xem dữ liệu đã lọc

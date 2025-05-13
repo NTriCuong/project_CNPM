@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./FlightDetails.css";
 import { useSelector } from "react-redux";
-import { selectDataDisplay, selectSearchFlight } from "../../../../redux/Store";
+import { selectDataDisplay } from "../../../../redux/Store";
 
 
 const calculateFlightDuration = (departureTime, arrivalTime) => {
@@ -31,7 +31,7 @@ const logoVJ = "https://seeklogo.com/images/V/vietjet-aviation-logo-A823494846-s
 const FlightDetails = ({classify,className}) => {
   const dataDisplay = useSelector(selectDataDisplay);
   
-  
+
   const data = dataDisplay?.filter((item) => item.departure_airport === classify);// item % 2 == 0
 
   return (
