@@ -14,6 +14,8 @@ import { selectSearchData } from "../../../../redux/Store";
 const DatePickerCustom = ({ flag }) => {
   //true ngay di false ngay ve
   const selectDatasearch = useSelector(selectSearchData);
+  console.log("selectDatasearch", selectDatasearch);
+  
   const [selectedDate, setSelectedDate] = useState(() => {
     const dateString = flag
       ? selectDatasearch.departureDate
@@ -28,13 +30,33 @@ const DatePickerCustom = ({ flag }) => {
   const openDatePicker = () => {
     datePickerRef.current.setFocus(); // hoặc dùng .input.click() nếu không được
   };
-  useEffect(() => {
-    if (flag)
-      //ngay di
-      Dispath(updateDepartureDate(format(new Date(selectedDate), "dd-MM-yyyy")));
-    else Dispath(updateArrivalDate(format(new Date(selectedDate), "dd-MM-yyyy")));
-  }, [selectedDate]);
+ useEffect(() => {
+  const dateString = flag
+    ? selectDatasearch.departureDate
+    : selectDatasearch.arrivalDate;
+
+  const parsedDate = parse(dateString, "dd-MM-yyyy", new Date());
+  setSelectedDate(parsedDate);
+}, [selectDatasearch.departureDate, selectDatasearch.arrivalDate]);
+
   registerLocale("vi", vi); // đăng ký locale
+
+  const CustomInput = React.forwardRef(({ value, onClick }, ref) => (
+  <div
+    onClick={onClick}
+    ref={ref}
+    style={{
+      fontSize:'12px',
+      backgroundColor: "#fff",
+      cursor: "pointer",
+      userSelect: "none"
+    }}
+  >
+    {value || "Chọn ngày"}
+  </div>
+));
+console.log("selectedDate", selectedDate);
+
   return (
     <div className="date-picker-customy">
       <img src={iconCalender} alt="calender" onClick={openDatePicker} />
@@ -53,7 +75,7 @@ const DatePickerCustom = ({ flag }) => {
         dateFormat="dd-MM-yyyy"
         locale="vi"
         onKeyDown={(e) => e.preventDefault()}
-        x
+        customInput={<CustomInput />}
         onPaste={(e) => e.preventDefault()}
       />
     </div>

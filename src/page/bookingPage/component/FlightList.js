@@ -1,4 +1,3 @@
-import React from "react";
 import "./FlightList.css";
 import DateSelector from "./date/DateSelector";
 import FlightDetails from "./list/FlightDetails"
@@ -36,13 +35,13 @@ function Flightlist() {
               <div className="route-header">
                 <div className="route-info">
                   <div className="route-location">
-                    <h2>{searchData.departureLocation.city}</h2>
-                    <div className="airport-code">{searchData.departureLocation.codeCity}</div>
+                    <h2>{searchData.arrivalLocation.city}</h2>
+                    <div className="airport-code">{searchData.arrivalLocation.codeCity}</div>
                   </div>
                   <div className="route-arrow">⟶</div>
                   <div className="route-location">
-                    <h2>{searchData.arrivalLocation.city}</h2>
-                    <div className="airport-code">{searchData.arrivalLocation.codeCity}</div>
+                    <h2>{searchData.departureLocation.city}</h2>
+                    <div className="airport-code">{ searchData.departureLocation.codeCity}</div>
                   </div>
                 </div>
                 <button className="collapse-button">

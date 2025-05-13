@@ -16,7 +16,7 @@ export const searchDataClice = createSlice({
         airport: "Sân Bay Quốc Tế Nội Bài",
       }, //điểm đến
       departureDate: format(new Date(), "dd-MM-yyyy"), // ngày đi
-      arrivalDate:format(addDays(new Date(), 1), "dd-MM-yyyy"), // ngày về
+      arrivalDate: format(addDays(new Date(), 1), "dd-MM-yyyy"), // ngày về
       ticketClasses: "Economy", //hạng vé Premium Economy, Business
       numberAdults: 1, // số khách người lớn
       numberChildren: 0, // só khách trẻ em
@@ -31,15 +31,20 @@ export const searchDataClice = createSlice({
       state.data.arrivalLocation = actions.payload;
     },
     updateDepartureDate: (state, actions) => {
+      // Xử lý departureDate
       state.data.departureDate = actions.payload;
-
-      // Cập nhật arrivalDate = departureDate + 1
-      const departureDateObject = parse(actions.payload, "dd-MM-yyyy", new Date());
-      state.data.arrivalDate = format(addDays(departureDateObject, 1), "dd-MM-yyyy");
+      const departureDateObject = parse(
+        actions.payload,
+        "dd-MM-yyyy",
+        new Date()
+      );
+      departureDateObject.setHours(12); // Đặt giờ giữa trưa để tránh lỗi lệch ngày do timezone
+      const arrivalDateObject = addDays(departureDateObject, 1);
+      state.data.arrivalDate = format(arrivalDateObject, "dd-MM-yyyy");
     },
-    updateArrivalDate:(state, actions) => {
-        state.data.arrivalDate = actions.payload;
-      },
+    updateArrivalDate: (state, actions) => {
+      state.data.arrivalDate = actions.payload;
+    },
     updateTicketClasses: (state, actions) => {
       state.data.ticketClasses = actions.payload;
     },
@@ -62,6 +67,6 @@ export const {
   updateNumberAdults,
   updateNumberChildren,
   updateNumberInfants,
-  updateArrivalDate
+  updateArrivalDate,
 } = searchDataClice.actions;
 export default searchDataClice.reducer;

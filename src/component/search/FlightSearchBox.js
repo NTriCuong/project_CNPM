@@ -22,13 +22,11 @@ import SelectConsumer from "./component/selectConsumer/SelectConsumer";
 import { searchFlight } from "../../api/axiosClient";
 import { format, parse } from "date-fns";
 import { appendFlightData, setFlightData } from "../../redux/searchFlightSlice";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import { setDataDisplay } from "../../redux/dataDisplay";
 
-
-
 function FlightSearchBox({ className }) {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const Dispath = useDispatch(); // dẩy dữa liệu lên
   const [tickerType, setTickerType] = useState(true);
   // trạng thái người dùng đang nhấn vào field chọn điểm đến và điểm đi hay chưa
@@ -48,18 +46,51 @@ function FlightSearchBox({ className }) {
   }, [SelectorSearchData]);
 
   useEffect(() => {
-    const date2 = parse(SelectorSearchData.arrivalDate, "dd-MM-yyyy", new Date());
+    const date2 = parse(
+      SelectorSearchData.arrivalDate,
+      "dd-MM-yyyy",
+      new Date()
+    );
     const weekdayNumber2 = date2.getDay();
-    const weekdays = ["Chủ Nhật", "Thứ Hai", "Thứ Ba", "Thứ Tư", "Thứ Năm", "Thứ Sáu", "Thứ Bảy"];
+    const weekdays = [
+      "Chủ Nhật",
+      "Thứ Hai",
+      "Thứ Ba",
+      "Thứ Tư",
+      "Thứ Năm",
+      "Thứ Sáu",
+      "Thứ Bảy",
+    ];
     setWeekdayText2(weekdays[weekdayNumber2]);
   }, [SelectorSearchData.arrivalDate]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     // kiểm tra khứ hồi hay 1 chiều
-    if (tickerType) {// nếu là 1 chiều thì kiểm tra ngày đi
+    const today = new Date();
+    const departureDate = parse(
+      SelectorSearchData.departureDate,
+      "dd-MM-yyyy",
+      new Date()
+    );
+    const arrivalDate = parse(
+      SelectorSearchData.arrivalDate,
+      "dd-MM-yyyy",
+      new Date()
+    );
+    // So sánh ngày đi phải >= ngày hiện tại (bỏ giờ phút giây)
+    if (departureDate.setHours(0, 0, 0, 0) < today.setHours(0, 0, 0, 0)) {
+      alert("Vui lòng chọn ngày đi hợp lệ");
+      return;
+    }
+    if (arrivalDate.setHours(0, 0, 0, 0) < today.setHours(0, 0, 0, 0)) {
+      alert("Vui lòng chọn ngày về hợp lệ");
+      return;
+    }
+    if (tickerType) {
+      // nếu là 1 chiều thì kiểm tra ngày đi
       Api();
-    }else {
+    } else {
       Api();
       Api2();
     }
@@ -216,9 +247,13 @@ function FlightSearchBox({ className }) {
         departure_airport_code: SelectorSearchData.departureLocation.codeCity,
         arrival_airport_code: SelectorSearchData.arrivalLocation.codeCity,
         departure_time: (() => {
-          const parsedDate = parse(SelectorSearchData.departureDate, 'dd-MM-yyyy', new Date());
-          return format(parsedDate, 'yyyy-MM-dd');
-        })(),        
+          const parsedDate = parse(
+            SelectorSearchData.departureDate,
+            "dd-MM-yyyy",
+            new Date()
+          );
+          return format(parsedDate, "yyyy-MM-dd");
+        })(),
         ticket_classes: SelectorSearchData.ticketClasses,
         number_adults: SelectorSearchData.numberAdults,
         number_children: SelectorSearchData.numberChildren,
@@ -229,49 +264,53 @@ function FlightSearchBox({ className }) {
       navigate("/booking");
     } catch (error) {
       if (error.response) {
-          // Nếu có response từ server
-          if (error.response.status === 404) {
-              alert(error.response.data.detail);
-          } else {
-              alert("API lỗi. Vui lòng kiểm tra lại mạng hoặc thử lại sau.");
-          }
-      } else {
-          // Nếu không có response (lỗi mạng hoặc lỗi khác)
-          alert("Không thể kết nối đến server. Vui lòng kiểm tra lại mạng.");
-      }
-  }
-  };
-//api khứ hồi
-const Api2 = async () => {
-  try {
-    const response = await searchFlight.post("/", {
-      departure_airport_code: SelectorSearchData.arrivalLocation.codeCity,
-      arrival_airport_code:  SelectorSearchData.departureLocation.codeCity,
-      departure_time: (() => {
-        const parsedDate = parse(SelectorSearchData.departureDate, 'dd-MM-yyyy', new Date());
-        return format(parsedDate, 'yyyy-MM-dd');
-      })(),        
-      ticket_classes: SelectorSearchData.ticketClasses,
-      number_adults: SelectorSearchData.numberAdults,
-      number_children: SelectorSearchData.numberChildren,
-      number_infants: SelectorSearchData.numberInfants,
-    });
-    Dispath(appendFlightData(response.data));
-    navigate("/booking");
-  } catch (error) {
-    if (error.response) {
         // Nếu có response từ server
         if (error.response.status === 404) {
-            alert('Không tìm thấy chuyến bay về');
+          alert(error.response.data.detail);
         } else {
-            alert("API lỗi. Vui lòng kiểm tra lại mạng hoặc thử lại sau.");
+          alert("API lỗi. Vui lòng kiểm tra lại mạng hoặc thử lại sau.");
         }
-    } else {
+      } else {
         // Nếu không có response (lỗi mạng hoặc lỗi khác)
         alert("Không thể kết nối đến server. Vui lòng kiểm tra lại mạng.");
+      }
     }
-}
-};
+  };
+  //api khứ hồi
+  const Api2 = async () => {
+    try {
+      const response = await searchFlight.post("/", {
+        departure_airport_code: SelectorSearchData.arrivalLocation.codeCity,
+        arrival_airport_code: SelectorSearchData.departureLocation.codeCity,
+        departure_time: (() => {
+          const parsedDate = parse(
+            SelectorSearchData.departureDate,
+            "dd-MM-yyyy",
+            new Date()
+          );
+          return format(parsedDate, "yyyy-MM-dd");
+        })(),
+        ticket_classes: SelectorSearchData.ticketClasses,
+        number_adults: SelectorSearchData.numberAdults,
+        number_children: SelectorSearchData.numberChildren,
+        number_infants: SelectorSearchData.numberInfants,
+      });
+      Dispath(appendFlightData(response.data));
+      navigate("/booking");
+    } catch (error) {
+      if (error.response) {
+        // Nếu có response từ server
+        if (error.response.status === 404) {
+          alert("Không tìm thấy chuyến bay về");
+        } else {
+          alert("API lỗi. Vui lòng kiểm tra lại mạng hoặc thử lại sau.");
+        }
+      } else {
+        // Nếu không có response (lỗi mạng hoặc lỗi khác)
+        alert("Không thể kết nối đến server. Vui lòng kiểm tra lại mạng.");
+      }
+    }
+  };
   // click
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -294,29 +333,29 @@ const Api2 = async () => {
     };
   }, []);
 
-const inputSelectRef = useRef(null); // Tạo ref cho InputSelect
+  const inputSelectRef = useRef(null); // Tạo ref cho InputSelect
 
-useEffect(() => {
-  const handleClickOutside = (event) => {
-    // Nếu click không nằm trong vùng departure, arrival hoặc InputSelect
-    if (
-      departureRef.current &&
-      !departureRef.current.contains(event.target) &&
-      arrivalRef.current &&
-      !arrivalRef.current.contains(event.target) &&
-      inputSelectRef.current &&
-      !inputSelectRef.current.contains(event.target)
-    ) {
-      setStatusDP(false);
-      setStatusArP(false);
-    }
-  };
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      // Nếu click không nằm trong vùng departure, arrival hoặc InputSelect
+      if (
+        departureRef.current &&
+        !departureRef.current.contains(event.target) &&
+        arrivalRef.current &&
+        !arrivalRef.current.contains(event.target) &&
+        inputSelectRef.current &&
+        !inputSelectRef.current.contains(event.target)
+      ) {
+        setStatusDP(false);
+        setStatusArP(false);
+      }
+    };
 
-  document.addEventListener("mousedown", handleClickOutside);
-  return () => {
-    document.removeEventListener("mousedown", handleClickOutside);
-  };
-}, []);
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   const handlePoint = () => {
     setStatusDP(!statusDP);
@@ -328,12 +367,24 @@ useEffect(() => {
     setStatusConsumer(!statusConsumer);
   };
 
-// Thứ trong lịch bay đi
-const date = parse(SelectorSearchData.departureDate, "dd-MM-yyyy", new Date());
-// Lấy thứ (0 = Chủ Nhật, 1 = Thứ Hai, ..., 6 = Thứ Bảy)
-const weekdayNumber = date.getDay();
-const weekdays = ["Chủ Nhật", "Thứ Hai", "Thứ Ba", "Thứ Tư", "Thứ Năm", "Thứ Sáu", "Thứ Bảy"];
-const weekdayText = weekdays[weekdayNumber];
+  // Thứ trong lịch bay đi
+  const date = parse(
+    SelectorSearchData.departureDate,
+    "dd-MM-yyyy",
+    new Date()
+  );
+  // Lấy thứ (0 = Chủ Nhật, 1 = Thứ Hai, ..., 6 = Thứ Bảy)
+  const weekdayNumber = date.getDay();
+  const weekdays = [
+    "Chủ Nhật",
+    "Thứ Hai",
+    "Thứ Ba",
+    "Thứ Tư",
+    "Thứ Năm",
+    "Thứ Sáu",
+    "Thứ Bảy",
+  ];
+  const weekdayText = weekdays[weekdayNumber];
 
   return (
     <div className="home-container">
@@ -374,10 +425,7 @@ const weekdayText = weekdays[weekdayNumber];
                 className="field"
                 textTop="Điểm Khởi Hành"
                 textCenter={
-                  <div >
-                    {" "}
-                    {SelectorSearchData.departureLocation.city}
-                  </div>
+                  <div> {SelectorSearchData.departureLocation.city}</div>
                 }
                 textBottom={
                   <div ref={departureRef} style={{ position: "relative" }}>
@@ -392,7 +440,7 @@ const weekdayText = weekdays[weekdayNumber];
                     </span>
                     {SelectorSearchData.departureLocation.airport}
                     <InputSelect
-                      ref={inputSelectRef} 
+                      ref={inputSelectRef}
                       className={`bottom-left-r ${
                         statusDP ? "input-select" : "select-none"
                       }`}
@@ -407,10 +455,7 @@ const weekdayText = weekdays[weekdayNumber];
                 className="field"
                 textTop="Điểm đến"
                 textCenter={
-                  <div >
-                    {" "}
-                    {SelectorSearchData.arrivalLocation.city}
-                  </div>
+                  <div> {SelectorSearchData.arrivalLocation.city}</div>
                 }
                 textBottom={
                   <div ref={arrivalRef} style={{ position: "relative" }}>
@@ -425,7 +470,7 @@ const weekdayText = weekdays[weekdayNumber];
                     </span>
                     {SelectorSearchData.arrivalLocation.airport}
                     <InputSelect
-                    ref={inputSelectRef} 
+                      ref={inputSelectRef}
                       className={`bottom-left-r ${
                         statusArP ? "input-select" : "select-none"
                       }`}
@@ -449,7 +494,7 @@ const weekdayText = weekdays[weekdayNumber];
                 className="field"
                 textTop="Ngày về"
                 textCenter={<DatePickerCustom flag={false} />}
-                textBottom={weekdayText2} 
+                textBottom={weekdayText2}
               />
               <SearchItem
                 className="field"
