@@ -29,7 +29,7 @@ const FlightFilters = () => {
     );
 
     console.log("Loc du lieu", filteredData); // Xem dữ liệu đã lọc
-    Dispath(setFlightData(filteredData));
+    Dispath(setDataDisplay(filteredData));
   }, [priceRange]);
 
   const [draggingThumb, setDraggingThumb] = useState(null); // 'min' or 'max' or null
@@ -54,7 +54,7 @@ const FlightFilters = () => {
     );
   });
 
-  Dispath(setFlightData(filteredData));
+  Dispath(setDataDisplay(filteredData));
 }, [departureMinutes]);
 
 
@@ -89,7 +89,7 @@ const FlightFilters = () => {
     }
 
     console.log("Filtered & Sorted Flights:", filteredData);
-    Dispath(setFlightData(filteredData));
+    Dispath(setDataDisplay(filteredData));
   }, [selectedAirline, selectedTripType]);
 
   // Đặt mục cho giá
