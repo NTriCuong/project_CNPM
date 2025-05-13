@@ -23,6 +23,7 @@ import { searchFlight } from "../../api/axiosClient";
 import { format, parse } from "date-fns";
 import { appendFlightData, setFlightData } from "../../redux/searchFlightSlice";
 import { useNavigate } from 'react-router-dom';
+import { setDataDisplay } from "../../redux/dataDisplay";
 
 
 
@@ -224,6 +225,7 @@ function FlightSearchBox({ className }) {
         number_infants: SelectorSearchData.numberInfants,
       });
       Dispath(setFlightData(response.data));
+      Dispath(setDataDisplay(response.data));
       navigate("/booking");
     } catch (error) {
       if (error.response) {
@@ -260,7 +262,7 @@ const Api2 = async () => {
     if (error.response) {
         // Nếu có response từ server
         if (error.response.status === 404) {
-            alert(error.response.data.detail);
+            alert('Không tìm thấy chuyến bay về');
         } else {
             alert("API lỗi. Vui lòng kiểm tra lại mạng hoặc thử lại sau.");
         }
