@@ -17,7 +17,6 @@ const FlightFilters = () => {
   //   Dispath(setDataDisplay(data));
   // }, [selectedAirline]);
 
-
   //Thanh kéo giá
   const [priceRange, setPriceRange] = useState([50, 500]);
 
@@ -54,13 +53,14 @@ const FlightFilters = () => {
         flight.total_price > priceRange[0] && flight.total_price < priceRange[1]
     );
 
-    // // Bước 3: Lọc theo giờ
+    console.log("daadada", filteredData);
+
+    // Bước 3: Lọc theo giờ
     // filteredData = filteredData.filter((flight) => {
     //   const departure = new Date(flight.departure_time);
     //   const minutes = departure.getHours() * 60 + departure.getMinutes();
     //   return minutes >= departureMinutes[0] && minutes <= departureMinutes[1];
     // });
-    // console.log("⏰ Sau lọc giờ:", filteredData.length);
 
     // Bước 4: Sắp xếp
     switch (selectedTripType) {
@@ -89,7 +89,7 @@ const FlightFilters = () => {
     priceRange,
     departureMinutes,
     selectedTripType,
-    Dispath,
+    searchData,
   ]);
 
   // Đặt mục cho giá
