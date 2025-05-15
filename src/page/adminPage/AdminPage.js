@@ -36,7 +36,6 @@ const AdminPage = () => {
   };
   const handleDelete = (flight_id) => {
     ApiDelete(flight_id);
-    Api();
   };
   //api xoá
   const ApiDelete = async (flight_id) => {
@@ -48,8 +47,9 @@ const AdminPage = () => {
       url: "/",
       data: {
         flight_ids: [Number(flight_id)],
-      },
+      }
     });
+      Api();
       alert("Delete flight successfully",res.data);
     } catch (error) {
       console.error("Error deleting flight:", error);

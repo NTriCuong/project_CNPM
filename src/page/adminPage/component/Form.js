@@ -124,7 +124,9 @@ const Form = () => {
       alert("Update flight successfully");
       navigate("/admin");
     } catch (error) {
-      console.error("Error updating flight:", error);
+      alert(error.response.data.detail);
+      console.log(error.response.data);
+      
     }
   };
   //api create
