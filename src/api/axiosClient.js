@@ -72,3 +72,83 @@ getFlight.interceptors.request.use(
     return Promise.reject(error);
   }
 );
+
+//api create flight
+export const createFlight = axios.create({
+  baseURL:`${root}/flight/add_flight`,
+  timeout: 10000,
+  headers:{
+    "Content-Type": "application/json",
+  }
+})
+
+// Thêm interceptor cho request
+createFlight.interceptors.request.use(
+  (config) => {
+    const token = sessionStorage.getItem('token');
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`; // thêm token vào header
+    }
+    return config; // trả về config đã chỉnh sửa
+  },
+  (error) => {
+    return Promise.reject(error);
+  }
+);
+
+//api xoá
+
+export const deleteFlight = axios.create({
+  baseURL:`${root}/flight/delete_flight`,
+  timeout: 10000,
+  headers:{
+    "Content-Type": "application/json",
+  }
+})
+
+// Thêm interceptor cho request
+deleteFlight.interceptors.request.use(
+  (config) => {
+    const token = sessionStorage.getItem('token');
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`; // thêm token vào header
+    }
+    return config; // trả về config đã chỉnh sửa
+  },
+  (error) => {
+    return Promise.reject(error);
+  }
+);
+
+//api update flight
+export const updateFlight = axios.create({
+  baseURL:`${root}/flight/update_flight`,
+  timeout: 10000,
+  headers:{
+    "Content-Type": "application/json",
+  }
+})
+
+// Thêm interceptor cho request
+updateFlight.interceptors.request.use(
+  (config) => {
+    const token = sessionStorage.getItem('token');
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`; // thêm token vào header
+    }
+    return config; // trả về config đã chỉnh sửa
+  },
+  (error) => {
+    return Promise.reject(error);
+  }
+);
+
+
+//api chatbot
+export const sentMessage = axios.create({
+  baseURL:`https://api.dcwizard.net/webhooks/rest/webhook`,
+  timeout: 10000,
+  headers:{
+    "Content-Type": "application/json",
+  }
+})

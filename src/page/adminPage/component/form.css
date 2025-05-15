@@ -1,12 +1,12 @@
 .custom-form {
-    position: fixed;
+    position:absolute;
     top: 50px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
     flex-direction: column;
     gap: 10px;
-    max-width: 700px;
+    max-width: 500px;
     z-index: 10;
     background: #fff; /* Đảm bảo form có nền trắng */
     padding: 30px;

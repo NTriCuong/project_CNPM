@@ -15,21 +15,6 @@ function FlightBookingPage() {
       <div className="flight-search-mobile">
         <FlightSearchBox className="flight-search-container" />
       </div>
-      {/* <FlightBookingLogin
-        className={`form-login ${auth === "auth-login" ? "on-login" : ""}`}
-      />
-      <FlightRegister
-        className={`form-login ${auth === "auth-register" ? "on-login" : ""}`}
-      />
-      <ForgotPassword
-        className={`form-login ${auth === "auth-forgotpassword" ? "on-login" : ""}`}
-      />
-      <ConfirmOTP
-        className={`form-login ${auth === "auth-confirmotp" ? "on-login" : ""}`}
-      />
-      <ResetPassword
-        className={`form-login ${auth === "auth-resetpassword" ? "on-login" : ""}`}
-      /> */}
       <div className="wrap-content">
         <div className="content-container">
           <div className="filters-wrapper">

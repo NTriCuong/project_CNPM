@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
-import AdminForm from "./component/Form";
 import { useNavigate } from "react-router-dom";
-import { getFlight } from "../../api/axiosClient";
+import { deleteFlight, getFlight } from "../../api/axiosClient";
 
 const AdminPage = () => {
   const [flights, setFlights] = useState([]);
@@ -14,42 +13,15 @@ const AdminPage = () => {
     try {
       const res = await getFlight.get();
       const rawFlights = res.data;
-
-      // Custom lại thành danh sách chuyến bay theo từng hạng vé
-      const formattedFlights = rawFlights.flatMap((flight) =>
-        flight.price_tables.map((price) => ({
-          airline_name: flight.airline_name,
-          arrival_airport_code: flight.arrival_airport_code,
-          arrival_time: flight.arrival_time,
-          available_seats: flight.available_seats,
-          departure_airport_code: flight.departure_airport_code,
-          departure_time: flight.departure_time,
-          flight_id: flight.flight_id,
-          flight_number: flight.flight_number,
-          ticket_class_name: price.ticket_class_name,
-          adult_price: price.adult_price,
-          child_price: price.child_price,
-          infant_price: price.infant_price,
-        }))
-      );
-
-    setFlights(formattedFlights);
-
+      setFlights(rawFlights);
     } catch (error) {
       console.error("Error fetching flights:", error);
     }
   };
+
   const styleTd = { textAlign: "center", padding: "10px" };
   const styleUpdate = {
     backgroundColor: "#4CAF50",
-    color: "white",
-    padding: "10px 20px",
-    border: "none",
-    borderRadius: "5px",
-    cursor: "pointer",
-  };
-  const styleDelete = {
-    backgroundColor: "red",
     color: "white",
     padding: "10px 20px",
     border: "none",
@@ -62,7 +34,28 @@ const AdminPage = () => {
   const handleUpdate = (data) => {
     navigate("/admin/form", { state: { data } });
   };
-  const handleDelete = (flight_number) => {};
+  const handleDelete = (flight_id) => {
+    ApiDelete(flight_id);
+  };
+  //api xoá
+  const ApiDelete = async (flight_id) => {
+    console.log("Delete flight with ID:", flight_id);
+    
+    try {
+     const res = await deleteFlight.request({
+      method: "delete",
+      url: "/",
+      data: {
+        flight_ids: [Number(flight_id)],
+      }
+    });
+      Api();
+      alert("Delete flight successfully",res.data);
+    } catch (error) {
+      console.error("Error deleting flight:", error);
+    }
+  };
+
   return (
     <div style={{ padding: "20px" }}>
       <h1 style={{ textAlign: "center" }}>Admin Page - Flight Management</h1>
@@ -76,24 +69,21 @@ const AdminPage = () => {
       >
         <thead>
           <tr>
+            <th>Airline Id</th>
             <th>Airline Name</th>
             <th>Flight Number</th>
             <th>Departure Airport</th>
             <th>Arrival Airport</th>
             <th>Departure Time</th>
             <th>Arrival Time</th>
-            <th>Ticket Class</th>
             <th>Available Seats</th>
-            <th>Adult Price</th>
-            <th>Child Price</th>
-            <th>Infant Price</th>
-            <th>update</th>
-            <th>delete</th>
+            <th>Price Tables</th>
           </tr>
         </thead>
-        <tbody style={{maxHeight: '800px', overflowY: "scroll"}}>
+        <tbody style={{ maxHeight: "800px", overflowY: "scroll" }}>
           {flights.map((flight) => (
             <tr key={flight.flight_id}>
+              <td style={styleTd}>{flight.flight_id}</td>
               <td style={styleTd}>{flight.airline_name}</td>
               <td style={styleTd}>{flight.flight_number}</td>
               <td style={styleTd}>{flight.departure_airport_code}</td>
@@ -104,30 +94,70 @@ const AdminPage = () => {
               <td style={styleTd}>
                 {new Date(flight.arrival_time).toLocaleString()}
               </td>
-              <td style={styleTd}>{flight.ticket_class_name}</td>
               <td style={styleTd}>{flight.available_seats}</td>
-              <td style={styleTd}>${flight.adult_price}</td>
-              <td style={styleTd}>${flight.child_price}</td>
-              <td style={styleTd}>${flight.infant_price}</td>
 
-              <td style={styleTd}>
-                {" "}
-                <button
-                  onClick={() => handleUpdate(flight)}
-                  style={styleUpdate}
+              {/* Nested table for price_tables */}
+              <td style={styleTd} colSpan={5}>
+                <table
+                  style={{
+                    border: "1px solid #ccc",
+                    width: "100%",
+                    borderCollapse: "collapse",
+                  }}
                 >
-                  {" "}
-                  update{" "}
-                </button>
+                  <thead>
+                    <tr>
+                      <th>ticket class</th>
+                      <th>adult price</th>
+                      <th>child price</th>
+                      <th>infant price</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {flight.price_tables.map((price, index) => (
+                      <tr key={index}>
+                        <td style={{ padding: "5px" }}>
+                          {price.ticket_class_name}
+                        </td>
+                        <td style={{ padding: "5px" }}>{price.adult_price}</td>
+                        <td style={{ padding: "5px" }}>{price.child_price}</td>
+                        <td style={{ padding: "5px" }}>{price.infant_price}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
               </td>
-              <td style={styleTd}>
-                {" "}
-                <button
-                  onClick={() => handleDelete(flight.flight_number)}
-                  style={styleDelete}
-                >
-                  delete
-                </button>
+              <td>
+                <tr style={{ border: "none" }}>
+                  <td style={{ border: "none", padding: "5px" }}>
+                    <button
+                      style={{
+                        color: "green",
+                        backgroundColor: "transparent",
+                        border: "none",
+                        cursor: "pointer",
+                      }}
+                      onClick={() => handleUpdate(flight)}
+                    >
+                      update
+                    </button>
+                  </td>
+                </tr>
+                <tr style={{ border: "none" }}>
+                  <td style={{ border: "none", padding: "5px" }}>
+                    <button
+                      style={{
+                        color: "red",
+                        backgroundColor: "transparent",
+                        border: "none",
+                        cursor: "pointer",
+                      }}
+                      onClick={() => handleDelete(flight.flight_id)}
+                    >
+                      delete
+                    </button>
+                  </td>
+                </tr>
               </td>
             </tr>
           ))}
