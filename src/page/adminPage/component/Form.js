@@ -1,22 +1,62 @@
 import React, { useState } from "react";
 import "./form.css"; // Import CSS file for styling
 import { useLocation, useNavigate } from "react-router-dom";
+import { createFlight, updateFlight } from "../../../api/axiosClient";
 const Form = () => {
   const navigate = useNavigate();
   const location = useLocation(); // khi chuyển trang có thể gửi kèm 1 cục dữ liệu
-  // hoặc xử dụng useParams để truyền dữ liệu
-  // const { id } = useParams(); // lấy id từ đường dẫn
-  const data = location.state?.data; // dữ liệu nhận lại được từ trang trước
-  const [formData, setFormData] = useState({
-    airline_name: data?.airline_name || "",
-    flight_number: data?.flight_number || "",
-    departure_airport: data?.departure_airport || "",
-    arrival_airport: data?.arrival_airport || "",
-    departure_time: data?.departure_time || "",
-    arrival_time: data?.arrival_time || "",
-    ticket_class_name: data?.ticket_class_name || "",
-    available_seats: data?.available_seats || "",
-    total_price: data?.total_price || "",
+  const data = location.state?.data;
+
+  const defaultPriceTables = [
+    {
+      ticket_class_name: "Economy",
+      adult_price: "",
+      child_price: "",
+      infant_price: "",
+    },
+    {
+      ticket_class_name: "Premium Economy",
+      adult_price: "",
+      child_price: "",
+      infant_price: "",
+    },
+    {
+      ticket_class_name: "Business",
+      adult_price: "",
+      child_price: "",
+      infant_price: "",
+    },
+  ];
+
+  const [formData, setFormData] = useState(() => {
+    if (data) {
+      return {
+        flight_id: data.flight_id,
+        airline_name: data.airline_name || "",
+        flight_number: data.flight_number || "",
+        departure_airport: data.departure_airport_code || "",
+        arrival_airport: data.arrival_airport_code || "",
+        departure_time: data.departure_time || "",
+        arrival_time: data.arrival_time || "",
+        available_seats: data.available_seats || "",
+        price_tables:
+          Array.isArray(data.price_tables) && data.price_tables.length > 0
+            ? data.price_tables
+            : defaultPriceTables,
+      };
+    } else {
+      return {
+        flight_id: "",
+        airline_name: "",
+        flight_number: "",
+        departure_airport: "",
+        arrival_airport: "",
+        departure_time: "",
+        arrival_time: "",
+        available_seats: "",
+        price_tables: defaultPriceTables,
+      };
+    }
   });
 
   const airlines = [
@@ -41,12 +81,6 @@ const Form = () => {
     "BWN",
   ];
 
-  const ticket = [
-    "Economy",
-    "Premium",
-    "Business",
-  ]
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -57,7 +91,73 @@ const Form = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
+    if (data != undefined) ApiUpdate();
+    else ApiCreate();
+  };
+  //api update
+  const ApiUpdate = async () => {
+    try {
+      await updateFlight.put(`/`, {
+        flight_id: Number(formData.flight_id),
+        flight_number: formData.flight_number,
+        airline_name: formData.airline_name,
+        departure_airport_code: formData.departure_airport,
+        arrival_airport_code: formData.arrival_airport,
+        departure_time: formData.departure_time,
+        arrival_time: formData.arrival_time,
+        available_seats: formData.available_seats,
+        price_tables: formData.price_tables
+          .filter((item) => {
+            return (
+              item.adult_price !== "" &&
+              item.child_price !== "" &&
+              item.infant_price !== ""
+            );
+          })
+          .map((item) => ({
+            ticket_class_name: item.ticket_class_name,
+            adult_price: Number(item.adult_price),
+            child_price: Number(item.child_price),
+            infant_price: Number(item.infant_price),
+          })),
+      });
+      alert("Update flight successfully");
+      navigate("/admin");
+    } catch (error) {
+      console.error("Error updating flight:", error);
+    }
+  };
+  //api create
+  const ApiCreate = async () => {
+    try {
+      await createFlight.post("/", {
+        flight_number: formData.flight_number,
+        airline_name: formData.airline_name,
+        departure_airport_code: formData.departure_airport,
+        arrival_airport_code: formData.arrival_airport,
+        departure_time: new Date(formData.departure_time).toISOString(),
+        arrival_time: new Date(formData.arrival_time).toISOString(),
+        available_seats: Number(formData.available_seats),
+        price_tables: formData.price_tables
+          .filter((item) => {
+            return (
+              item.adult_price !== "" &&
+              item.child_price !== "" &&
+              item.infant_price !== ""
+            );
+          })
+          .map((item) => ({
+            ticket_class_name: item.ticket_class_name,
+            adult_price: Number(item.adult_price),
+            child_price: Number(item.child_price),
+            infant_price: Number(item.infant_price),
+          })),
+      });
+      alert("Create flight successfully");
+      navigate("/admin");
+    } catch (error) {
+      console.error("Error creating flight:", error);
+    }
   };
   const styleBack = {
     backgroundColor: "white",
@@ -67,6 +167,7 @@ const Form = () => {
     textAlign: "left",
     margin: "0",
   };
+
   return (
     <form className={`custom-form`} onSubmit={handleSubmit}>
       <button
@@ -84,12 +185,11 @@ const Form = () => {
           value={formData.airline_name}
           onChange={handleChange}
         >
-          <option value="">Select Airline</option> {/* Tùy chọn mặc định */}
+          <option value="">Select Airline</option>
           <option value="Vietnam Airlines">Vietnam Airlines</option>
           <option value="AirAsia">AirAsia</option>
           <option value="Emirates">Emirates</option>
           <option value="Qatar Airways">Qatar Airways</option>
-          {/* Bạn có thể thêm các tùy chọn khác ở đây */}
         </select>
       </div>
       <div>
@@ -104,8 +204,13 @@ const Form = () => {
       </div>
       <div>
         <label htmlFor="departure_airport">Departure Airport:</label>
-        <select>
-          <option value="">          </option>
+        <select
+          id="departure_airport"
+          name="departure_airport"
+          value={formData.departure_airport}
+          onChange={handleChange}
+        >
+          <option value=""> Departure</option>
           {airlines.map((airlineCode) => (
             <option key={airlineCode} value={airlineCode}>
               {airlineCode}
@@ -115,8 +220,13 @@ const Form = () => {
       </div>
       <div>
         <label htmlFor="arrival_airport">Arrival Airport:</label>
-        <select>
-          <option value="">          </option>
+        <select
+          id="arrival_airport"
+          name="arrival_airport"
+          value={formData.arrival_airport}
+          onChange={handleChange}
+        >
+          <option value=""> Arrival</option>
           {airlines.map((airlineCode) => (
             <option key={airlineCode} value={airlineCode}>
               {airlineCode}
@@ -145,17 +255,6 @@ const Form = () => {
         />
       </div>
       <div>
-        <label htmlFor="ticket_class_name">Ticket Class Name:</label>
-        <select>
-          <option value="">          </option>
-          {ticket.map((airlineCode) => (
-            <option key={airlineCode} value={airlineCode}>
-              {airlineCode}
-            </option>
-          ))}
-        </select>
-      </div>
-      <div>
         <label htmlFor="available_seats">Available Seats:</label>
         <input
           type="number"
@@ -165,36 +264,46 @@ const Form = () => {
           onChange={handleChange}
         />
       </div>
-      <div>
-        <label htmlFor="total_price">Adults Price</label>
-        <input
-          type="number"
-          id="total_price"
-          name="total_price"
-          value={formData.total_price}
-          onChange={handleChange}
-        />
-      </div>
-            <div>
-        <label htmlFor="total_price">Child Price</label>
-        <input
-          type="number"
-          id="total_price"
-          name="total_price"
-          value={formData.total_price}
-          onChange={handleChange}
-        />
-      </div>
-            <div>
-        <label htmlFor="total_price">Infant Price</label>
-        <input
-          type="number"
-          id="total_price"
-          name="total_price"
-          value={formData.total_price}
-          onChange={handleChange}
-        />
-      </div>
+      {formData.price_tables.map((price, index) => (
+        <div key={index} style={{ marginBottom: "20px" }}>
+          <h3>{price.ticket_class_name}</h3>
+          <div style={{ display: "flex", gap: "10px", marginBottom: "10px" }}>
+            <label>Adults Price</label>
+            <input
+              type="number"
+              value={price.adult_price}
+              onChange={(e) => {
+                const updatedTables = [...formData.price_tables];
+                updatedTables[index].adult_price = e.target.value;
+                setFormData({ ...formData, price_tables: updatedTables });
+              }}
+            />
+            <label>Child Price</label>
+            <input
+              type="number"
+              value={price.child_price}
+              onChange={(e) => {
+                const updatedTables = [...formData.price_tables];
+                updatedTables[index].child_price = e.target.value;
+                setFormData({ ...formData, price_tables: updatedTables });
+              }}
+            />
+            <label>Infant Price</label>
+            <input
+              type="number"
+              value={price.infant_price}
+              onChange={(e) => {
+                const updatedTables = [...formData.price_tables];
+                updatedTables[index].infant_price = e.target.value;
+                setFormData({ ...formData, price_tables: updatedTables });
+              }}
+            />
+          </div>
+        </div>
+      ))}
+
+      <div></div>
+
       <button type="submit">Submit</button>
     </form>
   );
