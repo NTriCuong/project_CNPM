@@ -133,6 +133,10 @@ function FlightSearchBox({ className }) {
         number_infants: SelectorSearchData.numberInfants,
       });
 
+      //test dữ liệu chuyến bay
+      console.log("test du lieu chuyen bay", response);
+      
+
       dispatch(setFlightData(response.data));
       dispatch(setDataDisplay(response.data));
       navigate("/booking");

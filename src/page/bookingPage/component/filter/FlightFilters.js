@@ -42,18 +42,15 @@ const FlightFilters = () => {
     // Bước 1: Lọc theo hãng hàng không
     let filteredData =
       selectedAirline.length !== 0
-        ? searchData.filter((item) => {
-            const match = selectedAirline.includes(item.airline_name);
-            return match;
-          })
+        ? searchData.filter((item) =>
+            selectedAirline.includes(item.airline_name)
+          )
         : searchData;
     // Bước 2: Lọc theo giá
     filteredData = filteredData.filter(
       (flight) =>
         flight.total_price > priceRange[0] && flight.total_price < priceRange[1]
     );
-
-    console.log("daadada", filteredData);
 
     // Bước 3: Lọc theo giờ
     // filteredData = filteredData.filter((flight) => {
