@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "./DateSelector.css";
 import { useDispatch, useSelector } from "react-redux";
-import { selectSearchFlight } from "../../../../redux/Store";
+import { selectSearchData, selectSearchFlight } from "../../../../redux/Store";
 import { setDataDisplay } from "../../../../redux/dataDisplay";
 
-const generateNextDays = (numDays) => {
+const generateNextDays = (numDays, startDate = new Date()) => {
   const daysOfWeek = [
     "Chủ nhật",
     "Thứ 2",
@@ -16,58 +16,80 @@ const generateNextDays = (numDays) => {
   ];
 
   const result = [];
-  const today = new Date();
 
   for (let i = 0; i < numDays; i++) {
-    const nextDate = new Date(today);
-    nextDate.setDate(today.getDate() + i);
+    const nextDate = new Date(startDate);
+    nextDate.setDate(startDate.getDate() + i);
+    nextDate.setHours(0, 0, 0, 0); // Reset giờ tránh lỗi timezone
 
     const dayName = daysOfWeek[nextDate.getDay()];
-    const isoDate = nextDate.toISOString().split("T")[0]; // "yyyy-MM-dd"
+    const isoDate = `${nextDate.getFullYear()}-${String(
+      nextDate.getMonth() + 1
+    ).padStart(2, "0")}-${String(nextDate.getDate()).padStart(2, "0")}`;
+
     const displayDate = nextDate.toLocaleDateString("vi-VN", {
       day: "2-digit",
       month: "2-digit",
-    }); // "dd-MM" để hiển thị
+    }); // dd-MM
 
     result.push({
       day: dayName,
-      date: isoDate, // dùng để lọc
-      displayDate: displayDate, // dùng để hiển thị
+      date: isoDate,
+      displayDate,
     });
   }
 
   return result;
 };
 
+const getDateFromString = (dateStr) => {
+  const [day, month, year] = dateStr.split("-");
+  const date = new Date(+year, +month - 1, +day);
+  date.setHours(0, 0, 0, 0); // Reset giờ về 00:00:00
+  return date;
+};
+
 const DateSelector = () => {
-  const dates = generateNextDays(5);
   const searchData = useSelector(selectSearchFlight);
-  const [selectedDate, setSelectedDate] = useState(dates[0].date); // chọn mặc định là hôm nay
-  const Dispath = useDispatch();
-  const getDateOnly = (dateStr) => {
-    const date = new Date(dateStr);
-    return date.toISOString().split("T")[0]; // Chỉ lấy phần ngày "yyyy-MM-dd"
+  const searchDataState = useSelector(selectSearchData);
+  const dispatch = useDispatch();
+
+  // Ngày bắt đầu (startDate) lấy từ Redux hoặc ngày hôm nay
+  const startDate = searchDataState?.departureDate
+    ? getDateFromString(searchDataState.departureDate)
+    : (() => {
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+        return today;
+      })();
+
+  const dates = generateNextDays(5, startDate);
+
+  const [selectedDate, setSelectedDate] = useState(dates[0].date);
+
+  useEffect(() => {
+    // Cập nhật lại selectedDate khi ngày trong redux thay đổi
+    setSelectedDate(dates[0].date);
+  }, [startDate.toISOString()]);
+
+  const getDateOnly = (dateStrOrDate) => {
+    const d = new Date(dateStrOrDate);
+    return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(
+      2,
+      "0"
+    )}-${String(d.getDate()).padStart(2, "0")}`;
   };
 
   useEffect(() => {
     if (!Array.isArray(searchData)) return;
 
-    if (!selectedDate || isNaN(new Date(selectedDate))) {
-      console.warn("selectedDate bị sai định dạng:", selectedDate);
-      return;
-    }
-
     const filteredFlights = searchData.filter((flight) => {
-      const flightDateStr = getDateOnly(flight.departure_time); // Đảm bảo flight.departure_time có định dạng "yyyy-MM-dd"
-
-      // Chỉ so sánh phần ngày của flight và selectedDate (không có giờ)
-      return flightDateStr === selectedDate;
+      const flightDate = getDateOnly(flight.departure_time);
+      return flightDate === selectedDate;
     });
 
-    console.log("Filtered flights:", filteredFlights);
-    Dispath(setDataDisplay(filteredFlights));
-  }, [selectedDate]);
-
+    dispatch(setDataDisplay(filteredFlights));
+  }, [selectedDate, searchData, dispatch]);
   return (
     <div className="date-selector">
       {dates.map((item) => (
