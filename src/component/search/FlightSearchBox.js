@@ -28,24 +28,19 @@ import { setIsSearch } from "../../redux/isSearch";
 
 function FlightSearchBox({ className }) {
   const navigate = useNavigate();
-  const Dispath = useDispatch(); // dẩy dữa liệu lên
+  const dispatch = useDispatch();
   const [tickerType, setTickerType] = useState(true);
-  // trạng thái người dùng đang nhấn vào field chọn điểm đến và điểm đi hay chưa
   const [statusDP, setStatusDP] = useState(false);
   const [statusArP, setStatusArP] = useState(false);
   const [statusConsumer, setStatusConsumer] = useState(false);
   const departureRef = useRef(null);
   const arrivalRef = useRef(null);
-  // dữ liệu điểm khởi hành
   const SelectorSearchData = useSelector(selectSearchData);
   const [weekdayText2, setWeekdayText2] = useState("");
+  const inputSelectDepartureRef = useRef(null);
+  const inputSelectArrivalRef = useRef(null);
 
-  useEffect(() => {
-    setStatusDP(false);
-    setStatusArP(false);
-    setStatusConsumer(false);
-  }, [SelectorSearchData]);
-
+  // Xử lý ngày thứ
   useEffect(() => {
     const date2 = parse(
       SelectorSearchData.arrivalDate,
@@ -65,10 +60,34 @@ function FlightSearchBox({ className }) {
     setWeekdayText2(weekdays[weekdayNumber2]);
   }, [SelectorSearchData.arrivalDate]);
 
+  // Xử lý click outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        (departureRef.current && !departureRef.current.contains(event.target)) &&
+        (inputSelectDepartureRef.current && !inputSelectDepartureRef.current.contains(event.target))
+      ) {
+        setStatusDP(false);
+      }
+      
+      if (
+        (arrivalRef.current && !arrivalRef.current.contains(event.target)) &&
+        (inputSelectArrivalRef.current && !inputSelectArrivalRef.current.contains(event.target))
+      ) {
+        setStatusArP(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   const handleSubmit = (e) => {
     e.preventDefault();
-      Dispath(setIsSearch(true));
-    // kiểm tra khứ hồi hay 1 chiều
+    dispatch(setIsSearch(true));
+    
     const today = new Date();
     const departureDate = parse(
       SelectorSearchData.departureDate,
@@ -80,7 +99,7 @@ function FlightSearchBox({ className }) {
       "dd-MM-yyyy",
       new Date()
     );
-    // So sánh ngày đi phải >= ngày hiện tại (bỏ giờ phút giây)
+
     if (departureDate.setHours(0, 0, 0, 0) < today.setHours(0, 0, 0, 0)) {
       alert("Vui lòng chọn ngày đi hợp lệ");
       return;
@@ -89,14 +108,76 @@ function FlightSearchBox({ className }) {
       alert("Vui lòng chọn ngày về hợp lệ");
       return;
     }
+
     if (tickerType) {
-      // nếu là 1 chiều thì kiểm tra ngày đi
       Api();
     } else {
       Api();
       Api2();
     }
   };
+
+  const Api = async () => {
+    try {
+      const response = await searchFlight.post("/", {
+        departure_airport_code: SelectorSearchData.departureLocation.codeCity,
+        arrival_airport_code: SelectorSearchData.arrivalLocation.codeCity,
+        departure_time: format(parse(
+          SelectorSearchData.departureDate,
+          "dd-MM-yyyy",
+          new Date()
+        ), "yyyy-MM-dd"),
+        ticket_classes: SelectorSearchData.ticketClasses,
+        number_adults: SelectorSearchData.numberAdults,
+        number_children: SelectorSearchData.numberChildren,
+        number_infants: SelectorSearchData.numberInfants,
+      });
+
+      dispatch(setFlightData(response.data));
+      dispatch(setDataDisplay(response.data));
+      navigate("/booking");
+    } catch (error) {
+      if (error.response) {
+        if (error.response.status === 404) {
+          alert(error.response.data.detail);
+        } else {
+          alert("API lỗi. Vui lòng kiểm tra lại mạng hoặc thử lại sau.");
+        }
+      } else {
+        alert("Không thể kết nối đến server. Vui lòng kiểm tra lại mạng.");
+      }
+    }
+  };
+
+  const Api2 = async () => {
+    try {
+      const response = await searchFlight.post("/", {
+        departure_airport_code: SelectorSearchData.arrivalLocation.codeCity,
+        arrival_airport_code: SelectorSearchData.departureLocation.codeCity,
+        departure_time: format(parse(
+          SelectorSearchData.arrivalDate,
+          "dd-MM-yyyy",
+          new Date()
+        ), "yyyy-MM-dd"),
+        ticket_classes: SelectorSearchData.ticketClasses,
+        number_adults: SelectorSearchData.numberAdults,
+        number_children: SelectorSearchData.numberChildren,
+        number_infants: SelectorSearchData.numberInfants,
+      });
+      dispatch(appendFlightData(response.data));
+    } catch (error) {
+      if (error.response) {
+        if (error.response.status === 404) {
+          alert("Không tìm thấy chuyến bay về");
+        } else {
+          alert("API lỗi. Vui lòng kiểm tra lại mạng hoặc thử lại sau.");
+        }
+      } else {
+        alert("Không thể kết nối đến server. Vui lòng kiểm tra lại mạng.");
+      }
+    }
+  };
+
   const data = {
     recentSearches: {
       img: vietnam,
@@ -242,141 +323,24 @@ function FlightSearchBox({ className }) {
     ],
   };
 
-  //GOI API
-  const Api = async () => {
-    try {
-      const response = await searchFlight.post("/", {
-        departure_airport_code: SelectorSearchData.departureLocation.codeCity,
-        arrival_airport_code: SelectorSearchData.arrivalLocation.codeCity,
-        departure_time: (() => {
-          const parsedDate = parse(
-            SelectorSearchData.departureDate,
-            "dd-MM-yyyy",
-            new Date()
-          );
-          return format(parsedDate, "yyyy-MM-dd");
-        })(),
-        ticket_classes: SelectorSearchData.ticketClasses,
-        number_adults: SelectorSearchData.numberAdults,
-        number_children: SelectorSearchData.numberChildren,
-        number_infants: SelectorSearchData.numberInfants,
-      });
-      console.log("dadadada", response);
-      Dispath(setFlightData(response.data));
-      Dispath(setDataDisplay(response.data));
-      navigate("/booking");
-    } catch (error) {
-      if (error.response) {
-        // Nếu có response từ server
-        if (error.response.status === 404) {
-          alert(error.response.data.detail);
-        } else {
-          alert("API lỗi. Vui lòng kiểm tra lại mạng hoặc thử lại sau.");
-        }
-      } else {
-        // Nếu không có response (lỗi mạng hoặc lỗi khác)
-        alert("Không thể kết nối đến server. Vui lòng kiểm tra lại mạng.");
-      }
-    }
-  };
-  //api khứ hồi
-  const Api2 = async () => {
-    try {
-      const response = await searchFlight.post("/", {
-        departure_airport_code: SelectorSearchData.arrivalLocation.codeCity,
-        arrival_airport_code: SelectorSearchData.departureLocation.codeCity,
-        departure_time: (() => {
-          const parsedDate = parse(
-            SelectorSearchData.departureDate,
-            "dd-MM-yyyy",
-            new Date()
-          );
-          return format(parsedDate, "yyyy-MM-dd");
-        })(),
-        ticket_classes: SelectorSearchData.ticketClasses,
-        number_adults: SelectorSearchData.numberAdults,
-        number_children: SelectorSearchData.numberChildren,
-        number_infants: SelectorSearchData.numberInfants,
-      });
-      Dispath(appendFlightData(response.data));
-      navigate("/booking");
-    } catch (error) {
-      if (error.response) {
-        // Nếu có response từ server
-        if (error.response.status === 404) {
-          alert("Không tìm thấy chuyến bay về");
-        } else {
-          alert("API lỗi. Vui lòng kiểm tra lại mạng hoặc thử lại sau.");
-        }
-      } else {
-        // Nếu không có response (lỗi mạng hoặc lỗi khác)
-        alert("Không thể kết nối đến server. Vui lòng kiểm tra lại mạng.");
-      }
-    }
-  };
-  // click
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      // Nếu click không nằm trong vùng departure
-      if (
-        departureRef.current &&
-        !departureRef.current.contains(event.target)
-      ) {
-        setStatusDP(false);
-      }
-      // Nếu click không nằm trong vùng arrival
-      if (arrivalRef.current && !arrivalRef.current.contains(event.target)) {
-        setStatusArP(false);
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
-
-  const inputSelectRef = useRef(null); // Tạo ref cho InputSelect
-
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      // Nếu click không nằm trong vùng departure, arrival hoặc InputSelect
-      if (
-        departureRef.current &&
-        !departureRef.current.contains(event.target) &&
-        arrivalRef.current &&
-        !arrivalRef.current.contains(event.target) &&
-        inputSelectRef.current &&
-        !inputSelectRef.current.contains(event.target)
-      ) {
-        setStatusDP(false);
-        setStatusArP(false);
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
-
   const handlePoint = () => {
     setStatusDP(!statusDP);
   };
+
   const handleArP = () => {
     setStatusArP(!statusArP);
   };
+
   const handleConsumer = () => {
     setStatusConsumer(!statusConsumer);
   };
 
-  // Thứ trong lịch bay đi
+  // Lấy thứ ngày đi
   const date = parse(
     SelectorSearchData.departureDate,
     "dd-MM-yyyy",
     new Date()
   );
-  // Lấy thứ (0 = Chủ Nhật, 1 = Thứ Hai, ..., 6 = Thứ Bảy)
   const weekdayNumber = date.getDay();
   const weekdays = [
     "Chủ Nhật",
@@ -397,7 +361,7 @@ function FlightSearchBox({ className }) {
             <Button
               text={
                 <>
-                  <img src={icon1chieu} alt="icon" className="icon" />
+                  <img src={icon1chieu} alt="icon one way" className="icon" />
                   <pre className="pre-text"> Một Chiều</pre>
                 </>
               }
@@ -410,7 +374,7 @@ function FlightSearchBox({ className }) {
             <Button
               text={
                 <>
-                  <img src={icon2chieu} alt="icon" className="icon" />
+                  <img src={icon2chieu} alt="icon round trip" className="icon" />
                   <pre className="pre-text"> Khứ Hồi</pre>
                 </>
               }
@@ -443,7 +407,7 @@ function FlightSearchBox({ className }) {
                     </span>
                     {SelectorSearchData.departureLocation.airport}
                     <InputSelect
-                      ref={inputSelectRef}
+                      ref={inputSelectDepartureRef}
                       className={`bottom-left-r ${
                         statusDP ? "input-select" : "select-none"
                       }`}
@@ -473,7 +437,7 @@ function FlightSearchBox({ className }) {
                     </span>
                     {SelectorSearchData.arrivalLocation.airport}
                     <InputSelect
-                      ref={inputSelectRef}
+                      ref={inputSelectArrivalRef}
                       className={`bottom-left-r ${
                         statusArP ? "input-select" : "select-none"
                       }`}
@@ -483,8 +447,7 @@ function FlightSearchBox({ className }) {
                   </div>
                 }
               />
-              <div />
-              <img className="icon-swap" src={iconswap} />
+              <img className="icon-swap" src={iconswap} alt="swap icon" />
             </div>
             <div className="right-field">
               <SearchItem
@@ -506,7 +469,7 @@ function FlightSearchBox({ className }) {
                   <div className="select-consummer">
                     <div
                       onClick={handleConsumer}
-                      style={{ fontSize: "12px", padding: "2px" }}
+                      style={{ fontSize: "12px", padding: "3px" }}
                     >
                       {SelectorSearchData.numberAdults +
                         SelectorSearchData.numberChildren +

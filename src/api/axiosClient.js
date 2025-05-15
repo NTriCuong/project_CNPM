@@ -142,3 +142,13 @@ updateFlight.interceptors.request.use(
     return Promise.reject(error);
   }
 );
+
+
+//api chatbot
+export const sentMessage = axios.create({
+  baseURL:`https://api.dcwizard.net/webhooks/rest/webhook`,
+  timeout: 10000,
+  headers:{
+    "Content-Type": "application/json",
+  }
+})
