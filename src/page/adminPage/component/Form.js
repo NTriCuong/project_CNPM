@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./form.css"; // Import CSS file for styling
 import { useLocation, useNavigate } from "react-router-dom";
 import { createFlight, updateFlight } from "../../../api/axiosClient";
@@ -80,7 +80,21 @@ const Form = () => {
     "NYT",
     "BWN",
   ];
-
+useEffect(() => {
+  if (formData.departure_time) {
+    const departureDate = new Date(formData.departure_time);
+    // Add 18 hours (18 * 60 * 60 * 1000 ms)
+    const arrivalDate = new Date(departureDate.getTime() + 18 * 60 * 60 * 1000);
+    // Format to 'YYYY-MM-DDTHH:mm' for input[type="datetime-local"]
+    const pad = (n) => n.toString().padStart(2, '0');
+    const formatted = `${arrivalDate.getFullYear()}-${pad(arrivalDate.getMonth() + 1)}-${pad(arrivalDate.getDate())}T${pad(arrivalDate.getHours())}:${pad(arrivalDate.getMinutes())}`;
+    setFormData((prev) => ({
+      ...prev,
+      arrival_time: formatted,
+    }));
+  }
+  // eslint-disable-next-line
+}, [formData.departure_time]);
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({

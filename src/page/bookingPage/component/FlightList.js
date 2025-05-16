@@ -5,7 +5,7 @@ import { selectIsSearch, selectSearchData } from "../../../redux/Store";
 import { useSelector } from "react-redux";
 
 
-function Flightlist() {
+function Flightlist({tickerType}) {
 
   const searchData = useSelector(selectSearchData);
   const isSearch = useSelector(selectIsSearch)
@@ -32,7 +32,7 @@ function Flightlist() {
             </div>
             <DateSelector />
             <FlightDetails className={!isSearch?"is-search":''} classify={searchData.departureLocation.codeCity} />
-           {!isSearch?<></>:<> <div className="flight-section">
+           {tickerType || tickerType === null ?<></>:<> <div className="flight-section">
               <div className="route-header">
                 <div className="route-info">
                   <div className="route-location">
