@@ -3,14 +3,15 @@
   margin: 20px auto;
   font-family: "Roboto", sans-serif;
   overflow-x: scroll;
-  max-height: 300px ;
+  max-height: 300px;
 }
 
 .flight-card {
   background: white;
   border-radius: 10px;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
   padding: 15px;
+  height: 110px;
   display: flex;
   flex-direction: column;
 }
@@ -89,16 +90,13 @@
 
 .flight-details {
   display: flex;
-  justify-content: center; /* Căn giữa theo chiều ngang */
+  justify-content: center;
+  /* Căn giữa theo chiều ngang */
   align-items: center;
   margin-top: 10px;
   position: relative;
 }
 
-.detail-button {
-  font-weight: 100;
-  color: #0056b3;
-}
 
 .book-button {
   height: 32px;
@@ -112,11 +110,13 @@
   cursor: pointer;
   position: absolute;
   right: 0;
+  margin-top: 30px;
 }
 
 @media screen and (max-width: 768px) {
   .flight-card {
     padding: 12px;
+    height: 275px;
   }
 
   .flight-info {
@@ -193,5 +193,3 @@
     display: none;
   }
 }
-
-

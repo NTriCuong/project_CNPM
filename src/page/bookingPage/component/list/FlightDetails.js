@@ -75,7 +75,6 @@ const FlightDetails = ({classify,className}) => {
             </div>
           </div>
           <div className="flight-details">
-            <button className="detail-button">∨ Chi tiết</button>
             <button className="book-button">CHỌN</button>
           </div>
         </div>
