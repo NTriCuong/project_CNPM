@@ -5,8 +5,13 @@ import Menu from "../../component/menu/Menu";
 import FlightSearchBox from "../../component/search/FlightSearchBox";
 import Footer from "../../component/footer/Footer";
 import ChatBox from "../../component/chatBox/ChatBox";
+import { useLocation } from "react-router-dom";
 
 function FlightBookingPage() {
+  const location = useLocation();
+  const tickerType = location.state;
+  console.log(tickerType);
+  
   return (
     <div className="app-container">
       <div className="header-container">
@@ -18,10 +23,10 @@ function FlightBookingPage() {
       <div className="wrap-content">
         <div className="content-container">
           <div className="filters-wrapper">
-            <FlightFilters />
+            <FlightFilters  />
           </div>
           <div className="flight-list-wrapper">
-            <FlightList />
+            <FlightList tickerType ={tickerType}/>
           </div>
         </div>
       </div>

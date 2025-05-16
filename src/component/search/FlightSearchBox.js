@@ -29,7 +29,9 @@ import { setIsSearch } from "../../redux/isSearch";
 function FlightSearchBox({ className }) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const [tickerType, setTickerType] = useState(true);
+
+  const [tickerType, setTickerType] = useState(true);//khứ hồi 1 chiều true 1 chiều
+
   const [statusDP, setStatusDP] = useState(false);
   const [statusArP, setStatusArP] = useState(false);
   const [statusConsumer, setStatusConsumer] = useState(false);
@@ -39,6 +41,8 @@ function FlightSearchBox({ className }) {
   const [weekdayText2, setWeekdayText2] = useState("");
   const inputSelectDepartureRef = useRef(null);
   const inputSelectArrivalRef = useRef(null);
+  const [departureText, setDepartureText] = useState("");
+  const [arrivalText, setArrivalText] = useState("");
 
   // Xử lý ngày thứ
   useEffect(() => {
@@ -64,15 +68,19 @@ function FlightSearchBox({ className }) {
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (
-        (departureRef.current && !departureRef.current.contains(event.target)) &&
-        (inputSelectDepartureRef.current && !inputSelectDepartureRef.current.contains(event.target))
+        departureRef.current &&
+        !departureRef.current.contains(event.target) &&
+        inputSelectDepartureRef.current &&
+        !inputSelectDepartureRef.current.contains(event.target)
       ) {
         setStatusDP(false);
       }
-      
+
       if (
-        (arrivalRef.current && !arrivalRef.current.contains(event.target)) &&
-        (inputSelectArrivalRef.current && !inputSelectArrivalRef.current.contains(event.target))
+        arrivalRef.current &&
+        !arrivalRef.current.contains(event.target) &&
+        inputSelectArrivalRef.current &&
+        !inputSelectArrivalRef.current.contains(event.target)
       ) {
         setStatusArP(false);
       }
@@ -87,7 +95,7 @@ function FlightSearchBox({ className }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(setIsSearch(true));
-    
+
     const today = new Date();
     const departureDate = parse(
       SelectorSearchData.departureDate,
@@ -122,11 +130,10 @@ function FlightSearchBox({ className }) {
       const response = await searchFlight.post("/", {
         departure_airport_code: SelectorSearchData.departureLocation.codeCity,
         arrival_airport_code: SelectorSearchData.arrivalLocation.codeCity,
-        departure_time: format(parse(
-          SelectorSearchData.departureDate,
-          "dd-MM-yyyy",
-          new Date()
-        ), "yyyy-MM-dd"),
+        departure_time: format(
+          parse(SelectorSearchData.departureDate, "dd-MM-yyyy", new Date()),
+          "yyyy-MM-dd"
+        ),
         ticket_classes: SelectorSearchData.ticketClasses,
         number_adults: SelectorSearchData.numberAdults,
         number_children: SelectorSearchData.numberChildren,
@@ -134,12 +141,9 @@ function FlightSearchBox({ className }) {
       });
 
       //test dữ liệu chuyến bay
-      console.log("test du lieu chuyen bay", response);
-      
-
       dispatch(setFlightData(response.data));
       dispatch(setDataDisplay(response.data));
-      navigate("/booking");
+      navigate("/booking",{state:tickerType});
     } catch (error) {
       if (error.response) {
         if (error.response.status === 404) {
@@ -158,11 +162,10 @@ function FlightSearchBox({ className }) {
       const response = await searchFlight.post("/", {
         departure_airport_code: SelectorSearchData.arrivalLocation.codeCity,
         arrival_airport_code: SelectorSearchData.departureLocation.codeCity,
-        departure_time: format(parse(
-          SelectorSearchData.arrivalDate,
-          "dd-MM-yyyy",
-          new Date()
-        ), "yyyy-MM-dd"),
+        departure_time: format(
+          parse(SelectorSearchData.arrivalDate, "dd-MM-yyyy", new Date()),
+          "yyyy-MM-dd"
+        ),
         ticket_classes: SelectorSearchData.ticketClasses,
         number_adults: SelectorSearchData.numberAdults,
         number_children: SelectorSearchData.numberChildren,
@@ -378,7 +381,11 @@ function FlightSearchBox({ className }) {
             <Button
               text={
                 <>
-                  <img src={icon2chieu} alt="icon round trip" className="icon" />
+                  <img
+                    src={icon2chieu}
+                    alt="icon round trip"
+                    className="icon"
+                  />
                   <pre className="pre-text"> Khứ Hồi</pre>
                 </>
               }
@@ -417,6 +424,8 @@ function FlightSearchBox({ className }) {
                       }`}
                       data={data}
                       flag={true}
+                      searchText={departureText}
+                      setSearchText={setDepartureText}
                     />
                   </div>
                 }
@@ -447,6 +456,8 @@ function FlightSearchBox({ className }) {
                       }`}
                       data={data}
                       flag={false}
+                      searchText={arrivalText}
+                      setSearchText={setArrivalText}
                     />
                   </div>
                 }
@@ -473,7 +484,7 @@ function FlightSearchBox({ className }) {
                   <div className="select-consummer">
                     <div
                       onClick={handleConsumer}
-                      style={{ fontSize: "12px", padding: "3px" }}
+                      style={{ fontSize: "12px", padding: "3px 0px" }}
                     >
                       {SelectorSearchData.numberAdults +
                         SelectorSearchData.numberChildren +
