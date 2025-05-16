@@ -31,13 +31,7 @@ const PrivateRoute = ({ children }) => {
             </PrivateRoute>
         }  />
         <Route path="/admin/form" element={<Form/>} />
-        {/* các trang đăng nhập đăng xuất */}
         <Route path="/admin-login" element={<FlightBookingLogin/>} />
-        <Route path="/admin-register" element={<FlightRegister/>} />
-        
-        <Route path="/admin-forgotpassword" element={<ForgotPassword/>} />
-        <Route path="/admin-confirmotp" element={<ConfirmOTP/>} />
-        <Route path="/admin-resetpassword" element={<ResetPassword/>} />
 
         <Route path="*" element= {<Navigate to={isAuthenticated() ? '/admin' : '/login'} replace /> }/>
       </Routes>

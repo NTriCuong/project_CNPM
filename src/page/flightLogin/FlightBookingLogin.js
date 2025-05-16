@@ -34,16 +34,16 @@ const FlightBookingLogin = ({ className }) => {
   const handleShowPassword = () => {
     setShowPassword(!showPassword);
   };
-  const handleCreate = () => {
-    // Dispath(onRegister());
-    navigate("/admin-register");
-    resetInputField();
-  };
-  const handleForgot = () => {
-    // Dispath(onForgotPassword());
-    navigate("/admin-forgotpassword");
-    resetInputField();
-  };
+  // const handleCreate = () => {
+  //   // Dispath(onRegister());
+  //   navigate("/admin-register");
+  //   resetInputField();
+  // };
+  // const handleForgot = () => {
+  //   // Dispath(onForgotPassword());
+  //   navigate("/admin-forgotpassword");
+  //   resetInputField();
+  // };
   // API
   const Api = async () => {
     try {
@@ -91,9 +91,9 @@ const FlightBookingLogin = ({ className }) => {
       <div className="login-container">
         <div className="background-image"></div>
 
-        <button className="close-button" onClick={handleClose}>
+        {/* <button className="close-button" onClick={handleClose}>
           <img src={closeLogo} alt="close" />
-        </button>
+        </button> */}
         <h1 className="welcome-title" style={{ margin: "20px" }}>
           Chào Mừng Đến Với Nhóm 3
         </h1>
@@ -122,9 +122,9 @@ const FlightBookingLogin = ({ className }) => {
             <div className="form-group">
               <div className="password-header">
                 <label>Mật Khẩu</label>
-                <a className="forgot-password" onClick={handleForgot}>
+                {/* <a className="forgot-password" onClick={handleForgot}>
                   Quên mật khẩu?
-                </a>
+                </a> */}
               </div>
               <input
                 type={showPassword ? "text" : "password"}
@@ -142,7 +142,7 @@ const FlightBookingLogin = ({ className }) => {
               <img
                 src={closeEge}
                 alt="icon"
-                style={{ top: "55%" }}
+                style={{ top: "64%" }}
                 className={password !== "" ? "icon-ege" : "none-eye"}
                 onClick={handleShowPassword}
               />
@@ -160,10 +160,10 @@ const FlightBookingLogin = ({ className }) => {
               Đăng nhập
             </button>
 
-            <div className="signup-option">
+            {/* <div className="signup-option">
               <span>Chưa có tài khoản? </span>
               <button onClick={handleCreate}>Tạo tài khoản</button>
-            </div>
+            </div> */}
           </form>
         </div>
 
