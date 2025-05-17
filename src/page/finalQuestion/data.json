@@ -4926,5 +4926,31 @@
     "d": "Style chỉ áp dụng cho các hệ thống phân tán, Pattern áp dụng cho mọi hệ thống.",
     "answer": "B",
     "theory": "Đây là câu hỏi lặp lại từ chương 5, 6 và đầu chương 8. Architectural Style (Kiểu kiến trúc) là một tập hợp các nguyên tắc và ràng buộc về cách tổ chức hệ thống ở mức cao (ví dụ: Client-Server, Layered, Pipe-and-Filter). Architectural Pattern (Mẫu kiến trúc) là một giải pháp đã được kiểm chứng cho một vấn đề thiết kế cụ thể, thường có phạm vi nhỏ hơn Style (ví dụ: MVC, Repository). Một Style có thể được hiện thực hóa bằng nhiều Pattern khác nhau."
+  },{
+    "question": "98. Việc đánh giá kiến trúc (Architectural Evaluation) nên được thực hiện vào thời điểm nào trong quá trình phát triển để mang lại hiệu quả cao nhất?",
+    "a": "Chỉ sau khi hệ thống đã hoàn thành và sẵn sàng triển khai.",
+    "b": "Chỉ trong giai đoạn kiểm thử cuối cùng.",
+    "c": "Càng sớm càng tốt trong chu trình thiết kế (ngay sau khi có bản phác thảo kiến trúc) và có thể lặp lại khi kiến trúc được tinh chỉnh.",
+    "d": "Chỉ khi có vấn đề nghiêm trọng xảy ra trong quá trình phát triển.",
+    "answer": "C",
+    "theory": "Đây là câu hỏi lặp lại từ chương 5, 6 và đầu chương 8. Đánh giá kiến trúc nên được thực hiện càng sớm càng tốt trong vòng đời phát triển, ngay khi có các bản phác thảo kiến trúc ban đầu. Việc phát hiện và sửa chữa các vấn đề kiến trúc sớm sẽ tốn ít chi phí hơn nhiều so với việc sửa chúng ở các giai đoạn sau."
+  },{
+    "question": "77. Khái niệm \"Build\" và \"Release\" khác nhau như thế nào?",
+    "a": "Build là quá trình tạo ra bản thực thi, Release là bản chính thức được phát hành cho người dùng. Một release thường dựa trên một bản build đã được kiểm thử kỹ lưỡng.",
+    "b": "Build chỉ dành cho môi trường phát triển, Release chỉ dành cho môi trường kiểm thử.",
+    "c": "Chúng là hai thuật ngữ đồng nghĩa.",
+    "d": "Build luôn chứa nhiều lỗi hơn Release.",
+    "answer": "A",
+    "theory": "Một \"Build\" là kết quả của quá trình biên dịch và đóng gói mã nguồn thành một phiên bản có thể thực thi hoặc triển khai. Một \"Release\" là một phiên bản cụ thể của phần mềm được phát hành chính thức cho người dùng hoặc khách hàng, thường sau khi đã trải qua các giai đoạn kiểm thử và đảm bảo chất lượng."
+  },{
+    "question": "16. Kiểm thử trong khi xây dựng (Development testing) thường do ai thực hiện?",
+    "a": "Khách hàng.",
+    "b": "Đội ngũ kiểm thử độc lập.",
+    "c": "Nhóm phát triển phần mềm (lập trình viên).",
+    "d": "Người quản lý dự án.",
+    "answer": "C",
+    "theory": "Kiểm thử trong khi xây dựng (Development testing), bao gồm kiểm thử đơn vị (unit testing) và kiểm thử thành phần (component testing), thường được thực hiện bởi chính các lập trình viên hoặc nhóm phát triển trong quá trình họ xây dựng phần mềm."
   }
 ]
+
+
