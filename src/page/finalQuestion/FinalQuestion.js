@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import data from "./data.json";
+import data2 from "./data2.json"; //  bạn đã có file data2.json
 
 const FinalQuestion = () => {
   const [answers, setAnswers] = useState({}); // Lưu trữ câu trả lời của người dùng
@@ -20,31 +21,7 @@ const FinalQuestion = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // So sánh đáp án và lưu kết quả vào một biến tạm thời
-    const newResults = data.map((item, index) => {
-      const userAnswer = answers[index]; // Đáp án người dùng đã chọn
-      const correctAnswer = item.answer; // Đáp án đúng từ file data.json
-      return {
-        question: item.question,
-        userAnswer: userAnswer || null, // Nếu người dùng chưa chọn, hiển thị "Chưa trả lời"
-        correctAnswer,
-        isCorrect: userAnswer === correctAnswer, // Kiểm tra đúng/sai
-      };
-    });
-
-    // Cập nhật state results
-    setResults(newResults);
-    setShowTheory(true);
-    // In ra kết quả ngay lập tức
-    //chuyển về đầu trang
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth", // Tạo hiệu ứng cuộn mượt
-    });
-  };
-
+  
   const styleContainer = {
     width: "70%",
     margin: "0 auto",
@@ -113,10 +90,19 @@ const FinalQuestion = () => {
 
   // Bước 3: Chọn 50 phần tử đầu (không trùng vì mảng gốc đã unique)
   const uniqueResults = shuffled.slice(0, 50);
-  
   setDataDisplay(uniqueResults);
 };
   const handleRandom = ()=>{
+    setAnswers({});
+    setShowTheory(false);
+    setResults([
+      {
+        question: null,
+        userAnswer: null, // Nếu người dùng chưa chọn, hiển thị "Chưa trả lời"
+        correctAnswer: null,
+        isCorrect: null,
+      },
+    ]);
     randomizeData();
   }
   // Kiểm tra và khởi tạo giá trị 'index-question' trong localStorage nếu chưa có
@@ -128,22 +114,81 @@ const FinalQuestion = () => {
   }, []);
 
   // Lấy giá trị index từ localStorage (nếu có)
-  // Lấy giá trị index từ localStorage (nếu có)
   const index = parseInt(localStorage.getItem('index-question'), 10) || 0;
   // Hàm lấy 50 câu hỏi liên tiếp từ vị trí index trong data
+
   const handleSequentially = () => {
-    const next50 = dataDB.slice(index, index + 50);
-    setDataDisplay(next50);
+setAnswers({});
+    setShowTheory(false);
+    setResults([
+      {
+        question: null,
+        userAnswer: null, // Nếu người dùng chưa chọn, hiển thị "Chưa trả lời"
+        correctAnswer: null,
+        isCorrect: null,
+      },
+    ]);
+
     if(index + 50 >= dataDB.length)
       localStorage.setItem('index-question', 0);
     else
       localStorage.setItem('index-question', index + 50);
+    const next50 = dataDB.slice(index, index + 50);
+    setDataDisplay(next50);
   };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // So sánh đáp án và lưu kết quả vào một biến tạm thời
+    const da= dataDisplay
+    console.log(da);
+    console.log(answers);
+    
+    const newResults = da.map((item, index) => {
+      const userAnswer = answers[index]; // Đáp án người dùng đã chọn
+      const correctAnswer = item.answer; // Đáp án đúng từ file data.json
+      return {
+        question: item.question,
+        userAnswer: userAnswer || null, // Nếu người dùng chưa chọn, hiển thị "Chưa trả lời"
+        correctAnswer,
+        isCorrect: userAnswer === correctAnswer, // Kiểm tra đúng/sai
+      };
+    });
+
+    // Cập nhật state results
+    setResults(newResults);
+    setShowTheory(true);
+    // In ra kết quả ngay lập tức
+    //chuyển về đầu trang
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth", // Tạo hiệu ứng cuộn mượt
+    });
+  };
+  //data2
+const handleData2 = () => {
+  setAnswers({});
+  setShowTheory(false);
+  setResults([
+    {
+      question: null,
+      userAnswer: null, // Nếu người dùng chưa chọn, hiển thị "Chưa trả lời" 
+      correctAnswer: null,
+      isCorrect: null,
+    },
+  ])
+  setDataDisplay(data2);
+};
+
   return (
     <div style={styleContainer}>
       <h1 style={styleH1}>Final Question</h1>
+
       <button onClick={handleRandom} style={styleRandom} >Random</button>
+
       <button onClick={handleSequentially} style={styleRandom}>Theo Thứ Tự</button>
+
+      <button onClick={handleData2} style={styleRandom}>Ôn giữa kì tham khảo các lớp khác</button>
 
       <form onSubmit={handleSubmit}>
         <ul style={styleUl}>
@@ -157,6 +202,7 @@ const FinalQuestion = () => {
                     type="radio"
                     name={`answer-${index}`}
                     value="A"
+                    checked={answers[index] === "A"}
                     onChange={() => handleAnswerChange(index, "A")}
                   />{" "}
                   A. {item.a}
@@ -167,6 +213,7 @@ const FinalQuestion = () => {
                     type="radio"
                     name={`answer-${index}`}
                     value="B"
+                    checked={answers[index] === "B"}
                     onChange={() => handleAnswerChange(index, "B")}
                   />{" "}
                   B. {item.b}
@@ -177,6 +224,7 @@ const FinalQuestion = () => {
                     type="radio"
                     name={`answer-${index}`}
                     value="C"
+                    checked={answers[index] === "C"}
                     onChange={() => handleAnswerChange(index, "C")}
                   />{" "}
                   C. {item.c}
@@ -187,6 +235,7 @@ const FinalQuestion = () => {
                     type="radio"
                     name={`answer-${index}`}
                     value="D"
+                    checked={answers[index] === "D"}
                     onChange={() => handleAnswerChange(index, "D")}
                   />{" "}
                   D. {item.d}

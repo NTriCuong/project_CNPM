@@ -1,0 +1,515 @@
+[
+  {
+    "question": "Câu 1: Thiết kế phần mềm là gi?",
+    "a": "Quá trình viết mã nguồn",
+    "b": "Quá trinh xác định các thành phần phần mềm và mối liên kết giữa chúng\ndựa trên yêu cầu của khách hàng",
+    "c": "Quá trình kiêm thứ phần mềm",
+    "d": "Quá trình bào tri phần mềm",
+    "answer": "B",
+    "theory": ""
+  },
+  {
+    "question": "Câu 2: Hiện thực phần mềm là gi?",
+    "a": "Quá trinh kiểm thử phần mềm",
+    "b": "Quá trình hiên thực hóa thiết kể thành chương trình",
+    "c": "Quả trình viết tải liệu hướng dẫn",
+    "d": "Quá trinh bào tri phần mềm",
+    "answer": "B",
+    "theory": ""
+  },
+  {
+    "question": "Câu 3: Thiết kế và hiện thực phần mềm là hai hoạt động như thế nào?",
+    "a": "Tách biệt hoàn toàn",
+    "b": "Đan xen lẫn nhau",
+    "c": "Hoàn toàn độc lập",
+    "d": "Không liên quan đến nhau",
+    "answer": "B",
+    "theory": ""
+  },
+  {
+    "question": "Câu 4: Thiết kế hướng đối tượng sử dụng gì để biểu diễn?",
+    "a": "UML",
+    "b": "SQL",
+    "c": "HTML",
+    "d": "XML",
+    "answer": "A",
+    "theory": ""
+  },
+  {
+    "question": "Câu 5: Thiết kế mẫu là gi?",
+    "a": "Một phương pháp lập trinh",
+    "b": "Một phương pháp thiết kế giao diên người dùng",
+    "c": "Một phương pháp để giải quyết các vấn đề thiết kế thường gặp",
+    "d": "Một phương pháp kiểm thừ phần mềm",
+    "answer": "C",
+    "theory": ""
+  },
+  {
+    "question": "Can 6: Phát triển mã nguồn mở liên quan đến gì?",
+    "a": "Sử dụng phần mềm đóng gói",
+    "b": "Sử dụng và phát triển các thành phần mã nguồn mở",
+    "c": "Thiết kể giao diện người dùng",
+    "d": "Quản lý dự án phần mềm",
+    "answer": "B",
+    "theory": ""
+  },
+  {
+    "question": "Câu 7: Một trong những nguyên tắc chính trong thiết kế giao diện người dùng là gì?",
+    "a": "Tối ưu hóa cho các thiết bị đi động",
+    "b": "Tinh đến nhu cầu, kinh nghiệm và khả năng của người dùng hệ thống",
+    "c": "Tăng tốc độ phát triển phần mềm",
+    "d": "Giảm chi phí phát triển",
+    "answer": "B",
+    "theory": ""
+  },
+  {
+    "question": "Câu 8: Thiết kế UI cần nhận thức được điều gì?",
+    "a": "Các hạn chế về tài chính của dự án",
+    "b": "Các hạn chế về vật lí và tinh thần của người dùng",
+    "c": "Các công nghệ mới nhất",
+    "d": "Các yêu cầu chức năng của hệ thống",
+    "answer": "B",
+    "theory": ""
+  },
+  {
+    "question": "Câu 9: Các mô hình thiết kế hệ thống có vai trò gì trong dự án lớn?",
+    "a": "Giảm thời gian phát triển",
+    "b": "Là cơ chế giao tiếp quan trong giữa các nhóm thiết kể khác nhau",
+    "c": "Tăng chi phí dự án",
+    "d": "Giảm số lượng lỗi phần mềm",
+    "answer": "B",
+    "theory": ""
+  },
+  {
+    "question": "Câu 10: Thiết kế thuật toán là gi?",
+    "a": "Quá trình thiết kế giao diên người dùng",
+    "b": "Quá trinh thiết kế các thuật toán đề giải quyết các vấn đề cụ thể",
+    "c": "Quá trình viết mã nguồn",
+    "d": "Quá trình kiểm thử phần mềm",
+    "answer": "B",
+    "theory": ""
+  },
+  {
+    "question": "Câu 11: Thiết kế cơ sở dữ liệu liên quan đến điều gì?",
+    "a": "Thiết kế giao diện người dùng",
+    "b": "Thiết kế cấu trúc và tổ chức của cơ sở dữ liệu",
+    "c": "Thiết kế các thuật toán",
+    "d": "Kiểm thứ cơ sở dữ liêu",
+    "answer": "B",
+    "theory": ""
+  },
+  {
+    "question": "Câu 12: Trong thiết kế giao diện người dùng, cần thừa nhận điều gì?",
+    "a": "Người dùng luôn biết cách sử dụng hệ thống",
+    "b": "Ai cũng có thể nhầm lẫn",
+    "c": "Hệ thống không bao giờ gặp lỗi",
+    "d": "Giao diện không cần thân thiên",
+    "answer": "B",
+    "theory": ""
+  },
+  {
+    "question": "Câu 13: Mục tiêu chính của thiết kế giao diện người dùng là gì?",
+    "a": "Tăng tốc độ phát triền phần mềm",
+    "b": "Đáp ứng nhu cầu và trài nghiệm người dùng",
+    "c": "Giảm chi phí phát triên",
+    "d": "Tăng tính bảo mật của hệ thống",
+    "answer": "B",
+    "theory": ""
+  },
+  {
+    "question": "Câu 14: Quá trình thiết kế phần mềm bao gồm gì?",
+    "a": "Viết mã nguồn",
+    "b": "Định nghĩa các thành phần phần mềm và mối liên kết giữa chúng",
+    "c": "Kiếm thứ phần mềm",
+    "d": "Bảo tri phần mềm",
+    "answer": "B",
+    "theory": ""
+  },
+  {
+    "question": "Câu 15: Một ví dụ về biểu đồ hoạt động trong thiết kế phần mềm là gi?",
+    "a": "Biểu đồ lớp",
+    "b": "Biểu đồ liên kết",
+    "c": "Biểu đồ hoạt động swimming lane",
+    "d": "Biểu đồ thành phân",
+    "answer": "C",
+    "theory": ""
+  },
+  {
+    "question": "Cân 16: Quân lý bản quyền trong thiết kế phần mềm liên quan đến điều gì?",
+    "a": "Sư dụng các thành phần mã nguồn mở mà không cần kiểm tra",
+    "b": "Duy trì thông tin về các thành phần mã nguồn mở đã tải về và sử dung",
+    "c": "Thiết kế giao diện người dùng",
+    "d": "Bảo trì phần mềm",
+    "answer": "B",
+    "theory": ""
+  },
+  {
+    "question": "Câu 17: Một trong những nguyên tắc quan trọng trong thiết kế phần mềm là gì?",
+    "a": "Giám thiểu số lượng mã nguồn",
+    "b": "Đàm bảo phần mềm dễ dàng bảo trị và mờ rộng",
+    "c": "Tăng số lượng thành phần phần mèm",
+    "d": "Giăm thiếu tải liêu hướng dẫn",
+    "answer": "B",
+    "theory": ""
+  },
+  {
+    "question": "Câu 18: Thiết kế cơ sỡ dữ liệu bao gồm việc gi?",
+    "a": "Xác dinh cấu trúc dữ liệu và cách tổ chức dữ liệu trong cơ sở dữ liêu",
+    "b": "Viết mã nguồn",
+    "c": "Thiết kế giao diên người dùng",
+    "d": "Kiểm thừ cơ sử dũ liêu",
+    "answer": "A",
+    "theory": ""
+  },
+  {
+    "question": "Câu 19: Thiết kế thuật toán có vai trò gì trong phần mềm?",
+    "a": "Định nghĩa các giao diên người dùng",
+    "b": "Giải quyết các vấn đề cụ thể bằng cách xác định các bước xử lý",
+    "c": "Tăng tốc đô phát triển phần mềm",
+    "d": "Bảo tri phần mềm",
+    "answer": "B",
+    "theory": ""
+  },
+  {
+    "question": "Câu 20: Mục đích của việc hiện thực phần mềm là gì?",
+    "a": "Đáp ứng các yêu cầu thiết kế chi tiết",
+    "b": "Thoa mãn người dùng cuối",
+    "c": "Tăng tính phức tạp của mà nguồn",
+    "d": "Giảm chi phí phát triển",
+    "answer": "A",
+    "theory": ""
+  },
+  {
+    "question": "Câu 20: Mục dích của việc hiện thực phần mềm là gì?",
+    "a": "Đáp ứng các yêu cầu thiết kế chi tiết",
+    "b": "Thoa mãn người dùng cuối",
+    "c": "Tăng tính phức tạp của mà nguồn",
+    "d": "Giảm chi phí phát triên",
+    "answer": "A",
+    "theory": ""
+  },
+  {
+    "question": "Câu 21: Unit Implementation được hiểu là gì?",
+    "a": "Lập trình các đơn vị phần mềm nhỏ nhất",
+    "b": "Thiết kế giao diện người dùng",
+    "c": "Tạo lập các tài liệu hướng dẫn sử dụng",
+    "d": "Kiểm tra và bào trì phần mềm",
+    "answer": "A",
+    "theory": ""
+  },
+  {
+    "question": "Câu 22: Một quy tắc vàng trong hiện thực phần mềm là gì?",
+    "a": "Kiểm tra các yêu cầu và thiết kế lai một lần nữa",
+    "b": "Không cần kiểm tra lai thiết kế sau khi mã hóa",
+    "c": "Tấp trung vào việc lập trình nhanh chóng",
+    "d": "Đơn giản hóa tất cả các quy trình",
+    "answer": "A",
+    "theory": ""
+  },
+  {
+    "question": "Câu 23: Tại sao cần xác nhận các thiết kế chí tiết trước khi hiện thực?",
+    "a": "Để đảm bảo các thiết kế đáp ứng yêu cầu của người dùng",
+    "b": "Để giảm chi phí phát triển",
+    "c": "Để tiết kiệm thời gian kiểm thừ",
+    "d": "Để tăng tốc độ mã hóa",
+    "answer": "A",
+    "theory": ""
+  },
+  {
+    "question": "Câu 24: Mục dích của việc ghi lại lỗi khi sử dụng form là gì?",
+    "a": "Để theo dõi và sửa chữa lỗi một cách hệ thống",
+    "b": "De luu uni do lieu nguini ding",
+    "c": "Để tăng tốc đô phát triển phần mèm",
+    "d": "Để phân tích thị trường",
+    "answer": "A",
+    "theory": ""
+  },
+  {
+    "question": "Câu 25: Tiêu chuẩn yêu cầu đối với việc mã hóa bao gồm gì?",
+    "a": "Tính đúng đắn và rõ ràng",
+    "b": "Tính linh hoạt và tiết kiẽm",
+    "c": "Tinh đơn giản và nhanh chóng",
+    "d": "Tính bảo mật và khả năng mở rộng",
+    "answer": "A",
+    "theory": ""
+  },
+  {
+    "question": "Câu 26: Ước lượng kích thước và thời gian dựa trên gì ?",
+    "a": "Dữ liệu đã có",
+    "b": "Kinh nghiệm cá nhân",
+    "c": "Yêu cầu khách hàng",
+    "d": "Ngân sách dự án",
+    "answer": "A",
+    "theory": ""
+  },
+  {
+    "question": "Câu 27: Hiện thực mã chương trình bao gồm bước nào sau đây?",
+    "a": "Lập kế hoạch cấu trúc và thiết kế mã",
+    "b": "Thiết kế giao diện người dùng",
+    "c": "Viết tài liệu hướng dẫn",
+    "d": "Tạo lập báo cáo phân tích",
+    "answer": "A",
+    "theory": ""
+  },
+  {
+    "question": "Câu 28: Tại sao cần tự kiểm tra lại thiết kế/cấu trúc trước khi mã hóa?",
+    "a": "Để đăm bảo tính đúng đắn và hiệu quả của mã nguồn",
+    "b": "Để tăng tốc độ mã hóa",
+    "c": "Đề giảm chi phí phát triên",
+    "d": "Để làm hải lòng khách hàng",
+    "answer": "A",
+    "theory": ""
+  },
+  {
+    "question": "Câu 29: Quy tắc đặt tên trong hiện thực mã chương trình cân tuân thủ những gì?",
+    "a": "Phù hợp và rõ ràng",
+    "b": "Ngắn gọn và xúc tích",
+    "c": "Phức tạp và chi tiết",
+    "d": "Bất kỳ tên nào cũng được",
+    "answer": "A",
+    "theory": ""
+  },
+  {
+    "question": "Câu 30: Kiểm tra Class cần xem xét điều gì?",
+    "a": "Tên Class có thích hợp không",
+    "b": "Class có được trừu tượng không",
+    "c": "Header của Class có mô tả mục đích của hàm hay không",
+    "d": "Tất cả các ý trên",
+    "answer": "D",
+    "theory": ""
+  },
+  {
+    "question": "Câu 31: Kiểm tra thuộc tính cần xác định điều gì?",
+    "a": "Thuộc tính có cần thiết không",
+    "b": "Thuộc tính có thế là static không",
+    "c": "Thuộc tính có nên là final không",
+    "d": "Tất cả các ý trên",
+    "answer": "D",
+    "theory": ""
+  },
+  {
+    "question": "Câu 32: Phương pháp kiểm tra phương thức khởi dựng cần xác định điều gi?",
+    "a": "Phương thức có cần thiết không",
+    "b": "Phương thức có leverage các constructor hiện có không",
+    "c": "Phương thức có initialize tất cả các thuộc tính không",
+    "d": "Tất cả các ý trên",
+    "answer": "D",
+    "theory": ""
+  },
+  {
+    "question": "Câu 33: Làm thế nào để lập trình 1000 LoC/ngày?",
+    "a": "Lập kế hoạch cầu trúc và thiết kế mã chương trình",
+    "b": "Tăng tốc độ đánh máy",
+    "c": "Tập trung vào các yêu cầu của khách hàng",
+    "d": "Giảm thời gian kiểm tra mã",
+    "answer": "A",
+    "theory": ""
+  },
+  {
+    "question": "Câu 34: Kiềm tra thuộc tính có cần xác định điều gì?",
+    "a": "Sư cần thiết của thuộc tính",
+    "b": "Thuộc tính có thể là static hay không",
+    "c": "Thuộc tinh có nên là final hay không",
+    "d": "Tất cả các ý trên",
+    "answer": "D",
+    "theory": ""
+  },
+  {
+    "question": "Câu 35: Tại sao cần ghi chú lại các mốc thời gian trong quá trình hiện thực mã chượng trình?",
+    "a": "Để theo dõi tiến đô và quản lý thời gian hiệu quả",
+    "b": "Để lưu trữ dữ liệu người dùng",
+    "c": "Để phân tích thị trường",
+    "d": "Để giảm chi phí phát triển",
+    "answer": "A",
+    "theory": ""
+  },
+  {
+    "question": "Câu 36: Việc chuẩn bị đễ hiện thục bao gồm gì?",
+    "a": "Xác nhận các thiết kế chi tiết phải hiện thực",
+    "b": "Mã hóa từ một thiết kế được mô tả băng văn bản",
+    "c": "Đo thời gian phân loại theo các bước",
+    "d": "Tất cả các ý trên",
+    "answer": "D",
+    "theory": ""
+  },
+  {
+    "question": "Câu 37: Mục đích của việc biên dịch mã lệnh là gì?",
+    "a": "Kiểm tra và sửa chữa các lỗi củ pháp",
+    "b": "Thiết kế giao diện người dùng",
+    "c": "Viết tài liệu hướng dẫn",
+    "d": "Tạo lập báo cáo phân tích",
+    "answer": "A",
+    "theory": ""
+  },
+  {
+    "question": "Cân 38: Mục tiêu của kiểm thử phần mềm là gi?",
+    "a": "Để chi ra rằng chương trình thực hiện đúng như mong đợi và tim ra lỗi",
+    "b": "Để giảm chi phí phát triển",
+    "c": "Để tăng tốc độ lập trình",
+    "d": "Để làm hài lòng khách hàng",
+    "answer": "A",
+    "theory": ""
+  },
+  {
+    "question": "Câu 39: Kiểm thử đơn vị (unit testing) tập trung vào điều gi?",
+    "a": "Kiếm thừ chức năng của các đổi tượng hay các phương thức",
+    "b": "Kiêm thứ giao diễn người dùng",
+    "c": "Kiểm thừ hiệu suất hệ thống",
+    "d": "Kiểm thứ tính bảo mật",
+    "answer": "A",
+    "theory": ""
+  },
+  {
+    "question": "Câu 40: Kiềm thử component (component testing) tập trung vào điều gi?",
+    "a": "Kiểm thử giao diện component",
+    "b": "Kiếm thứ chức năng của các phương thức",
+    "c": "Kiểm thứ tính bảo mật",
+    "d": "Kiểm thứ giao diện người dùng",
+    "answer": "A",
+    "theory": ""
+  },
+  {
+    "question": "Câu 41: Kiểm thử hệ thống (system testing) tập trung vào điều gì?",
+    "a": "Kiểm thử tương tác giữa các component",
+    "b": "Kiểm thử giao diện người dùng",
+    "c": "Kiểm thử tính bảo mật",
+    "d": "Kiểm thử hiệu suất hệ thống",
+    "answer": "A",
+    "theory": ""
+  },
+  {
+    "question": "Câu 42: Kiềm thử tự động nên sử dụng gì để hỗ trợ kiểm thử đơn vị?",
+    "a": "Framework kiểm thử tự động (như JUnit)",
+    "b": "Các công cụ kiểm thử thủ công",
+    "c": "Phần mềm thiết kế giao diên",
+    "d": "Các chương trình bảo mật",
+    "answer": "A",
+    "theory": ""
+  },
+  {
+    "question": "Câu 43: Mục tiêu của kiểm thử giao diện là gi?",
+    "a": "Tim ra lỗi gây ra bởi các lỗi giao diện hoặc giả định sai về các giao diên",
+    "b": "Kiểm thử chức năng của các phương thức",
+    "c": "Kiếm thứ hiệu suất hệ thống",
+    "d": "Kiểm thứ tính bảo mật",
+    "answer": "A",
+    "theory": ""
+  },
+  {
+    "question": "Câu 44: Một loại giao diện trong kiểm thứ giao diện là gì?",
+    "a": "Giao diện có tham số",
+    "b": "Giao diện người dùng",
+    "c": "Giao diễn hệ thống",
+    "d": "Giao diện bảo mật",
+    "answer": "B",
+    "theory": ""
+  },
+  {
+    "question": "Câu 45: Kiểm thử phát triển là trách nhiệm của ai?",
+    "a": "Đội ngũ phát triển phần mềm",
+    "b": "Người dùng cuối",
+    "c": "Nhóm marketing",
+    "d": "Nhóm hỗ trợ khách hàng",
+    "answer": "A",
+    "theory": ""
+  },
+  {
+    "question": "Câu 46: Kiểm thử phát hành là gi?",
+    "a": "Kiểm thử hệ thống trước khi phát hành cho khách hàng",
+    "b": "Kiểm thứ hệ thống sau khi phát hành cho khách hàng",
+    "c": "Kiểm thứ hệ thống trong giai đoạn phát triển",
+    "d": "Kiểm thừ hệ thống trong giai đoạn bảo tri",
+    "answer": "A",
+    "theory": ""
+  },
+  {
+    "question": "Câu 47: Phương pháp kiểm thử hộp đen tập trung vào điều gi?",
+    "a": "Kiêm thừ chức năng của hệ thống mà không cần biết cầu trúc bên trong",
+    "b": "Kiểm thư hiệu suất hệ thống",
+    "c": "Kiêm thử tính bảo mật",
+    "d": "Kiểm thứ giao diên người dùng",
+    "answer": "A",
+    "theory": ""
+  },
+  {
+    "question": "Câu 48: Phương pháp kiểm thử hộp trắng tập trung vào diều gì?",
+    "a": "Kiểm thừ cầu trúc bên trong của hệ thống",
+    "b": "Kiểm thư hiệu suất hệ thống",
+    "c": "Kiểm thử tính bảo mật",
+    "d": "Kiểm thử giao diên người dùng",
+    "answer": "A",
+    "theory": ""
+  },
+  {
+    "question": "Câu 49: Phương pháp kiêm thử hộp xám là gì?",
+    "a": "Kết hợp giữa kiểm thứ hộp đen và kiểm thứ hộp trắng",
+    "b": "Kiểm thừ hiệu suất hệ thống",
+    "c": "Kiểm thứ tính bảo mát",
+    "d": "Kiêm thử giao diễn người dùng",
+    "answer": "A",
+    "theory": ""
+  },
+  {
+    "question": "Câu 50: Mục tiêu của kiểm thử validation là gi?",
+    "a": "Để chi ra rằng phần mềm thoa mãn các yêu cầu đưa ra",
+    "b": "Để tim ra các lỗi của phần mềm",
+    "c": "Để giàm chi phí phát triển",
+    "d": "Để tăng tốc độ lập trình",
+    "answer": "A",
+    "theory": ""
+  },
+  {
+    "question": "Câu 51: Mục tiêu của kiểm thứ defect là gi?",
+    "a": "Để tim ra các tinh huống mà phần mềm không hoạt động đúng như mong đợi",
+    "b": "Để chỉ ra rằng phần mềm thỏa mãn các yêu câu đưa ra",
+    "c": "Để giảm chi phí phát triển",
+    "d": "Đề làm hài lòng khách hàng",
+    "answer": "A",
+    "theory": ""
+  },
+  {
+    "question": "Câu 52: Tại sao cần kiểm tra kết quả của việc kiểm thử?",
+    "a": "Để tim ra lỗi và các bất thường",
+    "b": "Để lưu trữ dữ liệu người dùng",
+    "c": "Để phân tích thị trường",
+    "d": "Để tăng tốc đô phát triển phần mềm",
+    "answer": "A",
+    "theory": ""
+  },
+  {
+    "question": "Câu 53: Kiếm thử người dùng tập trung vào điều gì?",
+    "a": "Kiểm thử phần mềm bởi người dùng cuối",
+    "b": "Kiếm thứ tính bảo mật",
+    "c": "Kiểm thư hiệu suất hệ thống",
+    "d": "Kiểm thừ giao diễn người dùng",
+    "answer": "A",
+    "theory": ""
+  },
+  {
+    "question": "Câu 54: Cải tiền quy trình phần mềm bao gồm gi?",
+    "a": "Cải tiền các phương pháp phát triển và kiểm thủ phần mềm",
+    "b": "Tăng tốc độ lập trình",
+    "c": "Giảm chi phí phát triên",
+    "d": "Tập trung vào giao diên người dùng",
+    "answer": "A",
+    "theory": ""
+  },
+  {
+    "question": "Câu 55: Bảo trì phần mềm bao gồm gì?",
+    "a": "Sữa lỗi và nâng cấp phần mềm sau khi phát hành",
+    "b": "Thiết kế giao diện người dùng",
+    "c": "Viết tài liêu hướng dẫn",
+    "d": "Tao lấp báo cáo phân tích",
+    "answer": "A",
+    "theory": ""
+  },
+  {
+    "question": "Câu 56: Mục đích của việc kiểm thử bản release là gi?",
+    "a": "Để đảm bảo phần mềm hoạt động đúng như mong đợi trước khi phát hành",
+    "b": "Để giảm chi phí phát triên",
+    "c": "Để tăng tốc độ lập trình",
+    "d": "Để làm hài lòng khách hàng",
+    "answer": "A",
+    "theory": ""
+  }
+]
