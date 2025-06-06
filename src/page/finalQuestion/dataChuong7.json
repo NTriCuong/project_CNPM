@@ -1,0 +1,903 @@
+[
+    {
+    "question": "1. Theo định nghĩa trong giáo trình, \"Hiện thực phần mềm\" (Implementation) bao gồm những hoạt động chính nào?",
+    "a": "Chỉ lập trình (programming).",
+    "b": "Lập trình (programming) và tích hợp (integration) các đơn vị (unit).",
+    "c": "Chỉ thiết kế chi tiết.",
+    "d": "Chỉ kiểm thử đơn vị.",
+    "answer": "B",
+    "theory": "Hiện thực phần mềm không chỉ là việc viết mã (lập trình) cho từng đơn vị (unit) mà còn bao gồm cả việc tích hợp các đơn vị đó lại với nhau để tạo thành các thành phần lớn hơn hoặc toàn bộ hệ thống."
+  },
+  {
+    "question": "2. \"Unit\" trong \"Unit Implementation\" được hiểu là gì?",
+    "a": "Toàn bộ hệ thống phần mềm.",
+    "b": "Một module lớn của hệ thống.",
+    "c": "Phần nhỏ nhất của phần mềm được duy trì một cách riêng biệt (thường là lớp hoặc phương thức).",
+    "d": "Một yêu cầu chức năng.",
+    "answer": "C",
+    "theory": "Một \"unit\" trong ngữ cảnh hiện thực và kiểm thử đơn vị thường là một thành phần nhỏ nhất có thể kiểm thử được của phần mềm, chẳng hạn như một lớp, một phương thức, hoặc một hàm."
+  },
+  {
+    "question": "3. Mục đích chính của giai đoạn Hiện thực là gì?",
+    "a": "Thu thập yêu cầu từ khách hàng.",
+    "b": "Đáp ứng các yêu cầu đã được mô tả trong thiết kế chi tiết.",
+    "c": "Tối ưu hóa kiến trúc hệ thống.",
+    "d": "Viết tài liệu hướng dẫn sử dụng.",
+    "answer": "B",
+    "theory": "Mục đích chính của giai đoạn hiện thực là chuyển đổi các đặc tả thiết kế chi tiết (Software Design Document - SDD) thành mã nguồn chạy được, đảm bảo rằng mã nguồn đó đáp ứng đúng các yêu cầu và thiết kế đã được xác định."
+  },
+  {
+    "question": "4. Hai mục đích chính của việc mã hóa (coding) là gì?",
+    "a": "Tốc độ và hiệu năng.",
+    "b": "Tính đúng đắn (Correctness) và Tính rõ ràng (Clarity).",
+    "c": "Bảo mật và khả năng mở rộng.",
+    "d": "Hoàn thành nhanh và chi phí thấp.",
+    "answer": "B",
+    "theory": "Khi viết mã, mục tiêu quan trọng nhất là đảm bảo mã hoạt động đúng đắn (correctness) theo yêu cầu và thiết kế. Đồng thời, mã nguồn cũng cần phải rõ ràng, dễ đọc, dễ hiểu (clarity) để thuận tiện cho việc bảo trì và phát triển sau này."
+  },
+  {
+    "question": "5. \"Quy tắc vàng\" được đề cập một cách ẩn ý trong quy trình phát triển là gì?",
+    "a": "Chỉ viết code một lần duy nhất.",
+    "b": "Luôn ưu tiên hiệu năng hơn mọi thứ khác.",
+    "c": "Quy trình lặp đi lặp lại giữa việc xác định yêu cầu, thiết kế, hiện thực và kiểm tra.",
+    "d": "Bỏ qua tài liệu hóa để tiết kiệm thời gian.",
+    "answer": "C",
+    "theory": "Quy trình phát triển phần mềm hiện đại thường mang tính lặp đi lặp lại (iterative) và tăng trưởng (incremental). Các hoạt động như xác định yêu cầu, thiết kế, hiện thực, và kiểm tra được thực hiện lặp đi lặp lại trong các chu kỳ ngắn, giúp thích ứng với thay đổi và cải thiện chất lượng liên tục."
+  },
+  {
+    "question": "6. Bước đầu tiên trong việc chuẩn bị để hiện thực một đơn vị phần mềm là gì?",
+    "a": "Viết mã nguồn ngay lập tức.",
+    "b": "Ước lượng thời gian cần thiết.",
+    "c": "Xác nhận (confirm) và hiểu rõ các thiết kế chi tiết (ví dụ: từ SDD) cần phải hiện thực.",
+    "d": "Chuẩn bị form ghi lỗi.",
+    "answer": "C",
+    "theory": "Trước khi bắt tay vào viết mã cho một đơn vị phần mềm, lập trình viên cần đảm bảo rằng họ đã hiểu rõ các yêu cầu và thiết kế chi tiết của đơn vị đó, thường được mô tả trong Tài liệu Đặc tả Thiết kế (SDD) hoặc các tài liệu tương đương."
+  },
+  {
+    "question": "7. Tại sao việc hiểu các tiêu chuẩn (ví dụ: coding standard, documentation standard) lại quan trọng trước khi bắt đầu hiện thực?",
+    "a": "Để làm tăng độ phức tạp của dự án.",
+    "b": "Để đảm bảo tính nhất quán, dễ đọc, dễ bảo trì cho mã nguồn và tài liệu.",
+    "c": "Chỉ là yêu cầu hình thức từ quản lý.",
+    "d": "Để hạn chế sự sáng tạo của lập trình viên.",
+    "answer": "B",
+    "theory": "Tuân thủ các tiêu chuẩn về viết mã (coding standards) và tài liệu hóa (documentation standards) giúp tạo ra mã nguồn và tài liệu nhất quán, dễ đọc, dễ hiểu và dễ bảo trì hơn, đặc biệt khi làm việc trong một nhóm."
+  },
+  {
+    "question": "8. Việc ước lượng kích thước (ví dụ: LOC) và thời gian hiện thực dựa trên dữ liệu lịch sử có lợi ích gì?",
+    "a": "Đảm bảo dự án luôn hoàn thành đúng hạn.",
+    "b": "Giúp lập kế hoạch thực tế hơn và quản lý tiến độ hiệu quả.",
+    "c": "Làm tăng chi phí quản lý dự án.",
+    "d": "Không có lợi ích thực tế nào.",
+    "answer": "B",
+    "theory": "Dữ liệu lịch sử từ các dự án tương tự có thể giúp ước lượng kích thước công việc (ví dụ: Lines of Code - LOC) và thời gian cần thiết để hiện thực một cách thực tế hơn, từ đó hỗ trợ việc lập kế hoạch và quản lý tiến độ dự án hiệu quả hơn."
+  },
+  {
+    "question": "9. Mô hình hiện thực trong RUP (Rational Unified Process) thể hiện mối quan hệ nào?",
+    "a": "Chỉ mối quan hệ giữa các file mã nguồn.",
+    "b": "Mối quan hệ và sự truy vết (traceability) giữa các yếu tố thiết kế (design model) và các yếu tố hiện thực (implementation artifacts).",
+    "c": "Chỉ cấu trúc thư mục dự án.",
+    "d": "Chỉ quy trình biên dịch.",
+    "answer": "B",
+    "theory": "Trong RUP, Mô hình Hiện thực (Implementation Model) mô tả cách các yếu tố trong Mô hình Thiết kế (Design Model) được hiện thực hóa bằng các thành phần mã nguồn (implementation artifacts) như file mã nguồn, file thực thi. Sự truy vết giữa hai mô hình này là quan trọng."
+  },
+  {
+    "question": "10. Stereotype «trace» trong mô hình hiện thực RUP dùng để làm gì?",
+    "a": "Biểu diễn một file thực thi.",
+    "b": "Chỉ ra mối liên kết truy vết nguồn gốc giữa phần tử thiết kế và phần tử hiện thực.",
+    "c": "Biểu diễn quá trình biên dịch.",
+    "d": "Biểu diễn một lớp trừu tượng.",
+    "answer": "B",
+    "theory": "Stereotype «trace» được sử dụng trong RUP (và UML nói chung) để biểu diễn một mối quan hệ phụ thuộc, chỉ ra rằng một phần tử (ví dụ: một file mã nguồn trong mô hình hiện thực) truy vết (trace) hoặc hiện thực hóa một phần tử khác (ví dụ: một lớp trong mô hình thiết kế)."
+  },
+  {
+    "question": "11. Stereotype «file» trong mô hình hiện thực RUP đại diện cho điều gì?",
+    "a": "Một lớp trong mô hình thiết kế.",
+    "b": "Một package mã nguồn.",
+    "c": "Một file vật lý trong hệ thống file (ví dụ: file mã nguồn .java, file .jar, file readme).",
+    "d": "Một tiến trình đang chạy.",
+    "answer": "C",
+    "theory": "Stereotype «file» trong RUP được sử dụng để đại diện cho một artifact vật lý trong hệ thống file, chẳng hạn như một file mã nguồn, một file thực thi, một file tài liệu, v.v."
+  },
+  {
+    "question": "12. Bước nào sau đây thường KHÔNG nằm trong quy trình hiện thực mã chương trình chi tiết được đề cập?",
+    "a": "Lập kế hoạch cấu trúc và thiết kế mã.",
+    "b": "Tự kiểm tra lại thiết kế/cấu trúc.",
+    "c": "Gõ mã lệnh chương trình.",
+    "d": "Họp với khách hàng để xác nhận lại yêu cầu.",
+    "answer": "D",
+    "theory": "Quy trình hiện thực mã chi tiết thường bao gồm việc lập kế hoạch (có thể là thiết kế ở mức thấp), viết mã, và tự kiểm tra/review mã. Việc họp với khách hàng để xác nhận yêu cầu thường thuộc giai đoạn phân tích yêu cầu hoặc các vòng lặp sớm hơn, không phải là bước trực tiếp trong việc gõ mã chi tiết."
+  },
+  {
+    "question": "13. Tại sao việc \"tự kiểm tra lại mã lệnh – vẫn chưa biên dịch\" lại được gợi ý?",
+    "a": "Để trì hoãn việc biên dịch.",
+    "b": "Để phát hiện các lỗi logic hoặc lỗi không tuân thủ thiết kế/tiêu chuẩn trước khi trình biên dịch báo lỗi cú pháp.",
+    "c": "Chỉ là bước không cần thiết.",
+    "d": "Để đảm bảo mã nguồn chạy nhanh hơn.",
+    "answer": "B",
+    "theory": "Việc tự kiểm tra lại mã lệnh (desk checking) trước khi biên dịch giúp lập trình viên phát hiện sớm các lỗi logic, lỗi thiết kế, hoặc các vấn đề về tuân thủ tiêu chuẩn mà trình biên dịch có thể không phát hiện được. Điều này giúp tiết kiệm thời gian và công sức so với việc chỉ dựa vào trình biên dịch."
+  },
+  {
+    "question": "14. Việc ghi chú lại các mốc thời gian trong quá trình hiện thực giúp ích gì?",
+    "a": "Chỉ để báo cáo cho quản lý.",
+    "b": "Giúp cải thiện kỹ năng ước lượng và phân tích hiệu quả công việc trong tương lai.",
+    "c": "Làm tăng áp lực cho lập trình viên.",
+    "d": "Không có tác dụng thực tế.",
+    "answer": "B",
+    "theory": "Ghi lại thời gian thực tế bỏ ra cho các tác vụ hiện thực giúp cải thiện kỹ năng ước lượng cho các tác vụ tương tự trong tương lai. Nó cũng cung cấp dữ liệu để phân tích năng suất và hiệu quả công việc, từ đó có thể cải tiến quy trình."
+  },
+  {
+    "question": "15. Quy tắc đặt tên sử dụng getters và setters (ví dụ: getName(), setName()) thường áp dụng cho thành phần nào trong lớp?",
+    "a": "Các phương thức khởi tạo (constructors).",
+    "b": "Các thuộc tính (attributes) private để kiểm soát truy cập.",
+    "c": "Các hằng số (constants).",
+    "d": "Các lớp lồng nhau (nested classes).",
+    "answer": "B",
+    "theory": "Getters (ví dụ: `getName()`) và setters (ví dụ: `setName()`) là các phương thức công khai được sử dụng để truy cập (get) và thay đổi (set) giá trị của các thuộc tính (attributes) private của một lớp. Đây là một phần của nguyên tắc đóng gói (encapsulation)."
+  },
+  {
+    "question": "16. Việc sử dụng tiền tố hoặc hậu tố để phân biệt biến lớp, biến cục bộ và tham số (ví dụ: _length, length, aLength) nhằm mục đích gì?",
+    "a": "Làm cho tên biến dài hơn và khó đọc hơn.",
+    "b": "Tăng tính rõ ràng của mã nguồn, giúp dễ dàng phân biệt phạm vi của biến.",
+    "c": "Là yêu cầu bắt buộc của mọi ngôn ngữ lập trình.",
+    "d": "Chỉ là sở thích cá nhân của lập trình viên.",
+    "answer": "B",
+    "theory": "Sử dụng các quy ước đặt tên nhất quán, ví dụ như dùng tiền tố (_ cho biến instance, a cho argument/tham số), có thể giúp tăng tính rõ ràng của mã nguồn, giúp người đọc nhanh chóng xác định được phạm vi và loại của một biến."
+  },
+  {
+    "question": "17. Quy ước đặt tên lớp bắt đầu bằng ký tự in hoa và tên biến bắt đầu bằng ký tự thường là một ví dụ của:",
+    "a": "Tối ưu hóa hiệu năng.",
+    "b": "Quy tắc bảo mật.",
+    "c": "Tiêu chuẩn mã hóa (Coding Standard) về phong cách (style).",
+    "d": "Kỹ thuật kiểm thử.",
+    "answer": "C",
+    "theory": "Các quy ước đặt tên (naming conventions) như việc lớp bắt đầu bằng chữ hoa (PascalCase) và biến/phương thức bắt đầu bằng chữ thường (camelCase) là một phần của tiêu chuẩn mã hóa về phong cách, giúp mã nguồn nhất quán và dễ đọc hơn."
+  },
+  {
+    "question": "18. Tại sao nên sử dụng các từ nối (ví dụ: cylinderLength) thay vì viết tắt khó hiểu khi đặt tên?",
+    "a": "Để tên biến/phương thức ngắn gọn nhất có thể.",
+    "b": "Để tăng tính dễ đọc và dễ hiểu của mã nguồn.",
+    "c": "Để giảm kích thước file mã nguồn.",
+    "d": "Để gây khó khăn cho người khác khi đọc code.",
+    "answer": "B",
+    "theory": "Sử dụng tên đầy đủ, có ý nghĩa, và dễ hiểu (ví dụ: `cylinderLength` thay vì `cylLen` hoặc `cl`) giúp mã nguồn dễ đọc và dễ bảo trì hơn, ngay cả khi tên đó dài hơn một chút. Tránh viết tắt khó hiểu."
+  },
+  {
+    "question": "19. Việc sử dụng static final (trong Java) cho các hằng số (ví dụ: MAX_NAME_LENGTH) mang lại lợi ích gì?",
+    "a": "Cho phép thay đổi giá trị của hằng số trong quá trình chạy.",
+    "b": "Đảm bảo giá trị không đổi và có thể truy cập mà không cần tạo đối tượng.",
+    "c": "Làm giảm hiệu năng chương trình.",
+    "d": "Chỉ dùng cho các hằng số kiểu số nguyên.",
+    "answer": "B",
+    "theory": "Trong Java, `static final` được sử dụng để khai báo hằng số. `final` đảm bảo giá trị không thể thay đổi sau khi được gán. `static` cho phép truy cập hằng số đó thông qua tên lớp mà không cần tạo đối tượng của lớp, và giá trị hằng số được chia sẻ cho tất cả các đối tượng."
+  },
+  {
+    "question": "20. Cấu trúc thư mục dự án (ví dụ: tách riêng Source/Resource) giúp ích gì?",
+    "a": "Tăng kích thước dự án.",
+    "b": "Tổ chức mã nguồn và tài nguyên một cách logic, dễ quản lý và tìm kiếm.",
+    "c": "Làm chậm quá trình biên dịch.",
+    "d": "Không có lợi ích gì.",
+    "answer": "B",
+    "theory": "Một cấu trúc thư mục dự án được tổ chức tốt (ví dụ: tách riêng mã nguồn, tài nguyên, file test, tài liệu) giúp việc quản lý dự án, tìm kiếm file, và build hệ thống trở nên dễ dàng và logic hơn."
+  },
+  {
+    "question": "21. Tài liệu hóa header của một file mã nguồn thường bao gồm thông tin gì?",
+    "a": "Chỉ tên file.",
+    "b": "Tên lớp (nếu có), thông tin phiên bản, ngày tạo, bản quyền, lịch sử chỉnh sửa.",
+    "c": "Danh sách các lỗi đã sửa.",
+    "d": "Kết quả kiểm thử đơn vị.",
+    "answer": "B",
+    "theory": "Header của một file mã nguồn thường chứa các thông tin meta-data quan trọng như tên file/lớp, mô tả ngắn gọn, tác giả, ngày tạo, thông tin bản quyền, và lịch sử các thay đổi quan trọng (version history)."
+  },
+  {
+    "question": "22. Tài liệu hóa header của một phương thức (method) nên mô tả điều gì?",
+    "a": "Chỉ kiểu dữ liệu trả về.",
+    "b": "Mục đích của phương thức, cách thức hoạt động (nếu cần), ý nghĩa tham số (@param), ngoại lệ có thể ném ra (@exception), điều kiện trước/sau.",
+    "c": "Chỉ tên của người viết phương thức.",
+    "d": "Đoạn mã giả của phương thức.",
+    "answer": "B",
+    "theory": "Tài liệu hóa header của một phương thức (ví dụ: Javadoc) nên cung cấp thông tin đầy đủ để người khác có thể hiểu và sử dụng phương thức đó một cách chính xác, bao gồm mục đích, ý nghĩa của các tham số, giá trị trả về, các ngoại lệ có thể xảy ra, và các điều kiện tiên quyết/hậu quả."
+  },
+  {
+    "question": "23. Tại sao việc mô tả \"Nguyên nhân lựa chọn phạm vi truy xuất\" (ví dụ: public, private, protected) lại quan trọng trong tài liệu phương thức?",
+    "a": "Để giải thích lý do tại sao phương thức được thiết kế với mức độ truy cập đó, hỗ trợ việc hiểu và bảo trì.",
+    "b": "Chỉ là thông tin thừa.",
+    "c": "Để tăng độ dài của tài liệu.",
+    "d": "Chỉ cần thiết cho phương thức private.",
+    "answer": "A",
+    "theory": "Giải thích lý do lựa chọn một phạm vi truy xuất cụ thể (ví dụ: tại sao một phương thức là `private` thay vì `public`) giúp người đọc hiểu được ý đồ thiết kế và các ràng buộc, từ đó hỗ trợ việc bảo trì và tránh thay đổi không phù hợp sau này."
+  },
+  {
+    "question": "24. Việc ghi lại \"Điều kiện trước\" (Pre-conditions) và \"Điều kiện sau\" (Post-conditions) cho một phương thức giúp ích gì?",
+    "a": "Xác định rõ ràng các giả định về trạng thái đầu vào và đảm bảo về trạng thái đầu ra, hỗ trợ cho việc sử dụng và kiểm thử.",
+    "b": "Làm cho phương thức khó sử dụng hơn.",
+    "c": "Chỉ cần thiết cho các phương thức phức tạp.",
+    "d": "Tăng thời gian chạy của phương thức.",
+    "answer": "A",
+    "theory": "Pre-conditions là các điều kiện phải đúng trước khi phương thức được gọi. Post-conditions là các điều kiện sẽ đúng sau khi phương thức thực thi xong (nếu pre-conditions được thỏa mãn). Việc xác định rõ chúng giúp định nghĩa \"hợp đồng\" của phương thức, hỗ trợ việc sử dụng đúng và kiểm thử hiệu quả."
+  },
+  {
+    "question": "25. Tài liệu hóa thuộc tính (attribute) nên bao gồm thông tin gì?",
+    "a": "Chỉ tên thuộc tính.",
+    "b": "Mục đích sử dụng, các giá trị hợp lệ hoặc ràng buộc (ví dụ: 15 <= _age <= 130).",
+    "c": "Lịch sử thay đổi giá trị của thuộc tính.",
+    "d": "Tên của phương thức truy cập thuộc tính đó.",
+    "answer": "B",
+    "theory": "Tài liệu hóa một thuộc tính nên giải thích mục đích sử dụng của nó, kiểu dữ liệu, và quan trọng là các ràng buộc về giá trị hợp lệ hoặc các bất biến (invariants) liên quan đến thuộc tính đó."
+  },
+  {
+    "question": "26. Mục đích chính của việc kiểm tra mã (Code Inspection/Review) là gì?",
+    "a": "Tìm lỗi cú pháp mà trình biên dịch bỏ qua.",
+    "b": "Đánh giá hiệu quả làm việc của lập trình viên.",
+    "c": "Tìm các lỗi logic, lỗi không tuân thủ thiết kế/tiêu chuẩn, và các vấn đề tiềm ẩn khác mà kiểm thử có thể bỏ sót.",
+    "d": "Chỉ để đảm bảo code được định dạng đẹp.",
+    "answer": "C",
+    "theory": "Code inspection/review là một quá trình kiểm tra tĩnh mã nguồn bởi người khác (không phải tác giả) nhằm phát hiện các lỗi (logic, thiết kế), các điểm không tuân thủ tiêu chuẩn, các vấn đề về hiệu năng, bảo mật, hoặc các đoạn mã khó hiểu, khó bảo trì."
+  },
+  {
+    "question": "27. Ai thường là người thực hiện kiểm tra mã?",
+    "a": "Chỉ người quản lý dự án.",
+    "b": "Các lập trình viên khác trong nhóm (peer review) hoặc nhóm đảm bảo chất lượng.",
+    "c": "Chỉ khách hàng.",
+    "d": "Chỉ người viết ra đoạn mã đó.",
+    "answer": "B",
+    "theory": "Kiểm tra mã thường được thực hiện bởi các đồng nghiệp (peer review), các thành viên có kinh nghiệm hơn trong nhóm, hoặc một nhóm đảm bảo chất lượng (QA) độc lập. Việc có một cặp mắt thứ hai giúp phát hiện lỗi hiệu quả hơn."
+  },
+  {
+    "question": "28. Checklist kiểm tra Class (ví dụ: C1-C8) nhằm đảm bảo điều gì?",
+    "a": "Đảm bảo tên lớp đúng, lớp có mức trừu tượng phù hợp, header đầy đủ, liên kết yêu cầu rõ ràng, phụ thuộc được nêu, phạm vi truy cập hợp lý, tuân thủ chuẩn.",
+    "b": "Chỉ kiểm tra tên lớp.",
+    "c": "Chỉ kiểm tra tài liệu chuẩn (javadoc).",
+    "d": "Đảm bảo lớp không có lỗi cú pháp.",
+    "answer": "A",
+    "theory": "Checklist kiểm tra Class thường bao gồm nhiều mục để đảm bảo chất lượng của lớp, bao gồm tính đúng đắn của tên, mức độ trừu tượng, sự đầy đủ của header, liên kết với yêu cầu, quản lý phụ thuộc, phạm vi truy cập, và tuân thủ các tiêu chuẩn mã hóa."
+  },
+  {
+    "question": "29. Checklist kiểm tra thuộc tính (ví dụ: A1-A7) tập trung vào:",
+    "a": "Chỉ kiểu dữ liệu của thuộc tính.",
+    "b": "Sự cần thiết, tính tĩnh/final, phạm vi truy cập, quy ước đặt tên, tính độc lập, và chiến lược khởi tạo toàn diện.",
+    "c": "Chỉ quy ước đặt tên.",
+    "d": "Cách thuộc tính được sử dụng trong các phương thức.",
+    "answer": "B",
+    "theory": "Checklist kiểm tra thuộc tính xem xét các khía cạnh như sự cần thiết của thuộc tính, liệu nó có nên là `static` hoặc `final` không, phạm vi truy cập (public, private, protected) có phù hợp, tên có tuân thủ quy ước, có độc lập với các thuộc tính khác khi cần, và chiến lược khởi tạo có đảm bảo tính toàn vẹn."
+  },
+  {
+    "question": "30. Checklist kiểm tra phương thức khởi tạo (constructor) (ví dụ: CO1-CO5) xem xét:",
+    "a": "Chỉ số lượng tham số.",
+    "b": "Sự cần thiết, việc tận dụng constructor khác, việc khởi tạo đủ thuộc tính, phạm vi truy cập, và việc gọi constructor lớp cha.",
+    "c": "Tên của constructor.",
+    "d": "Kiểu dữ liệu trả về của constructor (lưu ý: constructor không có kiểu trả về).",
+    "answer": "B",
+    "theory": "Checklist cho constructor xem xét sự cần thiết của constructor, liệu có thể tận dụng constructor chaining, tất cả các thuộc tính quan trọng có được khởi tạo đúng cách, phạm vi truy cập có phù hợp, và liệu constructor của lớp cha có được gọi đúng (nếu cần)."
+  },
+  {
+    "question": "31. Checklist kiểm tra header phương thức (ví dụ: MH1-MH11) đảm bảo:",
+    "a": "Chỉ tên phương thức đúng.",
+    "b": "Tên phù hợp, phạm vi truy cập, tính tĩnh/final, mô tả mục đích rõ ràng, liên kết yêu cầu/thiết kế, nêu đủ invariants/pre-conditions/post-conditions, tuân thủ chuẩn tài liệu, kiểu tham số hợp lý.",
+    "c": "Header không quá dài.",
+    "d": "Chỉ mô tả các tham số.",
+    "answer": "B",
+    "theory": "Checklist cho header phương thức rất quan trọng, đảm bảo tên gọi có ý nghĩa, phạm vi truy cập và các modifier (static, final) là đúng, mô tả rõ mục đích, liên kết với yêu cầu, các điều kiện, tuân thủ chuẩn tài liệu hóa, và kiểu dữ liệu tham số hợp lý."
+  },
+  {
+    "question": "32. Checklist kiểm tra nội dung phương thức (ví dụ: MB1-MB11) tập trung vào:",
+    "a": "Chỉ số lượng dòng code.",
+    "b": "Sự nhất quán với thiết kế (pseudocode/flowchart), việc tuân thủ preconditions/postconditions/invariants, tính kết thúc của vòng lặp, tuân thủ chuẩn, cân bằng dấu ngoặc, xử lý tham số bất hợp lệ, kiểu trả về đúng, và comment đầy đủ.",
+    "c": "Tốc độ thực thi của phương thức.",
+    "d": "Việc sử dụng biến toàn cục.",
+    "answer": "B",
+    "theory": "Checklist kiểm tra nội dung phương thức tập trung vào tính đúng đắn logic, sự nhất quán với thiết kế, việc xử lý các điều kiện biên và ngoại lệ, tính kết thúc của vòng lặp, tuân thủ các tiêu chuẩn mã hóa, và sự rõ ràng, đầy đủ của comment."
+  },
+  {
+    "question": "33. Đo lường mã nguồn (Code Metrics) như LoC (Lines of Code) cung cấp thông tin về:",
+    "a": "Độ phức tạp logic của mã nguồn.",
+    "b": "Kích thước vật lý của mã nguồn.",
+    "c": "Mức độ dễ bảo trì.",
+    "d": "Số lượng lỗi tiềm ẩn.",
+    "answer": "B",
+    "theory": "LoC (Lines of Code) là một thước đo đơn giản về kích thước vật lý của mã nguồn. Nó có thể được sử dụng (một cách cẩn thận) để ước lượng nỗ lực, năng suất, hoặc so sánh kích thước giữa các module, nhưng không trực tiếp đo lường độ phức tạp hay chất lượng."
+  },
+  {
+    "question": "34. Các số liệu Software Science của IEEE (n1, n2, N1, N2) đo lường dựa trên:",
+    "a": "Số lượng module và lớp.",
+    "b": "Số lượng toán tử (operators) và toán hạng (operands) duy nhất và tổng số lần xuất hiện của chúng.",
+    "c": "Số lượng dòng comment.",
+    "d": "Thời gian thực thi chương trình.",
+    "answer": "B",
+    "theory": "Các số liệu Software Science của Halstead dựa trên việc đếm số lượng toán tử (operators) và toán hạng (operands) trong mã nguồn, cả về số loại duy nhất (n1, n2) và tổng số lần xuất hiện (N1, N2), từ đó suy ra các thước đo về độ dài, khối lượng, độ khó, nỗ lực."
+  },
+  {
+    "question": "35. Độ phức tạp Cyclomatic (Cyclomatic Complexity) đo lường điều gì?",
+    "a": "Kích thước của mã nguồn.",
+    "b": "Số lượng đường thực thi độc lập tuyến tính trong một module, thường liên quan đến số lượng điểm quyết định.",
+    "c": "Số lượng biến được sử dụng.",
+    "d": "Mức độ sử dụng lại code.",
+    "answer": "B",
+    "theory": "Độ phức tạp Cyclomatic của McCabe là một thước đo định lượng về độ phức tạp logic của một chương trình. Nó đo số lượng các đường đi độc lập tuyến tính qua đồ thị luồng điều khiển của chương trình, thường liên quan đến số lượng các câu lệnh điều kiện (if, while, for) và các điểm quyết định."
+  },
+  {
+    "question": "36. Giá trị Độ phức tạp Cyclomatic cao thường gợi ý điều gì?",
+    "a": "Mã nguồn rất dễ hiểu và bảo trì.",
+    "b": "Mã nguồn có cấu trúc logic phức tạp, khó kiểm thử và tiềm ẩn nhiều lỗi hơn.",
+    "c": "Mã nguồn có hiệu năng rất tốt.",
+    "d": "Mã nguồn được viết rất ngắn gọn.",
+    "answer": "B",
+    "theory": "Giá trị Độ phức tạp Cyclomatic cao cho thấy module đó có nhiều đường đi logic, làm cho nó khó hiểu, khó kiểm thử toàn diện, và có khả năng chứa nhiều lỗi hơn. Thường có một ngưỡng khuyến nghị cho độ phức tạp này."
+  },
+  {
+    "question": "37. Tại sao việc tích hợp (Integration) các đơn vị phần mềm lại cần thiết?",
+    "a": "Để làm chậm quá trình phát triển.",
+    "b": "Để kết hợp các phần đã được hiện thực và kiểm thử riêng lẻ thành một hệ thống hoặc hệ thống con hoạt động hoàn chỉnh.",
+    "c": "Chỉ cần thiết khi sử dụng mô hình thác nước.",
+    "d": "Để tăng số lượng lỗi.",
+    "answer": "B",
+    "theory": "Sau khi các đơn vị phần mềm (module, component) được phát triển và kiểm thử đơn vị, chúng cần được tích hợp lại với nhau để tạo thành một hệ thống lớn hơn. Quá trình tích hợp này nhằm đảm bảo các đơn vị có thể làm việc cùng nhau một cách chính xác."
+  },
+  {
+    "question": "38. Trong mô hình thác nước, tích hợp thường diễn ra khi nào?",
+    "a": "Ở đầu dự án.",
+    "b": "Song song với việc viết code từng đơn vị.",
+    "c": "Gần cuối giai đoạn hiện thực, sau khi hầu hết các đơn vị đã được hoàn thành.",
+    "d": "Không cần tích hợp trong mô hình thác nước.",
+    "answer": "C",
+    "theory": "Trong mô hình thác nước truyền thống, giai đoạn tích hợp thường diễn ra sau khi tất cả (hoặc hầu hết) các đơn vị đã được phát triển và kiểm thử đơn vị xong. Đây là một kiểu tích hợp \"big bang\" hoặc tích hợp theo giai đoạn lớn."
+  },
+  {
+    "question": "39. Trong các quy trình lặp như RUP, tích hợp diễn ra như thế nào?",
+    "a": "Chỉ diễn ra một lần duy nhất ở cuối dự án.",
+    "b": "Diễn ra thường xuyên, cuối mỗi vòng lặp (iteration) hoặc thậm chí thường xuyên hơn (continuous integration).",
+    "c": "Không diễn ra trong RUP.",
+    "d": "Chỉ tích hợp các đơn vị liên quan đến giao diện người dùng.",
+    "answer": "B",
+    "theory": "Trong các quy trình lặp và tăng trưởng như RUP, hoặc các phương pháp Agile, việc tích hợp được thực hiện thường xuyên, thường là vào cuối mỗi vòng lặp ngắn. Continuous Integration (CI) thậm chí còn khuyến khích tích hợp nhiều lần trong ngày."
+  },
+  {
+    "question": "40. Quá trình \"Build\" trong phát triển phần mềm là gì?",
+    "a": "Quá trình viết tài liệu thiết kế.",
+    "b": "Quá trình biên dịch mã nguồn, liên kết thư viện và tạo ra một phiên bản thực thi hoặc có thể triển khai của phần mềm.",
+    "c": "Quá trình thu thập yêu cầu.",
+    "d": "Quá trình kiểm thử giao diện.",
+    "answer": "B",
+    "theory": "Quá trình build bao gồm các bước cần thiết để chuyển đổi từ mã nguồn thành một sản phẩm phần mềm có thể chạy được hoặc triển khai được. Điều này thường bao gồm biên dịch, liên kết thư viện, đóng gói, và đôi khi cả việc chạy các kiểm thử tự động."
+  },
+  {
+    "question": "41. \"Single level iteration\" và \"Double level iteration\" trong quá trình build ám chỉ điều gì?",
+    "a": "Số lượng lập trình viên tham gia build.",
+    "b": "Các cấp độ tích hợp và build khác nhau, từ build cục bộ của lập trình viên đến build tích hợp của toàn đội.",
+    "c": "Số lần build trong một ngày.",
+    "d": "Loại công cụ build được sử dụng.",
+    "answer": "B",
+    "theory": "\"Single level iteration\" có thể ám chỉ build và tích hợp ở mức độ cá nhân hoặc một nhóm nhỏ. \"Double level iteration\" gợi ý có ít nhất hai cấp độ: build cục bộ (ví dụ: trên máy của lập trình viên) và build tích hợp (ví dụ: trên server CI, tích hợp mã nguồn từ nhiều người)."
+  },
+  {
+    "question": "42. \"Final Build of Single Level\" có thể tương ứng với cái gì?",
+    "a": "Build hàng ngày của một lập trình viên.",
+    "b": "Build tích hợp cuối cùng cho một vòng lặp (iteration) hoặc một tính năng.",
+    "c": "Build cuối cùng của toàn bộ dự án.",
+    "d": "Build chỉ chứa mã nguồn.",
+    "answer": "B",
+    "theory": "Trong một quy trình lặp, \"Final Build of Single Level\" có thể hiểu là bản build hoàn chỉnh cho một vòng lặp phát triển (iteration) hoặc cho một tính năng cụ thể, trước khi nó được tích hợp vào một bản build lớn hơn hoặc được phát hành."
+  },
+  {
+    "question": "43. Mục đích của \"Perform regression testing from prior build\" là gì?",
+    "a": "Kiểm tra các chức năng mới được thêm vào.",
+    "b": "Đảm bảo rằng các thay đổi mới không làm hỏng các chức năng đã hoạt động đúng ở bản build trước đó.",
+    "c": "Chỉ kiểm tra giao diện người dùng.",
+    "d": "Kiểm tra hiệu năng của bản build mới.",
+    "answer": "B",
+    "theory": "Kiểm thử hồi quy (Regression testing) được thực hiện sau khi có sự thay đổi trong mã nguồn để đảm bảo rằng các thay đổi đó không vô tình làm hỏng các chức năng đã hoạt động tốt trước đây."
+  },
+  {
+    "question": "44. \"Retest functions/modules/interfaces if required\" được thực hiện khi nào?",
+    "a": "Luôn luôn thực hiện cho mọi chức năng.",
+    "b": "Khi có thay đổi được thực hiện liên quan đến chức năng/module/giao diện đó hoặc khi kiểm thử hồi quy thất bại.",
+    "c": "Chỉ khi bắt đầu một vòng lặp mới.",
+    "d": "Chỉ khi khách hàng yêu cầu.",
+    "answer": "B",
+    "theory": "Việc kiểm thử lại (retest) một chức năng, module, hoặc giao diện là cần thiết khi có sự thay đổi trong phần đó, hoặc khi một kiểm thử liên quan đến nó (ví dụ: kiểm thử hồi quy) bị thất bại ở lần chạy trước, để xác nhận rằng lỗi đã được sửa."
+  },
+  {
+    "question": "45. \"Perform build integration tests\" tập trung vào việc kiểm tra:",
+    "a": "Từng đơn vị mã nguồn riêng lẻ.",
+    "b": "Sự tương tác và giao tiếp giữa các đơn vị/component vừa được tích hợp trong bản build hiện tại.",
+    "c": "Giao diện người dùng đồ họa.",
+    "d": "Tài liệu thiết kế.",
+    "answer": "B",
+    "theory": "Kiểm thử tích hợp (Integration testing) tập trung vào việc kiểm tra giao diện và sự tương tác giữa các đơn vị hoặc component đã được tích hợp với nhau, nhằm phát hiện các lỗi phát sinh do sự kết hợp này."
+  },
+  {
+    "question": "46. \"Perform iteration system and usability tests\" diễn ra khi nào theo quy trình gợi ý?",
+    "a": "Trước khi bắt đầu vòng lặp.",
+    "b": "Sau khi việc phát triển của một vòng lặp (iteration) được xem là hoàn thành (Development of iteration complete).",
+    "c": "Sau khi cài đặt hệ thống.",
+    "d": "Sau khi công việc hoàn thành (Job complete).",
+    "answer": "B",
+    "theory": "Sau khi các hoạt động phát triển trong một vòng lặp (iteration) được coi là hoàn thành (ví dụ: các tính năng của vòng lặp đó đã được hiện thực và kiểm thử đơn vị/tích hợp), thì kiểm thử hệ thống (system test) và kiểm thử khả năng sử dụng (usability test) cho vòng lặp đó sẽ được thực hiện."
+  },
+  {
+    "question": "47. Kiểm thử cài đặt (Installation tests) nhằm mục đích gì?",
+    "a": "Kiểm tra logic nghiệp vụ.",
+    "b": "Đảm bảo rằng phần mềm có thể được cài đặt thành công trên môi trường đích.",
+    "c": "Kiểm tra hiệu năng tải trang.",
+    "d": "Tìm lỗi cú pháp.",
+    "answer": "B",
+    "theory": "Kiểm thử cài đặt nhằm xác minh rằng phần mềm có thể được cài đặt (và gỡ cài đặt) một cách chính xác và đầy đủ trên các môi trường đích đã được chỉ định, bao gồm cả việc kiểm tra các file, cấu hình, và các phụ thuộc cần thiết."
+  },
+  {
+    "question": "48. Kiểm thử chấp nhận (Acceptance tests) thường do ai thực hiện và nhằm mục đích gì?",
+    "a": "Lập trình viên, để tìm lỗi code.",
+    "b": "Người dùng cuối hoặc khách hàng, để xác nhận rằng hệ thống đáp ứng yêu cầu và có thể chấp nhận được.",
+    "c": "Nhóm kiểm thử tự động, để chạy kiểm thử hồi quy.",
+    "d": "Quản lý dự án, để kiểm tra tiến độ.",
+    "answer": "B",
+    "theory": "Kiểm thử chấp nhận (Acceptance testing) thường được thực hiện bởi người dùng cuối, khách hàng, hoặc đại diện của họ, để xác định xem hệ thống có đáp ứng được các yêu cầu nghiệp vụ và mong đợi của họ hay không, và liệu có thể chấp nhận sản phẩm để đưa vào sử dụng."
+  },
+  {
+    "question": "49. Tại sao tính rõ ràng (clarity) của mã nguồn lại quan trọng đối với bảo trì?",
+    "a": "Mã nguồn rõ ràng giúp người bảo trì dễ dàng hiểu, sửa lỗi và thêm tính năng mới.",
+    "b": "Mã nguồn rõ ràng luôn chạy nhanh hơn.",
+    "c": "Mã nguồn rõ ràng không cần kiểm thử.",
+    "d": "Không quan trọng, chỉ cần chạy đúng là được.",
+    "answer": "A",
+    "theory": "Mã nguồn rõ ràng, dễ đọc và dễ hiểu sẽ giúp giảm đáng kể thời gian và công sức cần thiết cho việc bảo trì, bao gồm việc tìm và sửa lỗi, hiểu logic hiện có, và thêm các tính năng mới mà không gây ra lỗi không mong muốn."
+  },
+  {
+    "question": "50. Việc tuân thủ các tiêu chuẩn mã hóa (coding standards) đóng góp vào mục tiêu nào?",
+    "a": "Chỉ làm mã nguồn dài hơn.",
+    "b": "Tăng tính nhất quán, dễ đọc, dễ hiểu và dễ bảo trì của mã nguồn.",
+    "c": "Giảm hiệu năng của chương trình.",
+    "d": "Hạn chế khả năng tái sử dụng mã.",
+    "answer": "B",
+    "theory": "Tiêu chuẩn mã hóa giúp đảm bảo rằng tất cả các thành viên trong nhóm viết mã theo một phong cách nhất quán, làm cho mã nguồn dễ đọc, dễ hiểu hơn đối với mọi người, từ đó cải thiện khả năng bảo trì và hợp tác."
+  },
+
+  {
+    "question": "51. Sự khác biệt giữa \"Verification\" (Kiểm định) và \"Validation\" (Thẩm định) trong ngữ cảnh hiện thực và kiểm thử là gì?",
+    "a": "Verification kiểm tra \"Are we building the product right?\" (sản phẩm có tuân thủ đặc tả/thiết kế không), Validation kiểm tra \"Are we building the right product?\" (sản phẩm có đáp ứng nhu cầu người dùng không).",
+    "b": "Verification là kiểm thử tự động, Validation là kiểm thử thủ công.",
+    "c": "Verification do lập trình viên làm, Validation do khách hàng làm.",
+    "d": "Không có sự khác biệt.",
+    "answer": "A",
+    "theory": "Verification (Kiểm định) là quá trình đảm bảo rằng phần mềm được xây dựng đúng theo các đặc tả và thiết kế đã định (\"building the product right\"). Validation (Thẩm định) là quá trình đảm bảo rằng phần mềm đáp ứng được nhu cầu và mong đợi của người dùng (\"building the right product\")."
+  },
+  {
+    "question": "52. Kiểm thử đơn vị (Unit testing) chủ yếu thuộc về hoạt động nào?",
+    "a": "Validation (Thẩm định).",
+    "b": "Verification (Kiểm định - kiểm tra xem đơn vị có hoạt động đúng theo thiết kế của nó không).",
+    "c": "Requirements analysis (Phân tích yêu cầu).",
+    "d": "Deployment (Triển khai).",
+    "answer": "B",
+    "theory": "Kiểm thử đơn vị là một hoạt động Verification, nhằm xác minh rằng từng đơn vị (unit) nhỏ nhất của mã nguồn (ví dụ: phương thức, lớp) hoạt động đúng như thiết kế và đặc tả của nó."
+  },
+  {
+    "question": "53. Kiểm thử chấp nhận người dùng (User Acceptance Testing - UAT) chủ yếu thuộc về hoạt động nào?",
+    "a": "Verification (Kiểm định).",
+    "b": "Validation (Thẩm định - kiểm tra xem sản phẩm có đáp ứng đúng nhu cầu người dùng không).",
+    "c": "Coding (Mã hóa).",
+    "d": "Architectural Design (Thiết kế kiến trúc).",
+    "answer": "B",
+    "theory": "UAT là một hoạt động Validation, nơi người dùng cuối kiểm tra xem hệ thống có đáp ứng được các yêu cầu và nhu cầu thực tế của họ trong môi trường làm việc hay không, trước khi chấp nhận sản phẩm."
+  },
+  {
+    "question": "54. Công cụ nào thường được sử dụng để quản lý mã nguồn và theo dõi lịch sử thay đổi?",
+    "a": "Trình biên dịch (Compiler).",
+    "b": "Hệ thống quản lý phiên bản (Version Control System - VCS) như Git, SVN.",
+    "c": "Công cụ vẽ lưu đồ (Flowchart tool).",
+    "d": "Trình soạn thảo văn bản (Text editor).",
+    "answer": "B",
+    "theory": "Hệ thống quản lý phiên bản (VCS) như Git, Subversion (SVN), Mercurial được sử dụng để lưu trữ mã nguồn, theo dõi lịch sử các thay đổi, cho phép nhiều người làm việc song song, phân nhánh (branching), và hợp nhất (merging) mã nguồn."
+  },
+  {
+    "question": "55. Tại sao việc sử dụng VCS lại hữu ích hơn việc ghi nhật ký thay đổi thủ công trong header file?",
+    "a": "VCS cung cấp khả năng theo dõi chi tiết, phân nhánh, hợp nhất và khôi phục phiên bản hiệu quả hơn nhiều.",
+    "b": "Ghi thủ công luôn chính xác hơn.",
+    "c": "VCS chỉ dành cho các dự án mã nguồn mở.",
+    "d": "VCS làm chậm quá trình phát triển.",
+    "answer": "A",
+    "theory": "VCS cung cấp một cơ chế tự động và mạnh mẽ để quản lý các thay đổi trong mã nguồn, bao gồm việc lưu trữ chi tiết ai thay đổi gì, khi nào, cho phép tạo các nhánh để phát triển độc lập, hợp nhất các thay đổi, và dễ dàng quay lại các phiên bản trước đó nếu cần. Việc ghi thủ công rất dễ sai sót và không hiệu quả bằng."
+  },
+  {
+    "question": "56. \"Code Smell\" là thuật ngữ chỉ điều gì trong hiện thực phần mềm?",
+    "a": "Mùi hương dễ chịu từ phòng làm việc của lập trình viên.",
+    "b": "Bất kỳ triệu chứng nào trong mã nguồn có thể chỉ ra một vấn đề sâu sắc hơn trong thiết kế hoặc hiện thực (ví dụ: phương thức quá dài, lớp quá lớn, code trùng lặp).",
+    "c": "Lỗi cú pháp nghiêm trọng.",
+    "d": "Comment không rõ ràng.",
+    "answer": "B",
+    "theory": "Code Smell là một dấu hiệu bề ngoài trong mã nguồn cho thấy có thể có một vấn đề tiềm ẩn về thiết kế hoặc hiện thực. Nó không nhất thiết là một lỗi, nhưng thường là một chỉ báo rằng mã nguồn có thể cần được cải thiện (refactoring) để dễ hiểu, dễ bảo trì hơn."
+  },
+  {
+    "question": "57. Hoạt động \"Refactoring\" thường được thực hiện để giải quyết vấn đề gì?",
+    "a": "Thêm chức năng mới.",
+    "b": "Sửa lỗi khẩn cấp.",
+    "c": "Cải thiện cấu trúc và thiết kế của mã nguồn hiện có (loại bỏ code smell) mà không thay đổi hành vi bên ngoài của nó.",
+    "d": "Tối ưu hóa cơ sở dữ liệu.",
+    "answer": "C",
+    "theory": "Refactoring là quá trình cải thiện cấu trúc bên trong của mã nguồn hiện có mà không làm thay đổi hành vi quan sát được từ bên ngoài. Mục đích chính là làm cho mã dễ hiểu, dễ bảo trì hơn, và loại bỏ các \"code smells\"."
+  },
+  {
+    "question": "58. Continuous Integration (CI - Tích hợp liên tục) là một thực hành trong đó:",
+    "a": "Mã nguồn chỉ được tích hợp một lần duy nhất trước khi release.",
+    "b": "Lập trình viên tích hợp mã nguồn của họ vào kho chứa chung thường xuyên (ít nhất hàng ngày) và mỗi lần tích hợp đều được build và kiểm thử tự động.",
+    "c": "Chỉ thực hiện kiểm thử thủ công.",
+    "d": "Việc tích hợp do người quản lý dự án thực hiện thủ công.",
+    "answer": "B",
+    "theory": "Continuous Integration (CI) là một thực hành phát triển phần mềm trong đó các thành viên trong nhóm tích hợp công việc của họ thường xuyên, thường là nhiều lần mỗi ngày. Mỗi lần tích hợp được xác minh bằng một bản build tự động (bao gồm cả kiểm thử) để phát hiện lỗi tích hợp sớm."
+  },
+  {
+    "question": "59. Lợi ích chính của Continuous Integration (CI) là gì?",
+    "a": "Phát hiện sớm các xung đột và lỗi tích hợp, giảm rủi ro và thời gian sửa lỗi.",
+    "b": "Làm tăng số lượng lỗi trong hệ thống.",
+    "c": "Chỉ phù hợp với các dự án nhỏ.",
+    "d": "Thay thế hoàn toàn việc kiểm thử đơn vị.",
+    "answer": "A",
+    "theory": "CI giúp phát hiện sớm các vấn đề phát sinh do việc tích hợp mã nguồn từ nhiều người, giảm thiểu rủi ro của việc tích hợp lớn ở cuối dự án, và cho phép sửa lỗi nhanh hơn khi chúng còn nhỏ và dễ khoanh vùng."
+  },
+  {
+    "question": "60. Công cụ nào thường được sử dụng để tự động hóa quá trình Build và CI?",
+    "a": "Microsoft Word.",
+    "b": "Jenkins, GitLab CI/CD, GitHub Actions, Maven, Gradle.",
+    "c": "Photoshop.",
+    "d": "Công cụ vẽ UML.",
+    "answer": "B",
+    "theory": "Có nhiều công cụ hỗ trợ tự động hóa quá trình build và CI. Jenkins, GitLab CI/CD, GitHub Actions là các server CI phổ biến. Maven và Gradle là các công cụ build tự động thường được sử dụng cho các dự án Java và Android (Gradle)."
+  },
+  {
+    "question": "61. \"Technical Debt\" (Nợ kỹ thuật) là khái niệm ám chỉ điều gì?",
+    "a": "Khoản nợ tài chính của dự án phần mềm.",
+    "b": "Chi phí tiềm ẩn trong tương lai do việc chọn giải pháp dễ dàng, nhanh chóng nhưng không tối ưu trong hiện tại (ví dụ: bỏ qua refactoring, viết code khó bảo trì).",
+    "c": "Số lượng lỗi chưa được sửa.",
+    "d": "Thời gian cần thiết để đào tạo lập trình viên mới.",
+    "answer": "B",
+    "theory": "Nợ kỹ thuật là một ẩn dụ, chỉ chi phí ngầm của việc phải làm lại công việc trong tương lai do đã chọn một giải pháp dễ dàng hoặc nhanh chóng (nhưng không phải là tốt nhất) ở hiện tại. Việc này có thể bao gồm việc bỏ qua refactoring, viết code chất lượng thấp, hoặc không cập nhật tài liệu."
+  },
+  {
+    "question": "62. Việc tuân thủ thiết kế chi tiết (SDD) khi hiện thực quan trọng vì sao?",
+    "a": "Chỉ để làm hài lòng nhà thiết kế.",
+    "b": "Để đảm bảo rằng mã nguồn hiện thực đúng logic và cấu trúc đã được cân nhắc và phê duyệt, giảm thiểu lỗi và đảm bảo tính nhất quán.",
+    "c": "Không quan trọng, lập trình viên có thể tự do thay đổi thiết kế.",
+    "d": "Chỉ cần thiết khi sử dụng ngôn ngữ C++.",
+    "answer": "B",
+    "theory": "Thiết kế chi tiết (SDD) là kết quả của quá trình phân tích và thiết kế cẩn thận. Việc tuân thủ SDD khi hiện thực giúp đảm bảo rằng mã nguồn phản ánh đúng các quyết định thiết kế, duy trì tính toàn vẹn của kiến trúc, và giảm thiểu rủi ro phát sinh lỗi do hiểu sai hoặc hiện thực không đúng."
+  },
+  {
+    "question": "63. \"Debugging\" (Gỡ lỗi) khác với \"Testing\" (Kiểm thử) như thế nào?",
+    "a": "Testing tìm ra sự tồn tại của lỗi, Debugging xác định vị trí và nguyên nhân của lỗi để sửa chữa.",
+    "b": "Debugging được thực hiện trước Testing.",
+    "c": "Testing chỉ do tester làm, Debugging chỉ do lập trình viên làm.",
+    "d": "Chúng là hai thuật ngữ đồng nghĩa.",
+    "answer": "A",
+    "theory": "Testing là hoạt động nhằm phát hiện sự tồn tại của lỗi bằng cách thực thi chương trình với các đầu vào cụ thể. Debugging là hoạt động sau khi lỗi đã được phát hiện, nhằm tìm ra vị trí (nguồn gốc) và nguyên nhân của lỗi đó để có thể sửa chữa."
+  },
+  {
+    "question": "64. Công cụ Debugger thường cung cấp những khả năng nào?",
+    "a": "Chỉ biên dịch mã nguồn.",
+    "b": "Chạy chương trình từng bước, đặt điểm dừng (breakpoints), kiểm tra giá trị biến, xem call stack.",
+    "c": "Tự động sửa lỗi logic.",
+    "d": "Vẽ biểu đồ lớp.",
+    "answer": "B",
+    "theory": "Công cụ Debugger cung cấp các tính năng giúp lập trình viên theo dõi quá trình thực thi của chương trình, bao gồm việc chạy từng dòng lệnh (step-by-step execution), đặt các điểm dừng (breakpoints) để tạm ngưng chương trình tại vị trí mong muốn, kiểm tra giá trị của các biến, và xem call stack (lịch sử các lời gọi hàm)."
+  },
+  {
+    "question": "65. Tại sao việc viết kiểm thử đơn vị (unit tests) trước hoặc song song với việc viết mã (Test-Driven Development - TDD) lại được khuyến khích?",
+    "a": "Giúp định nghĩa rõ ràng yêu cầu của đơn vị mã, đảm bảo mã viết ra có thể kiểm thử được và cung cấp mạng lưới an toàn cho refactoring.",
+    "b": "Làm tăng gấp đôi thời gian phát triển.",
+    "c": "Chỉ phù hợp cho các hàm toán học đơn giản.",
+    "d": "Gây khó khăn cho việc thiết kế.",
+    "answer": "A",
+    "theory": "TDD là một thực hành phát triển trong đó kiểm thử đơn vị được viết trước khi viết mã chức năng. Điều này giúp làm rõ yêu cầu cho đơn vị mã, đảm bảo mã được thiết kế để có thể kiểm thử, và tạo ra một bộ kiểm thử hồi quy tự động giúp an toàn khi refactoring hoặc thay đổi mã sau này."
+  },
+  {
+    "question": "66. Mục tiêu của kiểm thử tích hợp (Integration Testing) là gì?",
+    "a": "Kiểm tra từng đơn vị riêng lẻ.",
+    "b": "Kiểm tra sự tương tác và giao tiếp giữa các đơn vị/component đã được tích hợp với nhau.",
+    "c": "Kiểm tra hiệu năng tổng thể của hệ thống.",
+    "d": "Kiểm tra giao diện người dùng.",
+    "answer": "B",
+    "theory": "Kiểm thử tích hợp được thực hiện sau khi các đơn vị đã được kiểm thử đơn vị và được kết hợp lại. Mục tiêu là phát hiện các lỗi phát sinh do sự tương tác giữa các đơn vị, ví dụ như lỗi giao diện, lỗi truyền dữ liệu, hoặc các giả định sai về hành vi của nhau."
+  },
+  {
+    "question": "67. Chiến lược tích hợp \"Big Bang\" có nhược điểm gì?",
+    "a": "Tích hợp tất cả các module cùng một lúc, khiến việc xác định nguồn gốc lỗi khi có vấn đề trở nên rất khó khăn.",
+    "b": "Quá tốn thời gian để tích hợp từng module nhỏ.",
+    "c": "Chỉ áp dụng được cho RUP.",
+    "d": "Yêu cầu phải có công cụ CI.",
+    "answer": "A",
+    "theory": "Trong chiến lược tích hợp \"Big Bang\", tất cả các module được tích hợp cùng một lúc. Nếu có lỗi xảy ra, việc tìm ra module nào gây lỗi hoặc tương tác nào gây lỗi sẽ rất khó khăn và tốn thời gian do có quá nhiều điểm tương tác tiềm ẩn."
+  },
+  {
+    "question": "68. Chiến lược tích hợp tăng dần (Incremental Integration), ví dụ Top-down hoặc Bottom-up, có ưu điểm gì so với Big Bang?",
+    "a": "Lỗi tích hợp được phát hiện và định vị dễ dàng hơn do chỉ tích hợp một hoặc vài module mỗi lần.",
+    "b": "Hoàn thành dự án nhanh hơn.",
+    "c": "Không cần viết test driver hoặc test stub.",
+    "d": "Yêu cầu ít tài nguyên kiểm thử hơn.",
+    "answer": "A",
+    "theory": "Trong tích hợp tăng dần, các module được tích hợp từng cái một hoặc từng nhóm nhỏ. Điều này giúp việc phát hiện và khoanh vùng lỗi tích hợp trở nên dễ dàng hơn, vì phạm vi tìm kiếm lỗi được giới hạn trong các module mới được tích hợp và giao diện của chúng."
+  },
+  {
+    "question": "69. \"Test Stub\" thường được sử dụng trong chiến lược tích hợp nào và với mục đích gì?",
+    "a": "Bottom-up, để mô phỏng module cấp cao hơn gọi module đang kiểm thử.",
+    "b": "Top-down, để mô phỏng các module cấp thấp hơn được gọi bởi module đang kiểm thử.",
+    "c": "Big Bang, để mô phỏng toàn bộ hệ thống.",
+    "d": "Không dùng trong tích hợp.",
+    "answer": "B",
+    "theory": "Trong chiến lược tích hợp Top-down, các module cấp cao được kiểm thử trước. Khi một module cấp cao gọi một module cấp thấp chưa được hiện thực, một Test Stub (giả lập đơn giản) sẽ được sử dụng để thay thế module cấp thấp đó, trả về các giá trị giả định để module cấp cao có thể được kiểm thử."
+  },
+  {
+    "question": "70. \"Test Driver\" thường được sử dụng trong chiến lược tích hợp nào và với mục đích gì?",
+    "a": "Top-down, để mô phỏng module cấp thấp hơn.",
+    "b": "Bottom-up, để mô phỏng module cấp cao hơn gọi module/nhóm module đang được kiểm thử.",
+    "c": "Big Bang, để bắt đầu quá trình kiểm thử.",
+    "d": "Chỉ dùng cho kiểm thử đơn vị.",
+    "answer": "B",
+    "theory": "Trong chiến lược tích hợp Bottom-up, các module cấp thấp được kiểm thử trước. Để kiểm thử một module cấp thấp, một Test Driver (một chương trình nhỏ) được viết để gọi module đó, cung cấp đầu vào và kiểm tra đầu ra, đóng vai trò như một module cấp cao hơn."
+  },
+  {
+    "question": "71. Việc lựa chọn ngôn ngữ lập trình có ảnh hưởng đến giai đoạn hiện thực không?",
+    "a": "Không, mọi ngôn ngữ đều như nhau.",
+    "b": "Có, ảnh hưởng đến cú pháp, các thư viện có sẵn, hiệu năng, cộng đồng hỗ trợ, và đôi khi cả phong cách thiết kế.",
+    "c": "Chỉ ảnh hưởng đến tốc độ biên dịch.",
+    "d": "Chỉ ảnh hưởng đến kích thước file thực thi.",
+    "answer": "B",
+    "theory": "Lựa chọn ngôn ngữ lập trình có ảnh hưởng lớn đến giai đoạn hiện thực. Mỗi ngôn ngữ có cú pháp, hệ sinh thái thư viện, đặc điểm hiệu năng, và cộng đồng hỗ trợ riêng, điều này có thể ảnh hưởng đến năng suất, chất lượng mã nguồn, và khả năng giải quyết các vấn đề cụ thể."
+  },
+  {
+    "question": "72. Khái niệm \"Code Readability\" (Tính dễ đọc của mã) phụ thuộc vào yếu tố nào?",
+    "a": "Chỉ phụ thuộc vào độ dài của mã.",
+    "b": "Cách đặt tên biến/hàm, cấu trúc mã, định dạng nhất quán, comment hợp lý, sự đơn giản của logic.",
+    "c": "Chỉ phụ thuộc vào ngôn ngữ lập trình.",
+    "d": "Chỉ phụ thuộc vào kinh nghiệm của người đọc.",
+    "answer": "B",
+    "theory": "Tính dễ đọc của mã phụ thuộc vào nhiều yếu tố, bao gồm việc đặt tên có ý nghĩa, cấu trúc logic rõ ràng, định dạng mã nhất quán, sử dụng comment hiệu quả để giải thích những phần phức tạp, và giữ cho logic đơn giản nhất có thể."
+  },
+  {
+    "question": "73. Tại sao nên tránh sử dụng \"magic numbers\" (các hằng số không tường minh) trong code?",
+    "a": "Làm mã nguồn khó hiểu và khó bảo trì khi cần thay đổi giá trị. Nên sử dụng hằng số có tên (named constants).",
+    "b": "Chúng làm giảm hiệu năng.",
+    "c": "Chúng gây lỗi biên dịch.",
+    "d": "Chúng chỉ được phép dùng trong ngôn ngữ C.",
+    "answer": "A",
+    "theory": "\"Magic numbers\" là các giá trị hằng số xuất hiện trực tiếp trong mã mà không có giải thích về ý nghĩa của chúng. Điều này làm mã khó hiểu và khó bảo trì, vì nếu giá trị đó cần thay đổi, phải tìm và sửa ở nhiều nơi. Sử dụng hằng số có tên (ví dụ: `final int MAX_USERS = 100;`) sẽ cải thiện tính dễ đọc và dễ bảo trì."
+  },
+  {
+    "question": "74. Mục đích của việc viết comment trong code là gì?",
+    "a": "Giải thích những đoạn code phức tạp, mục đích của một khối mã, hoặc các quyết định thiết kế quan trọng (WHY, not just WHAT).",
+    "b": "Lặp lại y nguyên những gì code đã thể hiện rõ ràng.",
+    "c": "Làm cho file mã nguồn dài hơn.",
+    "d": "Chỉ để ghi tên tác giả.",
+    "answer": "A",
+    "theory": "Comment nên được sử dụng để giải thích những phần code không tự minh bạch, ví dụ như logic phức tạp, lý do đằng sau một quyết định thiết kế, hoặc mục đích của một khối mã. Comment nên tập trung vào \"tại sao\" (WHY) hơn là chỉ mô tả lại \"cái gì\" (WHAT) mà code đã thể hiện rõ."
+  },
+  {
+    "question": "75. Comment như thế nào được coi là \"tốt\"?",
+    "a": "Càng nhiều comment càng tốt.",
+    "b": "Comment giải thích rõ ràng \"tại sao\" (why) đoạn code được viết như vậy, thay vì chỉ mô tả \"cái gì\" (what) mà code đang làm (nếu code đã tự rõ ràng). Comment cần được cập nhật khi code thay đổi.",
+    "c": "Chỉ comment ở đầu file.",
+    "d": "Sử dụng ngôn ngữ địa phương thay vì tiếng Anh.",
+    "answer": "B",
+    "theory": "Comment tốt là comment cung cấp thông tin giá trị, giải thích ý đồ hoặc logic phức tạp mà không thể hiện rõ qua code. Nó phải chính xác và được cập nhật cùng với code. Tránh comment thừa thãi hoặc mô tả những điều hiển nhiên."
+  },
+  {
+    "question": "76. Việc hiện thực các xử lý ngoại lệ (Exception Handling) quan trọng vì sao?",
+    "a": "Để chương trình chạy nhanh hơn.",
+    "b": "Để xử lý các tình huống lỗi hoặc bất thường một cách có kiểm soát, tránh chương trình bị dừng đột ngột và cung cấp thông tin hữu ích.",
+    "c": "Chỉ cần thiết cho các ứng dụng web.",
+    "d": "Làm tăng độ phức tạp không cần thiết.",
+    "answer": "B",
+    "theory": "Xử lý ngoại lệ là một phần quan trọng của việc viết mã mạnh mẽ (robust). Nó cho phép chương trình đối phó với các tình huống lỗi hoặc các điều kiện bất thường một cách có kiểm soát, thay vì bị crash. Nó cũng có thể cung cấp thông tin lỗi hữu ích cho người dùng hoặc để ghi log."
+  },
+  {
+    "question": "77. Tài liệu nào là đầu vào quan trọng nhất cho giai đoạn hiện thực?",
+    "a": "Kế hoạch dự án (Project Plan).",
+    "b": "Đặc tả yêu cầu phần mềm (SRS - Software Requirements Specification).",
+    "c": "Tài liệu thiết kế chi tiết (SDD - Software Design Document), bao gồm thiết kế lớp, thiết kế thuật toán, thiết kế giao diện.",
+    "d": "Tài liệu kiểm thử (Test Plan).",
+    "answer": "C",
+    "theory": "Tài liệu Thiết kế Chi tiết (SDD) là đầu vào chính cho giai đoạn hiện thực. Nó cung cấp các đặc tả về cách hệ thống và các thành phần của nó nên được xây dựng, bao gồm cấu trúc lớp, thuật toán, giao diện, v.v."
+  },
+  {
+    "question": "78. Kết quả đầu ra chính của giai đoạn hiện thực là gì?",
+    "a": "Các mô hình thiết kế.",
+    "b": "Mã nguồn đã được biên dịch, kiểm thử đơn vị và (một phần) tích hợp.",
+    "c": "Kế hoạch kiểm thử chấp nhận.",
+    "d": "Tài liệu yêu cầu.",
+    "answer": "B",
+    "theory": "Kết quả chính của giai đoạn hiện thực là mã nguồn hoạt động được (đã biên dịch), đã qua kiểm thử đơn vị, và có thể đã được tích hợp một phần hoặc toàn bộ, sẵn sàng cho các giai đoạn kiểm thử tiếp theo."
+  },
+  {
+    "question": "79. Ai là người chịu trách nhiệm chính cho việc hiện thực mã nguồn?",
+    "a": "Khách hàng.",
+    "b": "Người quản lý dự án.",
+    "c": "Lập trình viên (Developer/Programmer).",
+    "d": "Người kiểm thử (Tester).",
+    "answer": "C",
+    "theory": "Lập trình viên (Developer hay Programmer) là người chịu trách nhiệm chính trong việc viết mã nguồn (coding) dựa trên các đặc tả thiết kế."
+  },
+  {
+    "question": "80. Hoạt động nào giúp đảm bảo chất lượng trong suốt quá trình hiện thực?",
+    "a": "Chỉ dựa vào kiểm thử cuối cùng.",
+    "b": "Tuân thủ tiêu chuẩn mã hóa, viết kiểm thử đơn vị, thực hiện code review, tích hợp liên tục.",
+    "c": "Chỉ viết comment đầy đủ.",
+    "d": "Chỉ sử dụng IDE tốt nhất.",
+    "answer": "B",
+    "theory": "Đảm bảo chất lượng trong giai đoạn hiện thực là một quá trình liên tục, bao gồm nhiều hoạt động như tuân thủ coding standards, viết unit tests, thực hiện code reviews (ví dụ: peer reviews), và áp dụng tích hợp liên tục (CI) để phát hiện lỗi sớm."
+  },
+  {
+    "question": "81. Độ phức tạp của mã hóa (Coding Complexity) có thể được giảm bớt bằng cách nào?",
+    "a": "Chia nhỏ các phương thức/lớp thành các đơn vị nhỏ hơn, có trách nhiệm rõ ràng (Single Responsibility Principle).",
+    "b": "Sử dụng tên biến ngắn nhất có thể.",
+    "c": "Viết tất cả logic vào một phương thức lớn.",
+    "d": "Tránh sử dụng comment.",
+    "answer": "A",
+    "theory": "Chia nhỏ các vấn đề phức tạp thành các đơn vị nhỏ hơn, dễ quản lý hơn, mỗi đơn vị có một trách nhiệm rõ ràng (theo Nguyên tắc Trách nhiệm Đơn lẻ - Single Responsibility Principle) là một cách hiệu quả để giảm độ phức tạp của mã hóa và cải thiện tính dễ hiểu, dễ bảo trì."
+  },
+  {
+    "question": "82. Tài liệu hóa mã nguồn (Code Documentation) phục vụ mục đích gì?",
+    "a": "Chỉ để đáp ứng yêu cầu quy trình.",
+    "b": "Giúp các lập trình viên khác (và chính mình trong tương lai) hiểu được mã nguồn, cách sử dụng và bảo trì nó.",
+    "c": "Làm chậm quá trình phát triển.",
+    "d": "Chỉ cần thiết cho mã nguồn mở.",
+    "answer": "B",
+    "theory": "Tài liệu hóa mã nguồn (ví dụ: comment trong code, tài liệu API) rất quan trọng để giúp người khác (và chính tác giả sau một thời gian) hiểu được mã làm gì, tại sao nó được viết như vậy, và cách sử dụng nó. Điều này cực kỳ hữu ích cho việc bảo trì và phát triển tiếp."
+  },
+  {
+    "question": "83. Sự khác biệt giữa hiện thực một lớp trừu tượng (abstract class) và một giao diện (interface) là gì?",
+    "a": "Lớp trừu tượng không thể có phương thức cụ thể, interface có thể.",
+    "b": "Interface có thể chứa thuộc tính, lớp trừu tượng thì không.",
+    "c": "Một lớp có thể kế thừa nhiều lớp trừu tượng nhưng chỉ hiện thực một interface.",
+    "d": "Một lớp kế thừa lớp trừu tượng (extends) và hiện thực giao diện (implements); lớp trừu tượng có thể có cả phương thức trừu tượng và cụ thể, interface (trong Java < 8) chỉ có phương thức trừu tượng (hoặc default/static từ Java 8+).",
+    "answer": "D",
+    "theory": "Trong Java, một lớp `extends` một lớp trừu tượng (chỉ một) và `implements` một hoặc nhiều giao diện. Lớp trừu tượng có thể có cả phương thức trừu tượng (không có thân hàm) và phương thức cụ thể (có thân hàm), cũng như các thuộc tính. Interface (trước Java 8) chỉ chứa các hằng số và chữ ký phương thức trừu tượng. Từ Java 8, interface có thể có cả phương thức default và static với hiện thực."
+  },
+  {
+    "question": "84. Khi hiện thực một phương thức, việc kiểm tra các tham số đầu vào (input validation) quan trọng vì sao?",
+    "a": "Để đảm bảo phương thức hoạt động đúng đắn với các dữ liệu không hợp lệ hoặc không mong đợi, tránh gây lỗi hoặc hành vi không xác định.",
+    "b": "Chỉ cần thiết nếu phương thức là public.",
+    "c": "Làm giảm hiệu năng của phương thức.",
+    "d": "Không cần thiết nếu người gọi luôn truyền đúng tham số.",
+    "answer": "A",
+    "theory": "Kiểm tra tính hợp lệ của các tham số đầu vào là một thực hành tốt để đảm bảo phương thức hoạt động một cách mạnh mẽ (robust). Nó giúp xử lý các trường hợp dữ liệu đầu vào không mong đợi hoặc không hợp lệ, tránh gây ra lỗi không kiểm soát hoặc hành vi không xác định."
+  },
+  {
+    "question": "85. Tích hợp hệ thống (System Integration) khác với tích hợp đơn vị/component (Unit/Component Integration) ở điểm nào?",
+    "a": "Không có sự khác biệt.",
+    "b": "Tích hợp hệ thống thường liên quan đến việc kết hợp các hệ thống con (subsystems) lớn hoặc kết nối với các hệ thống bên ngoài.",
+    "c": "Tích hợp đơn vị phức tạp hơn tích hợp hệ thống.",
+    "d": "Chỉ tích hợp hệ thống mới cần kiểm thử.",
+    "answer": "B",
+    "theory": "Tích hợp đơn vị/component tập trung vào việc kết hợp các module nhỏ bên trong một hệ thống. Tích hợp hệ thống thường ở một quy mô lớn hơn, liên quan đến việc kết hợp các subsystem đã được tích hợp lại với nhau, hoặc tích hợp hệ thống của chúng ta với các hệ thống bên ngoài khác."
+  },
+  {
+    "question": "86. Việc sử dụng một \"Build Script\" (ví dụ: Ant, Maven, Gradle script) giúp tự động hóa những công việc gì?",
+    "a": "Chỉ việc viết code.",
+    "b": "Các bước như biên dịch mã nguồn, chạy kiểm thử, đóng gói ứng dụng, và đôi khi cả triển khai.",
+    "c": "Chỉ việc quản lý yêu cầu.",
+    "d": "Chỉ việc vẽ sơ đồ UML.",
+    "answer": "B",
+    "theory": "Build script tự động hóa các tác vụ lặp đi lặp lại trong quá trình build, bao gồm việc biên dịch mã nguồn, quản lý các phụ thuộc, chạy các kiểm thử tự động, đóng gói ứng dụng thành các định dạng có thể triển khai (ví dụ: JAR, WAR, APK), và đôi khi cả việc triển khai lên môi trường."
+  },
+  {
+    "question": "87. Tại sao việc duy trì sự nhất quán giữa thiết kế và mã nguồn hiện thực lại quan trọng?",
+    "a": "Giúp tài liệu thiết kế luôn phản ánh đúng trạng thái của hệ thống, hỗ trợ bảo trì và phát triển trong tương lai.",
+    "b": "Chỉ là vấn đề thẩm mỹ.",
+    "c": "Không quan trọng, code chạy đúng là được.",
+    "d": "Chỉ cần thiết cho người quản lý.",
+    "answer": "A",
+    "theory": "Nếu mã nguồn hiện thực bị thay đổi mà tài liệu thiết kế không được cập nhật tương ứng (hoặc ngược lại), tài liệu thiết kế sẽ trở nên lỗi thời và không còn hữu ích. Duy trì sự nhất quán giúp đảm bảo tài liệu luôn là nguồn tham khảo đáng tin cậy cho việc hiểu, bảo trì và phát triển hệ thống."
+  },
+  {
+    "question": "88. \"Code Coverage\" (Độ bao phủ mã) là một số liệu kiểm thử đo lường:",
+    "a": "Tỷ lệ phần trăm mã nguồn đã được thực thi bởi các bộ kiểm thử.",
+    "b": "Số lượng lỗi tìm thấy trên mỗi nghìn dòng code.",
+    "c": "Thời gian cần thiết để chạy tất cả các kiểm thử.",
+    "d": "Mức độ phức tạp của mã nguồn.",
+    "answer": "A",
+    "theory": "Code Coverage là một thước đo cho biết bao nhiêu phần trăm mã nguồn (ví dụ: dòng lệnh, nhánh, điều kiện) đã được thực thi trong quá trình chạy các bộ kiểm thử. Nó giúp đánh giá mức độ đầy đủ của việc kiểm thử."
+  },
+  {
+    "question": "89. Đạt được 100% Code Coverage có đảm bảo rằng phần mềm không còn lỗi không?",
+    "a": "Có, tuyệt đối không còn lỗi.",
+    "b": "Không, nó chỉ đảm bảo mọi dòng lệnh/nhánh đã được chạy ít nhất một lần, nhưng không đảm bảo đúng đắn trong mọi tình huống hoặc logic.",
+    "c": "Chỉ đảm bảo không có lỗi cú pháp.",
+    "d": "Chỉ đảm bảo hiệu năng tốt.",
+    "answer": "B",
+    "theory": "Đạt 100% code coverage không có nghĩa là phần mềm không có lỗi. Nó chỉ cho biết tất cả các phần của mã đã được thực thi bởi các test case, nhưng không đảm bảo rằng các test case đó đã kiểm tra tất cả các tình huống logic có thể xảy ra hoặc các yêu cầu phi chức năng."
+  },
+  {
+    "question": "90. Phong cách mã hóa (Coding Style) bao gồm những yếu tố nào?",
+    "a": "Chỉ cách đặt tên biến.",
+    "b": "Cách thụt lề, sử dụng khoảng trắng, vị trí dấu ngoặc, quy ước đặt tên, cách viết comment, v.v.",
+    "c": "Chỉ thuật toán được sử dụng.",
+    "d": "Chỉ ngôn ngữ lập trình.",
+    "answer": "B",
+    "theory": "Phong cách mã hóa (Coding Style) bao gồm một tập hợp các quy ước về cách viết và định dạng mã nguồn, như cách thụt lề, sử dụng khoảng trắng, vị trí đặt dấu ngoặc, quy ước đặt tên cho biến/hàm/lớp, cách viết comment, và nhiều quy tắc khác nhằm làm cho mã nguồn nhất quán và dễ đọc."
+  },
+  {
+    "question": "91. Tại sao các nhóm phát triển thường thống nhất một Coding Style chung?",
+    "a": "Để hạn chế sự sáng tạo.",
+    "b": "Để tạo ra mã nguồn nhất quán, dễ đọc và dễ hiểu cho tất cả thành viên trong nhóm.",
+    "c": "Chỉ vì quản lý yêu cầu.",
+    "d": "Để làm chậm tiến độ.",
+    "answer": "B",
+    "theory": "Việc thống nhất một Coding Style chung trong nhóm giúp đảm bảo rằng mã nguồn do các thành viên khác nhau viết ra có cùng một diện mạo và cấu trúc, làm cho việc đọc, hiểu, và bảo trì mã của người khác trở nên dễ dàng hơn, cải thiện sự hợp tác."
+  },
+  {
+    "question": "92. Hiện thực phần mềm có phải là một hoạt động hoàn toàn độc lập, không cần giao tiếp với các vai trò khác không?",
+    "a": "Đúng, lập trình viên chỉ cần làm việc một mình.",
+    "b": "Không, cần có sự giao tiếp thường xuyên với nhà thiết kế, tester, nhà phân tích nghiệp vụ và các lập trình viên khác.",
+    "c": "Chỉ cần giao tiếp với tester.",
+    "d": "Chỉ cần giao tiếp khi gặp lỗi.",
+    "answer": "B",
+    "theory": "Hiện thực phần mềm là một hoạt động hợp tác. Lập trình viên cần giao tiếp với nhà thiết kế để làm rõ các đặc tả, với tester để hiểu các kịch bản kiểm thử, với nhà phân tích nghiệp vụ để hiểu yêu cầu, và với các lập trình viên khác để phối hợp công việc và giải quyết các vấn đề tích hợp."
+  },
+  {
+    "question": "93. Giai đoạn nào trong vòng đời phần mềm thường tốn nhiều chi phí nhất?",
+    "a": "Thu thập yêu cầu.",
+    "b": "Thiết kế.",
+    "c": "Hiện thực.",
+    "d": "Bảo trì và tiến hóa (thường chiếm phần lớn chi phí trong suốt vòng đời).",
+    "answer": "D",
+    "theory": "Đối với nhiều hệ thống phần mềm, đặc biệt là các hệ thống lớn và tồn tại lâu dài, chi phí cho việc bảo trì (sửa lỗi, thích ứng với thay đổi môi trường) và tiến hóa (thêm tính năng mới, cải tiến) thường chiếm phần lớn tổng chi phí trong suốt vòng đời của phần mềm, vượt xa chi phí phát triển ban đầu."
+  },
+  {
+    "question": "94. Việc viết mã nguồn \"sạch\" (Clean Code) có ý nghĩa gì?",
+    "a": "Mã nguồn không có comment.",
+    "b": "Mã nguồn dễ đọc, dễ hiểu, dễ thay đổi, tuân thủ các nguyên tắc thiết kế tốt và tiêu chuẩn mã hóa.",
+    "c": "Mã nguồn sử dụng ít biến nhất.",
+    "d": "Mã nguồn được viết nhanh nhất.",
+    "answer": "B",
+    "theory": "Clean Code là mã nguồn được viết sao cho dễ đọc, dễ hiểu, và dễ bảo trì bởi người khác (và chính tác giả trong tương lai). Nó thường tuân thủ các nguyên tắc thiết kế tốt (như SOLID), có tên gọi rõ ràng, cấu trúc logic, và tránh sự phức tạp không cần thiết."
+  },
+  {
+    "question": "95. Đâu là thách thức phổ biến trong giai đoạn tích hợp?",
+    "a": "Các giao diện giữa các module không tương thích.",
+    "b": "Các giả định sai về cách hoạt động của module khác.",
+    "c": "Khó khăn trong việc xác định nguồn gốc lỗi khi nhiều module được tích hợp cùng lúc.",
+    "d": "Tất cả các ý trên.",
+    "answer": "D",
+    "theory": "Giai đoạn tích hợp thường gặp nhiều thách thức, bao gồm sự không tương thích về giao diện giữa các module, các giả định sai lầm của các nhà phát triển về cách module khác hoạt động, và việc khó khăn trong việc khoanh vùng lỗi khi nhiều module được tích hợp đồng thời."
+  },
+  {
+    "question": "96. Việc kiểm tra hiệu năng (Performance Testing) nên được thực hiện khi nào?",
+    "a": "Chỉ sau khi hoàn thành toàn bộ hệ thống.",
+    "b": "Có thể thực hiện ở cấp độ đơn vị, tích hợp và hệ thống, đặc biệt quan trọng khi tích hợp các thành phần có ảnh hưởng đến hiệu năng.",
+    "c": "Không cần thiết phải kiểm tra hiệu năng.",
+    "d": "Chỉ khi người dùng phàn nàn về tốc độ.",
+    "answer": "B",
+    "theory": "Kiểm tra hiệu năng không nên đợi đến cuối cùng. Nó có thể và nên được thực hiện ở các cấp độ khác nhau (đơn vị, tích hợp, hệ thống) để phát hiện sớm các vấn đề về hiệu năng. Đặc biệt quan trọng khi tích hợp các thành phần hoặc subsystem có khả năng ảnh hưởng đến thời gian đáp ứng hoặc thông lượng."
+  },
+  {
+    "question": "97. Khi thiết kế kiến trúc, việc cân bằng giữa các thuộc tính chất lượng (quality attributes) thường đối mặt với thách thức nào?",
+    "a": "Các thuộc tính chất lượng luôn bổ trợ lẫn nhau một cách hoàn hảo.",
+    "b": "Thường phải có sự đánh đổi (trade-offs), vì việc tối ưu một thuộc tính (ví dụ: hiệu năng) có thể ảnh hưởng tiêu cực đến thuộc tính khác (ví dụ: bảo mật, khả năng bảo trì).",
+    "c": "Chỉ cần tập trung vào việc đáp ứng yêu cầu chức năng là đủ, các thuộc tính chất lượng không quan trọng bằng.",
+    "d": "Các thuộc tính chất lượng chỉ quan trọng đối với giao diện người dùng.",
+    "answer": "B",
+    "theory": "Đây là câu hỏi lặp lại từ chương 5 (câu 97) và chương 6 (câu 97). Trong thiết kế kiến trúc, việc cố gắng tối ưu một thuộc tính chất lượng (ví dụ: tăng hiệu năng) thường dẫn đến sự đánh đổi với các thuộc tính chất lượng khác (ví dụ: có thể làm tăng độ phức tạp, giảm khả năng bảo trì hoặc tăng chi phí). Các kiến trúc sư phải tìm cách cân bằng các đánh đổi này."
+  },
+  {
+    "question": "98. Việc đánh giá kiến trúc (Architectural Evaluation) nên được thực hiện vào thời điểm nào trong quá trình phát triển để mang lại hiệu quả cao nhất?",
+    "a": "Chỉ sau khi hệ thống đã hoàn thành và sẵn sàng triển khai.",
+    "b": "Chỉ trong giai đoạn kiểm thử cuối cùng.",
+    "c": "Càng sớm càng tốt trong chu trình thiết kế (ngay sau khi có bản phác thảo kiến trúc) và có thể lặp lại khi kiến trúc được tinh chỉnh.",
+    "d": "Chỉ khi có vấn đề nghiêm trọng xảy ra trong quá trình phát triển.",
+    "answer": "C",
+    "theory": "Đây là câu hỏi lặp lại từ chương 5 (câu 98) và chương 6 (câu 98). Đánh giá kiến trúc nên được thực hiện càng sớm càng tốt trong vòng đời phát triển, ngay khi có các bản phác thảo kiến trúc ban đầu. Việc phát hiện và sửa chữa các vấn đề kiến trúc sớm sẽ tốn ít chi phí hơn nhiều so với việc sửa chúng ở các giai đoạn sau."
+  },
+  {
+    "question": "99. Hiện tượng \"Architectural Drift\" (hay \"Architectural Erosion\" - Xói mòn kiến trúc) mô tả điều gì?",
+    "a": "Việc kiến trúc phần mềm trở nên quá phức tạp không cần thiết.",
+    "b": "Sự sai lệch dần dần của cấu trúc hệ thống thực tế so với thiết kế kiến trúc ban đầu theo thời gian, thường do các thay đổi cục bộ không tuân thủ nguyên tắc kiến trúc.",
+    "c": "Việc thay đổi hoàn toàn mẫu kiến trúc đã chọn giữa chừng dự án.",
+    "d": "Việc thiếu hoàn toàn tài liệu mô tả kiến trúc.",
+    "answer": "B",
+    "theory": "Đây là câu hỏi lặp lại từ chương 5 (câu 99) và chương 6 (câu 99). Xói mòn kiến trúc (Architectural Drift/Erosion) là hiện tượng cấu trúc thực tế của hệ thống ngày càng sai lệch so với thiết kế kiến trúc ban đầu qua thời gian. Điều này thường xảy ra do các thay đổi, sửa lỗi, hoặc bổ sung tính năng được thực hiện mà không tuân thủ chặt chẽ các nguyên tắc và ràng buộc của kiến trúc đã định."
+  },
+  {
+    "question": "100. \"Architectural Style\" (Kiểu kiến trúc) và \"Architectural Pattern\" (Mẫu kiến trúc) thường được phân biệt như thế nào?",
+    "a": "Style là một giải pháp cụ thể, Pattern là một vấn đề chung chung.",
+    "b": "Pattern mô tả một giải pháp đã được chứng minh cho một vấn đề thiết kế cụ thể, lặp đi lặp lại; Style mô tả một cách tiếp cận, một triết lý tổ chức hệ thống ở mức cao hơn, định hình cấu trúc tổng thể (ví dụ: Client-Server là một style, MVC là một pattern).",
+    "c": "Không có sự khác biệt rõ ràng, chúng thường được dùng thay thế cho nhau.",
+    "d": "Style chỉ áp dụng cho các hệ thống phân tán, Pattern áp dụng cho mọi hệ thống.",
+    "answer": "B",
+    "theory": "Đây là câu hỏi lặp lại từ chương 5 (câu 100) và chương 6 (câu 100). Architectural Style (Kiểu kiến trúc) là một tập hợp các nguyên tắc và ràng buộc về cách tổ chức hệ thống ở mức cao (ví dụ: Client-Server, Layered, Pipe-and-Filter). Architectural Pattern (Mẫu kiến trúc) là một giải pháp đã được kiểm chứng cho một vấn đề thiết kế cụ thể, thường có phạm vi nhỏ hơn Style (ví dụ: MVC, Repository). Một Style có thể được hiện thực hóa bằng nhiều Pattern khác nhau."
+  }
+]

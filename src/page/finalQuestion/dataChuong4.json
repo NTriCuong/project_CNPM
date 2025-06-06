@@ -1,0 +1,876 @@
+[
+     {
+    "question": "1. Mô hình hóa hệ thống trong phát triển phần mềm là gì?",
+    "a": "Quá trình viết mã chi tiết cho hệ thống.",
+    "b": "Quá trình kiểm thử toàn bộ chức năng hệ thống.",
+    "c": "Quá trình xây dựng các biểu diễn trừu tượng của hệ thống từ các góc nhìn khác nhau.",
+    "d": "Quá trình triển khai hệ thống lên môi trường production.",
+    "answer": "C",
+    "theory": "Mô hình hóa hệ thống là quá trình tạo ra các biểu diễn trừu tượng của một hệ thống từ các góc nhìn khác nhau (ví dụ: cấu trúc, hành vi, tương tác) để hiểu rõ hơn, phân tích, thiết kế và giao tiếp về hệ thống đó."
+  },
+  {
+    "question": "2. Tại sao mô hình hóa hệ thống lại quan trọng trong giai đoạn đầu của phát triển phần mềm?",
+    "a": "Để viết tài liệu hướng dẫn sử dụng chi tiết.",
+    "b": "Để giúp người phân tích hiểu chức năng hệ thống và giao tiếp hiệu quả với khách hàng.",
+    "c": "Để tối ưu hóa hiệu năng cơ sở dữ liệu ngay lập tức.",
+    "d": "Để lựa chọn ngôn ngữ lập trình phù hợp nhất.",
+    "answer": "B",
+    "theory": "Trong giai đoạn đầu, mô hình hóa giúp làm rõ yêu cầu, hiểu chức năng hệ thống và tạo ra một phương tiện giao tiếp chung giữa đội ngũ phát triển và khách hàng, đảm bảo mọi người có cùng hiểu biết về hệ thống."
+  },
+  {
+    "question": "3. Khi mô hình hóa một hệ thống ĐÃ CÓ SẴN, mục đích chính là gì?",
+    "a": "Thiết kế lại toàn bộ hệ thống từ đầu.",
+    "b": "Làm rõ hệ thống hiện tại làm được gì và làm cơ sở thảo luận về điểm mạnh/yếu.",
+    "c": "Chỉ tập trung vào việc sửa lỗi của hệ thống cũ.",
+    "d": "Viết lại toàn bộ tài liệu kỹ thuật của hệ thống.",
+    "answer": "B",
+    "theory": "Mô hình hóa hệ thống đã có sẵn (as-is modeling) giúp hiểu rõ cách hệ thống hiện tại hoạt động, xác định các chức năng, điểm mạnh, điểm yếu, từ đó làm cơ sở cho việc cải tiến, bảo trì hoặc thay thế."
+  },
+  {
+    "question": "4. Góc nhìn nào trong mô hình hóa hệ thống tập trung vào ranh giới và môi trường hoạt động của hệ thống?",
+    "a": "Góc nhìn tương tác (Interaction perspective)",
+    "b": "Góc nhìn cấu trúc (Structural perspective)",
+    "c": "Góc nhìn hành vi (Behavioral perspective)",
+    "d": "Góc nhìn bên ngoài (External perspective) / Ngữ cảnh",
+    "answer": "D",
+    "theory": "Góc nhìn bên ngoài (hay mô hình ngữ cảnh) xác định ranh giới của hệ thống, các thực thể bên ngoài (actors, hệ thống khác) tương tác với nó và môi trường mà hệ thống hoạt động."
+  },
+  {
+    "question": "5. Loại biểu đồ UML nào thường được sử dụng để mô tả \"Góc nhìn bên ngoài\" (External perspective)?",
+    "a": "Biểu đồ Lớp (Class Diagram)",
+    "b": "Biểu đồ Tuần tự (Sequence Diagram)",
+    "c": "Biểu đồ Use Case (Use Case Diagram) - thường dùng để thể hiện ngữ cảnh tương tác.",
+    "d": "Biểu đồ Trạng thái (State Diagram)",
+    "answer": "C",
+    "theory": "Biểu đồ Use Case mô tả các chức năng của hệ thống từ góc nhìn của người dùng (actors) và cách họ tương tác với hệ thống, thể hiện rõ ràng phạm vi và ngữ cảnh của hệ thống."
+  },
+  {
+    "question": "6. Mô hình ngữ cảnh (Context model) KHÔNG nhằm mục đích gì?",
+    "a": "Cho thấy ranh giới của hệ thống đang phát triển.",
+    "b": "Xác định các hệ thống hoặc tác nhân bên ngoài tương tác với hệ thống.",
+    "c": "Mô tả chi tiết cấu trúc dữ liệu bên trong hệ thống.",
+    "d": "Giúp hiểu phạm vi của hệ thống.",
+    "answer": "C",
+    "theory": "Mô hình ngữ cảnh tập trung vào việc xác định ranh giới, phạm vi của hệ thống và các tương tác của nó với môi trường bên ngoài. Nó không đi sâu vào chi tiết cấu trúc bên trong như cấu trúc dữ liệu."
+  },
+  {
+    "question": "7. Mô hình xử lý (Process model) dùng để làm gì?",
+    "a": "Mô tả chi tiết các lớp đối tượng trong hệ thống.",
+    "b": "Làm nổi rõ cách hệ thống đang phát triển được sử dụng trong các quy trình nghiệp vụ.",
+    "c": "Chỉ ra các trạng thái khác nhau của một đối tượng.",
+    "d": "Xác định các thành phần phần cứng cần thiết.",
+    "answer": "B",
+    "theory": "Mô hình xử lý (thường dùng biểu đồ hoạt động) mô tả các quy trình nghiệp vụ mà hệ thống hỗ trợ, cho thấy các bước công việc, luồng dữ liệu và cách hệ thống được tích hợp vào các hoạt động đó."
+  },
+  {
+    "question": "8. Loại biểu đồ UML nào phù hợp nhất để thể hiện Mô hình xử lý nghiệp vụ?",
+    "a": "Biểu đồ Lớp (Class Diagram)",
+    "b": "Biểu đồ Triển khai (Deployment Diagram)",
+    "c": "Biểu đồ Hoạt động (Activity Diagram)",
+    "d": "Biểu đồ Đối tượng (Object Diagram)",
+    "answer": "C",
+    "theory": "Biểu đồ Hoạt động (Activity Diagram) rất thích hợp để mô tả các luồng công việc (workflow) và quy trình nghiệp vụ, bao gồm các hoạt động, quyết định và luồng điều khiển."
+  },
+  {
+    "question": "9. Góc nhìn tương tác (Interaction perspective) tập trung vào điều gì?",
+    "a": "Cấu trúc tĩnh của các lớp và mối quan hệ của chúng.",
+    "b": "Hành vi động của hệ thống khi phản ứng với sự kiện.",
+    "c": "Sự tương tác giữa hệ thống với môi trường hoặc giữa các thành phần bên trong.",
+    "d": "Cách hệ thống được triển khai trên phần cứng.",
+    "answer": "C",
+    "theory": "Góc nhìn tương tác mô tả cách các đối tượng hoặc thành phần của hệ thống (hoặc hệ thống với các actor bên ngoài) giao tiếp và cộng tác với nhau để thực hiện một chức năng nào đó, thường thể hiện qua việc trao đổi thông điệp."
+  },
+  {
+    "question": "10. Hai loại biểu đồ UML chính được sử dụng để mô hình hóa tương tác là gì?",
+    "a": "Biểu đồ Lớp và Biểu đồ Component",
+    "b": "Biểu đồ Use Case và Biểu đồ Tuần tự",
+    "c": "Biểu đồ Hoạt động và Biểu đồ Trạng thái",
+    "d": "Biểu đồ Gói và Biểu đồ Triển khai",
+    "answer": "B",
+    "theory": "Biểu đồ Use Case mô tả các tương tác ở mức cao giữa actor và hệ thống. Biểu đồ Tuần tự (và các biểu đồ tương tác khác như Biểu đồ Giao tiếp) mô tả chi tiết trình tự các thông điệp được trao đổi giữa các đối tượng để thực hiện một use case hoặc một kịch bản cụ thể."
+  },
+
+  {
+    "question": "11. Biểu đồ Use Case (Use Case Diagram) mô tả điều gì?",
+    "a": "Cấu trúc chi tiết của cơ sở dữ liệu.",
+    "b": "Các tương tác giữa tác nhân (actors) và hệ thống thông qua các ca sử dụng (use cases).",
+    "c": "Luồng xử lý dữ liệu qua các chức năng.",
+    "d": "Các trạng thái và sự chuyển đổi trạng thái của một đối tượng.",
+    "answer": "B",
+    "theory": "Biểu đồ Use Case mô tả chức năng của hệ thống từ góc nhìn người dùng, thể hiện các 'use cases' (ca sử dụng) mà hệ thống cung cấp và các 'actors' (tác nhân) tương tác với các use cases đó."
+  },
+  {
+    "question": "12. Trong biểu đồ Use Case, 'actor' là gì?",
+    "a": "Một chức năng cụ thể của hệ thống.",
+    "b": "Một lớp đối tượng bên trong hệ thống.",
+    "c": "Một người dùng, hệ thống khác, hoặc thực thể bên ngoài tương tác với hệ thống.",
+    "d": "Một module phần mềm.",
+    "answer": "C",
+    "theory": "Actor trong biểu đồ Use Case đại diện cho một vai trò nào đó mà người dùng, hệ thống khác, hoặc một thực thể bên ngoài đóng khi tương tác với hệ thống để đạt được một mục tiêu cụ thể."
+  },
+  {
+    "question": "13. Mục đích chính của việc mô tả chi tiết Use Case bằng văn bản là gì?",
+    "a": "Thay thế hoàn toàn biểu đồ Use Case đồ họa.",
+    "b": "Cung cấp thông tin chi tiết về luồng sự kiện, điều kiện, ngoại lệ mà biểu đồ không thể hiện hết.",
+    "c": "Chỉ để liệt kê danh sách các actor tham gia.",
+    "d": "Mô tả cấu trúc cơ sở dữ liệu liên quan.",
+    "answer": "B",
+    "theory": "Mô tả Use Case bằng văn bản (Use Case specification) bổ sung chi tiết cho biểu đồ, bao gồm luồng sự kiện chính, các luồng rẽ nhánh (alternative flows), điều kiện tiên quyết, hậu điều kiện, và các ngoại lệ, giúp hiểu rõ hơn cách use case được thực hiện."
+  },
+  {
+    "question": "14. Kịch bản (Scenario) là gì trong ngữ cảnh của Use Case?",
+    "a": "Một mô tả chi tiết về cấu trúc lớp.",
+    "b": "Một ví dụ cụ thể về một chuỗi tương tác xảy ra khi thực hiện một Use Case.",
+    "c": "Một danh sách các yêu cầu phi chức năng.",
+    "d": "Một biểu đồ trạng thái của hệ thống.",
+    "answer": "B",
+    "theory": "Một kịch bản (scenario) là một đường đi cụ thể (instance) qua một Use Case, mô tả một chuỗi các hành động và tương tác giữa actor và hệ thống trong một tình huống cụ thể."
+  },
+  {
+    "question": "15. Biểu đồ Tuần tự (Sequence Diagram) tập trung mô tả điều gì?",
+    "a": "Cấu trúc tĩnh của hệ thống.",
+    "b": "Tổ chức các gói (package) trong hệ thống.",
+    "c": "Trình tự thời gian của các thông điệp (messages) được trao đổi giữa các đối tượng hoặc actor.",
+    "d": "Các trạng thái khác nhau của toàn bộ hệ thống.",
+    "answer": "C",
+    "theory": "Biểu đồ Tuần tự (Sequence Diagram) mô tả sự tương tác động giữa các đối tượng theo trình tự thời gian. Nó thể hiện các đối tượng tham gia và các thông điệp được gửi giữa chúng theo thứ tự xảy ra."
+  },
+  {
+    "question": "16. Trong Biểu đồ Tuần tự, đường thẳng đứng nét đứt kéo dài từ một đối tượng/actor được gọi là gì?",
+    "a": "Thông điệp (Message)",
+    "b": "Thanh kích hoạt (Activation bar)",
+    "c": "Đường sống (Lifeline)",
+    "d": "Điều kiện (Condition)",
+    "answer": "C",
+    "theory": "Đường sống (Lifeline) trong Biểu đồ Tuần tự đại diện cho sự tồn tại của một đối tượng hoặc actor trong suốt khoảng thời gian của tương tác được mô tả."
+  },
+  {
+    "question": "17. Yếu tố nào trong Biểu đồ Tuần tự thể hiện một lời gọi phương thức hoặc một tín hiệu gửi đi?",
+    "a": "Đường sống (Lifeline)",
+    "b": "Thông điệp (Message), thường biểu diễn bằng mũi tên.",
+    "c": "Thanh kích hoạt (Activation bar)",
+    "d": "Ghi chú (Note)",
+    "answer": "B",
+    "theory": "Thông điệp (Message) trong Biểu đồ Tuần tự, thường được biểu diễn bằng mũi tên từ lifeline này sang lifeline khác, thể hiện một lời gọi phương thức, một tín hiệu, hoặc việc tạo/hủy đối tượng."
+  },
+  {
+    "question": "18. Khối 'alt' (alternative) trong Biểu đồ Tuần tự dùng để biểu diễn điều gì?",
+    "a": "Một vòng lặp các thông điệp.",
+    "b": "Các luồng tương tác thay thế, tương đương cấu trúc IF-ELSE.",
+    "c": "Một phần tùy chọn của tương tác (optional).",
+    "d": "Sự kết thúc của một lifeline.",
+    "answer": "B",
+    "theory": "Khối 'alt' (alternative) trong Biểu đồ Tuần tự cho phép mô tả các luồng tương tác thay thế. Chỉ có một trong các luồng bên trong khối 'alt' sẽ được thực thi, dựa trên các điều kiện (guards) tương ứng, tương tự như cấu trúc if-else if-else."
+  },
+  {
+    "question": "19. Khối 'opt' (optional) trong Biểu đồ Tuần tự biểu diễn điều gì?",
+    "a": "Một chuỗi các thông điệp bắt buộc phải xảy ra.",
+    "b": "Các luồng thay thế lẫn nhau.",
+    "c": "Một đoạn tương tác chỉ xảy ra nếu một điều kiện nào đó đúng.",
+    "d": "Sự khởi đầu của một tương tác song song.",
+    "answer": "C",
+    "theory": "Khối 'opt' (optional) trong Biểu đồ Tuần tự biểu diễn một đoạn tương tác chỉ được thực hiện nếu một điều kiện (guard) đi kèm là đúng. Nếu điều kiện sai, đoạn tương tác đó sẽ bị bỏ qua."
+  },
+  {
+    "question": "20. Khối 'loop' trong Biểu đồ Tuần tự dùng để làm gì?",
+    "a": "Biểu diễn một lựa chọn giữa hai luồng thông điệp.",
+    "b": "Biểu diễn một đoạn tương tác được lặp lại nhiều lần.",
+    "c": "Biểu diễn một thông điệp gửi tự đến chính nó.",
+    "d": "Biểu diễn một tương tác tùy chọn.",
+    "answer": "B",
+    "theory": "Khối 'loop' trong Biểu đồ Tuần tự dùng để biểu diễn một đoạn các thông điệp hoặc tương tác được lặp lại nhiều lần, thường đi kèm với một điều kiện lặp."
+  },
+  {
+    "question": "21. Sự khác biệt cơ bản giữa Biểu đồ Use Case và Biểu đồ Tuần tự là gì?",
+    "a": "Use Case mô tả CÁI GÌ hệ thống làm, Tuần tự mô tả Al làm.",
+    "b": "Use Case tập trung vào cấu trúc, Tuần tự tập trung vào hành vi.",
+    "c": "Use Case mô tả tổng quan tương tác, Tuần tự mô tả chi tiết trình tự thời gian của tương tác đó.",
+    "d": "Use Case dùng cho người dùng, Tuần tự dùng cho lập trình viên.",
+    "answer": "C",
+    "theory": "Biểu đồ Use Case cung cấp một cái nhìn tổng quan về các chức năng mà hệ thống cung cấp cho actors. Biểu đồ Tuần tự đi sâu vào chi tiết cách một use case cụ thể (hoặc một kịch bản của nó) được thực hiện thông qua trình tự các thông điệp trao đổi giữa các đối tượng theo thời gian."
+  },
+  {
+    "question": "22. Góc nhìn cấu trúc (Structural perspective) trong mô hình hóa hệ thống tập trung vào yếu tố nào?",
+    "a": "Luồng sự kiện và phản ứng của hệ thống.",
+    "b": "Tương tác giữa người dùng và hệ thống.",
+    "c": "Tổ chức tĩnh của hệ thống hoặc cấu trúc dữ liệu.",
+    "d": "Môi trường hoạt động bên ngoài của hệ thống.",
+    "answer": "C",
+    "theory": "Góc nhìn cấu trúc mô tả các thành phần tĩnh của hệ thống và mối quan hệ giữa chúng, ví dụ như các lớp, đối tượng, thành phần, gói và cách chúng được tổ chức, hoặc cấu trúc dữ liệu của hệ thống."
+  },
+  {
+    "question": "23. Loại biểu đồ UML nào là công cụ chính để mô tả cấu trúc tĩnh của các lớp trong hệ thống hướng đối tượng?",
+    "a": "Biểu đồ Hoạt động (Activity Diagram)",
+    "b": "Biểu đồ Lớp (Class Diagram)",
+    "c": "Biểu đồ Tuần tự (Sequence Diagram)",
+    "d": "Biểu đồ Trạng thái (State Diagram)",
+    "answer": "B",
+    "theory": "Biểu đồ Lớp (Class Diagram) là biểu đồ UML chính dùng để mô tả cấu trúc tĩnh của một hệ thống hướng đối tượng, bao gồm các lớp, thuộc tính, phương thức của chúng và các mối quan hệ giữa các lớp (như association, generalization, aggregation, composition)."
+  },
+  {
+    "question": "24. Trong Biểu đồ Lớp, một 'lớp' (class) đại diện cho điều gì?",
+    "a": "Một hành động cụ thể mà hệ thống thực hiện.",
+    "b": "Một định nghĩa trừu tượng cho một tập hợp các đối tượng có cùng thuộc tính, hành vi và mối quan hệ.",
+    "c": "Một màn hình giao diện người dùng.",
+    "d": "Một quy trình nghiệp vụ.",
+    "answer": "B",
+    "theory": "Một lớp trong Biểu đồ Lớp là một khuôn mẫu (blueprint) hoặc một định nghĩa trừu tượng cho việc tạo ra các đối tượng. Nó mô tả các thuộc tính (dữ liệu) và hành vi (phương thức) chung mà tất cả các đối tượng của lớp đó sẽ có, cũng như các mối quan hệ với các lớp khác."
+  },
+  {
+    "question": "25. Thành phần nào của một lớp trong Biểu đồ Lớp mô tả dữ liệu mà các đối tượng của lớp đó nắm giữ?",
+    "a": "Tên lớp (Class name)",
+    "b": "Thuộc tính (Attributes)",
+    "c": "Phương thức/Hoạt động (Operations/Methods)",
+    "d": "Mối quan hệ (Relationships)",
+    "answer": "B",
+    "theory": "Thuộc tính (Attributes) của một lớp trong Biểu đồ Lớp đại diện cho các đặc điểm dữ liệu hoặc trạng thái mà mỗi đối tượng của lớp đó sẽ có và lưu trữ."
+  },
+  {
+    "question": "26. Thành phần nào của một lớp trong Biểu đồ Lớp mô tả các hành vi hoặc chức năng mà đối tượng của lớp đó có thể thực hiện?",
+    "a": "Thuộc tính (Attributes)",
+    "b": "Tên lớp (Class name)",
+    "c": "Phương thức/Hoạt động (Operations/Methods)",
+    "d": "Kiểu dữ liệu (Data types)",
+    "answer": "C",
+    "theory": "Phương thức (Methods) hoặc Hoạt động (Operations) của một lớp trong Biểu đồ Lớp mô tả các hành vi, chức năng hoặc các thao tác mà đối tượng của lớp đó có thể thực hiện."
+  },
+  {
+    "question": "27. Mối quan hệ 'Generalization' (Tổng quát hóa) trong Biểu đồ Lớp thể hiện khái niệm nào trong lập trình hướng đối tượng?",
+    "a": "Association (Liên kết)",
+    "b": "Aggregation (Tập hợp)",
+    "c": "Composition (Thành phần)",
+    "d": "Inheritance (Thừa kế)",
+    "answer": "D",
+    "theory": "Mối quan hệ Generalization (Tổng quát hóa) trong UML tương ứng trực tiếp với khái niệm Thừa kế (Inheritance) trong lập trình hướng đối tượng, nơi một lớp con (subclass) kế thừa các thuộc tính và phương thức từ một lớp cha (superclass)."
+  },
+  {
+    "question": "28. Trong mối quan hệ Generalization, lớp cha được gọi là gì?",
+    "a": "Subclass (Lớp con)",
+    "b": "Superclass (Lớp cha / Lớp cơ sở)",
+    "c": "Interface (Giao diện)",
+    "d": "Abstract class (Lớp trừu tượng) - có thể nhưng không phải luôn luôn.",
+    "answer": "B",
+    "theory": "Trong mối quan hệ Generalization (thừa kế), lớp tổng quát hơn, từ đó các lớp khác kế thừa, được gọi là Superclass (Lớp cha) hoặc Lớp cơ sở (Base class)."
+  },
+  {
+    "question": "29. Lợi ích chính của việc sử dụng Generalization trong thiết kế là gì?",
+    "a": "Tăng độ phức tạp của hệ thống.",
+    "b": "Giảm khả năng tái sử dụng code.",
+    "c": "Quản lý độ phức tạp bằng cách nhóm các đặc điểm chung và thúc đẩy tái sử dụng code thông qua thừa kế.",
+    "d": "Làm cho việc hiểu hệ thống khó khăn hơn.",
+    "answer": "C",
+    "theory": "Generalization giúp quản lý độ phức tạp bằng cách trừu tượng hóa các đặc điểm chung vào lớp cha. Nó cũng thúc đẩy tái sử dụng code vì các lớp con có thể sử dụng lại các thuộc tính và phương thức của lớp cha, đồng thời mở rộng hoặc tùy chỉnh chúng."
+  },
+  {
+    "question": "30. Mối quan hệ 'Aggregation' (Cộng gộp/Tập hợp) trong Biểu đồ Lớp mô tả điều gì?",
+    "a": "Mối quan hệ \"is-a\" (là một loại của).",
+    "b": "Mối quan hệ \"part-of\" (là một phần của) nhưng các thành phần có thể tồn tại độc lập với tập hợp.",
+    "c": "Mối quan hệ \"uses\" (sử dụng).",
+    "d": "Mối quan hệ sở hữu mạnh, thành phần không thể tồn tại nếu không có tập hợp.",
+    "answer": "B",
+    "theory": "Aggregation là một dạng đặc biệt của Association, biểu thị mối quan hệ \"whole-part\" (toàn thể-bộ phận) hay \"has-a\". Điểm quan trọng của Aggregation là các bộ phận (parts) có thể tồn tại độc lập với toàn thể (whole); nếu toàn thể bị hủy, các bộ phận vẫn có thể tồn tại."
+  },
+  {
+    "question": "31. Mối quan hệ 'Composition' (Bao gộp/Thành phần) khác Aggregation như thế nào?",
+    "a": "Composition là mối quan hệ yếu hơn Aggregation.",
+    "b": "Composition thể hiện mối quan hệ sở hữu mạnh, vòng đời của thành phần phụ thuộc vào lớp chứa nó (nếu lớp chứa bị hủy, thành phần cũng bị hủy).",
+    "c": "Aggregation chỉ dùng cho các lớp trừu tượng, Composition dùng cho lớp cụ thể.",
+    "d": "Không có sự khác biệt đáng kể giữa Aggregation và Composition.",
+    "answer": "B",
+    "theory": "Composition là một dạng Aggregation mạnh hơn. Nó thể hiện mối quan hệ sở hữu mạnh, nghĩa là thành phần (part) không thể tồn tại độc lập với toàn thể (whole). Nếu toàn thể bị hủy, các thành phần của nó cũng bị hủy theo."
+  },
+  {
+    "question": "32. Biểu tượng nào thường được sử dụng để biểu diễn Aggregation trong UML?",
+    "a": "Mũi tên nét liền có đầu tam giác rỗng.",
+    "b": "Mũi tên nét liền có đầu hình thoi rỗng.",
+    "c": "Mũi tên nét liền có đầu hình thoi đặc.",
+    "d": "Đường thẳng nét liền không có mũi tên.",
+    "answer": "B",
+    "theory": "Trong Biểu đồ Lớp UML, Aggregation được biểu diễn bằng một đường thẳng nối giữa hai lớp, với một hình thoi rỗng (không tô đen) ở phía lớp \"whole\" (toàn thể)."
+  },
+  {
+    "question": "33. Biểu tượng nào thường được sử dụng để biểu diễn Composition trong UML?",
+    "a": "Mũi tên nét liền có đầu tam giác rỗng.",
+    "b": "Mũi tên nét liền có đầu hình thoi rỗng.",
+    "c": "Mũi tên nét liền có đầu hình thoi đặc.",
+    "d": "Đường thẳng nét đứt có mũi tên.",
+    "answer": "C",
+    "theory": "Trong Biểu đồ Lớp UML, Composition được biểu diễn bằng một đường thẳng nối giữa hai lớp, với một hình thoi đặc (tô đen) ở phía lớp \"whole\" (toàn thể)."
+  },
+  {
+    "question": "34. Ví dụ nào sau đây thể hiện rõ nhất mối quan hệ Composition?",
+    "a": "Một 'Thư viện' chứa nhiều 'Sách' (Sách có thể tồn tại ngoài thư viện).",
+    "b": "Một 'Phòng học' là một phần của một 'Tòa nhà' (Phòng học không thể tồn tại nếu tòa nhà bị phá hủy).",
+    "c": "Một 'Giáo viên' dạy nhiều 'Lớp học'.",
+    "d": "Một 'Sinh viên' mượn nhiều 'Sách'.",
+    "answer": "B",
+    "theory": "Composition thể hiện sự sở hữu mạnh, nơi vòng đời của phần (part) phụ thuộc vào toàn thể (whole). Một phòng học không thể tồn tại nếu tòa nhà chứa nó bị phá hủy. Sách có thể tồn tại độc lập với thư viện (đây là Aggregation)."
+  },
+  {
+    "question": "35. Góc nhìn hành vi (Behavioral perspective) mô tả điều gì?",
+    "a": "Cấu trúc tĩnh của dữ liệu.",
+    "b": "Mối quan hệ giữa các thành phần phần cứng.",
+    "c": "Hành vi động của hệ thống và cách nó phản ứng với các tác động (stimuli).",
+    "d": "Ranh giới giữa hệ thống và môi trường.",
+    "answer": "C",
+    "theory": "Góc nhìn hành vi tập trung vào cách hệ thống hoạt động và thay đổi theo thời gian, đặc biệt là cách nó phản ứng với các sự kiện hoặc tác động từ bên trong hoặc bên ngoài. Biểu đồ Trạng thái, Biểu đồ Hoạt động là các ví dụ."
+  },
+  {
+    "question": "36. Hai loại tác động (stimuli) chính gây ra phản ứng trong mô hình hành vi là gì?",
+    "a": "Lỗi và Ngoại lệ (Errors and Exceptions).",
+    "b": "Dữ liệu và Sự kiện (Data and Events).",
+    "c": "Yêu cầu và Phản hồi (Requests and Responses).",
+    "d": "Tác nhân và Hệ thống (Actors and Systems).",
+    "answer": "B",
+    "theory": "Trong mô hình hành vi, hệ thống phản ứng với các tác động (stimuli). Các tác động này thường là sự xuất hiện của dữ liệu mới cần xử lý (data) hoặc các sự kiện (events) xảy ra (ví dụ: người dùng nhấn nút, hết thời gian)."
+  },
+{
+    "question": "37. Mô hình hướng dữ liệu (Data-driven modeling) phù hợp với loại hệ thống nào?",
+    "a": "Hệ thống thời gian thực phức tạp với nhiều sự kiện không đồng bộ.",
+    "b": "Hệ thống xử lý nghiệp vụ, nơi đầu vào dữ liệu điều khiển quá trình xử lý.",
+    "c": "Hệ thống nhúng điều khiển",
+    "d": "Giao diện người dùng đồ hoạ phức tạp",
+    "answer": "B",
+    "theory": "Mô hình hướng dữ liệu (Data-driven modeling) phù hợp với các hệ thống mà luồng dữ liệu và các thao tác trên dữ liệu đóng vai trò trung tâm, chẳng hạn như hệ thống xử lý nghiệp vụ, nơi dữ liệu đầu vào điều khiển các quy trình xử lý và quyết định."
+},
+  {
+    "question": "41. Yếu tố nào gây ra sự thay đổi từ trạng thái này sang trạng thái khác trong Biểu đồ Trạng thái?",
+    "a": "Một thuộc tính (Attribute)",
+    "b": "Một phương thức (Operation)",
+    "c": "Một sự kiện (Event) kích hoạt sự chuyển đổi (Transition).",
+    "d": "Một lớp cha (Superclass).",
+    "answer": "C",
+    "theory": "Trong Biểu đồ Trạng thái, sự chuyển đổi (Transition) từ một trạng thái này sang trạng thái khác thường được kích hoạt bởi một sự kiện (Event). Khi sự kiện xảy ra và điều kiện bảo vệ (guard condition) (nếu có) được thỏa mãn, đối tượng sẽ chuyển trạng thái."
+  },
+  {
+    "question": "42. 'Transition' (Chuyển đổi) trong Biểu đồ Trạng thái thường bao gồm những thành phần nào?",
+    "a": "Chỉ có tên sự kiện.",
+    "b": "Sự kiện kích hoạt (Trigger), điều kiện bảo vệ (Guard), và hành động (Action/Effect).",
+    "c": "Tên trạng thái nguồn và trạng thái đích.",
+    "d": "Tên lớp và các thuộc tính.",
+    "answer": "B",
+    "theory": "Một Transition trong Biểu đồ Trạng thái thường bao gồm: Sự kiện kích hoạt (Trigger event) gây ra transition, Điều kiện bảo vệ (Guard condition) phải đúng để transition xảy ra, và Hành động (Action/Effect) được thực hiện khi transition diễn ra."
+  },
+  {
+    "question": "43. 'Guard condition' (Điều kiện bảo vệ) trên một transition có ý nghĩa gì?",
+    "a": "Là hành động được thực hiện khi transition xảy ra.",
+    "b": "Là sự kiện gây ra transition.",
+    "c": "Là một biểu thức logic, nếu đúng thì transition mới có thể xảy ra khi sự kiện kích hoạt xuất hiện.",
+    "d": "Là tên của trạng thái đích.",
+    "answer": "C",
+    "theory": "Điều kiện bảo vệ (Guard condition) là một biểu thức Boolean được đánh giá khi sự kiện kích hoạt transition xảy ra. Transition chỉ diễn ra nếu điều kiện bảo vệ là đúng."
+  },
+  {
+    "question": "44. Khái niệm 'Superstate' trong Biểu đồ Trạng thái dùng để làm gì?",
+    "a": "Đại diện cho trạng thái khởi đầu của hệ thống.",
+    "b": "Đại diện cho trạng thái kết thúc.",
+    "c": "Gói gọn một nhóm các trạng thái con có chung các transition hoặc hành vi, giúp đơn giản hóa biểu đồ.",
+    "d": "Chỉ ra một trạng thái không bao giờ đạt tới.",
+    "answer": "C",
+    "theory": "Superstate (hay composite state) là một trạng thái chứa các trạng thái con (substates). Nó giúp tổ chức và đơn giản hóa các biểu đồ trạng thái phức tạp bằng cách nhóm các trạng thái có liên quan và các transition chung."
+  },
+  {
+    "question": "45. Loại biểu đồ nào mô tả luồng công việc (workflow) hoặc luồng xử lý dữ liệu bằng cách tập trung vào các hoạt động và sự chuyển tiếp giữa chúng?",
+    "a": "Biểu đồ Trạng thái (State Diagram)",
+    "b": "Biểu đồ Hoạt động (Activity Diagram)",
+    "c": "Biểu đồ Tuần tự (Sequence Diagram)",
+    "d": "Biểu đồ Lớp (Class Diagram)",
+    "answer": "B",
+    "theory": "Biểu đồ Hoạt động (Activity Diagram) mô tả các luồng công việc hoặc quy trình bằng cách hiển thị các hoạt động (actions), các điểm quyết định (decision nodes), và sự chuyển tiếp (control flows) giữa chúng."
+  },
+  {
+    "question": "46. Trong Biểu đồ Hoạt động, hình thoi (diamond shape) thường biểu diễn điều gì?",
+    "a": "Một hành động (Action)",
+    "b": "Điểm bắt đầu hoặc kết thúc luồng (Initial/Final node)",
+    "c": "Điểm quyết định (Decision node) hoặc điểm hợp nhất (Merge node).",
+    "d": "Luồng song song (Fork/Join node).",
+    "answer": "C",
+    "theory": "Hình thoi trong Biểu đồ Hoạt động thường đại diện cho Điểm quyết định (Decision node), nơi luồng điều khiển rẽ nhánh dựa trên một điều kiện, hoặc Điểm hợp nhất (Merge node), nơi các luồng rẽ nhánh hội tụ lại."
+  },
+  {
+    "question": "47. Trong Biểu đồ Hoạt động, thanh ngang dày (thick horizontal bar) dùng để biểu diễn điều gì?",
+    "a": "Một hoạt động đơn lẻ.",
+    "b": "Một quyết định rẽ nhánh.",
+    "c": "Sự bắt đầu hoặc kết thúc của luồng hoạt động.",
+    "d": "Sự chia tách luồng thành các nhánh song song (Fork) hoặc hợp nhất các nhánh song song (Join).",
+    "answer": "D",
+    "theory": "Thanh ngang dày trong Biểu đồ Hoạt động đại diện cho Fork node (chia một luồng thành nhiều luồng song song) hoặc Join node (hợp nhất nhiều luồng song song thành một luồng)."
+  },
+  {
+    "question": "48. So sánh Biểu đồ Hoạt động và Biểu đồ Trạng thái, điểm khác biệt chính là gì?",
+    "a": "Hoạt động mô tả luồng công việc/xử lý, Trạng thái mô tả vòng đời/trạng thái của một đối tượng.",
+    "b": "Hoạt động chỉ dùng cho nghiệp vụ, Trạng thái chỉ dùng cho kỹ thuật.",
+    "c": "Hoạt động không có rẽ nhánh, Trạng thái có.",
+    "d": "Hoạt động tập trung vào sự kiện, Trạng thái tập trung vào dữ liệu.",
+    "answer": "A",
+    "theory": "Biểu đồ Hoạt động tập trung vào luồng các hoạt động và xử lý trong một quy trình. Biểu đồ Trạng thái tập trung vào các trạng thái khác nhau của một đối tượng cụ thể và sự chuyển đổi giữa các trạng thái đó trong suốt vòng đời của nó."
+  },
+  {
+    "question": "49. Mục đích của việc sử dụng nhiều loại biểu đồ UML khác nhau để mô hình hóa một hệ thống là gì?",
+    "a": "Làm cho tài liệu trở nên phức tạp và khó hiểu hơn.",
+    "b": "Cung cấp các góc nhìn khác nhau, bổ sung cho nhau để hiểu rõ hơn về hệ thống cả về cấu trúc tĩnh và hành vi động.",
+    "c": "Chỉ để đáp ứng yêu cầu của quy trình phát triển phần mềm.",
+    "d": "Thay thế hoàn toàn việc viết mô tả bằng văn bản.",
+    "answer": "B",
+    "theory": "Mỗi loại biểu đồ UML tập trung vào một khía cạnh cụ thể của hệ thống. Sử dụng nhiều loại biểu đồ giúp cung cấp một cái nhìn toàn diện, từ các góc độ khác nhau (cấu trúc, hành vi, tương tác, triển khai), giúp hiểu rõ hơn và đầy đủ hơn về hệ thống."
+  },
+  {
+    "question": "50. Mối liên hệ giữa Biểu đồ Use Case và Biểu đồ Tuần tự thường là gì?",
+    "a": "Một Biểu đồ Tuần tự mô tả chi tiết cách thực hiện một Use Case cụ thể hoặc một kịch bản trong Use Case đó.",
+    "b": "Biểu đồ Use Case là một phần của Biểu đồ Tuần tự.",
+    "c": "Chúng hoàn toàn độc lập và không liên quan đến nhau.",
+    "d": "Biểu đồ Tuần tự định nghĩa các Actor cho Biểu đồ Use Case.",
+    "answer": "A",
+    "theory": "Một Use Case mô tả một chức năng từ góc nhìn người dùng. Một Biểu đồ Tuần tự thường được sử dụng để chi tiết hóa cách một Use Case (hoặc một kịch bản cụ thể của nó) được hiện thực hóa thông qua sự tương tác giữa các đối tượng theo thời gian."
+  },
+  {
+    "question": "51. Mối liên hệ giữa Biểu đồ Tuần tự và Biểu đồ Lớp thường là gì?",
+    "a": "Biểu đồ Lớp xác định các trạng thái cho Biểu đồ Tuần tự.",
+    "b": "Các đối tượng và lớp xuất hiện trong Biểu đồ Tuần tự thường được định nghĩa chi tiết trong Biểu đồ Lớp (thuộc tính, phương thức).",
+    "c": "Chúng mô tả cùng một khía cạnh của hệ thống.",
+    "d": "Biểu đồ Tuần tự mô tả mối quan hệ thừa kế, Biểu đồ Lớp mô tả thông điệp.",
+    "answer": "B",
+    "theory": "Biểu đồ Tuần tự cho thấy các đối tượng (instances) tương tác với nhau. Các lớp của những đối tượng này, cùng với thuộc tính và phương thức của chúng (được gọi trong các thông điệp), thường được định nghĩa và mô tả chi tiết trong Biểu đồ Lớp."
+  },
+  {
+    "question": "52. Mối liên hệ giữa Biểu đồ Lớp và Biểu đồ Trạng thái thường là gì?",
+    "a": "Biểu đồ Lớp là một trạng thái đặc biệt trong Biểu đồ Trạng thái.",
+    "b": "Biểu đồ Trạng thái thường mô tả vòng đời hoặc hành vi của các đối tượng thuộc một Lớp cụ thể được định nghĩa trong Biểu đồ Lớp.",
+    "c": "Biểu đồ Trạng thái xác định các phương thức cho Biểu đồ Lớp.",
+    "d": "Không có mối liên hệ trực tiếp nào.",
+    "answer": "B",
+    "theory": "Biểu đồ Trạng thái mô tả các trạng thái và sự chuyển đổi trạng thái của một đối tượng. Lớp của đối tượng đó, cùng với các thuộc tính và phương thức liên quan đến các trạng thái và hành động, được định nghĩa trong Biểu đồ Lớp."
+  },
+  {
+    "question": "53. Việc mô hình hóa hệ thống thường là một quá trình:",
+    "a": "Tuyến tính, thực hiện một lần duy nhất từ đầu đến cuối.",
+    "b": "Lặp đi lặp lại (iterative) và tăng trưởng (incremental), các mô hình được xây dựng và tinh chỉnh dần.",
+    "c": "Chỉ thực hiện sau khi đã viết xong toàn bộ code.",
+    "d": "Hoàn toàn tự động bởi các công cụ CASE.",
+    "answer": "B",
+    "theory": "Mô hình hóa hệ thống là một quá trình lặp đi lặp lại và tăng trưởng. Các mô hình ban đầu có thể ở mức trừu tượng cao và sau đó được tinh chỉnh, bổ sung chi tiết qua nhiều vòng lặp khi hiểu biết về hệ thống tăng lên."
+  },
+  {
+    "question": "54. Ưu điểm của việc sử dụng ký hiệu đồ họa chuẩn hóa như UML là gì?",
+    "a": "Làm cho mô hình khó hiểu đối với người không chuyên.",
+    "b": "Tạo ra sự giao tiếp rõ ràng, nhất quán giữa các thành viên trong nhóm phát triển và với khách hàng.",
+    "c": "Hạn chế khả năng biểu diễn các khía cạnh phức tạp của hệ thống.",
+    "d": "Chỉ phù hợp với các dự án quy mô nhỏ.",
+    "answer": "B",
+    "theory": "Sử dụng một ngôn ngữ mô hình hóa chuẩn như UML giúp đảm bảo rằng tất cả các bên liên quan (nhà phát triển, nhà phân tích, khách hàng) có một cách hiểu chung và nhất quán về các mô hình, giảm thiểu hiểu lầm và cải thiện giao tiếp."
+  },
+  {
+    "question": "55. Đâu KHÔNG phải là một góc nhìn hệ thống phổ biến được đề cập trong tài liệu?",
+    "a": "Góc nhìn bên ngoài (External perspective)",
+    "b": "Góc nhìn tương tác (Interaction perspective)",
+    "c": "Góc nhìn tài chính (Financial perspective)",
+    "d": "Góc nhìn cấu trúc (Structural perspective)",
+    "answer": "C",
+    "theory": "Các góc nhìn hệ thống phổ biến trong mô hình hóa thường bao gồm góc nhìn bên ngoài (ngữ cảnh), tương tác, cấu trúc và hành vi. Góc nhìn tài chính không phải là một góc nhìn kỹ thuật trực tiếp của mô hình hóa hệ thống theo UML."
+  },
+  {
+    "question": "56. Trong Biểu đồ Tuần tự, thứ tự các thông điệp từ trên xuống dưới thể hiện điều gì?",
+    "a": "Mức độ ưu tiên của thông điệp.",
+    "b": "Trình tự thời gian xảy ra của các tương tác.",
+    "c": "Mối quan hệ kế thừa giữa các đối tượng.",
+    "d": "Cấu trúc phân cấp của hệ thống.",
+    "answer": "B",
+    "theory": "Trục thời gian trong Biểu đồ Tuần tự chạy từ trên xuống dưới. Do đó, thứ tự các thông điệp được vẽ từ trên xuống dưới thể hiện trình tự thời gian mà các thông điệp đó được gửi và nhận."
+  },
+  {
+    "question": "57. Để mô tả cách các thành phần phần mềm vật lý (ví dụ: file .exe, .dll, thư viện) được tổ chức và phụ thuộc lẫn nhau, loại biểu đồ nào phù hợp? (Mở rộng từ Study Guide)",
+    "a": "Biểu đồ Lớp (Class Diagram)",
+    "b": "Biểu đồ Component (Component Diagram)",
+    "c": "Biểu đồ Trạng thái (State Diagram)",
+    "d": "Biểu đồ Use Case (Use Case Diagram)",
+    "answer": "B",
+    "theory": "Biểu đồ Component mô tả cách hệ thống được chia thành các thành phần (components) vật lý, có thể triển khai được (như file .exe, .dll, thư viện) và các mối quan hệ phụ thuộc giữa chúng."
+  },
+  {
+    "question": "58. Để mô tả cách các thành phần phần mềm và phần cứng được triển khai và kết nối vật lý với nhau (ví dụ: server, client, database server), loại biểu đồ nào phù hợp? (Mở rộng từ Study Guide)",
+    "a": "Biểu đồ Hoạt động (Activity Diagram)",
+    "b": "Biểu đồ Triển khai (Deployment Diagram)",
+    "c": "Biểu đồ Tuần tự (Sequence Diagram)",
+    "d": "Biểu đồ Lớp (Class Diagram)",
+    "answer": "B",
+    "theory": "Biểu đồ Triển khai (Deployment Diagram) mô tả cấu trúc vật lý của hệ thống, bao gồm các nút (nodes) phần cứng (như server, client) và cách các thành phần phần mềm (artifacts) được triển khai lên các nút đó, cũng như các kết nối vật lý giữa chúng."
+  },
+  {
+    "question": "59. Mối quan hệ <<include>> giữa hai Use Case có ý nghĩa gì? (Mở rộng từ Study Guide)",
+    "a": "Use Case này là một trường hợp đặc biệt của Use Case kia.",
+    "b": "Use Case gốc bắt buộc phải bao gồm hành vi của Use Case được chỉ tới tại một điểm xác định.",
+    "c": "Use Case gốc có thể tùy chọn mở rộng hành vi của Use Case được chỉ tới.",
+    "d": "Hai Use Case này hoàn toàn giống nhau.",
+    "answer": "B",
+    "theory": "Mối quan hệ <<include>> chỉ ra rằng hành vi của Use Case được bao gồm (included use case) là một phần bắt buộc của Use Case bao gồm (base use case). Use Case gốc sẽ không hoàn chỉnh nếu không thực hiện hành vi của Use Case được include."
+  },
+  {
+    "question": "60. Mối quan hệ <<extend>> giữa hai Use Case có ý nghĩa gì? (Mở rộng từ Study Guide)",
+    "a": "Use Case gốc luôn luôn thực hiện hành vi của Use Case mở rộng.",
+    "b": "Use Case mở rộng bổ sung hành vi tùy chọn (optional) vào Use Case gốc tại một hoặc nhiều điểm mở rộng (extension points).",
+    "c": "Đây là mối quan hệ thừa kế giữa các Use Case.",
+    "d": "Use Case mở rộng là điều kiện tiên quyết để thực hiện Use Case gốc.",
+    "answer": "B",
+    "theory": "Mối quan hệ <<extend>> cho phép một Use Case (extending use case) bổ sung hành vi tùy chọn cho một Use Case khác (base use case) tại các điểm mở rộng (extension points) xác định. Hành vi mở rộng chỉ xảy ra khi một điều kiện nhất định được thỏa mãn."
+  },
+  {
+    "question": "61. Khi nào nên sử dụng mối quan hệ <<include>>?",
+    "a": "Khi một hành vi lặp lại ở nhiều Use Case và muốn tách ra để tái sử dụng.",
+    "b": "Khi muốn mô tả một luồng xử lý ngoại lệ.",
+    "c": "Khi một Use Case quá phức tạp và muốn chia nhỏ.",
+    "d": "Khi một Use Case là tùy chọn.",
+    "answer": "A",
+    "theory": "Mối quan hệ <<include>> rất hữu ích khi một đoạn hành vi chung được sử dụng bởi nhiều Use Case. Bằng cách tách hành vi chung đó thành một Use Case riêng và include nó vào các Use Case khác, ta có thể tránh lặp lại và tăng tính tái sử dụng."
+  },
+  {
+    "question": "62. Khi nào nên sử dụng mối quan hệ <<extend>>?",
+    "a": "Khi muốn mô tả hành vi cốt lõi của Use Case.",
+    "b": "Khi muốn mô tả một hành vi tùy chọn hoặc một luồng phụ chỉ xảy ra trong một số điều kiện nhất định.",
+    "c": "Khi muốn gộp nhiều Use Case nhỏ thành một Use Case lớn.",
+    "d": "Khi hai Use Case có cùng Actor.",
+    "answer": "B",
+    "theory": "Mối quan hệ <<extend>> được sử dụng để mô hình hóa các hành vi tùy chọn, các biến thể hoặc các luồng phụ của một Use Case cơ sở. Hành vi mở rộng này không phải lúc nào cũng xảy ra, mà phụ thuộc vào điều kiện cụ thể."
+  },
+  {
+    "question": "63. Trong hệ thống \"Máy ATM\", hành động \"Xác thực thẻ và mã PIN\" là bắt buộc cho mọi giao dịch rút tiền, chuyển khoản. Mối quan hệ nào phù hợp để mô tả điều này?",
+    "a": "Generalization",
+    "b": "Extend",
+    "c": "Include (ví dụ: Rút tiền <<include>> Xác thực thẻ)",
+    "d": "Association",
+    "answer": "C",
+    "theory": "Vì \"Xác thực thẻ và mã PIN\" là hành vi bắt buộc và chung cho nhiều giao dịch như rút tiền, chuyển khoản, nên nó được mô hình hóa như một Use Case riêng và được <<include>> bởi các Use Case giao dịch đó."
+  },
+  {
+    "question": "64. Trong hệ thống \"Đặt hàng Online\", Use Case \"Thanh toán\" có thể được thực hiện bằng \"Thẻ tín dụng\" hoặc \"Ví điện tử\". Mối quan hệ nào phù hợp để mô tả các phương thức thanh toán này với Use Case \"Thanh toán\"?",
+    "a": "Include",
+    "b": "Generalization (Thanh toán bằng Thẻ và Thanh toán bằng Ví là các dạng cụ thể của Thanh toán)",
+    "c": "Extend",
+    "d": "Aggregation",
+    "answer": "B",
+    "theory": "Nếu \"Thanh toán bằng Thẻ tín dụng\" và \"Thanh toán bằng Ví điện tử\" là các cách thức cụ thể, chuyên biệt hóa của hành vi \"Thanh toán\" chung, thì mối quan hệ Generalization là phù hợp. \"Thanh toán\" sẽ là Use Case cha (tổng quát), và các phương thức kia là các Use Case con (cụ thể)."
+  },
+  {
+    "question": "65. Trong hệ thống \"Soạn thảo văn bản\", chức năng \"Kiểm tra chính tả\" có thể được người dùng kích hoạt tùy chọn. Mối quan hệ nào mô tả tốt nhất giữa \"Soạn thảo\" và \"Kiểm tra chính tả\"?",
+    "a": "Include",
+    "b": "Extend (Soạn thảo <<extend>> Kiểm tra chính tả)",
+    "c": "Generalization",
+    "d": "Composition",
+    "answer": "B",
+    "theory": "Vì \"Kiểm tra chính tả\" là một chức năng tùy chọn, không phải lúc nào cũng được thực hiện khi \"Soạn thảo\", nên mối quan hệ <<extend>> là phù hợp. Use Case \"Soạn thảo\" là base use case, và \"Kiểm tra chính tả\" là extending use case."
+  },
+  {
+    "question": "66. Data Flow Diagram (DFD) khác UML chủ yếu ở điểm nào? (Mở rộng từ Study Guide)",
+    "a": "DFD tập trung vào luồng dữ liệu qua các quy trình, UML có nhiều loại biểu đồ mô tả các khía cạnh khác nhau (cấu trúc, hành vi, tương tác).",
+    "b": "DFD là chuẩn quốc tế, UML chỉ dùng nội bộ.",
+    "c": "DFD mô tả hướng đối tượng, UML mô tả hướng chức năng.",
+    "d": "DFD chỉ dùng cho hệ thống nhỏ, UML dùng cho hệ thống lớn.",
+    "answer": "A",
+    "theory": "DFD (Biểu đồ Luồng Dữ liệu) là một kỹ thuật mô hình hóa truyền thống, tập trung vào cách dữ liệu di chuyển qua hệ thống và được xử lý bởi các quy trình. UML là một ngôn ngữ mô hình hóa hướng đối tượng, cung cấp một bộ sưu tập phong phú các biểu đồ để mô tả các khía cạnh khác nhau của hệ thống."
+  },
+  {
+    "question": "67. Khi nào việc sử dụng DFD có thể phù hợp hơn UML? (Mở rộng từ Study Guide)",
+    "a": "Khi cần mô tả chi tiết các lớp và thừa kế.",
+    "b": "Khi cần mô tả trạng thái của đối tượng.",
+    "c": "Khi hệ thống chủ yếu là xử lý dữ liệu và muốn tập trung vào việc dữ liệu di chuyển và biến đổi như thế nào qua các quy trình.",
+    "d": "Khi cần mô tả tương tác người dùng chi tiết theo thời gian.",
+    "answer": "C",
+    "theory": "DFD đặc biệt hữu ích cho các hệ thống có luồng dữ liệu phức tạp, nơi việc hiểu cách dữ liệu được nhập, xử lý, lưu trữ và xuất ra là quan trọng. Nó cung cấp một cái nhìn tổng quan tốt về dòng chảy dữ liệu trong hệ thống."
+  },
+  {
+    "question": "68. Việc liên kết thông tin giữa các biểu đồ UML (ví dụ: Use Case -> Sequence -> Class) nhằm mục đích gì? (Mở rộng từ Study Guide)",
+    "a": "Tạo ra sự dư thừa thông tin không cần thiết.",
+    "b": "Đảm bảo tính nhất quán, đầy đủ và khả năng truy vết nguồn gốc yêu cầu qua các giai đoạn phân tích, thiết kế.",
+    "c": "Chỉ để làm cho bộ tài liệu trông đầy đặn hơn.",
+    "d": "Gây khó khăn cho việc bảo trì mô hình.",
+    "answer": "B",
+    "theory": "Liên kết thông tin giữa các biểu đồ UML (ví dụ: một Use Case được hiện thực hóa bởi một số Sequence Diagrams, các đối tượng trong Sequence Diagram là instances của các Classes) giúp đảm bảo tính nhất quán và đầy đủ của mô hình. Nó cũng cho phép truy vết yêu cầu từ các mô hình mức cao đến các mô hình chi tiết hơn."
+  },
+  {
+    "question": "69. Đâu là một công cụ phổ biến hỗ trợ vẽ sơ đồ UML? (Mở rộng từ Study Guide)",
+    "a": "Microsoft Word",
+    "b": "Visual Paradigm / Enterprise Architect / StarUML / Lucidchart",
+    "c": "Adobe Photoshop",
+    "d": "Notepad++",
+    "answer": "B",
+    "theory": "Có nhiều công cụ CASE (Computer-Aided Software Engineering) hỗ trợ vẽ và quản lý mô hình UML. Các công cụ phổ biến bao gồm Visual Paradigm, Enterprise Architect, StarUML, Lucidchart, Draw.io, và nhiều công cụ khác."
+  },
+  {
+    "question": "70. Việc đánh giá và kiểm tra mô hình UML (ví dụ: qua trao đổi nhóm) quan trọng vì sao? (Mở rộng từ Study Guide)",
+    "a": "Để tìm ra lỗi sai, sự thiếu nhất quán, hoặc các điểm cần cải thiện trong mô hình trước khi chuyển sang giai đoạn hiện thực.",
+    "b": "Chỉ là một thủ tục hình thức không có giá trị thực tế.",
+    "c": "Để xác định ai là người vẽ mô hình tốt nhất.",
+    "d": "Để kéo dài thời gian dự án.",
+    "answer": "A",
+    "theory": "Đánh giá và kiểm tra mô hình UML (ví dụ: thông qua walkthroughs, inspections) giúp phát hiện sớm các lỗi, thiếu sót, hoặc sự không nhất quán trong thiết kế. Việc này giúp cải thiện chất lượng mô hình và giảm chi phí sửa lỗi ở các giai đoạn sau."
+  },
+  {
+    "question": "71. Mô hình hóa giúp ích gì trong việc chuyển đổi từ giai đoạn phân tích yêu cầu sang thiết kế chi tiết? (Mở rộng từ Study Guide)",
+    "a": "Cung cấp một cầu nối trực quan, cấu trúc hóa các yêu cầu thành các thành phần thiết kế ban đầu (lớp, module, tương tác).",
+    "b": "Không có vai trò gì trong việc chuyển đổi này.",
+    "c": "Chỉ giúp xác định yêu cầu, không liên quan đến thiết kế.",
+    "d": "Làm phức tạp hóa quá trình chuyển đổi.",
+    "answer": "A",
+    "theory": "Các mô hình được tạo ra trong giai đoạn phân tích (ví dụ: Use Case, mô hình khái niệm) cung cấp đầu vào và cơ sở để phát triển các mô hình thiết kế chi tiết hơn (ví dụ: Biểu đồ Lớp chi tiết, Biểu đồ Tuần tự). Mô hình hóa giúp cấu trúc hóa quá trình chuyển đổi này."
+  },
+  {
+    "question": "72. Việc sử dụng Al (Trí tuệ nhân tạo) trong mô hình hóa hệ thống có tiềm năng gì? (Mở rộng từ Study Guide)",
+    "a": "Tự động tạo mô hình UML từ mô tả ngôn ngữ tự nhiên, kiểm tra tính nhất quán, đề xuất cải tiến.",
+    "b": "Thay thế hoàn toàn vai trò của kỹ sư phần mềm.",
+    "c": "Chỉ dùng để vẽ các biểu đồ đẹp hơn.",
+    "d": "Làm tăng chi phí mô hình hóa mà không mang lại lợi ích.",
+    "answer": "A",
+    "theory": "AI có tiềm năng hỗ trợ mô hình hóa bằng cách tự động hóa một số tác vụ như tạo mô hình từ văn bản, phân tích tính nhất quán của mô hình, gợi ý các mẫu thiết kế, hoặc thậm chí tối ưu hóa thiết kế dựa trên các ràng buộc."
+  },
+  {
+    "question": "73. Đâu KHÔNG phải là lợi ích của việc mô hình hóa hệ thống?",
+    "a": "Cải thiện giao tiếp giữa các bên liên quan.",
+    "b": "Giúp hiểu rõ hơn về hệ thống.",
+    "c": "Hỗ trợ phân tích và thiết kế hệ thống.",
+    "d": "Đảm bảo 100% không có lỗi trong phần mềm cuối cùng.",
+    "answer": "D",
+    "theory": "Mô hình hóa là một công cụ mạnh mẽ giúp hiểu, phân tích, thiết kế và giao tiếp về hệ thống. Tuy nhiên, nó không thể đảm bảo 100% rằng phần mềm cuối cùng sẽ không có lỗi. Chất lượng phần mềm còn phụ thuộc vào nhiều yếu tố khác như hiện thực, kiểm thử."
+  },
+  {
+    "question": "74. Khi mô hình hóa tương tác người dùng, yếu tố nào là quan trọng nhất cần xem xét?",
+    "a": "Ngôn ngữ lập trình sẽ sử dụng.",
+    "b": "Cách người dùng thực hiện các nhiệm vụ của họ thông qua hệ thống (luồng công việc, các bước).",
+    "c": "Cấu trúc cơ sở dữ liệu chi tiết.",
+    "d": "Thuật toán sắp xếp được sử dụng bên trong.",
+    "answer": "B",
+    "theory": "Khi mô hình hóa tương tác người dùng (ví dụ: bằng Use Cases, Sequence Diagrams, Activity Diagrams), việc hiểu rõ các nhiệm vụ (tasks) mà người dùng muốn thực hiện và các bước họ đi qua trong hệ thống để hoàn thành các nhiệm vụ đó là rất quan trọng."
+  },
+  {
+    "question": "75. Mô hình nào tập trung vào \"ai làm gì\" và \"khi nào\"?",
+    "a": "Biểu đồ Lớp (Class Diagram)",
+    "b": "Biểu đồ Tuần tự (Sequence Diagram)",
+    "c": "Biểu đồ Component (Component Diagram)",
+    "d": "Biểu đồ Trạng thái (State Diagram)",
+    "answer": "B",
+    "theory": "Biểu đồ Tuần tự mô tả các đối tượng (ai) thực hiện các hành động (gửi thông điệp - làm gì) theo một trình tự thời gian cụ thể (khi nào)."
+  },
+  {
+    "question": "76. Mô hình nào tập trung vào \"cái gì tồn tại\" và \"mối quan hệ tĩnh giữa chúng\"?",
+    "a": "Biểu đồ Lớp (Class Diagram)",
+    "b": "Biểu đồ Tuần tự (Sequence Diagram)",
+    "c": "Biểu đồ Hoạt động (Activity Diagram)",
+    "d": "Biểu đồ Use Case (Use Case Diagram)",
+    "answer": "A",
+    "theory": "Biểu đồ Lớp mô tả các loại thực thể (lớp - cái gì tồn tại) trong hệ thống và các mối quan hệ tĩnh (như association, generalization) giữa chúng, không phụ thuộc vào thời gian."
+  },
+  {
+    "question": "77. Mô hình nào tập trung vào \"hành vi của một đối tượng thay đổi như thế nào theo thời gian\"?",
+    "a": "Biểu đồ Lớp (Class Diagram)",
+    "b": "Biểu đồ Triển khai (Deployment Diagram)",
+    "c": "Biểu đồ Trạng thái (State Machine Diagram)",
+    "d": "Biểu đồ Gói (Package Diagram)",
+    "answer": "C",
+    "theory": "Biểu đồ Trạng thái mô tả vòng đời của một đối tượng, cho thấy các trạng thái khác nhau mà nó có thể trải qua và các sự kiện gây ra sự chuyển đổi giữa các trạng thái đó theo thời gian."
+  },
+  {
+    "question": "78. Trong ví dụ về hệ thống MHC-PMS, \"Patient Record System\" đóng vai trò gì trong mô hình ngữ cảnh?",
+    "a": "Là một phần bên trong của MHC-PMS.",
+    "b": "Là một actor (hệ thống bên ngoài) tương tác với MHC-PMS.",
+    "c": "Là một quy trình nghiệp vụ.",
+    "d": "Là một lớp dữ liệu.",
+    "answer": "B",
+    "theory": "Trong mô hình ngữ cảnh, nếu \"Patient Record System\" là một hệ thống riêng biệt mà MHC-PMS cần tương tác (ví dụ: để lấy hoặc cập nhật thông tin bệnh nhân), thì nó sẽ được coi là một actor (hệ thống bên ngoài)."
+  },
+  {
+    "question": "79. Trong Biểu đồ Lớp của MHC-PMS (slide 204), mối quan hệ giữa \"Patient\" và \"Consultation\" thể hiện điều gì?",
+    "a": "Một Patient có thể có một hoặc nhiều (1..*) Consultation.",
+    "b": "Một Consultation chỉ thuộc về một Patient.",
+    "c": "Patient kế thừa từ Consultation.",
+    "d": "Consultation là một phần không thể tách rời của Patient (Composition).",
+    "answer": "A",
+    "theory": "Số lượng (multiplicity) 1..* ở phía Consultation trong mối quan hệ với Patient có nghĩa là một đối tượng Patient có thể liên kết với một hoặc nhiều đối tượng Consultation."
+  },
+  {
+    "question": "80. Trong Biểu đồ Lớp của MHC-PMS (slide 204), mối quan hệ giữa \"Hospital Doctor\" và \"Doctor\" là loại quan hệ gì?",
+    "a": "Aggregation",
+    "b": "Composition",
+    "c": "Association",
+    "d": "Generalization (Hospital Doctor là một loại Doctor)",
+    "answer": "D",
+    "theory": "Nếu \"Hospital Doctor\" là một loại hình cụ thể hơn của \"Doctor\", kế thừa các đặc điểm chung của \"Doctor\" và có thể có thêm các đặc điểm riêng, thì đây là mối quan hệ Generalization."
+  },
+  {
+    "question": "81. Mô hình hóa cấu trúc giúp trả lời câu hỏi nào sau đây?",
+    "a": "Hệ thống phản ứng với sự kiện X như thế nào?",
+    "b": "Các thành phần chính của hệ thống là gì và chúng liên kết với nhau ra sao?",
+    "c": "Người dùng A tương tác với hệ thống để thực hiện tác vụ B như thế nào?",
+    "d": "Hệ thống được sử dụng trong quy trình nghiệp vụ C như thế nào?",
+    "answer": "B",
+    "theory": "Mô hình hóa cấu trúc (ví dụ: Biểu đồ Lớp, Biểu đồ Component) tập trung vào việc xác định các thành phần chính của hệ thống (ví dụ: lớp, module) và cách chúng được tổ chức, liên kết tĩnh với nhau."
+  },
+  {
+    "question": "82. Mô hình hóa hành vi giúp trả lời câu hỏi nào sau đây?",
+    "a": "Hệ thống được tạo thành từ những lớp nào?",
+    "b": "Dữ liệu được lưu trữ ở đâu?",
+    "c": "Hệ thống thay đổi trạng thái hoặc thực hiện hành động gì khi có một sự kiện xảy ra?",
+    "d": "Ai là người dùng chính của hệ thống?",
+    "answer": "C",
+    "theory": "Mô hình hóa hành vi (ví dụ: Biểu đồ Trạng thái, Biểu đồ Hoạt động) tập trung vào cách hệ thống hoạt động và phản ứng với các sự kiện, mô tả sự thay đổi trạng thái hoặc các chuỗi hành động được thực hiện."
+  },
+  {
+    "question": "83. Việc định nghĩa rõ ràng \"ranh giới hệ thống\" trong mô hình ngữ cảnh có lợi ích gì?",
+    "a": "Giúp xác định phạm vi công việc, những gì cần phát triển và những gì là tương tác bên ngoài.",
+    "b": "Giúp xác định chi tiết các thuật toán bên trong.",
+    "c": "Giúp lựa chọn màu sắc cho giao diện người dùng.",
+    "d": "Giúp tối ưu hóa code ngay từ đầu.",
+    "answer": "A",
+    "theory": "Mô hình ngữ cảnh giúp xác định rõ ràng ranh giới của hệ thống, từ đó làm rõ phạm vi (scope) của dự án: những gì nằm bên trong hệ thống cần được phát triển và những gì nằm bên ngoài (actors, hệ thống khác) mà hệ thống cần tương tác."
+  },
+  {
+    "question": "84. Nếu một hệ thống có yêu cầu cao về độ tin cậy và khả năng chịu lỗi, mô hình tương tác giữa các thành phần cần phân tích kỹ điều gì?",
+    "a": "Màu sắc của các thành phần.",
+    "b": "Cách các thành phần xử lý lỗi, các kịch bản dự phòng khi một thành phần gặp sự cố.",
+    "c": "Số lượng lớp trong mỗi thành phần.",
+    "d": "Tên của các lập trình viên phát triển từng thành phần.",
+    "answer": "B",
+    "theory": "Đối với hệ thống yêu cầu độ tin cậy cao, việc phân tích mô hình tương tác (ví dụ: Biểu đồ Tuần tự) cần chú trọng đến cách các thành phần giao tiếp trong các tình huống lỗi, cách chúng phát hiện lỗi, xử lý ngoại lệ, và các cơ chế dự phòng để đảm bảo hệ thống vẫn hoạt động ổn định."
+  },
+  {
+    "question": "85. Trong Biểu đồ Trạng thái của lò vi sóng (slide 218), sự kiện \"Door Open\" khi đang ở trạng thái \"Operation\" sẽ dẫn đến trạng thái nào?",
+    "a": "Full Power",
+    "b": "Waiting",
+    "c": "Disabled",
+    "d": "Enabled",
+    "answer": "C",
+    "theory": "Dựa trên logic thông thường của lò vi sóng và các biểu đồ trạng thái tương tự, khi cửa lò được mở trong lúc đang hoạt động (Operation), lò sẽ chuyển sang trạng thái không hoạt động hoặc bị vô hiệu hóa (Disabled) để đảm bảo an toàn."
+  },
+  {
+    "question": "86. Trong Biểu đồ Trạng thái của lò vi sóng (slide 218), hành động \"Do: Set Power = 600\" thuộc về trạng thái nào?",
+    "a": "Waiting",
+    "b": "Half Power",
+    "c": "Full Power",
+    "d": "Set Time",
+    "answer": "B",
+    "theory": "Hành động \"Do: Set Power = 600\" là một hoạt động được thực hiện liên tục khi đối tượng đang ở trong một trạng thái cụ thể. Trong ví dụ lò vi sóng, đây có thể là trạng thái \"Half Power\" nếu 600W tương ứng với nửa công suất."
+  },
+  {
+    "question": "87. Mô hình hóa hệ thống có thể giúp phát hiện sớm các yêu cầu mâu thuẫn hoặc không đầy đủ không?",
+    "a": "Không, mô hình hóa chỉ dùng để vẽ.",
+    "b": "Có, việc trực quan hóa và phân tích các tương tác, cấu trúc, hành vi giúp dễ dàng nhận ra các điểm bất hợp lý.",
+    "c": "Chỉ giúp phát hiện yêu cầu mâu thuẫn, không phát hiện yêu cầu thiếu.",
+    "d": "Chỉ giúp khi hệ thống đã được lập trình xong.",
+    "answer": "B",
+    "theory": "Quá trình mô hình hóa đòi hỏi phải suy nghĩ kỹ lưỡng về các khía cạnh của hệ thống. Việc trực quan hóa này giúp dễ dàng phát hiện các mâu thuẫn logic, các yêu cầu không đầy đủ hoặc các tình huống chưa được xem xét, từ đó cải thiện chất lượng yêu cầu."
+  },
+  {
+    "question": "88. Tại sao việc hiểu các \"stakeholder\" (bên liên quan) khác nhau lại quan trọng khi mô hình hóa?",
+    "a": "Mỗi stakeholder có thể có những yêu cầu và góc nhìn khác nhau về hệ thống, cần được xem xét để tạo ra mô hình phù hợp.",
+    "b": "Chỉ để biết ai sẽ trả tiền cho dự án.",
+    "c": "Để xác định ai sẽ là người kiểm thử cuối cùng.",
+    "d": "Không quan trọng, chỉ cần tập trung vào yêu cầu kỹ thuật.",
+    "answer": "A",
+    "theory": "Các stakeholder khác nhau (người dùng, quản lý, nhà phát triển, khách hàng) có những mối quan tâm và góc nhìn khác nhau đối với hệ thống. Hiểu rõ các stakeholder giúp tạo ra các mô hình đáp ứng được nhu cầu đa dạng và đảm bảo hệ thống thành công."
+  },
+  {
+    "question": "89. Sự khác biệt giữa mô hình hóa trong giai đoạn phân tích và mô hình hóa trong giai đoạn thiết kế là gì?",
+    "a": "Phân tích tập trung vào CÁI GÌ (yêu cầu), thiết kế tập trung vào CÁCH THỨC (giải pháp). Mô hình phân tích thường trừu tượng hơn, mô hình thiết kế chi tiết hơn.",
+    "b": "Phân tích dùng UML, thiết kế dùng DFD.",
+    "c": "Phân tích do khách hàng làm, thiết kế do lập trình viên làm.",
+    "d": "Không có sự khác biệt nào.",
+    "answer": "A",
+    "theory": "Mô hình hóa trong giai đoạn phân tích tập trung vào việc hiểu và đặc tả yêu cầu của hệ thống (CÁI GÌ hệ thống nên làm). Mô hình hóa trong giai đoạn thiết kế tập trung vào việc xác định giải pháp kỹ thuật để hiện thực hóa các yêu cầu đó (CÁCH THỨC hệ thống sẽ làm). Mô hình thiết kế thường chi tiết hơn và gần với việc hiện thực hơn."
+  },
+  {
+    "question": "90. Mô hình hóa có vai trò gì trong việc bảo trì và tiến hóa phần mềm?",
+    "a": "Không có vai trò gì, chỉ dùng lúc phát triển ban đầu.",
+    "b": "Giúp người bảo trì hiểu cấu trúc và hành vi của hệ thống hiện tại, đánh giá tác động của thay đổi dễ dàng hơn.",
+    "c": "Chỉ giúp xác định lỗi cần sửa.",
+    "d": "Làm cho việc bảo trì khó khăn hơn vì phải cập nhật mô hình.",
+    "answer": "B",
+    "theory": "Các mô hình hệ thống (đặc biệt là các mô hình \"as-is\" và mô hình thiết kế) là tài liệu quý giá cho việc bảo trì và tiến hóa. Chúng giúp đội ngũ bảo trì nhanh chóng hiểu được cấu trúc, hành vi của hệ thống, từ đó đánh giá tác động của các thay đổi và thực hiện sửa lỗi hoặc nâng cấp hiệu quả hơn."
+  },
+  {
+    "question": "91. Đâu là hạn chế tiềm ẩn của việc quá phụ thuộc vào mô hình hóa?",
+    "a": "Mô hình có thể trở nên quá phức tạp, khó bảo trì và tốn nhiều thời gian để tạo ra mà không tương xứng với lợi ích.",
+    "b": "Mô hình luôn luôn đơn giản và dễ hiểu.",
+    "c": "Mô hình luôn đảm bảo chất lượng code tốt.",
+    "d": "Mô hình giúp giảm thời gian phát triển trong mọi trường hợp.",
+    "answer": "A",
+    "theory": "Nếu không được kiểm soát, việc mô hình hóa có thể dẫn đến tạo ra các mô hình quá chi tiết, phức tạp (over-modeling), gây tốn kém thời gian, công sức để tạo và duy trì mà không mang lại lợi ích tương xứng. Cần có sự cân bằng và lựa chọn mức độ chi tiết phù hợp."
+  },
+  {
+    "question": "92. Khi một lớp A \"biết\" về lớp B (ví dụ: có một thuộc tính kiểu B), đây là loại mối quan hệ nào trong Biểu đồ Lớp?",
+    "a": "Generalization",
+    "b": "Association (Liên kết)",
+    "c": "Dependency (Phụ thuộc - nếu chỉ sử dụng B trong phương thức)",
+    "d": "Realization (Hiện thực hóa - thường với Interface)",
+    "answer": "B",
+    "theory": "Nếu lớp A có một thuộc tính (instance variable) kiểu lớp B, điều này có nghĩa là mỗi đối tượng của lớp A sẽ có một tham chiếu hoặc chứa một đối tượng của lớp B. Đây là một dạng của mối quan hệ Association (liên kết) giữa A và B, cụ thể hơn có thể là Aggregation hoặc Composition tùy thuộc vào ngữ nghĩa."
+  },
+  {
+    "question": "93. Việc chọn mức độ chi tiết phù hợp cho một mô hình UML phụ thuộc vào yếu tố nào?",
+    "a": "Luôn phải vẽ chi tiết nhất có thể.",
+    "b": "Chỉ cần vẽ ở mức tổng quan nhất.",
+    "c": "Mục đích của mô hình và đối tượng người xem (ví dụ: mô hình cho khách hàng khác mô hình cho lập trình viên).",
+    "d": "Số lượng lớp trong hệ thống.",
+    "answer": "C",
+    "theory": "Mức độ chi tiết của một mô hình UML nên được quyết định bởi mục đích sử dụng mô hình đó (ví dụ: để giao tiếp với khách hàng, để hướng dẫn lập trình, để phân tích rủi ro) và đối tượng sẽ xem mô hình đó. Không phải lúc nào chi tiết hơn cũng tốt hơn."
+  },
+  {
+    "question": "94. Biểu đồ nào thể hiện tốt nhất sự phân cấp chức năng hoặc tổ chức các thành phần lớn của hệ thống?",
+    "a": "Biểu đồ Trạng thái",
+    "b": "Biểu đồ Gói (Package Diagram) hoặc Biểu đồ Component",
+    "c": "Biểu đồ Tuần tự",
+    "d": "Biểu đồ Thời gian (Timing Diagram)",
+    "answer": "B",
+    "theory": "Biểu đồ Gói (Package Diagram) dùng để tổ chức các phần tử của mô hình (như lớp, use case) thành các nhóm có ngữ nghĩa, thể hiện sự phân cấp và phụ thuộc giữa các gói. Biểu đồ Component cũng thể hiện sự tổ chức của các thành phần lớn và giao diện của chúng."
+  },
+  {
+    "question": "95. Trong các góc nhìn hệ thống, góc nhìn nào quan tâm nhất đến hiệu năng và xử lý đồng thời?",
+    "a": "Góc nhìn cấu trúc (Structural perspective)",
+    "b": "Góc nhìn hành vi (Behavioral perspective) - đặc biệt qua Biểu đồ Hoạt động.",
+    "c": "Góc nhìn tương tác (Interaction perspective) - qua Biểu đồ Tuần tự cũng thể hiện phần nào.",
+    "d": "Góc nhìn ngữ cảnh (Context perspective)",
+    "answer": "B",
+    "theory": "Góc nhìn hành vi, đặc biệt thông qua Biểu đồ Hoạt động với các luồng song song (fork/join) hoặc Biểu đồ Tuần tự với các thông điệp không đồng bộ, có thể giúp phân tích các vấn đề liên quan đến hiệu năng và xử lý đồng thời. Góc nhìn triển khai cũng liên quan đến hiệu năng."
+  },
+  {
+    "question": "96. Mô hình hóa hành vi giúp xác định các yêu cầu phi chức năng nào?",
+    "a": "Yêu cầu về giao diện người dùng.",
+    "b": "Yêu cầu về hiệu năng (performance), thời gian đáp ứng (response time).",
+    "c": "Yêu cầu về khả năng bảo trì.",
+    "d": "Yêu cầu về ngôn ngữ lập trình.",
+    "answer": "B",
+    "theory": "Mô hình hóa hành vi (ví dụ: Biểu đồ Tuần tự có thể chú thích thời gian, Biểu đồ Hoạt động có thể phân tích thông lượng) có thể giúp làm rõ và phân tích các yêu cầu phi chức năng liên quan đến hiệu năng, thời gian đáp ứng, và khả năng xử lý đồng thời."
+  },
+  {
+    "question": "97. Việc sử dụng \"Stereotype\" (ví dụ: <<system>>, <<interface>>) trong UML nhằm mục đích gì?",
+    "a": "Làm cho biểu đồ khó đọc hơn.",
+    "b": "Mở rộng ngữ nghĩa của các phần tử UML chuẩn để biểu diễn các khái niệm cụ thể hơn.",
+    "c": "Chỉ để trang trí cho biểu đồ.",
+    "d": "Thay thế hoàn toàn các phần tử UML cơ bản.",
+    "answer": "B",
+    "theory": "Stereotype là một cơ chế mở rộng của UML, cho phép người dùng định nghĩa các loại phần tử mới dựa trên các phần tử UML hiện có. Nó giúp tùy biến UML để phù hợp hơn với một miền vấn đề cụ thể hoặc một phương pháp luận cụ thể bằng cách thêm ngữ nghĩa mới."
+  },
+  {
+    "question": "98. Nếu cần mô tả một quy trình có sự tham gia của nhiều bộ phận/vai trò khác nhau và muốn làm rõ trách nhiệm của từng bên, nên sử dụng yếu tố nào trong Biểu đồ Hoạt động?",
+    "a": "Decision node (Nút quyết định)",
+    "b": "Fork/Join node (Nút rẽ/hợp nhất luồng song song)",
+    "c": "Swimlanes (Làn bơi - phân chia theo vai trò/bộ phận)",
+    "d": "Initial node (Nút bắt đầu)",
+    "answer": "C",
+    "theory": "Swimlanes (Làn bơi) trong Biểu đồ Hoạt động được sử dụng để phân chia các hoạt động theo các vai trò, bộ phận hoặc actor chịu trách nhiệm thực hiện chúng, giúp làm rõ trách nhiệm và sự phối hợp giữa các bên."
+  },
+  {
+    "question": "99. Ưu điểm của việc mô hình hóa cấu trúc dữ liệu (ví dụ: dùng Biểu đồ Lớp chỉ với thuộc tính) là gì?",
+    "a": "Giúp thiết kế giao diện người dùng hiệu quả.",
+    "b": "Giúp hiểu rõ cách dữ liệu được tổ chức, lưu trữ và mối quan hệ giữa các thực thể dữ liệu, làm cơ sở cho thiết kế CSDL.",
+    "c": "Giúp xác định các sự kiện hệ thống.",
+    "d": "Giúp tối ưu hóa thuật toán tìm kiếm.",
+    "answer": "B",
+    "theory": "Mô hình hóa cấu trúc dữ liệu, ví dụ bằng Biểu đồ Lớp chỉ tập trung vào các lớp và thuộc tính của chúng (đôi khi được gọi là conceptual model hoặc domain model), giúp làm rõ các thực thể dữ liệu quan trọng, các thuộc tính của chúng và mối quan hệ giữa chúng. Đây là đầu vào quan trọng cho việc thiết kế cơ sở dữ liệu."
+  },
+  {
+    "question": "100. Mô hình hóa hệ thống là một kỹ năng quan trọng đối với vai trò nào trong đội ngũ phát triển phần mềm?",
+    "a": "Chỉ Lập trình viên (Programmer).",
+    "b": "Chỉ Người kiểm thử (Tester).",
+    "c": "Chỉ Quản lý dự án (Project Manager).",
+    "d": "Kỹ sư phần mềm, Nhà phân tích nghiệp vụ, Kiến trúc sư hệ thống (Software Engineer, Business Analyst, System Architect).",
+    "answer": "D",
+    "theory": "Mô hình hóa hệ thống là một kỹ năng cần thiết cho nhiều vai trò trong phát triển phần mềm. Nhà phân tích nghiệp vụ sử dụng mô hình để hiểu và đặc tả yêu cầu. Kiến trúc sư hệ thống sử dụng mô hình để thiết kế cấu trúc tổng thể. Kỹ sư phần mềm (developers) sử dụng và tạo ra các mô hình chi tiết hơn để hướng dẫn việc hiện thực. Testers cũng có thể sử dụng mô hình để thiết kế test case."
+  }
+]

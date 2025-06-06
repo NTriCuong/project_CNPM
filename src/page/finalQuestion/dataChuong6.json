@@ -1,0 +1,902 @@
+[
+     {
+    "question": "1. Hoạt động sáng tạo nhằm xác định các thành phần của phần mềm và mối liên kết giữa chúng, dựa trên yêu cầu khách hàng được gọi là gì?",
+    "a": "Hiện thực (Implementation)",
+    "b": "Kiểm thử (Testing)",
+    "c": "Thiết kế (Design)",
+    "d": "Bảo trì (Maintenance)",
+    "answer": "C",
+    "theory": "Thiết kế phần mềm là quá trình định nghĩa kiến trúc, các thành phần, module, giao diện, và dữ liệu cho một hệ thống phần mềm để đáp ứng các yêu cầu đã được xác định."
+  },
+  {
+    "question": "2. Quá trình hiện thực hóa thiết kế thành chương trình chạy được gọi là gì?",
+    "a": "Phân tích yêu cầu (Requirements Analysis)",
+    "b": "Thiết kế (Design)",
+    "c": "Hiện thực (Implementation)",
+    "d": "Đặc tả (Specification)",
+    "answer": "C",
+    "theory": "Hiện thực (Implementation) hay lập trình (coding) là quá trình chuyển đổi các đặc tả thiết kế thành mã nguồn có thể thực thi được bằng một ngôn ngữ lập trình cụ thể."
+  },
+  {
+    "question": "3. Mối quan hệ giữa Thiết kế và Hiện thực trong phát triển phần mềm thường như thế nào?",
+    "a": "Là hai giai đoạn hoàn toàn tách biệt, tuyến tính.",
+    "b": "Hiện thực luôn diễn ra trước Thiết kế.",
+    "c": "Là các hoạt động đan xen, lặp đi lặp lại.",
+    "d": "Thiết kế chỉ cần thiết cho các dự án lớn.",
+    "answer": "C",
+    "theory": "Trong các quy trình phát triển hiện đại, thiết kế và hiện thực thường là các hoạt động lặp đi lặp lại và đan xen. Thiết kế ban đầu có thể được hiện thực một phần, sau đó dựa trên phản hồi và hiểu biết mới, thiết kế lại được tinh chỉnh và hiện thực tiếp."
+  },
+  {
+    "question": "4. Phương pháp chính được đề cập trong outline để cấu trúc phần mềm là gì?",
+    "a": "Lập trình hướng thủ tục (Procedural Programming)",
+    "b": "Thiết kế hướng đối tượng (Object-Oriented Design - OOD) sử dụng UML",
+    "c": "Phát triển dựa trên component (Component-Based Development)",
+    "d": "Lập trình Agile (Agile Programming)",
+    "answer": "B",
+    "theory": "Thiết kế hướng đối tượng (OOD) là một phương pháp thiết kế phần mềm tập trung vào việc xác định các lớp và đối tượng, cùng với các thuộc tính, hành vi và mối quan hệ của chúng. UML là một ngôn ngữ mô hình hóa thường được sử dụng để biểu diễn các thiết kế OOD."
+  },
+  {
+    "question": "5. Giai đoạn đầu tiên trong quy trình thiết kế OOD thường là gì?",
+    "a": "Nhận diện lớp/đối tượng chính.",
+    "b": "Thiết kế kiến trúc hệ thống.",
+    "c": "Phát triển mô hình thiết kế chi tiết.",
+    "d": "Xác định ngữ cảnh và tương tác của hệ thống.",
+    "answer": "D",
+    "theory": "Trước khi đi vào thiết kế chi tiết, một bước quan trọng trong OOD là hiểu rõ ngữ cảnh mà hệ thống sẽ hoạt động (ví dụ: thông qua mô hình ngữ cảnh, use cases) và cách nó sẽ tương tác với các thực thể bên ngoài. Điều này giúp xác định các yêu cầu và ràng buộc ban đầu."
+  },
+  {
+    "question": "6. Việc hiểu môi trường hoạt động và cách hệ thống tương tác với các hệ thống khác/người dùng (Xác định ngữ cảnh và tương tác) thường sử dụng công cụ/mô hình nào?",
+    "a": "Chỉ Biểu đồ lớp (Class Diagram).",
+    "b": "Chỉ Biểu đồ trạng thái (State Diagram).",
+    "c": "Mô hình ngữ cảnh (Context Model) và Biểu đồ Use Case.",
+    "d": "Mô hình triển khai (Deployment Diagram).",
+    "answer": "C",
+    "theory": "Mô hình ngữ cảnh giúp xác định ranh giới và các tương tác bên ngoài của hệ thống. Biểu đồ Use Case mô tả các chức năng mà hệ thống cung cấp cho người dùng (actors) và cách họ tương tác với hệ thống, giúp làm rõ ngữ cảnh sử dụng."
+  },
+  {
+    "question": "7. Mục đích chính của giai đoạn \"Thiết kế kiến trúc hệ thống\" trong OOD là gì?",
+    "a": "Viết mã chi tiết cho từng lớp.",
+    "b": "Xác định các thành phần chính (subsystems), cách chúng giao tiếp và lựa chọn mẫu kiến trúc phù hợp.",
+    "c": "Thu thập yêu cầu từ khách hàng.",
+    "d": "Kiểm thử giao diện người dùng.",
+    "answer": "B",
+    "theory": "Thiết kế kiến trúc hệ thống trong OOD tập trung vào việc xác định cấu trúc tổng thể của hệ thống, bao gồm việc chia hệ thống thành các thành phần lớn (subsystems hoặc packages), xác định giao diện và cách chúng tương tác, và lựa chọn các mẫu kiến trúc (architectural patterns) phù hợp."
+  },
+  {
+    "question": "8. Các mẫu kiến trúc nào thường được xem xét trong giai đoạn thiết kế kiến trúc hệ thống?",
+    "a": "Chỉ MVC.",
+    "b": "Chỉ Pipe-and-Filter.",
+    "c": "Client-Server, Phân tầng (Layered), MVC, Repository, v.v.",
+    "d": "Chỉ Microservices.",
+    "answer": "C",
+    "theory": "Trong giai đoạn thiết kế kiến trúc, các nhà thiết kế sẽ xem xét và lựa chọn các mẫu kiến trúc phù hợp với yêu cầu và đặc điểm của hệ thống. Các mẫu phổ biến bao gồm Client-Server, Layered, Model-View-Controller (MVC), Repository, Pipe-and-Filter, Microservices, v.v."
+  },
+  {
+    "question": "9. Phương pháp nào KHÔNG được đề cập trong outline để nhận diện lớp/đối tượng chính?",
+    "a": "Phân tích ngữ pháp dựa trên mô tả hệ thống.",
+    "b": "Nhận diện các thực thể hữu hình trong phạm vi ứng dụng.",
+    "c": "Phân tích hành vi và các đối tượng tham gia.",
+    "d": "Phân tích hiệu năng hệ thống.",
+    "answer": "D",
+    "theory": "Các phương pháp phổ biến để nhận diện lớp/đối tượng bao gồm phân tích ngữ pháp (tìm danh từ, động từ), nhận diện các khái niệm và thực thể trong miền vấn đề, và phân tích các hành vi/tương tác. Phân tích hiệu năng thường liên quan đến đánh giá kiến trúc hoặc thiết kế, không phải là phương pháp chính để nhận diện lớp."
+  },
+  {
+    "question": "10. Giai đoạn \"Phát triển mô hình thiết kế\" trong OOD tập trung vào việc gì?",
+    "a": "Chỉ xác định yêu cầu phi chức năng.",
+    "b": "Chỉ vẽ mô hình ngữ cảnh.",
+    "c": "Chi tiết hóa cấu trúc (mô hình tĩnh) và hành vi (mô hình động) của hệ thống.",
+    "d": "Lựa chọn ngôn ngữ lập trình.",
+    "answer": "C",
+    "theory": "Sau khi có kiến trúc tổng thể, giai đoạn phát triển mô hình thiết kế tập trung vào việc chi tiết hóa các thành phần. Mô hình tĩnh (ví dụ: Biểu đồ Lớp chi tiết) mô tả cấu trúc các lớp, thuộc tính, phương thức, mối quan hệ. Mô hình động (ví dụ: Biểu đồ Tuần tự, Biểu đồ Trạng thái) mô tả hành vi và tương tác của các đối tượng."
+  },
+  {
+    "question": "11. Mô hình tĩnh trong thiết kế OOD thường được thể hiện bằng biểu đồ UML nào?",
+    "a": "Biểu đồ Hoạt động (Activity Diagram).",
+    "b": "Biểu đồ Tuần tự (Sequence Diagram).",
+    "c": "Biểu đồ Lớp (Class Diagram).",
+    "d": "Biểu đồ Use Case (Use Case Diagram).",
+    "answer": "C",
+    "theory": "Biểu đồ Lớp (Class Diagram) là công cụ chính để mô tả mô hình tĩnh trong OOD, thể hiện các lớp, thuộc tính, phương thức và các mối quan hệ tĩnh giữa chúng."
+  },
+  {
+    "question": "12. Biểu đồ lớp (Class Diagram) KHÔNG thể hiện thông tin nào sau đây?",
+    "a": "Tên các lớp đối tượng.",
+    "b": "Các thuộc tính của lớp.",
+    "c": "Trình tự tương tác theo thời gian giữa các đối tượng.",
+    "d": "Các phương thức của lớp và mối quan hệ giữa các lớp.",
+    "answer": "C",
+    "theory": "Biểu đồ Lớp mô tả cấu trúc tĩnh. Trình tự tương tác theo thời gian giữa các đối tượng là một khía cạnh động, thường được mô tả bằng Biểu đồ Tuần tự hoặc các biểu đồ tương tác khác."
+  },
+  {
+    "question": "13. Các loại mối quan hệ nào thường được biểu diễn trong Biểu đồ lớp?",
+    "a": "Chỉ thừa kế (Generalization).",
+    "b": "Chỉ liên kết (Association).",
+    "c": "Association, Aggregation, Composition, Generalization.",
+    "d": "Chỉ phụ thuộc (Dependency).",
+    "answer": "C",
+    "theory": "Biểu đồ Lớp có thể biểu diễn nhiều loại mối quan hệ tĩnh giữa các lớp, bao gồm: Association (liên kết chung), Aggregation (cộng gộp), Composition (bao gộp/thành phần), Generalization (thừa kế), và Dependency (phụ thuộc)."
+  },
+  {
+    "question": "14. Mô hình động trong thiết kế OOD mô tả khía cạnh nào của hệ thống?",
+    "a": "Cấu trúc tổ chức các module mã nguồn.",
+    "b": "Cách các đối tượng tương tác với nhau theo thời gian hoặc thay đổi trạng thái.",
+    "c": "Cách triển khai hệ thống lên phần cứng.",
+    "d": "Mối quan hệ tĩnh giữa các lớp.",
+    "answer": "B",
+    "theory": "Mô hình động trong OOD tập trung vào hành vi của hệ thống khi nó chạy, bao gồm cách các đối tượng tương tác (ví dụ: gửi thông điệp), trình tự các tương tác, và sự thay đổi trạng thái của các đối tượng theo thời gian."
+  },
+  {
+    "question": "15. Biểu đồ UML nào dùng để mô tả tương tác theo thời gian giữa các đối tượng?",
+    "a": "Biểu đồ Lớp (Class Diagram).",
+    "b": "Biểu đồ Trạng thái (State Diagram).",
+    "c": "Biểu đồ Hoạt động (Activity Diagram).",
+    "d": "Biểu đồ Tuần tự (Sequence Diagram).",
+    "answer": "D",
+    "theory": "Biểu đồ Tuần tự (Sequence Diagram) là một loại biểu đồ tương tác, được sử dụng để mô tả cách các đối tượng giao tiếp với nhau bằng cách gửi và nhận thông điệp theo một trình tự thời gian cụ thể."
+  },
+  {
+    "question": "16. Biểu đồ UML nào dùng để mô tả sự thay đổi trạng thái của một đối tượng khi phản ứng với sự kiện?",
+    "a": "Biểu đồ Lớp (Class Diagram).",
+    "b": "Biểu đồ Tuần tự (Sequence Diagram).",
+    "c": "Biểu đồ Trạng thái (State Diagram).",
+    "d": "Biểu đồ Component (Component Diagram).",
+    "answer": "C",
+    "theory": "Biểu đồ Trạng thái (State Machine Diagram) mô tả các trạng thái khác nhau mà một đối tượng có thể trải qua trong vòng đời của nó, các sự kiện gây ra sự chuyển đổi giữa các trạng thái, và các hành động được thực hiện."
+  },
+  {
+    "question": "17. \"Đặc tả giao diện đối tượng\" (Interface Specification) quan trọng vì sao?",
+    "a": "Chỉ để tăng số lượng tài liệu.",
+    "b": "Cho phép các đối tượng/component được thiết kế và phát triển song song, độc lập.",
+    "c": "Chỉ cần thiết cho các hệ thống nhỏ.",
+    "d": "Để mô tả chi tiết thuật toán bên trong.",
+    "answer": "B",
+    "theory": "Đặc tả giao diện (interface) định nghĩa \"hợp đồng\" về cách một đối tượng hoặc component có thể được sử dụng bởi các đối tượng/component khác, mà không cần biết chi tiết hiện thực bên trong. Điều này cho phép phát triển song song, độc lập và dễ dàng thay thế các hiện thực."
+  },
+  {
+    "question": "18. Mẫu thiết kế (Design Pattern) là gì?",
+    "a": "Một đoạn mã nguồn cụ thể giải quyết một vấn đề.",
+    "b": "Một cách tái sử dụng kiến thức trừu tượng về một vấn đề thiết kế thường gặp và giải pháp đã được kiểm chứng.",
+    "c": "Một quy trình quản lý dự án.",
+    "d": "Một công cụ vẽ sơ đồ UML.",
+    "answer": "B",
+    "theory": "Mẫu thiết kế là một giải pháp chung, có thể tái sử dụng cho một vấn đề thường gặp trong một ngữ cảnh thiết kế phần mềm cụ thể. Nó không phải là một đoạn code cụ thể mà là một mô tả hoặc template về cách giải quyết vấn đề."
+  },
+  {
+    "question": "19. Các thành phần cơ bản của một mô tả mẫu thiết kế thường bao gồm:",
+    "a": "Chỉ Tên và Mã nguồn ví dụ.",
+    "b": "Chỉ Mục đích và Ưu điểm.",
+    "c": "Tên, Mô tả vấn đề, Mô tả giải pháp (template), Hệ quả (Consequences).",
+    "d": "Tên lớp, Thuộc tính, Phương thức.",
+    "answer": "C",
+    "theory": "Một mô tả mẫu thiết kế đầy đủ thường bao gồm: Tên mẫu, Bối cảnh/Vấn đề mà mẫu giải quyết, Giải pháp (cấu trúc, các thành phần tham gia, và sự tương tác của chúng), và Hệ quả (ưu điểm, nhược điểm, và các đánh đổi khi áp dụng mẫu)."
+  },
+  {
+    "question": "20. Mục đích chính của mẫu Observer là gì?",
+    "a": "Đơn giản hóa việc truy cập một hệ thống con phức tạp.",
+    "b": "Tách rời việc biểu diễn trạng thái (View) khỏi đối tượng dữ liệu (Model) để dễ dàng cập nhật và thay đổi cách hiển thị.",
+    "c": "Cung cấp cách duyệt qua các phần tử của một tập hợp mà không cần biết cấu trúc bên trong.",
+    "d": "Thêm chức năng mới vào đối tượng một cách linh hoạt.",
+    "answer": "B",
+    "theory": "Mẫu Observer định nghĩa một mối quan hệ phụ thuộc một-nhiều giữa các đối tượng, sao cho khi một đối tượng (Subject/Model) thay đổi trạng thái, tất cả các đối tượng phụ thuộc (Observers/Views) của nó sẽ được thông báo và cập nhật tự động. Điều này giúp tách rời Subject và Observers."
+  },
+  {
+    "question": "21. Trong mẫu Observer, thành phần nào chịu trách nhiệm lưu trữ trạng thái và thông báo cho các thành phần khác khi trạng thái thay đổi?",
+    "a": "Observer (trừu tượng).",
+    "b": "ConcreteObserver (cụ thể).",
+    "c": "Subject (trừu tượng) / ConcreteSubject (cụ thể).",
+    "d": "Controller.",
+    "answer": "C",
+    "theory": "Subject (hay Observable) là thành phần nắm giữ trạng thái và có danh sách các Observers. Khi trạng thái của Subject thay đổi, nó sẽ thông báo cho tất cả các Observers đã đăng ký."
+  },
+  {
+    "question": "22. Trong mẫu Observer, thành phần nào chịu trách nhiệm nhận thông báo và cập nhật cách hiển thị của nó?",
+    "a": "Subject (trừu tượng).",
+    "b": "ConcreteSubject (cụ thể).",
+    "c": "Observer (trừu tượng) / ConcreteObserver (cụ thể).",
+    "d": "Model.",
+    "answer": "C",
+    "theory": "Observer là thành phần đăng ký với Subject để nhận thông báo khi trạng thái của Subject thay đổi. Khi nhận được thông báo, Observer sẽ cập nhật trạng thái hoặc cách hiển thị của chính nó."
+  },
+  {
+    "question": "23. Ưu điểm chính của mẫu Observer là gì?",
+    "a": "Luôn cải thiện hiệu năng hệ thống.",
+    "b": "Giảm sự phụ thuộc giữa đối tượng dữ liệu và các đối tượng hiển thị nó.",
+    "c": "Cấu trúc code luôn đơn giản nhất.",
+    "d": "Loại bỏ hoàn toàn việc cập nhật không cần thiết.",
+    "answer": "B",
+    "theory": "Mẫu Observer giúp giảm sự khớp nối (coupling) giữa Subject và Observers. Subject không cần biết chi tiết về các Observers, chỉ cần biết chúng có một interface chung để nhận thông báo. Điều này làm tăng tính linh hoạt và khả năng tái sử dụng."
+  },
+  {
+    "question": "24. Nhược điểm tiềm ẩn của mẫu Observer là gì?",
+    "a": "Khó thêm các cách hiển thị mới.",
+    "b": "Tăng sự phụ thuộc giữa các thành phần.",
+    "c": "Có thể ảnh hưởng đến hiệu năng do việc cập nhật liên tục, đôi khi không cần thiết cho tất cả các Observer.",
+    "d": "Chỉ áp dụng được cho giao diện đồ họa.",
+    "answer": "C",
+    "theory": "Nếu có nhiều Observers và Subject thay đổi trạng thái thường xuyên, việc thông báo và cập nhật cho tất cả các Observers có thể gây ra vấn đề về hiệu năng, đặc biệt nếu một số cập nhật là không cần thiết hoặc tốn kém."
+  },
+  {
+    "question": "25. Mẫu thiết kế nào dùng để cung cấp một giao diện đơn giản, thống nhất cho một tập hợp các giao diện phức tạp trong một hệ thống con?",
+    "a": "Observer.",
+    "b": "Iterator.",
+    "c": "Decorator.",
+    "d": "Façade.",
+    "answer": "D",
+    "theory": "Mẫu Façade cung cấp một giao diện đơn giản hóa cho một hệ thống con (subsystem) phức tạp bao gồm nhiều lớp hoặc giao diện. Client chỉ cần tương tác với Façade thay vì phải biết và tương tác với tất cả các thành phần bên trong hệ thống con."
+  },
+  {
+    "question": "26. Mẫu thiết kế nào cung cấp một cách tuần tự truy cập các phần tử của một đối tượng tập hợp mà không cần phơi bày cấu trúc bên trong của nó?",
+    "a": "Observer.",
+    "b": "Iterator.",
+    "c": "Decorator.",
+    "d": "Façade.",
+    "answer": "B",
+    "theory": "Mẫu Iterator cung cấp một phương thức chuẩn để duyệt qua các phần tử của một đối tượng tập hợp (ví dụ: list, array) một cách tuần tự, mà không cần client phải biết về cách cấu trúc và lưu trữ bên trong của tập hợp đó."
+  },
+  {
+    "question": "27. Mẫu thiết kế nào cho phép thêm các trách nhiệm/chức năng mới vào một đối tượng một cách linh hoạt, động tại thời điểm chạy?",
+    "a": "Observer.",
+    "b": "Iterator.",
+    "c": "Decorator.",
+    "d": "Façade.",
+    "answer": "C",
+    "theory": "Mẫu Decorator cho phép gắn thêm các hành vi hoặc trách nhiệm mới cho một đối tượng một cách động, bằng cách \"bao bọc\" đối tượng gốc bằng một hoặc nhiều đối tượng decorator. Nó là một giải pháp thay thế linh hoạt cho việc sử dụng kế thừa để mở rộng chức năng."
+  },
+  {
+    "question": "28. Phát triển mã nguồn mở (Open Source Development) là gì?",
+    "a": "Một phương pháp thiết kế giao diện người dùng.",
+    "b": "Một cách tiếp cận phát triển phần mềm mà mã nguồn được công bố công khai và cộng đồng có thể tham gia đóng góp.",
+    "c": "Một loại giấy phép bản quyền phần mềm cụ thể.",
+    "d": "Một kỹ thuật tối ưu hóa cơ sở dữ liệu.",
+    "answer": "B",
+    "theory": "Phát triển mã nguồn mở là một mô hình phát triển phần mềm trong đó mã nguồn được công khai, cho phép mọi người xem, sửa đổi và phân phối lại. Nó thường dựa trên sự hợp tác của cộng đồng."
+  },
+  {
+    "question": "29. Đâu KHÔNG phải là ví dụ về phần mềm mã nguồn mở nổi tiếng được đề cập?",
+    "a": "Linux.",
+    "b": "Microsoft Windows.",
+    "c": "Apache Web Server.",
+    "d": "MySQL.",
+    "answer": "B",
+    "theory": "Linux, Apache Web Server, và MySQL là các ví dụ nổi tiếng về phần mềm mã nguồn mở. Microsoft Windows là một hệ điều hành thương mại, mã nguồn đóng (proprietary)."
+  },
+  {
+    "question": "30. Mô hình kinh doanh phổ biến của các công ty phát triển phần mềm mã nguồn mở thường dựa vào việc gì?",
+    "a": "Bán bản quyền sử dụng phần mềm.",
+    "b": "Bán dịch vụ hỗ trợ, tư vấn, đào tạo liên quan đến phần mềm.",
+    "c": "Thu phí trên mỗi lượt tải về.",
+    "d": "Quảng cáo tích hợp trong phần mềm.",
+    "answer": "B",
+    "theory": "Nhiều công ty phát triển phần mềm mã nguồn mở kiếm doanh thu bằng cách cung cấp các dịch vụ giá trị gia tăng xung quanh sản phẩm mã nguồn mở của họ, chẳng hạn như hỗ trợ kỹ thuật, tư vấn triển khai, tùy chỉnh, hoặc các phiên bản thương mại với tính năng bổ sung."
+  },
+  {
+    "question": "31. Việc mã nguồn được công bố trong phát triển mã nguồn mở có nghĩa là gì?",
+    "a": "Bất kỳ ai cũng có thể làm mọi thứ với mã nguồn đó mà không có ràng buộc.",
+    "b": "Mã nguồn có sẵn để xem xét, sửa đổi nhưng việc sử dụng và phân phối lại phải tuân theo các điều khoản của giấy phép đi kèm.",
+    "c": "Mã nguồn chỉ được xem, không được sửa đổi.",
+    "d": "Chỉ những người trả tiền mới được xem mã nguồn.",
+    "answer": "B",
+    "theory": "Mặc dù mã nguồn mở được công khai, việc sử dụng, sửa đổi và phân phối lại nó vẫn phải tuân thủ các điều khoản của giấy phép mã nguồn mở (ví dụ: GPL, MIT, Apache) đi kèm với phần mềm đó. Các giấy phép này có các quy định khác nhau."
+  },
+  {
+    "question": "32. Loại giấy phép mã nguồn mở nào yêu cầu các sản phẩm phái sinh (derived work) cũng phải được phát hành dưới dạng mã nguồn mở?",
+    "a": "BSD License.",
+    "b": "MIT License.",
+    "c": "GPL (GNU General Public License).",
+    "d": "Apache License.",
+    "answer": "C",
+    "theory": "Giấy phép GPL (GNU General Public License) là một giấy phép \"copyleft\" mạnh, yêu cầu rằng bất kỳ phần mềm nào được tạo ra dựa trên (phái sinh từ) mã nguồn cấp phép GPL cũng phải được phát hành dưới giấy phép GPL (hoặc một giấy phép tương thích), đảm bảo tính mở của các sản phẩm phái sinh."
+  },
+  {
+    "question": "33. Loại giấy phép mã nguồn mở nào cho phép tích hợp mã nguồn mở vào sản phẩm thương mại độc quyền mà không yêu cầu phải mở mã nguồn của sản phẩm đó?",
+    "a": "GPL (GNU General Public License).",
+    "b": "LGPL (GNU Lesser General Public License) - trong một số trường hợp liên kết thư viện.",
+    "c": "BSD License / MIT License.",
+    "d": "Cả b và c đều đúng trong nhiều trường hợp.",
+    "answer": "D",
+    "theory": "Các giấy phép \"permissive\" như BSD, MIT, và Apache thường cho phép tích hợp mã nguồn mở vào các sản phẩm thương mại độc quyền mà không yêu cầu sản phẩm đó phải mở mã nguồn. LGPL cũng cho phép điều này đối với việc liên kết động thư viện, trong khi việc sửa đổi trực tiếp thư viện LGPL vẫn có thể yêu cầu mở mã nguồn phần sửa đổi."
+  },
+  {
+    "question": "34. Tại sao việc quản lý bản quyền cẩn thận lại quan trọng khi sử dụng component mã nguồn mở?",
+    "a": "Để tránh vi phạm các điều khoản giấy phép và các vấn đề pháp lý tiềm ẩn.",
+    "b": "Để đảm bảo mã nguồn luôn là phiên bản mới nhất.",
+    "c": "Để tối ưu hóa hiệu năng của component.",
+    "d": "Chỉ là thủ tục không cần thiết.",
+    "answer": "A",
+    "theory": "Mỗi component mã nguồn mở đều đi kèm với một giấy phép cụ thể. Việc không tuân thủ các điều khoản của giấy phép (ví dụ: về việc ghi công, về việc phân phối lại mã nguồn) có thể dẫn đến vi phạm bản quyền và các rắc rối pháp lý."
+  },
+  {
+    "question": "35. Thiết kế giao diện người dùng (UI) cần xem xét yếu tố nào?",
+    "a": "Chỉ yếu tố thẩm mỹ (màu sắc, bố cục).",
+    "b": "Chỉ tốc độ xử lý của hệ thống.",
+    "c": "Nhu cầu, kinh nghiệm, khả năng và hạn chế của người dùng cuối.",
+    "d": "Chỉ loại cơ sở dữ liệu được sử dụng.",
+    "answer": "C",
+    "theory": "Thiết kế UI hiệu quả phải đặt người dùng làm trung tâm, xem xét các yếu tố như mục tiêu của họ, kiến thức và kinh nghiệm, khả năng (ví dụ: người dùng có khuyết tật), và các hạn chế của ngữ cảnh sử dụng để tạo ra một giao diện dễ sử dụng, hiệu quả và mang lại trải nghiệm tốt."
+  },
+  {
+    "question": "36. Nguyên tắc \"Thân thiện với người dùng\" trong thiết kế UI nghĩa là gì?",
+    "a": "Sử dụng nhiều thuật ngữ kỹ thuật máy tính nhất có thể.",
+    "b": "Giao diện nên sử dụng thuật ngữ và khái niệm quen thuộc với người dùng trong lĩnh vực của họ.",
+    "c": "Giao diện phải có màu sắc sặc sỡ.",
+    "d": "Giao diện phải thay đổi liên tục.",
+    "answer": "B",
+    "theory": "Thiết kế thân thiện với người dùng (user-friendly) có nghĩa là giao diện phải dễ hiểu, dễ học và dễ sử dụng. Điều này bao gồm việc sử dụng ngôn ngữ, thuật ngữ và các khái niệm mà người dùng mục tiêu đã quen thuộc, tránh các thuật ngữ kỹ thuật khó hiểu."
+  },
+  {
+    "question": "37. Nguyên tắc \"Nhất quán\" (Consistency) trong thiết kế UI đòi hỏi điều gì?",
+    "a": "Mỗi màn hình phải có một thiết kế hoàn toàn khác biệt.",
+    "b": "Các lệnh, menu, biểu tượng, cách trình bày thông tin nên có sự đồng nhất trên toàn bộ ứng dụng.",
+    "c": "Luôn sử dụng font chữ lớn nhất có thể.",
+    "d": "Màu nền phải thay đổi theo thời gian trong ngày.",
+    "answer": "B",
+    "theory": "Tính nhất quán trong thiết kế UI có nghĩa là các yếu tố giao diện (như vị trí menu, biểu tượng, cách đặt tên lệnh, cách trình bày thông tin) và hành vi của chúng nên giống nhau hoặc tương tự nhau trên toàn bộ ứng dụng. Điều này giúp người dùng học nhanh hơn và giảm lỗi."
+  },
+  {
+    "question": "38. Nguyên tắc \"Ít bất ngờ\" (Principle of Least Astonishment) trong thiết kế UI có nghĩa là gì?",
+    "a": "Hệ thống nên có nhiều tính năng ẩn thú vị.",
+    "b": "Hành vi của hệ thống đối với các thao tác tương tự nên có thể dự đoán được bởi người dùng.",
+    "c": "Giao diện nên thay đổi bố cục một cách ngẫu nhiên.",
+    "d": "Luôn yêu cầu người dùng xác nhận mọi hành động.",
+    "answer": "B",
+    "theory": "Nguyên tắc \"Ít bất ngờ\" (hay Principle of Least Surprise) nói rằng hành vi của hệ thống nên phù hợp với mong đợi của người dùng. Khi người dùng thực hiện một hành động, kết quả nên là điều họ dự đoán được, tránh gây bất ngờ hoặc nhầm lẫn."
+  },
+  {
+    "question": "39. Nguyên tắc \"Khôi phục được\" (Recoverability) trong thiết kế UI đề cập đến khả năng nào?",
+    "a": "Khả năng hệ thống tự sửa lỗi mã nguồn.",
+    "b": "Khả năng người dùng dễ dàng hoàn tác (undo) các thao tác lỗi hoặc quay lại trạng thái trước đó.",
+    "c": "Khả năng khôi phục mật khẩu đã quên.",
+    "d": "Khả năng hệ thống chạy trên nhiều hệ điều hành.",
+    "answer": "B",
+    "theory": "Khả năng khôi phục (Recoverability) cho phép người dùng dễ dàng sửa lỗi khi họ mắc phải, ví dụ bằng cách cung cấp chức năng hoàn tác (undo), hủy bỏ (cancel), hoặc quay lại bước trước đó. Điều này giúp người dùng tự tin hơn khi tương tác với hệ thống."
+  },
+  {
+    "question": "40. Tại sao cần xem xét \"Đa dạng người dùng\" (User Diversity) khi thiết kế UI?",
+    "a": "Để làm giao diện phức tạp hơn.",
+    "b": "Vì những người dùng khác nhau (ví dụ: người mới bắt đầu, chuyên gia, người có khuyết tật) có thể có nhu cầu và cách tương tác khác nhau.",
+    "c": "Chỉ để tăng số lượng màn hình thiết kế.",
+    "d": "Để giới hạn số lượng người có thể sử dụng hệ thống.",
+    "answer": "B",
+    "theory": "Người dùng có sự đa dạng về kiến thức, kinh nghiệm, kỹ năng, khả năng thể chất và nhận thức, cũng như các mục tiêu và ngữ cảnh sử dụng khác nhau. Thiết kế UI cần xem xét sự đa dạng này để đảm bảo tính dễ sử dụng và khả năng tiếp cận (accessibility) cho nhiều đối tượng người dùng nhất có thể."
+  },
+  {
+    "question": "41. Việc mô tả thuật toán bằng lưu đồ hoặc mã giả thuộc giai đoạn nào?",
+    "a": "Phân tích yêu cầu.",
+    "b": "Thiết kế thuật toán (một phần của thiết kế chi tiết).",
+    "c": "Kiểm thử hệ thống.",
+    "d": "Bảo trì phần mềm.",
+    "answer": "B",
+    "theory": "Mô tả thuật toán bằng lưu đồ (flowchart) hoặc mã giả (pseudocode) là một phần của giai đoạn thiết kế chi tiết, cụ thể là thiết kế logic xử lý cho các phương thức hoặc module."
+  },
+  {
+    "question": "42. Thiết kế cơ sở dữ liệu liên quan chặt chẽ đến giai đoạn nào trong OOD?",
+    "a": "Xác định ngữ cảnh.",
+    "b": "Thiết kế kiến trúc.",
+    "c": "Nhận diện lớp/đối tượng và phát triển mô hình tĩnh (Biểu đồ lớp).",
+    "d": "Đặc tả giao diện đối tượng.",
+    "answer": "C",
+    "theory": "Mô hình tĩnh (đặc biệt là Biểu đồ Lớp) trong OOD, nơi các lớp, thuộc tính và mối quan hệ giữa chúng được xác định, là đầu vào quan trọng cho việc thiết kế cơ sở dữ liệu. Các lớp thường được ánh xạ thành các bảng, thuộc tính thành các cột."
+  },
+  {
+    "question": "43. Đâu là một kỹ thuật phổ biến để nhận diện lớp đối tượng từ mô tả yêu cầu bằng văn bản?",
+    "a": "Phân tích DFD (Data Flow Diagram).",
+    "b": "Phân tích ngữ pháp (Grammatical analysis), tìm danh từ (ứng viên cho lớp/thuộc tính) và động từ (ứng viên cho phương thức).",
+    "c": "Phân tích lưu đồ (Flowchart analysis).",
+    "d": "Phân tích mã nguồn (Source code analysis).",
+    "answer": "B",
+    "theory": "Phân tích ngữ pháp là một kỹ thuật đơn giản để bắt đầu nhận diện các ứng viên cho lớp và thuộc tính (thường là các danh từ hoặc cụm danh từ) và các ứng viên cho phương thức (thường là các động từ hoặc cụm động từ) từ mô tả yêu cầu bằng ngôn ngữ tự nhiên."
+  },
+  {
+    "question": "44. Mô hình hóa ngữ cảnh giúp xác định yếu tố nào quan trọng cho thiết kế?",
+    "a": "Chi tiết triển khai của các lớp.",
+    "b": "Các giao diện (interfaces) mà hệ thống cần cung cấp hoặc sử dụng để tương tác với môi trường bên ngoài.",
+    "c": "Các thuật toán sắp xếp dữ liệu.",
+    "d": "Lựa chọn font chữ cho giao diện.",
+    "answer": "B",
+    "theory": "Mô hình ngữ cảnh xác định các actor và hệ thống bên ngoài mà hệ thống của chúng ta cần tương tác. Từ đó, có thể xác định các giao diện (interfaces) cần thiết để cho phép các tương tác này diễn ra, điều này rất quan trọng cho thiết kế."
+  },
+  {
+    "question": "45. Tại sao cần phải đặc tả giao diện (Interface Specification) một cách rõ ràng?",
+    "a": "Để định nghĩa \"hợp đồng\" giữa các component, cho phép chúng tương tác mà không cần biết chi tiết hiện thực bên trong của nhau.",
+    "b": "Chỉ để làm tài liệu dài hơn.",
+    "c": "Để mô tả trạng thái của đối tượng.",
+    "d": "Để liệt kê các giấy phép mã nguồn mở.",
+    "answer": "A",
+    "theory": "Đặc tả giao diện rõ ràng định nghĩa các phương thức, tham số, kiểu trả về và hành vi mong đợi mà một component cung cấp hoặc yêu cầu. Điều này tạo ra một \"hợp đồng\" cho phép các component được phát triển và thay đổi độc lập, miễn là tuân thủ giao diện."
+  },
+  {
+    "question": "46. Mối quan hệ giữa một lớp (Class) và giao diện (Interface) mà nó hiện thực hóa (implements) là loại quan hệ nào trong UML?",
+    "a": "Association.",
+    "b": "Generalization.",
+    "c": "Realization (Hiện thực hóa).",
+    "d": "Dependency.",
+    "answer": "C",
+    "theory": "Mối quan hệ Realization (Hiện thực hóa) trong UML được sử dụng để biểu diễn việc một lớp (classifier) hiện thực hóa (implements) các hành vi được đặc tả bởi một giao diện (interface)."
+  },
+  {
+    "question": "47. Sử dụng mẫu thiết kế mang lại lợi ích gì ngoài việc tái sử dụng giải pháp?",
+    "a": "Cung cấp một bộ từ vựng chung để các nhà phát triển giao tiếp về các giải pháp thiết kế.",
+    "b": "Luôn đảm bảo hiệu năng tốt nhất.",
+    "c": "Giảm số lượng dòng code phải viết.",
+    "d": "Làm cho việc kiểm thử trở nên không cần thiết.",
+    "answer": "A",
+    "theory": "Mẫu thiết kế cung cấp một bộ thuật ngữ và khái niệm chung đã được công nhận. Khi các nhà phát triển nói về việc sử dụng \"mẫu Observer\" hay \"mẫu Factory\", họ có thể nhanh chóng hiểu ý nhau về cấu trúc và mục đích của giải pháp đó, giúp cải thiện giao tiếp."
+  },
+  {
+    "question": "48. Khi nào thì việc áp dụng Thiết kế hướng đối tượng (OOD) có thể không hiệu quả?",
+    "a": "Đối với các hệ thống lớn, phức tạp.",
+    "b": "Đối với các hệ thống đòi hỏi bảo trì và mở rộng cao.",
+    "c": "Đối với các hệ thống rất nhỏ, đơn giản, nơi chi phí tạo và bảo trì mô hình vượt quá lợi ích.",
+    "d": "Đối với các hệ thống cần tái sử dụng code.",
+    "answer": "C",
+    "theory": "Đối với các ứng dụng rất nhỏ, đơn giản, hoặc các script ngắn, việc áp dụng đầy đủ quy trình OOD với nhiều mô hình có thể là quá mức cần thiết (overkill) và tốn kém hơn so với lợi ích mang lại. Tuy nhiên, các nguyên tắc OOD cơ bản vẫn có thể hữu ích."
+  },
+  {
+    "question": "49. Biểu đồ nào trong UML phù hợp nhất để thể hiện cấu trúc vật lý của hệ thống, bao gồm các nút (nodes) và cách các thành phần (artifacts) được triển khai lên đó?",
+    "a": "Biểu đồ Lớp (Class Diagram).",
+    "b": "Biểu đồ Component (Component Diagram).",
+    "c": "Biểu đồ Triển khai (Deployment Diagram).",
+    "d": "Biểu đồ Hoạt động (Activity Diagram).",
+    "answer": "C",
+    "theory": "Biểu đồ Triển khai (Deployment Diagram) được sử dụng để mô hình hóa cấu trúc vật lý của hệ thống, cho thấy các nút (nodes) phần cứng (ví dụ: server, thiết bị) và cách các thành phần phần mềm thực thi (artifacts) được phân bố và triển khai trên các nút đó."
+  },
+  {
+    "question": "50. Mối quan hệ giữa các tầng trong kiến trúc phân tầng thường là gì?",
+    "a": "Tầng cao hơn sử dụng dịch vụ của tầng ngay dưới nó.",
+    "b": "Các tầng có thể gọi trực tiếp bất kỳ tầng nào khác.",
+    "c": "Chỉ tầng trên cùng và dưới cùng tương tác với nhau.",
+    "d": "Các tầng hoàn toàn độc lập, không giao tiếp.",
+    "answer": "A",
+    "theory": "Trong kiến trúc phân tầng điển hình, các yêu cầu thường đi từ tầng cao hơn xuống tầng thấp hơn. Mỗi tầng cung cấp dịch vụ cho tầng ngay bên trên nó và sử dụng dịch vụ của tầng ngay bên dưới nó. Giao tiếp trực tiếp giữa các tầng không kề nhau thường bị hạn chế để duy trì sự tách biệt."
+  },
+  {
+    "question": "51. Việc phân tích kịch bản (Scenario analysis) hữu ích như thế nào trong việc nhận diện lớp/đối tượng?",
+    "a": "Giúp xác định các đối tượng, thuộc tính và hành động liên quan đến một luồng sử dụng cụ thể của hệ thống.",
+    "b": "Chỉ giúp xác định các actor.",
+    "c": "Chỉ hữu ích cho việc vẽ biểu đồ trạng thái.",
+    "d": "Giúp xác định giấy phép mã nguồn mở.",
+    "answer": "A",
+    "theory": "Phân tích kịch bản (scenario analysis) bằng cách đi qua các luồng sử dụng cụ thể của hệ thống (ví dụ, các bước trong một use case) giúp nhận diện các đối tượng tham gia, dữ liệu (thuộc tính) chúng cần, và các hành động (phương thức) chúng thực hiện."
+  },
+  {
+    "question": "52. \"Cohesion\" (Độ gắn kết) trong thiết kế module/lớp nghĩa là gì?",
+    "a": "Mức độ phụ thuộc giữa các module/lớp khác nhau.",
+    "b": "Mức độ mà các thành phần bên trong một module/lớp liên quan chặt chẽ đến nhau và cùng thực hiện một nhiệm vụ cụ thể.",
+    "c": "Số lượng dòng code trong một module/lớp.",
+    "d": "Tốc độ thực thi của module/lớp.",
+    "answer": "B",
+    "theory": "Cohesion (Độ gắn kết) đo lường mức độ mà các trách nhiệm và chức năng của một module hoặc lớp là liên quan và tập trung. Một module/lớp có độ gắn kết cao khi tất cả các phần tử bên trong nó làm việc cùng nhau để thực hiện một mục đích duy nhất, rõ ràng."
+  },
+  {
+    "question": "53. \"Coupling\" (Độ khớp nối/liên kết) trong thiết kế module/lớp nghĩa là gì?",
+    "a": "Mức độ liên quan của các thành phần bên trong một module.",
+    "b": "Mức độ phụ thuộc lẫn nhau giữa các module/lớp khác nhau.",
+    "c": "Kích thước của giao diện module/lớp.",
+    "d": "Số lượng lỗi trong module/lớp.",
+    "answer": "B",
+    "theory": "Coupling (Độ khớp nối) đo lường mức độ phụ thuộc giữa các module hoặc lớp. Khớp nối thấp (low coupling) là mong muốn, nghĩa là các module/lớp ít phụ thuộc vào nhau, giúp chúng dễ thay đổi và bảo trì độc lập."
+  },
+  {
+    "question": "54. Một thiết kế tốt thường hướng tới mục tiêu nào về Cohesion và Coupling?",
+    "a": "Cohesion thấp, Coupling cao.",
+    "b": "Cohesion cao, Coupling cao.",
+    "c": "Cohesion thấp, Coupling thấp.",
+    "d": "Cohesion cao, Coupling thấp.",
+    "answer": "D",
+    "theory": "Một thiết kế module/lớp tốt thường hướng tới mục tiêu đạt được Cohesion cao (các thành phần bên trong module/lớp liên quan chặt chẽ với nhau) và Coupling thấp (sự phụ thuộc giữa các module/lớp là tối thiểu)."
+  },
+  {
+    "question": "55. Tại sao cần phải hiểu rõ yêu cầu (cả chức năng và phi chức năng) trước khi bắt đầu thiết kế kiến trúc?",
+    "a": "Để lựa chọn được tên lớp phù hợp.",
+    "b": "Vì kiến trúc phải được thiết kế để đáp ứng các yêu cầu đó, đặc biệt là các yêu cầu phi chức năng thường ảnh hưởng lớn đến cấu trúc tổng thể.",
+    "c": "Chỉ để ước tính thời gian dự án.",
+    "d": "Không cần thiết, có thể thiết kế kiến trúc trước rồi điều chỉnh yêu cầu sau.",
+    "answer": "B",
+    "theory": "Yêu cầu, đặc biệt là các yêu cầu phi chức năng (như hiệu năng, bảo mật, khả năng mở rộng), đóng vai trò quyết định trong việc lựa chọn và định hình kiến trúc. Kiến trúc phải được thiết kế sao cho có thể đáp ứng được các yêu cầu này."
+  },
+  {
+    "question": "56. Việc sử dụng các framework (ví dụ: Spring, .NET) ảnh hưởng như thế nào đến thiết kế phần mềm?",
+    "a": "Không ảnh hưởng gì.",
+    "b": "Cung cấp sẵn các cấu trúc, component và mẫu, giúp đẩy nhanh quá trình phát triển nhưng cũng có thể áp đặt các ràng buộc thiết kế.",
+    "c": "Chỉ giúp cho việc viết code nhanh hơn.",
+    "d": "Chỉ làm tăng độ phức tạp.",
+    "answer": "B",
+    "theory": "Framework cung cấp một nền tảng và các thành phần được xây dựng sẵn, giúp tăng tốc độ phát triển và chuẩn hóa cấu trúc. Tuy nhiên, việc sử dụng framework cũng có nghĩa là phải tuân theo các quy ước và ràng buộc thiết kế của framework đó (inversion of control)."
+  },
+  {
+    "question": "57. Trong thiết kế OOD, khái niệm \"Encapsulation\" (Đóng gói) có ý nghĩa gì?",
+    "a": "Che giấu chi tiết hiện thực bên trong của một đối tượng và chỉ cung cấp giao diện công khai để tương tác.",
+    "b": "Cho phép một lớp kế thừa thuộc tính và phương thức từ lớp khác.",
+    "c": "Khả năng một đối tượng thuộc lớp con được đối xử như đối tượng thuộc lớp cha.",
+    "d": "Định nghĩa nhiều phương thức cùng tên nhưng khác tham số.",
+    "answer": "A",
+    "theory": "Encapsulation (Đóng gói) là một nguyên tắc cơ bản của OOD, nghĩa là che giấu trạng thái bên trong (dữ liệu) và chi tiết hiện thực của một đối tượng, chỉ cho phép truy cập và thay đổi trạng thái đó thông qua một tập hợp các phương thức công khai (public interface)."
+  },
+  {
+    "question": "58. Khái niệm \"Polymorphism\" (Đa hình) trong OOD cho phép điều gì?",
+    "a": "Một đối tượng có nhiều trạng thái khác nhau.",
+    "b": "Nhiều lớp có cùng tên.",
+    "c": "Các đối tượng thuộc các lớp khác nhau có thể phản ứng với cùng một thông điệp (lời gọi phương thức) theo cách riêng của chúng.",
+    "d": "Một lớp kế thừa từ nhiều lớp cha.",
+    "answer": "C",
+    "theory": "Polymorphism (Đa hình) cho phép các đối tượng của các lớp khác nhau (thường có chung một lớp cha hoặc hiện thực cùng một interface) có thể được xử lý thông qua một giao diện chung, nhưng mỗi đối tượng sẽ thực hiện hành vi (phương thức) theo cách riêng của lớp mình."
+  },
+  {
+    "question": "59. Thiết kế hướng đối tượng (OOD) thường mang lại lợi ích gì so với thiết kế hướng thủ tục truyền thống?",
+    "a": "Luôn luôn chạy nhanh hơn.",
+    "b": "Code luôn ngắn gọn hơn.",
+    "c": "Tăng khả năng tái sử dụng, bảo trì và mô hình hóa thế giới thực tốt hơn.",
+    "d": "Dễ học và áp dụng hơn cho người mới bắt đầu.",
+    "answer": "C",
+    "theory": "OOD giúp tạo ra các module (lớp) có tính đóng gói cao, dễ tái sử dụng và bảo trì. Nó cũng cung cấp các khái niệm (như lớp, đối tượng, kế thừa, đa hình) giúp mô hình hóa các thực thể và mối quan hệ trong thế giới thực một cách tự nhiên hơn so với lập trình hướng thủ tục."
+  },
+  {
+    "question": "60. Đâu là thách thức khi áp dụng các mẫu thiết kế?",
+    "a": "Các mẫu thiết kế luôn làm code đơn giản hơn.",
+    "b": "Việc lựa chọn sai mẫu hoặc áp dụng không đúng cách có thể dẫn đến sự phức tạp không cần thiết (over-engineering).",
+    "c": "Các mẫu thiết kế chỉ áp dụng được cho một ngôn ngữ lập trình duy nhất.",
+    "d": "Không có tài liệu nào về các mẫu thiết kế.",
+    "answer": "B",
+    "theory": "Mặc dù mẫu thiết kế cung cấp giải pháp tốt, việc áp dụng chúng một cách mù quáng hoặc chọn sai mẫu cho vấn đề có thể làm tăng độ phức tạp không cần thiết. Cần hiểu rõ vấn đề và ngữ cảnh trước khi quyết định áp dụng một mẫu cụ thể."
+  },
+  {
+    "question": "61. Tại sao việc xem xét các \"trade-offs\" (đánh đổi) lại quan trọng khi lựa chọn và áp dụng mẫu thiết kế?",
+    "a": "Vì mỗi mẫu thiết kế đều hoàn hảo.",
+    "b": "Vì mỗi mẫu thiết kế đều có ưu và nhược điểm, việc áp dụng nó có thể cải thiện một khía cạnh nhưng lại ảnh hưởng đến khía cạnh khác.",
+    "c": "Chỉ để làm phức tạp quá trình ra quyết định.",
+    "d": "Không quan trọng, chỉ cần chọn mẫu phổ biến nhất.",
+    "answer": "B",
+    "theory": "Không có mẫu thiết kế nào là hoàn hảo cho mọi tình huống. Mỗi mẫu đều có những ưu điểm (ví dụ: tăng tính linh hoạt) và nhược điểm (ví dụ: tăng độ phức tạp, giảm hiệu năng). Việc hiểu và cân nhắc các đánh đổi này là rất quan trọng để đưa ra quyết định thiết kế phù hợp."
+  },
+  {
+    "question": "62. Phát triển phần mềm dựa trên component (Component-Based Software Engineering - CBSE) liên quan đến thiết kế như thế nào?",
+    "a": "Hoàn toàn không liên quan.",
+    "b": "Thiết kế tập trung vào việc xác định, lựa chọn và tích hợp các component có sẵn (thường là black-box) để xây dựng hệ thống.",
+    "c": "Chỉ là một cách gọi khác của OOD.",
+    "d": "Chỉ áp dụng cho phần cứng.",
+    "answer": "B",
+    "theory": "CBSE là một cách tiếp cận phát triển phần mềm bằng cách lắp ráp từ các component đã được xây dựng sẵn và có thể tái sử dụng. Thiết kế trong CBSE tập trung vào việc xác định các component cần thiết, giao diện của chúng, và cách chúng được tích hợp để tạo thành hệ thống."
+  },
+  {
+    "question": "63. Đặc tả giao diện (Interface Specification) đặc biệt quan trọng trong cách tiếp cận phát triển nào?",
+    "a": "Chỉ trong phát triển mã nguồn mở.",
+    "b": "Chỉ trong phát triển theo mô hình thác nước.",
+    "c": "Trong OOD và đặc biệt là CBSE, nơi các component cần tương tác qua các giao diện được định nghĩa rõ ràng.",
+    "d": "Chỉ khi sử dụng mẫu Observer.",
+    "answer": "C",
+    "theory": "Trong cả OOD và CBSE, giao diện đóng vai trò là \"hợp đồng\" giữa các thành phần. Việc đặc tả giao diện rõ ràng cho phép các component được phát triển độc lập và tương tác với nhau một cách đáng tin cậy, ngay cả khi hiện thực bên trong của chúng thay đổi."
+  },
+  {
+    "question": "64. Việc lựa chọn giữa phát triển mã nguồn mở và phát triển độc quyền (proprietary) cho một dự án phụ thuộc vào yếu tố nào?",
+    "a": "Chỉ phụ thuộc vào sở thích của lập trình viên.",
+    "b": "Mô hình kinh doanh, chiến lược sản phẩm, yêu cầu về kiểm soát mã nguồn, yếu tố cộng đồng, và các vấn đề pháp lý/bản quyền.",
+    "c": "Chỉ phụ thuộc vào chi phí ban đầu.",
+    "d": "Chỉ phụ thuộc vào ngôn ngữ lập trình.",
+    "answer": "B",
+    "theory": "Quyết định sử dụng/phát triển mã nguồn mở hay độc quyền là một quyết định chiến lược, phụ thuộc vào nhiều yếu tố như mô hình kinh doanh của công ty, mức độ kiểm soát mong muốn đối với sản phẩm, sự sẵn có của cộng đồng hỗ trợ, chi phí, và các ràng buộc pháp lý của giấy phép."
+  },
+  {
+    "question": "65. Giấy phép GPL và BSD khác nhau cơ bản ở điểm nào liên quan đến việc phân phối lại mã nguồn sửa đổi?",
+    "a": "GPL không cho phép sửa đổi, BSD cho phép.",
+    "b": "GPL yêu cầu mã nguồn sửa đổi cũng phải mở (viral/copyleft), BSD thường không yêu cầu (permissive).",
+    "c": "BSD chỉ dùng cho hệ điều hành, GPL dùng cho ứng dụng.",
+    "d": "GPL miễn phí, BSD phải trả phí.",
+    "answer": "B",
+    "theory": "GPL là một giấy phép copyleft mạnh, yêu cầu các sản phẩm phái sinh cũng phải được cấp phép dưới GPL. Ngược lại, các giấy phép kiểu BSD (và MIT) là permissive, thường cho phép sử dụng, sửa đổi và phân phối lại mã nguồn (kể cả trong các sản phẩm độc quyền) với ít ràng buộc hơn về việc mở mã nguồn của sản phẩm phái sinh."
+  },
+  {
+    "question": "66. Trong thiết kế UI, việc cung cấp phản hồi (feedback) cho người dùng sau mỗi hành động quan trọng vì sao?",
+    "a": "Để làm chậm hệ thống.",
+    "b": "Để người dùng biết rằng hệ thống đã nhận và đang xử lý yêu cầu của họ, hoặc kết quả của hành động là gì.",
+    "c": "Chỉ cần thiết cho các thao tác phức tạp.",
+    "d": "Chỉ để hiển thị thông báo lỗi.",
+    "answer": "B",
+    "theory": "Phản hồi ngay lập tức và rõ ràng giúp người dùng hiểu được trạng thái hiện tại của hệ thống, xác nhận rằng hành động của họ đã được ghi nhận, và biết được kết quả của hành động đó. Điều này làm tăng cảm giác kiểm soát và giảm sự không chắc chắn."
+  },
+  {
+    "question": "67. Thiết kế thuật toán tập trung vào khía cạnh nào của phần mềm?",
+    "a": "Cách dữ liệu được lưu trữ.",
+    "b": "Cách người dùng tương tác với hệ thống.",
+    "c": "Logic xử lý cụ thể để giải quyết một vấn đề tính toán (hiệu quả, độ phức tạp).",
+    "d": "Cách các thành phần giao tiếp với nhau.",
+    "answer": "C",
+    "theory": "Thiết kế thuật toán tập trung vào việc phát triển các bước logic cụ thể để giải quyết một vấn đề tính toán. Các yếu tố quan trọng trong thiết kế thuật toán bao gồm tính đúng đắn, hiệu quả (thời gian chạy, sử dụng bộ nhớ), và độ phức tạp."
+  },
+  {
+    "question": "68. Mối liên hệ giữa thiết kế kiến trúc và thiết kế thuật toán là gì?",
+    "a": "Hoàn toàn độc lập.",
+    "b": "Thiết kế kiến trúc xác định các thành phần, và thiết kế thuật toán chi tiết hóa logic xử lý bên trong các thành phần đó.",
+    "c": "Thiết kế thuật toán quyết định kiến trúc tổng thể.",
+    "d": "Chỉ kiến trúc mới quan trọng.",
+    "answer": "B",
+    "theory": "Thiết kế kiến trúc xác định các thành phần chính của hệ thống và cách chúng tương tác. Thiết kế thuật toán sau đó sẽ chi tiết hóa logic xử lý bên trong các phương thức hoặc chức năng của các thành phần đó để thực hiện các nhiệm vụ cụ thể."
+  },
+  {
+    "question": "69. Thiết kế cơ sở dữ liệu (Database Design) bao gồm các hoạt động nào?",
+    "a": "Chỉ chọn màu sắc cho bảng.",
+    "b": "Xác định cấu trúc lưu trữ dữ liệu (bảng, cột, kiểu dữ liệu), mối quan hệ giữa các bảng, và các ràng buộc toàn vẹn.",
+    "c": "Thiết kế giao diện người dùng để nhập liệu.",
+    "d": "Viết các câu lệnh SQL phức tạp.",
+    "answer": "B",
+    "theory": "Thiết kế cơ sở dữ liệu bao gồm việc xác định các thực thể dữ liệu, thuộc tính của chúng, cách chúng được tổ chức thành các bảng, các mối quan hệ giữa các bảng (ví dụ: khóa ngoại), và các ràng buộc để đảm bảo tính toàn vẹn và nhất quán của dữ liệu."
+  },
+  {
+    "question": "70. Tại sao thiết kế cơ sở dữ liệu lại quan trọng đối với hiệu năng hệ thống?",
+    "a": "Không ảnh hưởng đến hiệu năng.",
+    "b": "Một thiết kế CSDL tốt giúp tối ưu hóa việc truy vấn và cập nhật dữ liệu, giảm thời gian xử lý.",
+    "c": "Chỉ quan trọng đối với việc lưu trữ ảnh.",
+    "d": "Chỉ ảnh hưởng đến dung lượng lưu trữ.",
+    "answer": "B",
+    "theory": "Thiết kế cơ sở dữ liệu (ví dụ: việc chọn kiểu dữ liệu phù hợp, chuẩn hóa bảng, tạo chỉ mục (index) hợp lý) có ảnh hưởng lớn đến hiệu năng của các thao tác truy vấn và cập nhật dữ liệu, từ đó ảnh hưởng đến hiệu năng tổng thể của hệ thống."
+  },
+  {
+    "question": "71. Đâu là sự khác biệt chính giữa mô hình tĩnh và mô hình động trong thiết kế OOD?",
+    "a": "Mô hình tĩnh thể hiện cấu trúc, mô hình động thể hiện hành vi theo thời gian.",
+    "b": "Mô hình tĩnh dùng UML, mô hình động không dùng UML.",
+    "c": "Mô hình tĩnh dễ vẽ hơn, mô hình động khó vẽ hơn.",
+    "d": "Mô hình tĩnh dùng cho lớp, mô hình động dùng cho đối tượng.",
+    "answer": "A",
+    "theory": "Mô hình tĩnh (ví dụ: Biểu đồ Lớp) mô tả các yếu tố cấu trúc của hệ thống không thay đổi theo thời gian. Mô hình động (ví dụ: Biểu đồ Tuần tự, Biểu đồ Trạng thái) mô tả hành vi của hệ thống khi nó thực thi, bao gồm các tương tác và sự thay đổi trạng thái theo thời gian."
+  },
+  {
+    "question": "72. Phân tích kịch bản (Scenario-based analysis) là một kỹ thuật hữu ích để:",
+    "a": "Nhận diện lớp và đối tượng.",
+    "b": "Hiểu cách người dùng tương tác với hệ thống trong các tình huống cụ thể.",
+    "c": "Xác định các yêu cầu động và luồng sự kiện.",
+    "d": "Tất cả các ý trên.",
+    "answer": "D",
+    "theory": "Phân tích kịch bản (thường dựa trên use cases) giúp hiểu rõ các luồng tương tác của người dùng, từ đó nhận diện các đối tượng tham gia, các hành động chúng thực hiện, và các sự kiện xảy ra. Điều này hữu ích cho cả việc xác định lớp, mô tả hành vi động và làm rõ yêu cầu."
+  },
+  {
+    "question": "73. Một \"Subsystem\" trong thiết kế kiến trúc thường đại diện cho:",
+    "a": "Một lớp đối tượng đơn lẻ.",
+    "b": "Một nhóm các thành phần liên quan chặt chẽ, thực hiện một tập hợp các chức năng lớn hơn.",
+    "c": "Toàn bộ hệ thống phần mềm.",
+    "d": "Một file mã nguồn.",
+    "answer": "B",
+    "theory": "Một subsystem là một phần lớn của hệ thống, thường bao gồm nhiều component hoặc module liên quan, và có trách nhiệm thực hiện một tập hợp các chức năng có ý nghĩa. Subsystem có thể được coi là một component ở mức độ trừu tượng cao hơn."
+  },
+  {
+    "question": "74. Tại sao việc quản lý sự thay đổi (Change Management) lại quan trọng trong suốt vòng đời thiết kế?",
+    "a": "Yêu cầu và môi trường luôn thay đổi, cần có quy trình để đánh giá và tích hợp các thay đổi vào thiết kế một cách có kiểm soát.",
+    "b": "Để ngăn chặn mọi thay đổi đối với thiết kế ban đầu.",
+    "c": "Chỉ quan trọng trong giai đoạn hiện thực.",
+    "d": "Chỉ để theo dõi ai yêu cầu thay đổi.",
+    "answer": "A",
+    "theory": "Trong suốt vòng đời phát triển, yêu cầu của khách hàng, công nghệ, hoặc môi trường kinh doanh có thể thay đổi. Quản lý sự thay đổi là quy trình cần thiết để đánh giá tác động của các thay đổi này, quyết định có chấp nhận chúng hay không, và tích hợp chúng vào thiết kế một cách có kiểm soát để tránh làm hỏng hệ thống."
+  },
+  {
+    "question": "75. \"Refactoring\" (Tái cấu trúc mã) liên quan đến thiết kế như thế nào?",
+    "a": "Là việc viết lại hoàn toàn thiết kế.",
+    "b": "Là quá trình cải thiện cấu trúc mã nguồn hiện có mà không thay đổi hành vi bên ngoài, thường nhằm cải thiện thiết kế (dễ hiểu, dễ bảo trì).",
+    "c": "Là việc thêm chức năng mới vào thiết kế.",
+    "d": "Là việc sửa lỗi trong thiết kế.",
+    "answer": "B",
+    "theory": "Refactoring là việc cải thiện cấu trúc bên trong của mã nguồn (và do đó là thiết kế chi tiết) mà không làm thay đổi hành vi quan sát được từ bên ngoài. Mục đích là làm cho code dễ hiểu hơn, dễ bảo trì hơn, và tuân thủ các nguyên tắc thiết kế tốt hơn."
+  },
+  {
+    "question": "76. Khi nào nên sử dụng Biểu đồ trạng thái thay vì Biểu đồ hoạt động?",
+    "a": "Khi muốn mô tả luồng công việc phức tạp với nhiều bước.",
+    "b": "Khi muốn tập trung vào vòng đời và các trạng thái khác nhau của một đối tượng cụ thể khi nó phản ứng với sự kiện.",
+    "c": "Khi muốn mô tả cấu trúc tĩnh của hệ thống.",
+    "d": "Khi muốn mô tả sự tương tác giữa nhiều đối tượng.",
+    "answer": "B",
+    "theory": "Biểu đồ Trạng thái phù hợp nhất khi cần mô tả hành vi của một đối tượng đơn lẻ, cụ thể là các trạng thái mà nó có thể có và cách nó chuyển đổi giữa các trạng thái đó khi có sự kiện xảy ra. Biểu đồ Hoạt động tập trung hơn vào luồng các hoạt động trong một quy trình."
+  },
+  {
+    "question": "77. Định nghĩa \"Interface\" (Giao diện) trong ngữ cảnh OOD thường bao gồm:",
+    "a": "Chi tiết hiện thực của các phương thức.",
+    "b": "Chỉ tên của lớp.",
+    "c": "Tập hợp các chữ ký phương thức (tên, tham số, kiểu trả về) mà một lớp phải cung cấp.",
+    "d": "Các thuộc tính private của lớp.",
+    "answer": "C",
+    "theory": "Trong OOD, một interface (giao diện) định nghĩa một tập hợp các chữ ký phương thức (operations) mà một lớp cam kết sẽ hiện thực hóa. Nó không chứa chi tiết hiện thực của các phương thức đó, chỉ là \"hợp đồng\" về những gì lớp có thể làm."
+  },
+  {
+    "question": "78. Lợi ích của việc sử dụng các công cụ CASE (Computer-Aided Software Engineering) trong thiết kế là gì?",
+    "a": "Hỗ trợ vẽ và quản lý các mô hình UML, kiểm tra tính nhất quán, đôi khi sinh mã tự động.",
+    "b": "Thay thế hoàn toàn vai trò của nhà thiết kế.",
+    "c": "Làm chậm quá trình thiết kế.",
+    "d": "Chỉ dùng để lưu trữ tài liệu.",
+    "answer": "A",
+    "theory": "Công cụ CASE hỗ trợ các nhà thiết kế trong việc tạo, sửa đổi và quản lý các mô hình phần mềm (ví dụ: mô hình UML). Chúng có thể giúp kiểm tra tính nhất quán, tạo tài liệu, và đôi khi tự động sinh mã từ các mô hình, giúp tăng năng suất và chất lượng."
+  },
+  {
+    "question": "79. Đâu là một nguyên tắc thiết kế quan trọng giúp giảm sự phụ thuộc và tăng khả năng thay đổi?",
+    "a": "Viết tất cả code trong một file duy nhất.",
+    "b": "Sử dụng nhiều biến toàn cục (global variables).",
+    "c": "Thiết kế dựa trên giao diện thay vì hiện thực cụ thể (Design to interfaces, not implementations).",
+    "d": "Tránh sử dụng thừa kế hoàn toàn.",
+    "answer": "C",
+    "theory": "Nguyên tắc \"Design to interfaces, not implementations\" khuyến khích việc các thành phần phụ thuộc vào các giao diện trừu tượng thay vì các lớp hiện thực cụ thể. Điều này làm giảm sự khớp nối và cho phép dễ dàng thay thế các hiện thực mà không ảnh hưởng đến các thành phần khác."
+  },
+  {
+    "question": "80. Mẫu Singleton đảm bảo điều gì?",
+    "a": "Một lớp có nhiều đối tượng con.",
+    "b": "Một lớp chỉ có duy nhất một thể hiện (instance) và cung cấp một điểm truy cập toàn cục đến nó.",
+    "c": "Mọi phương thức đều là static.",
+    "d": "Lớp không thể bị kế thừa.",
+    "answer": "B",
+    "theory": "Mẫu Singleton đảm bảo rằng một lớp chỉ có một thể hiện duy nhất trong toàn bộ ứng dụng và cung cấp một cách để truy cập vào thể hiện đó từ bất kỳ đâu (thường thông qua một phương thức static)."
+  },
+  {
+    "question": "81. Mẫu Factory Method hữu ích khi nào?",
+    "a": "Khi muốn che giấu logic tạo đối tượng phức tạp và cho phép các lớp con quyết định lớp cụ thể nào sẽ được tạo.",
+    "b": "Khi muốn đảm bảo chỉ có một thể hiện của lớp.",
+    "c": "Khi muốn thêm chức năng vào đối tượng một cách động.",
+    "d": "Khi muốn tách rời giao diện khỏi hiện thực.",
+    "answer": "A",
+    "theory": "Mẫu Factory Method định nghĩa một giao diện để tạo đối tượng, nhưng để các lớp con quyết định lớp cụ thể nào sẽ được khởi tạo. Nó cho phép một lớp trì hoãn việc khởi tạo đối tượng cho các lớp con, giúp che giấu logic tạo đối tượng phức tạp."
+  },
+  {
+    "question": "82. Việc áp dụng các nguyên tắc SOLID (Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, Dependency Inversion) giúp ích gì cho thiết kế OOD?",
+    "a": "Làm code khó hiểu hơn.",
+    "b": "Tạo ra các thiết kế linh hoạt, dễ bảo trì, dễ mở rộng và dễ hiểu hơn.",
+    "c": "Chỉ áp dụng cho ngôn ngữ Java.",
+    "d": "Tăng sự phụ thuộc giữa các lớp.",
+    "answer": "B",
+    "theory": "Các nguyên tắc SOLID là một tập hợp các hướng dẫn thiết kế hướng đối tượng nhằm tạo ra các hệ thống dễ hiểu, linh hoạt, dễ bảo trì và dễ mở rộng. Chúng giúp giảm sự khớp nối, tăng tính gắn kết và cải thiện khả năng tái sử dụng."
+  },
+  {
+    "question": "83. Trong thiết kế phần mềm, \"Abstraction\" (Trừu tượng hóa) nghĩa là gì?",
+    "a": "Cung cấp tất cả chi tiết hiện thực.",
+    "b": "Tập trung vào các đặc điểm thiết yếu của một đối tượng hoặc hệ thống, bỏ qua các chi tiết không cần thiết.",
+    "c": "Sao chép code từ nơi khác.",
+    "d": "Viết code bằng ngôn ngữ máy.",
+    "answer": "B",
+    "theory": "Trừu tượng hóa là quá trình loại bỏ các chi tiết không cần thiết để tập trung vào các khía cạnh quan trọng của một vấn đề hoặc một thực thể. Trong OOD, nó giúp tạo ra các mô hình đơn giản hơn và dễ quản lý hơn."
+  },
+  {
+    "question": "84. Thiết kế giao diện người dùng (UI) và thiết kế trải nghiệm người dùng (UX) có giống nhau không?",
+    "a": "Hoàn toàn giống nhau.",
+    "b": "UI tập trung vào giao diện trực quan (cái nhìn và cảm nhận), UX bao gồm toàn bộ trải nghiệm của người dùng khi tương tác với sản phẩm (bao gồm cả UI, tính hữu dụng, cảm xúc).",
+    "c": "UX là một phần của UI.",
+    "d": "UI chỉ liên quan đến màu sắc, UX chỉ liên quan đến tốc độ.",
+    "answer": "B",
+    "theory": "UI (User Interface) là phần giao diện trực quan mà người dùng nhìn thấy và tương tác. UX (User Experience) là một khái niệm rộng hơn, bao gồm toàn bộ cảm nhận và trải nghiệm của người dùng khi sử dụng một sản phẩm hoặc dịch vụ, trong đó UI là một phần quan trọng."
+  },
+  {
+    "question": "85. Tại sao việc xem xét \"non-functional requirements\" (yêu cầu phi chức năng) lại cực kỳ quan trọng trong giai đoạn thiết kế, đặc biệt là thiết kế kiến trúc?",
+    "a": "Chúng thường dễ đáp ứng hơn yêu cầu chức năng.",
+    "b": "Chúng thường định hình cấu trúc tổng thể của hệ thống (ví dụ: yêu cầu hiệu năng cao có thể dẫn đến kiến trúc phân tán, yêu cầu bảo mật cao dẫn đến kiến trúc phân tầng chặt chẽ).",
+    "c": "Chúng không ảnh hưởng đến mã nguồn.",
+    "d": "Chúng chỉ quan trọng đối với người dùng cuối.",
+    "answer": "B",
+    "theory": "Các yêu cầu phi chức năng (như hiệu năng, bảo mật, khả năng mở rộng, độ tin cậy) thường có tác động sâu rộng đến các quyết định kiến trúc. Việc không xem xét kỹ lưỡng chúng từ đầu có thể dẫn đến một hệ thống không đáp ứng được các thuộc tính chất lượng quan trọng."
+  },
+  {
+    "question": "86. Đâu là một phương pháp để đánh giá tính dễ bảo trì của một thiết kế?",
+    "a": "Đếm số dòng code.",
+    "b": "Xem xét mức độ module hóa, độ khớp nối (coupling) và độ gắn kết (cohesion).",
+    "c": "Kiểm tra tốc độ chạy của chương trình.",
+    "d": "Khảo sát ý kiến người dùng về giao diện.",
+    "answer": "B",
+    "theory": "Tính dễ bảo trì của một thiết kế phụ thuộc nhiều vào cấu trúc của nó. Một thiết kế có tính module hóa cao, độ gắn kết cao bên trong các module, và độ khớp nối thấp giữa các module thường dễ hiểu, dễ sửa đổi và dễ bảo trì hơn."
+  },
+  {
+    "question": "87. Mô hình hóa động (dynamic modeling) giúp trả lời câu hỏi nào mà mô hình hóa tĩnh (static modeling) không thể?",
+    "a": "Hệ thống có bao nhiêu lớp?",
+    "b": "Lớp A có mối quan hệ gì với lớp B?",
+    "c": "Khi sự kiện X xảy ra, đối tượng Y sẽ gửi thông điệp gì cho đối tượng Z?",
+    "d": "Lớp C có những thuộc tính nào?",
+    "answer": "C",
+    "theory": "Mô hình hóa tĩnh mô tả cấu trúc. Mô hình hóa động (ví dụ: Biểu đồ Tuần tự) mô tả hành vi theo thời gian, cho thấy trình tự các tương tác (thông điệp) giữa các đối tượng khi một sự kiện nào đó xảy ra."
+  },
+  {
+    "question": "88. Việc sử dụng lại (reuse) trong thiết kế phần mềm có thể ở những cấp độ nào?",
+    "a": "Chỉ ở cấp độ mã nguồn (copy-paste).",
+    "b": "Cấp độ mã nguồn, cấp độ component, cấp độ thiết kế (mẫu thiết kế), cấp độ kiến trúc.",
+    "c": "Chỉ ở cấp độ kiến trúc.",
+    "d": "Chỉ ở cấp độ mẫu thiết kế.",
+    "answer": "B",
+    "theory": "Tái sử dụng trong phần mềm có thể diễn ra ở nhiều cấp độ: từ việc tái sử dụng các đoạn mã nhỏ, các component đã được xây dựng sẵn, các mẫu thiết kế đã được kiểm chứng, cho đến việc tái sử dụng toàn bộ kiến trúc cho các ứng dụng tương tự."
+  },
+  {
+    "question": "89. Một thiết kế \"testable\" (có khả năng kiểm thử) thường có đặc điểm gì?",
+    "a": "Có nhiều phụ thuộc phức tạp giữa các module.",
+    "b": "Các module được thiết kế độc lập, có giao diện rõ ràng, dễ dàng cô lập để kiểm thử đơn vị (unit test).",
+    "c": "Sử dụng nhiều biến toàn cục.",
+    "d": "Mã nguồn được viết bằng ngôn ngữ assembly.",
+    "answer": "B",
+    "theory": "Một thiết kế có khả năng kiểm thử cao thường có các module/component được thiết kế độc lập, có giao diện được định nghĩa rõ ràng, và ít phụ thuộc vào trạng thái toàn cục. Điều này giúp dễ dàng cô lập các phần của hệ thống để thực hiện kiểm thử đơn vị và kiểm thử tích hợp."
+  },
+  {
+    "question": "90. Tại sao cần phân biệt giữa \"logical design\" (thiết kế logic) và \"physical design\" (thiết kế vật lý) trong cơ sở dữ liệu?",
+    "a": "Không cần phân biệt.",
+    "b": "Thiết kế logic tập trung vào mô hình dữ liệu (thực thể, thuộc tính, quan hệ) độc lập với hệ quản trị CSDL cụ thể; thiết kế vật lý chi tiết hóa cách dữ liệu được lưu trữ và truy cập trên một hệ quản trị CSDL cụ thể.",
+    "c": "Thiết kế logic là vẽ ERD, thiết kế vật lý là viết SQL.",
+    "d": "Thiết kế logic do người dùng làm, thiết kế vật lý do lập trình viên làm.",
+    "answer": "B",
+    "theory": "Thiết kế logic CSDL tập trung vào việc mô hình hóa yêu cầu dữ liệu của người dùng một cách trừu tượng (ví dụ: bằng ERD), không phụ thuộc vào hệ quản trị CSDL (DBMS) nào sẽ được sử dụng. Thiết kế vật lý CSDL dịch mô hình logic đó thành một hiện thực cụ thể trên một DBMS đã chọn, bao gồm việc định nghĩa bảng, cột, kiểu dữ liệu, chỉ mục, v.v."
+  },
+  {
+    "question": "91. Trong quy trình thiết kế OOD, việc quay lại các bước trước đó (ví dụ: từ phát triển mô hình thiết kế quay lại nhận diện lớp) có phổ biến không?",
+    "a": "Không, quy trình luôn đi thẳng.",
+    "b": "Có, đây là một quy trình lặp, việc phát hiện ra vấn đề ở bước sau có thể yêu cầu điều chỉnh lại các bước trước đó.",
+    "c": "Chỉ xảy ra khi có lỗi nghiêm trọng.",
+    "d": "Chỉ áp dụng cho mô hình Agile.",
+    "answer": "B",
+    "theory": "Thiết kế phần mềm, bao gồm OOD, là một quy trình lặp (iterative). Việc phát hiện ra các vấn đề, thiếu sót, hoặc có những hiểu biết mới ở các bước sau thường dẫn đến việc phải quay lại và điều chỉnh các quyết định hoặc mô hình đã được tạo ở các bước trước đó."
+  },
+  {
+    "question": "92. Đâu là vai trò của \"kịch bản\" (scenarios) trong việc phát triển mô hình thiết kế động (ví dụ: Sequence Diagram)?",
+    "a": "Mỗi kịch bản đại diện cho một luồng tương tác cụ thể cần được mô hình hóa chi tiết bằng Biểu đồ Tuần tự.",
+    "b": "Kịch bản chỉ dùng để viết tài liệu hướng dẫn.",
+    "c": "Kịch bản dùng để xác định cấu trúc lớp tĩnh.",
+    "d": "Kịch bản không liên quan đến mô hình động.",
+    "answer": "A",
+    "theory": "Các kịch bản (scenarios), thường là các đường đi cụ thể qua một use case, cung cấp các tình huống tương tác cụ thể. Mỗi kịch bản này có thể được mô hình hóa chi tiết bằng một Biểu đồ Tuần tự (Sequence Diagram) để thể hiện trình tự các thông điệp giữa các đối tượng."
+  },
+  {
+    "question": "93. Khi nào thì một lớp nên được thiết kế là \"abstract\" (trừu tượng)?",
+    "a": "Khi lớp đó không có phương thức nào.",
+    "b": "Khi lớp đó đại diện cho một khái niệm chung, không có ý nghĩa khi tạo đối tượng trực tiếp từ nó, và dự định được kế thừa bởi các lớp cụ thể hơn.",
+    "c": "Khi lớp đó có quá nhiều thuộc tính.",
+    "d": "Khi muốn ngăn chặn việc kế thừa.",
+    "answer": "B",
+    "theory": "Một lớp trừu tượng (abstract class) đại diện cho một khái niệm chung chung mà không có ý nghĩa hoặc không thể tạo đối tượng trực tiếp từ nó. Nó thường chứa các phương thức trừu tượng (chưa có hiện thực) mà các lớp con cụ thể sẽ phải hiện thực hóa. Lớp trừu tượng được thiết kế để được kế thừa."
+  },
+  {
+    "question": "94. Sự khác biệt giữa Aggregation và Association là gì?",
+    "a": "Aggregation là mối quan hệ mạnh hơn Association.",
+    "b": "Aggregation (\"part-of\") là một dạng đặc biệt của Association, thể hiện mối quan hệ \"toàn thể-bộ phận\", trong khi Association thể hiện mối liên kết chung chung hơn.",
+    "c": "Association chỉ có một chiều, Aggregation có hai chiều.",
+    "d": "Chỉ Aggregation mới có số lượng (multiplicity).",
+    "answer": "B",
+    "theory": "Association là một mối liên kết ngữ nghĩa chung giữa hai hoặc nhiều lớp. Aggregation là một dạng đặc biệt của association, biểu thị mối quan hệ \"has-a\" hoặc \"part-of\", nơi một lớp (toàn thể) bao gồm các đối tượng của lớp khác (bộ phận), nhưng các bộ phận có thể tồn tại độc lập."
+  },
+  {
+    "question": "95. Việc sử dụng thư viện mã nguồn mở (open source libraries) ảnh hưởng thế nào đến thiết kế?",
+    "a": "Không ảnh hưởng.",
+    "b": "Cần xem xét giấy phép, sự ổn định, cộng đồng hỗ trợ và cách tích hợp thư viện vào kiến trúc tổng thể.",
+    "c": "Chỉ làm giảm thời gian viết code.",
+    "d": "Luôn luôn làm tăng hiệu năng.",
+    "answer": "B",
+    "theory": "Khi quyết định sử dụng một thư viện mã nguồn mở, nhà thiết kế cần xem xét nhiều yếu tố: giấy phép của thư viện có phù hợp không, thư viện có ổn định và được hỗ trợ tốt không, và việc tích hợp nó vào kiến trúc hiện tại có gây ra vấn đề gì không (ví dụ: xung đột phụ thuộc, ảnh hưởng hiệu năng)."
+  },
+  {
+    "question": "96. Thiết kế giao diện lập trình ứng dụng (API Design) là một phần quan trọng của:",
+    "a": "Thiết kế UI.",
+    "b": "Thiết kế kiến trúc và thiết kế chi tiết, đặc biệt khi xây dựng các hệ thống con, component hoặc microservices cần giao tiếp với nhau.",
+    "c": "Thiết kế cơ sở dữ liệu.",
+    "d": "Quản lý bản quyền mã nguồn mở.",
+    "answer": "B",
+    "theory": "Thiết kế API (Application Programming Interface) là việc định nghĩa cách các thành phần phần mềm (ví dụ: subsystems, components, microservices) sẽ tương tác với nhau. Một API được thiết kế tốt phải dễ hiểu, dễ sử dụng, ổn định và đáp ứng được nhu cầu của các client sử dụng nó."
+  },
+  {
+    "question": "97. Khi thiết kế kiến trúc, việc cân bằng giữa các thuộc tính chất lượng (quality attributes) thường đối mặt với thách thức nào?",
+    "a": "Các thuộc tính chất lượng luôn bổ trợ lẫn nhau một cách hoàn hảo.",
+    "b": "Thường phải có sự đánh đổi (trade-offs), vì việc tối ưu một thuộc tính (ví dụ: hiệu năng) có thể ảnh hưởng tiêu cực đến thuộc tính khác (ví dụ: bảo mật, khả năng bảo trì).",
+    "c": "Chỉ cần tập trung vào việc đáp ứng yêu cầu chức năng là đủ, các thuộc tính chất lượng không quan trọng bằng.",
+    "d": "Các thuộc tính chất lượng chỉ quan trọng đối với giao diện người dùng.",
+    "answer": "B",
+    "theory": "Đây là câu hỏi lặp lại từ chương 5 (câu 97) và chương 8 (câu 97). Trong thiết kế kiến trúc, việc cố gắng tối ưu một thuộc tính chất lượng (ví dụ: tăng hiệu năng) thường dẫn đến sự đánh đổi với các thuộc tính chất lượng khác (ví dụ: có thể làm tăng độ phức tạp, giảm khả năng bảo trì hoặc tăng chi phí). Các kiến trúc sư phải tìm cách cân bằng các đánh đổi này."
+  },
+  {
+    "question": "98. Việc đánh giá kiến trúc (Architectural Evaluation) nên được thực hiện vào thời điểm nào trong quá trình phát triển để mang lại hiệu quả cao nhất?",
+    "a": "Chỉ sau khi hệ thống đã hoàn thành và sẵn sàng triển khai.",
+    "b": "Chỉ trong giai đoạn kiểm thử cuối cùng.",
+    "c": "Càng sớm càng tốt trong chu trình thiết kế (ngay sau khi có bản phác thảo kiến trúc) và có thể lặp lại khi kiến trúc được tinh chỉnh.",
+    "d": "Chỉ khi có vấn đề nghiêm trọng xảy ra trong quá trình phát triển.",
+    "answer": "C",
+    "theory": "Đây là câu hỏi lặp lại từ chương 5 (câu 98) và chương 8 (câu 98). Đánh giá kiến trúc nên được thực hiện càng sớm càng tốt trong vòng đời phát triển, ngay khi có các bản phác thảo kiến trúc ban đầu. Việc phát hiện và sửa chữa các vấn đề kiến trúc sớm sẽ tốn ít chi phí hơn nhiều so với việc sửa chúng ở các giai đoạn sau."
+  },
+  {
+    "question": "99. Hiện tượng \"Architectural Drift\" (hay \"Architectural Erosion\" - Xói mòn kiến trúc) mô tả điều gì?",
+    "a": "Việc kiến trúc phần mềm trở nên quá phức tạp không cần thiết.",
+    "b": "Sự sai lệch dần dần của cấu trúc hệ thống thực tế so với thiết kế kiến trúc ban đầu theo thời gian, thường do các thay đổi cục bộ không tuân thủ nguyên tắc kiến trúc.",
+    "c": "Việc thay đổi hoàn toàn mẫu kiến trúc đã chọn giữa chừng dự án.",
+    "d": "Việc thiếu hoàn toàn tài liệu mô tả kiến trúc.",
+    "answer": "B",
+    "theory": "Đây là câu hỏi lặp lại từ chương 5 (câu 99) và chương 8 (câu 99). Xói mòn kiến trúc (Architectural Drift/Erosion) là hiện tượng cấu trúc thực tế của hệ thống ngày càng sai lệch so với thiết kế kiến trúc ban đầu qua thời gian. Điều này thường xảy ra do các thay đổi, sửa lỗi, hoặc bổ sung tính năng được thực hiện mà không tuân thủ chặt chẽ các nguyên tắc và ràng buộc của kiến trúc đã định."
+  },
+  {
+    "question": "100. \"Architectural Style\" (Kiểu kiến trúc) và \"Architectural Pattern\" (Mẫu kiến trúc) thường được phân biệt như thế nào?",
+    "a": "Style là một giải pháp cụ thể, Pattern là một vấn đề chung chung.",
+    "b": "Pattern mô tả một giải pháp đã được chứng minh cho một vấn đề thiết kế cụ thể, lặp đi lặp lại; Style mô tả một cách tiếp cận, một triết lý tổ chức hệ thống ở mức cao hơn, định hình cấu trúc tổng thể (ví dụ: Client-Server là một style, MVC là một pattern).",
+    "c": "Không có sự khác biệt rõ ràng, chúng thường được dùng thay thế cho nhau.",
+    "d": "Style chỉ áp dụng cho các hệ thống phân tán, Pattern áp dụng cho mọi hệ thống.",
+    "answer": "B",
+    "theory": "Đây là câu hỏi lặp lại từ chương 5 (câu 100) và chương 8 (câu 100). Architectural Style (Kiểu kiến trúc) là một tập hợp các nguyên tắc và ràng buộc về cách tổ chức hệ thống ở mức cao (ví dụ: Client-Server, Layered, Pipe-and-Filter). Architectural Pattern (Mẫu kiến trúc) là một giải pháp đã được kiểm chứng cho một vấn đề thiết kế cụ thể, thường có phạm vi nhỏ hơn Style (ví dụ: MVC, Repository). Một Style có thể được hiện thực hóa bằng nhiều Pattern khác nhau."
+  }
+]

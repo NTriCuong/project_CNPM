@@ -1,0 +1,902 @@
+[
+    {
+    "question": "1. Mục tiêu chính của kiểm thử phần mềm là gì?",
+    "a": "Chứng minh rằng phần mềm không có lỗi.",
+    "b": "Tìm ra lỗi và chỉ ra rằng phần mềm hoạt động đúng như mong đợi.",
+    "c": "Tối ưu hóa hiệu năng của phần mềm.",
+    "d": "Viết tài liệu hướng dẫn sử dụng.",
+    "answer": "B",
+    "theory": "Mục tiêu chính của kiểm thử là phát hiện lỗi (defects) trong phần mềm. Đồng thời, kiểm thử cũng nhằm mục đích xác nhận rằng phần mềm hoạt động đúng theo các yêu cầu và mong đợi đã đặt ra. Không thể chứng minh phần mềm hoàn toàn không có lỗi."
+  },
+  {
+    "question": "2. Hoạt động nào sau đây nhằm mục đích chỉ ra rằng phần mềm thỏa mãn các yêu cầu đã đặt ra?",
+    "a": "Defect testing (Kiểm thử lỗi).",
+    "b": "Validation testing (Kiểm thử thẩm định).",
+    "c": "Regression testing (Kiểm thử hồi quy).",
+    "d": "Unit testing (Kiểm thử đơn vị).",
+    "answer": "B",
+    "theory": "Validation testing (Kiểm thử thẩm định) nhằm mục đích xác nhận rằng phần mềm đáp ứng được nhu cầu của người dùng và thỏa mãn các yêu cầu đã được đặt ra (Are we building the right product?)."
+  },
+  {
+    "question": "3. Hoạt động nào sau đây nhằm mục đích khám phá các lỗi hoặc khiếm khuyết trong phần mềm?",
+    "a": "Validation testing (Kiểm thử thẩm định).",
+    "b": "Defect testing (Kiểm thử lỗi).",
+    "c": "User testing (Kiểm thử người dùng).",
+    "d": "Acceptance testing (Kiểm thử chấp nhận).",
+    "answer": "B",
+    "theory": "Defect testing (Kiểm thử lỗi) là hoạt động được thiết kế đặc biệt để tìm kiếm các lỗi, khiếm khuyết, hoặc các điểm không phù hợp với đặc tả trong phần mềm."
+  },
+  {
+    "question": "4. \"Verification\" (Kiểm định) trong V&V (Verification & Validation) trả lời câu hỏi nào?",
+    "a": "\"Chúng ta có đang xây dựng đúng sản phẩm không?\" (Are we building the right product?)",
+    "b": "\"Chúng ta có đang xây dựng sản phẩm đúng cách không?\" (Are we building the product right?)",
+    "c": "\"Sản phẩm có dễ sử dụng không?\"",
+    "d": "\"Chi phí phát triển là bao nhiêu?\"",
+    "answer": "B",
+    "theory": "Verification (Kiểm định) trả lời câu hỏi \"Are we building the product right?\", nghĩa là kiểm tra xem phần mềm có được xây dựng đúng theo các đặc tả, thiết kế, và tiêu chuẩn đã định hay không."
+  },
+  {
+    "question": "5. \"Validation\" (Thẩm định) trong V&V (Verification & Validation) trả lời câu hỏi nào?",
+    "a": "\"Chúng ta có đang xây dựng đúng sản phẩm không?\" (Are we building the right product?)",
+    "b": "\"Chúng ta có đang xây dựng sản phẩm đúng cách không?\" (Are we building the product right?)",
+    "c": "\"Mã nguồn có tuân thủ coding standard không?\"",
+    "d": "\"Kiến trúc hệ thống có tối ưu không?\"",
+    "answer": "A",
+    "theory": "Validation (Thẩm định) trả lời câu hỏi \"Are we building the right product?\", nghĩa là kiểm tra xem phần mềm có đáp ứng được nhu cầu và mong đợi thực sự của người dùng và các bên liên quan hay không."
+  },
+  {
+    "question": "6. Sự khác biệt cơ bản giữa kiểm thử (Testing) và gỡ lỗi (Debugging) là gì?",
+    "a": "Testing tìm lỗi, Debugging sửa lỗi.",
+    "b": "Debugging là một phần của Testing.",
+    "c": "Testing thực hiện trước Debugging.",
+    "d": "Cả a và c đều đúng.",
+    "answer": "A",
+    "theory": "Testing là quá trình thực thi phần mềm để tìm ra sự tồn tại của lỗi. Debugging là quá trình sau khi lỗi được phát hiện, nhằm xác định vị trí và nguyên nhân của lỗi để sửa chữa nó. Testing thường diễn ra trước Debugging."
+  },
+  {
+    "question": "7. Thanh tra phần mềm (Software Inspection) là một kỹ thuật:",
+    "a": "Kiểm thử động (Dynamic testing).",
+    "b": "Kiểm thử tĩnh (Static verification), phân tích biểu diễn tĩnh của hệ thống.",
+    "c": "Kiểm thử hiệu năng.",
+    "d": "Kiểm thử người dùng.",
+    "answer": "B",
+    "theory": "Software Inspection (còn gọi là Fagan inspection) là một kỹ thuật kiểm thử tĩnh (static verification). Nó bao gồm việc xem xét kỹ lưỡng các sản phẩm phần mềm (như code, tài liệu thiết kế) bởi một nhóm người để tìm lỗi, mà không cần thực thi chương trình."
+  },
+  {
+    "question": "8. Kiểm thử phần mềm (Software Testing) là một kỹ thuật:",
+    "a": "Kiểm thử tĩnh (Static verification).",
+    "b": "Kiểm thử động (Dynamic verification), thực thi và quan sát hành vi.",
+    "c": "Chỉ dùng để kiểm tra tài liệu.",
+    "d": "Chỉ thực hiện bởi khách hàng.",
+    "answer": "B",
+    "theory": "Software Testing là một kỹ thuật kiểm thử động (dynamic verification). Nó liên quan đến việc thực thi chương trình với các dữ liệu đầu vào cụ thể và quan sát hành vi, kết quả đầu ra để xác định xem có lỗi hay không."
+  },
+  {
+    "question": "9. Mô hình quy trình kiểm thử phần mềm cơ bản bao gồm các bước nào?",
+    "a": "Chỉ chạy chương trình và báo cáo kết quả.",
+    "b": "Thiết kế test case → Chuẩn bị test data → Chạy chương trình với test data → So sánh kết quả.",
+    "c": "Viết code → Chạy chương trình → Sửa lỗi.",
+    "d": "Thu thập yêu cầu → Thiết kế → Kiểm thử.",
+    "answer": "B",
+    "theory": "Một quy trình kiểm thử cơ bản bao gồm các bước chính: Thiết kế các trường hợp kiểm thử (test cases) dựa trên đặc tả, chuẩn bị dữ liệu kiểm thử (test data) cho các test case đó, thực thi chương trình với test data, và so sánh kết quả thực tế với kết quả mong đợi để xác định lỗi."
+  },
+  {
+    "question": "10. Kiểm thử hộp đen (Black-box testing) dựa trên yếu tố nào để thiết kế test case?",
+    "a": "Cấu trúc mã nguồn bên trong.",
+    "b": "Đặc tả yêu cầu chức năng và phi chức năng của phần mềm.",
+    "c": "Kinh nghiệm cá nhân của lập trình viên.",
+    "d": "Lưu đồ thuật toán.",
+    "answer": "B",
+    "theory": "Kiểm thử hộp đen (Black-box testing) tập trung vào việc kiểm tra chức năng của phần mềm dựa trên đặc tả yêu cầu, mà không cần biết đến cấu trúc bên trong (mã nguồn) của nó. Test case được thiết kế dựa trên đầu vào và đầu ra mong đợi."
+  },
+  {
+    "question": "11. Kiểm thử hộp trắng (White-box testing) dựa trên yếu tố nào để thiết kế test case?",
+    "a": "Yêu cầu của khách hàng.",
+    "b": "Giao diện người dùng.",
+    "c": "Cấu trúc logic và mã nguồn bên trong của phần mềm.",
+    "d": "Tài liệu kiến trúc hệ thống.",
+    "answer": "C",
+    "theory": "Kiểm thử hộp trắng (White-box testing hay glass-box testing) dựa trên kiến thức về cấu trúc bên trong, logic và mã nguồn của phần mềm. Test case được thiết kế để kiểm tra các đường đi (paths) cụ thể trong mã, các điều kiện, vòng lặp, v.v."
+  },
+  {
+    "question": "12. Kỹ thuật phân vùng tương đương (Equivalence Partitioning) thuộc loại kiểm thử nào?",
+    "a": "Kiểm thử hộp trắng (White-box testing).",
+    "b": "Kiểm thử hộp đen (Black-box testing).",
+    "c": "Kiểm thử hồi quy (Regression testing).",
+    "d": "Kiểm thử tích hợp (Integration testing).",
+    "answer": "B",
+    "theory": "Phân vùng tương đương là một kỹ thuật thiết kế test case hộp đen. Nó chia miền dữ liệu đầu vào thành các phân vùng (lớp) tương đương, nơi giả định rằng tất cả các giá trị trong một phân vùng sẽ cho kết quả tương tự. Chỉ cần chọn một giá trị đại diện từ mỗi phân vùng để kiểm thử."
+  },
+  {
+    "question": "13. Kỹ thuật phân tích giá trị biên (Boundary Value Analysis) thường được sử dụng kết hợp với kỹ thuật nào?",
+    "a": "Kiểm tra luồng điều khiển (Control flow testing).",
+    "b": "Phân vùng tương đương (Equivalence Partitioning).",
+    "c": "Kiểm thử trạng thái (State testing).",
+    "d": "Kiểm thử đơn vị (Unit testing).",
+    "answer": "B",
+    "theory": "Phân tích giá trị biên (BVA) thường được sử dụng kết hợp với Phân vùng tương đương. Sau khi xác định các phân vùng tương đương, BVA tập trung vào việc kiểm thử các giá trị tại các điểm biên (boundaries) của các phân vùng đó, vì lỗi thường xảy ra ở các điểm biên."
+  },
+  {
+    "question": "14. Mục tiêu của kiểm thử độ bao phủ câu lệnh (Statement Coverage) là gì?",
+    "a": "Đảm bảo mọi hàm đều được gọi ít nhất một lần.",
+    "b": "Đảm bảo mọi dòng lệnh trong mã nguồn được thực thi ít nhất một lần.",
+    "c": "Đảm bảo mọi nhánh quyết định (true/false) đều được thực thi ít nhất một lần.",
+    "d": "Đảm bảo mọi vòng lặp được thực thi đúng số lần.",
+    "answer": "B",
+    "theory": "Độ bao phủ câu lệnh (Statement Coverage) là một thước đo kiểm thử hộp trắng, nhằm đảm bảo rằng mỗi câu lệnh (statement) thực thi được trong mã nguồn đã được chạy ít nhất một lần trong quá trình kiểm thử."
+  },
+  {
+    "question": "15. Kiểm thử độ bao phủ nhánh (Branch Coverage) / Quyết định (Decision Coverage) mạnh hơn Độ bao phủ câu lệnh vì sao?",
+    "a": "Nó dễ thực hiện hơn.",
+    "b": "Nó đảm bảo mọi dòng lệnh được chạy và còn đảm bảo mọi kết quả có thể có của các điểm quyết định (if, while,...) đều được kiểm tra.",
+    "c": "Nó chỉ kiểm tra các nhánh 'true'.",
+    "d": "Nó không yêu cầu xem mã nguồn.",
+    "answer": "B",
+    "theory": "Độ bao phủ nhánh (hay quyết định) yêu cầu mỗi nhánh có thể có của một điểm quyết định (ví dụ: cả nhánh true và false của một câu lệnh if) đều phải được thực thi ít nhất một lần. Điều này mạnh hơn độ bao phủ câu lệnh vì có thể có trường hợp mọi câu lệnh được chạy nhưng không phải tất cả các nhánh đều được kiểm tra."
+  },
+  {
+    "question": "16. Kiểm thử trong khi xây dựng (Development testing) thường do ai thực hiện?",
+    "a": "Khách hàng.",
+    "b": "Đội ngũ kiểm thử độc lập.",
+    "c": "Nhóm phát triển phần mềm (lập trình viên).",
+    "d": "Người quản lý dự án.",
+    "answer": "C",
+    "theory": "Kiểm thử trong khi xây dựng (Development testing), bao gồm kiểm thử đơn vị (unit testing) và kiểm thử thành phần (component testing), thường được thực hiện bởi chính các lập trình viên hoặc nhóm phát triển trong quá trình họ xây dựng phần mềm."
+  },
+  {
+    "question": "17. Kiểm thử đơn vị (Unit testing) tập trung vào việc kiểm tra:",
+    "a": "Toàn bộ hệ thống.",
+    "b": "Tương tác giữa các component.",
+    "c": "Các đơn vị chương trình riêng lẻ (lớp, phương thức) một cách độc lập.",
+    "d": "Giao diện người dùng.",
+    "answer": "C",
+    "theory": "Kiểm thử đơn vị tập trung vào việc kiểm tra các thành phần nhỏ nhất, có thể cô lập được của phần mềm (ví dụ: một phương thức, một lớp) để đảm bảo chúng hoạt động đúng theo đặc tả của chúng, một cách độc lập với các phần khác của hệ thống."
+  },
+  {
+    "question": "18. Kiểm thử thành phần (Component testing) tập trung vào việc kiểm tra:",
+    "a": "Từng dòng mã lệnh.",
+    "b": "Giao diện (interface) của một component được tạo thành từ nhiều đơn vị.",
+    "c": "Yêu cầu của người dùng cuối.",
+    "d": "Cấu hình cài đặt.",
+    "answer": "B",
+    "theory": "Kiểm thử thành phần (Component testing) tập trung vào việc kiểm tra các component (thường được tạo thành từ việc tích hợp nhiều đơn vị) thông qua giao diện (interface) của chúng. Nó kiểm tra xem component có cung cấp đúng các dịch vụ được đặc tả qua giao diện hay không."
+  },
+  {
+    "question": "19. Kiểm thử hệ thống (System testing) tập trung vào việc kiểm tra:",
+    "a": "Các thuật toán riêng lẻ.",
+    "b": "Tương tác giữa các component đã được tích hợp và các chức năng nổi bật của toàn hệ thống.",
+    "c": "Tài liệu thiết kế.",
+    "d": "Mã nguồn của từng lớp.",
+    "answer": "B",
+    "theory": "Kiểm thử hệ thống (System testing) được thực hiện trên toàn bộ hệ thống đã được tích hợp. Nó kiểm tra xem hệ thống có đáp ứng các yêu cầu chức năng và phi chức năng đã đặt ra hay không, bao gồm sự tương tác giữa các component và các hành vi nổi bật của hệ thống."
+  },
+  {
+    "question": "20. Việc sử dụng framework như JUnit, NUnit hỗ trợ loại kiểm thử nào?",
+    "a": "Kiểm thử hệ thống thủ công.",
+    "b": "Kiểm thử chấp nhận người dùng.",
+    "c": "Tự động hóa kiểm thử đơn vị (Automated unit testing).",
+    "d": "Thanh tra mã nguồn (Code inspection).",
+    "answer": "C",
+    "theory": "JUnit (cho Java) và NUnit (cho .NET) là các framework phổ biến được sử dụng để viết và chạy các kiểm thử đơn vị một cách tự động. Chúng cung cấp các assertion, test runner, và các tiện ích khác để hỗ trợ việc kiểm thử đơn vị."
+  },
+  {
+    "question": "21. Kiểm thử giao diện (Interface testing) nhằm mục đích gì?",
+    "a": "Kiểm tra giao diện người dùng đồ họa.",
+    "b": "Tìm lỗi do tương tác không đúng hoặc giả định sai về cách các module/component giao tiếp với nhau.",
+    "c": "Chỉ kiểm tra các tham số kiểu số nguyên.",
+    "d": "Kiểm tra tốc độ mạng.",
+    "answer": "B",
+    "theory": "Kiểm thử giao diện tập trung vào việc kiểm tra sự tương tác giữa các module, component, hoặc hệ thống thông qua các giao diện (APIs, tham số, định dạng dữ liệu). Mục đích là phát hiện lỗi do hiểu sai về giao diện, truyền dữ liệu không đúng, hoặc các giả định không chính xác về hành vi của nhau."
+  },
+  {
+    "question": "22. Khi kiểm thử giao diện có tham số, tại sao nên kiểm tra các giá trị biên?",
+    "a": "Vì lỗi thường xảy ra tại các điểm giới hạn của dải giá trị hợp lệ.",
+    "b": "Chỉ để tăng số lượng test case.",
+    "c": "Vì giá trị biên dễ nhập liệu hơn.",
+    "d": "Chỉ là quy tắc ngẫu nhiên.",
+    "answer": "A",
+    "theory": "Kinh nghiệm cho thấy lỗi thường có xu hướng xảy ra tại các giá trị biên của một dải đầu vào (ví dụ: giá trị nhỏ nhất, lớn nhất, ngay bên trong và ngay bên ngoài dải hợp lệ). Do đó, kiểm tra các giá trị biên là một kỹ thuật quan trọng."
+  },
+  {
+    "question": "23. Tại sao việc kiểm thử tham số con trỏ với giá trị null lại quan trọng?",
+    "a": "Để đảm bảo chương trình không bị lỗi NullPointerException hoặc tương tự khi tham số là null.",
+    "b": "null là giá trị phổ biến nhất.",
+    "c": "Chỉ cần thiết trong ngôn ngữ C.",
+    "d": "Để kiểm tra hiệu năng.",
+    "answer": "A",
+    "theory": "Nếu một phương thức mong đợi một đối tượng (tham chiếu/con trỏ) nhưng lại nhận được giá trị null, nó có thể gây ra lỗi NullPointerException (trong Java) hoặc các lỗi tương tự nếu không được xử lý đúng cách. Kiểm thử với giá trị null giúp đảm bảo chương trình xử lý tình huống này một cách an toàn."
+  },
+  {
+    "question": "24. Stress testing trong hệ thống truyền thông điệp nhằm mục đích gì?",
+    "a": "Kiểm tra giao diện người dùng.",
+    "b": "Đánh giá khả năng xử lý của hệ thống dưới tải trọng cao hoặc bất thường, tìm ra giới hạn hoặc điểm yếu.",
+    "c": "Chỉ kiểm tra định dạng thông điệp.",
+    "d": "Kiểm tra khả năng cài đặt.",
+    "answer": "B",
+    "theory": "Stress testing đẩy hệ thống vượt quá giới hạn hoạt động bình thường của nó (ví dụ: gửi một lượng lớn thông điệp, tạo ra các điều kiện lỗi) để xem hệ thống phản ứng như thế nào, có phục hồi được không, và tìm ra các điểm yếu hoặc giới hạn chịu tải."
+  },
+  {
+    "question": "25. Use case có thể được sử dụng làm cơ sở cho loại kiểm thử nào?",
+    "a": "Chỉ kiểm thử đơn vị.",
+    "b": "Kiểm thử hệ thống (System testing) và Kiểm thử chấp nhận (Acceptance testing) vì nó mô tả tương tác end-to-end.",
+    "c": "Chỉ kiểm thử giao diện.",
+    "d": "Chỉ kiểm thử hồi quy.",
+    "answer": "B",
+    "theory": "Use case mô tả cách người dùng tương tác với hệ thống để đạt được một mục tiêu. Do đó, chúng là cơ sở tốt để thiết kế các test case cho Kiểm thử Hệ thống (kiểm tra xem hệ thống có thực hiện đúng các chức năng từ đầu đến cuối) và Kiểm thử Chấp nhận (xác nhận hệ thống đáp ứng nhu cầu người dùng)."
+  },
+  {
+    "question": "26. Kiểm thử hồi quy (Regression Testing) là gì?",
+    "a": "Kiểm thử các chức năng mới được thêm vào.",
+    "b": "Kiểm thử lại hệ thống sau khi có thay đổi để đảm bảo các chức năng cũ không bị ảnh hưởng tiêu cực.",
+    "c": "Kiểm thử được thực hiện bởi người dùng cuối.",
+    "d": "Kiểm thử hiệu năng của hệ thống.",
+    "answer": "B",
+    "theory": "Kiểm thử hồi quy được thực hiện mỗi khi có sự thay đổi trong mã nguồn (sửa lỗi, thêm tính năng mới, refactoring) để đảm bảo rằng các thay đổi đó không vô tình làm hỏng các chức năng đã hoạt động tốt trước đây."
+  },
+  {
+    "question": "27. Tại sao kiểm thử hồi quy rất tốn kém nếu thực hiện thủ công?",
+    "a": "Vì phải lặp lại một số lượng lớn các kiểm thử đã thực hiện trước đó.",
+    "b": "Vì cần nhiều người thực hiện.",
+    "c": "Vì yêu cầu phần cứng đặc biệt.",
+    "d": "Vì khó thiết kế test case hồi quy.",
+    "answer": "A",
+    "theory": "Kiểm thử hồi quy thường bao gồm việc chạy lại một bộ lớn các test case đã được tạo ra từ trước để bao phủ các chức năng hiện có. Nếu thực hiện thủ công, việc này sẽ rất tốn thời gian và công sức, dễ gây nhàm chán và sai sót."
+  },
+  {
+    "question": "28. Tự động hóa đóng vai trò quan trọng như thế nào đối với kiểm thử hồi quy?",
+    "a": "Làm cho kiểm thử hồi quy trở nên khả thi và hiệu quả về chi phí bằng cách chạy lại các bộ kiểm thử một cách nhanh chóng.",
+    "b": "Không có vai trò gì.",
+    "c": "Chỉ giúp tạo báo cáo.",
+    "d": "Chỉ áp dụng cho kiểm thử đơn vị.",
+    "answer": "A",
+    "theory": "Tự động hóa kiểm thử hồi quy cho phép chạy lại một bộ lớn các test case một cách nhanh chóng và nhất quán sau mỗi lần thay đổi. Điều này làm cho việc kiểm thử hồi quy trở nên khả thi, hiệu quả về chi phí và giúp phát hiện lỗi sớm."
+  },
+  {
+    "question": "29. Kiểm thử bản phát hành (Release testing) thường do ai thực hiện?",
+    "a": "Nhóm phát triển.",
+    "b": "Một nhóm kiểm thử độc lập hoặc nhóm đảm bảo chất lượng (QA).",
+    "c": "Khách hàng tiềm năng.",
+    "d": "Người quản lý dự án.",
+    "answer": "B",
+    "theory": "Kiểm thử bản phát hành (Release testing) thường được thực hiện bởi một nhóm kiểm thử riêng biệt, độc lập với nhóm phát triển (ví dụ: đội QA). Mục đích là để đánh giá xem hệ thống đã sẵn sàng để phát hành cho khách hàng hay chưa, dựa trên một góc nhìn khách quan."
+  },
+  {
+    "question": "30. Mục tiêu chính của Kiểm thử bản phát hành là gì?",
+    "a": "Tìm ra mọi lỗi còn sót lại trong mã nguồn.",
+    "b": "Thuyết phục các bên liên quan (bao gồm khách hàng) rằng hệ thống đủ tốt để phát hành và đáp ứng yêu cầu.",
+    "c": "Tối ưu hóa hiệu năng cuối cùng.",
+    "d": "Viết tài liệu người dùng.",
+    "answer": "B",
+    "theory": "Kiểm thử bản phát hành không nhằm mục đích tìm lỗi (mặc dù lỗi vẫn có thể được phát hiện) mà chủ yếu là để chứng minh rằng hệ thống đáp ứng các yêu cầu đã định và đủ chất lượng để phát hành cho người dùng. Nó là một dạng của validation testing."
+  },
+  {
+    "question": "31. Kiểm thử bản phát hành thường tập trung vào phương pháp kiểm thử nào?",
+    "a": "Chỉ kiểm thử hộp trắng.",
+    "b": "Chủ yếu là kiểm thử hộp đen (dựa trên đặc tả và yêu cầu).",
+    "c": "Chỉ kiểm thử đơn vị.",
+    "d": "Chỉ thanh tra mã nguồn.",
+    "answer": "B",
+    "theory": "Kiểm thử bản phát hành thường tập trung vào kiểm thử hộp đen, nghĩa là kiểm tra hệ thống dựa trên đặc tả yêu cầu và hành vi quan sát được từ bên ngoài, mà không cần quan tâm đến cấu trúc bên trong. Điều này phản ánh cách người dùng sẽ sử dụng hệ thống."
+  },
+  {
+    "question": "32. Kiểm thử hiệu năng (Performance testing) là một phần quan trọng của kiểm thử bản phát hành nhằm mục đích gì?",
+    "a": "Đảm bảo giao diện người dùng đẹp mắt.",
+    "b": "Đánh giá các thuộc tính phi chức năng như thời gian đáp ứng, thông lượng (throughput) dưới các tải trọng khác nhau.",
+    "c": "Tìm lỗi logic trong các thuật toán.",
+    "d": "Kiểm tra khả năng cài đặt.",
+    "answer": "B",
+    "theory": "Kiểm thử hiệu năng trong giai đoạn kiểm thử bản phát hành nhằm đánh giá xem hệ thống có đáp ứng được các yêu cầu về hiệu năng (ví dụ: thời gian phản hồi, khả năng chịu tải, thông lượng) đã được đặt ra trong các kịch bản sử dụng thực tế hay không."
+  },
+  {
+    "question": "33. Stress testing khác với Load testing như thế nào?",
+    "a": "Stress testing kiểm tra dưới tải trọng bình thường, Load testing kiểm tra dưới tải trọng cực hạn.",
+    "b": "Load testing đánh giá hiệu năng dưới tải trọng dự kiến, Stress testing đẩy hệ thống vượt quá giới hạn để xem nó ứng xử/phục hồi ra sao.",
+    "c": "Chúng là hai thuật ngữ đồng nghĩa.",
+    "d": "Stress testing chỉ kiểm tra CPU, Load testing kiểm tra bộ nhớ.",
+    "answer": "B",
+    "theory": "Load testing kiểm tra hành vi của hệ thống dưới các mức tải trọng bình thường và dự kiến. Stress testing đi xa hơn, đẩy hệ thống đến hoặc vượt quá giới hạn chịu tải của nó để xem hệ thống phản ứng như thế nào khi gặp điều kiện khắc nghiệt (ví dụ: có bị crash không, có phục hồi được không)."
+  },
+  {
+    "question": "34. Kiểm thử người dùng (User testing) là gì?",
+    "a": "Lập trình viên tự kiểm thử mã của mình.",
+    "b": "Nhóm QA kiểm thử hệ thống trong môi trường giả lập.",
+    "c": "Người dùng thực tế hoặc tiềm năng sử dụng và kiểm thử hệ thống trong môi trường làm việc của họ.",
+    "d": "Tự động chạy các script kiểm thử giao diện.",
+    "answer": "C",
+    "theory": "Kiểm thử người dùng là quá trình cho phép người dùng thực tế (hoặc đại diện của họ) sử dụng hệ thống trong môi trường làm việc tự nhiên của họ để đánh giá tính dễ sử dụng, sự phù hợp với nhu cầu, và phát hiện các vấn đề mà các loại kiểm thử khác có thể bỏ qua."
+  },
+  {
+    "question": "35. Kiểm thử Alpha (Alpha testing) thường diễn ra ở đâu?",
+    "a": "Tại địa điểm của khách hàng.",
+    "b": "Tại địa điểm của nhà phát triển, với sự tham gia của người dùng (hoặc nhóm kiểm thử nội bộ đóng vai người dùng).",
+    "c": "Công khai trên internet cho mọi người tham gia.",
+    "d": "Chỉ trên môi trường đám mây.",
+    "answer": "B",
+    "theory": "Alpha testing thường được thực hiện tại môi trường của nhà phát triển (hoặc một môi trường kiểm soát) bởi một nhóm người dùng nội bộ hoặc một nhóm khách hàng được chọn lọc, trước khi sản phẩm được phát hành rộng rãi hơn."
+  },
+  {
+    "question": "36. Kiểm thử Beta (Beta testing) thường diễn ra ở đâu?",
+    "a": "Chỉ tại địa điểm của nhà phát triển.",
+    "b": "Phát hành bản dùng thử cho một nhóm người dùng bên ngoài sử dụng trong môi trường thực tế của họ và cung cấp phản hồi.",
+    "c": "Chỉ trong phòng thí nghiệm.",
+    "d": "Không cần thiết cho phần mềm hiện đại.",
+    "answer": "B",
+    "theory": "Beta testing diễn ra sau Alpha testing, nơi sản phẩm được phát hành cho một nhóm người dùng bên ngoài (beta testers) sử dụng trong môi trường thực tế của họ. Mục đích là để thu thập phản hồi về các vấn đề, lỗi, và tính dễ sử dụng trong điều kiện sử dụng thực."
+  },
+  {
+    "question": "37. Mục tiêu chính của Kiểm thử người dùng là gì?",
+    "a": "Tìm lỗi cú pháp.",
+    "b": "Đánh giá xem hệ thống có thực sự đáp ứng nhu cầu và mong đợi của người dùng trong thực tế hay không (Validation).",
+    "c": "Kiểm tra kiến trúc hệ thống.",
+    "d": "Đo lường độ bao phủ mã.",
+    "answer": "B",
+    "theory": "Mục tiêu chính của kiểm thử người dùng (bao gồm Alpha và Beta testing) là để xác nhận (validate) rằng hệ thống thực sự hữu ích, dễ sử dụng, và đáp ứng được nhu cầu của người dùng mục tiêu trong các kịch bản sử dụng thực tế."
+  },
+  {
+    "question": "38. Đâu KHÔNG phải là một tiêu chí phổ biến để dừng kiểm thử?",
+    "a": "Hoàn thành một phương pháp kiểm tra cụ thể (ví dụ: chạy hết các test case đã thiết kế).",
+    "b": "Đạt được một tỷ lệ bao phủ mã nhất định (ví dụ: 95% bao phủ nhánh).",
+    "c": "Tỷ lệ phát hiện lỗi giảm xuống dưới một ngưỡng nhất định.",
+    "d": "Hết thời gian dự kiến cho giai đoạn kiểm thử, bất kể chất lượng.",
+    "answer": "D",
+    "theory": "Việc dừng kiểm thử chỉ vì hết thời gian mà không xem xét đến chất lượng hiện tại của sản phẩm (ví dụ: số lượng lỗi nghiêm trọng còn tồn tại, độ bao phủ chưa đạt) là một thực hành không tốt và có thể dẫn đến việc phát hành sản phẩm kém chất lượng."
+  },
+  {
+    "question": "39. Phương pháp \"gieo hạt lỗi\" (fault seeding / defect seeding) được sử dụng để:",
+    "a": "Cố tình thêm lỗi vào phần mềm để gây khó khăn cho người dùng.",
+    "b": "Ước lượng số lượng lỗi còn lại trong phần mềm bằng cách xem tỷ lệ lỗi được \"gieo\" vào bị phát hiện trong quá trình kiểm thử.",
+    "c": "Tăng tốc độ kiểm thử.",
+    "d": "Tự động sửa các lỗi tìm thấy.",
+    "answer": "B",
+    "theory": "Trong phương pháp gieo hạt lỗi, một số lượng lỗi đã biết (hạt lỗi) được cố tình đưa vào phần mềm. Sau đó, quá trình kiểm thử được thực hiện. Tỷ lệ hạt lỗi được tìm thấy so với tổng số hạt lỗi được gieo có thể được sử dụng để ước lượng hiệu quả của quá trình kiểm thử và từ đó suy ra số lượng lỗi thực tế còn lại trong phần mềm."
+  },
+  {
+    "question": "40. Tiến hóa phần mềm (Software Evolution) đề cập đến giai đoạn nào của vòng đời phần mềm?",
+    "a": "Chỉ giai đoạn phát triển ban đầu.",
+    "b": "Giai đoạn sau khi phần mềm được phát hành và đưa vào sử dụng, nơi nó tiếp tục được thay đổi và cập nhật.",
+    "c": "Chỉ giai đoạn thu thập yêu cầu.",
+    "d": "Chỉ giai đoạn kiểm thử.",
+    "answer": "B",
+    "theory": "Tiến hóa phần mềm là quá trình thay đổi và phát triển của phần mềm sau khi nó đã được triển khai và đưa vào sử dụng. Điều này bao gồm việc sửa lỗi, cải tiến, thêm tính năng mới, và thích ứng với môi trường thay đổi."
+  },
+  {
+    "question": "41. Tại sao tiến hóa phần mềm lại quan trọng và tốn kém?",
+    "a": "Vì yêu cầu kinh doanh, công nghệ và môi trường hoạt động liên tục thay đổi, đòi hỏi phần mềm phải thích ứng để duy trì giá trị. Chi phí bảo trì và nâng cấp thường chiếm phần lớn tổng chi phí vòng đời.",
+    "b": "Vì lập trình viên thích viết lại code.",
+    "c": "Vì khách hàng luôn đòi hỏi những thứ không cần thiết.",
+    "d": "Tiến hóa không quan trọng và không tốn kém.",
+    "answer": "A",
+    "theory": "Phần mềm phải liên tục tiến hóa để đáp ứng các yêu cầu kinh doanh thay đổi, công nghệ mới, và sự thay đổi của môi trường vận hành. Nếu không, nó sẽ trở nên lỗi thời và mất giá trị. Quá trình bảo trì và tiến hóa này thường rất tốn kém, chiếm một phần lớn trong tổng chi phí vòng đời của phần mềm."
+  },
+  {
+    "question": "42. Sự khác biệt giữa \"Evolution\" và \"Servicing\" trong vòng đời phần mềm là gì?",
+    "a": "Evolution thêm chức năng mới, Servicing chỉ sửa lỗi.",
+    "b": "Evolution diễn ra khi phần mềm còn được tích cực phát triển để đáp ứng yêu cầu mới, Servicing chỉ sửa lỗi và thực hiện các thay đổi nhỏ để duy trì hoạt động trong môi trường hiện tại (không thêm tính năng lớn).",
+    "c": "Servicing tốn kém hơn Evolution.",
+    "d": "Không có sự khác biệt.",
+    "answer": "B",
+    "theory": "Evolution (Tiến hóa) thường liên quan đến việc phát triển các phiên bản mới với tính năng mới hoặc cải tiến đáng kể để đáp ứng các yêu cầu thay đổi. Servicing (Bảo dưỡng) tập trung vào việc duy trì hoạt động của phiên bản hiện tại, bao gồm sửa lỗi, và thực hiện các điều chỉnh nhỏ để nó tiếp tục hoạt động trong môi trường hiện tại mà không thêm các tính năng lớn."
+  },
+  {
+    "question": "43. Giai đoạn \"Phase-out\" của phần mềm nghĩa là gì?",
+    "a": "Phần mềm đang được phát triển mạnh mẽ nhất.",
+    "b": "Phần mềm vẫn được sử dụng nhưng không còn được thay đổi hay nâng cấp nữa, chuẩn bị được thay thế.",
+    "c": "Phần mềm vừa được phát hành lần đầu.",
+    "d": "Phần mềm được chuyển sang mã nguồn mở.",
+    "answer": "B",
+    "theory": "Giai đoạn Phase-out (Loại bỏ dần) là giai đoạn cuối trong vòng đời của một số phần mềm, khi nó không còn được hỗ trợ tích cực (không có bản vá lỗi, không có nâng cấp) và đang được lên kế hoạch để thay thế bằng một hệ thống mới hơn, mặc dù nó có thể vẫn đang được sử dụng."
+  },
+  {
+    "question": "44. Quy trình xử lý yêu cầu thay đổi (Change Request) trong tiến hóa phần mềm thường bao gồm bước nào?",
+    "a": "Chấp nhận và thực hiện ngay mọi yêu cầu thay đổi.",
+    "b": "Phân tích tác động (Impact Analysis), Lập kế hoạch phát hành (Release Planning), Hiện thực thay đổi.",
+    "c": "Chỉ cần ghi nhận yêu cầu thay đổi.",
+    "d": "Từ chối mọi yêu cầu thay đổi sau khi phát hành.",
+    "answer": "B",
+    "theory": "Một quy trình xử lý yêu cầu thay đổi có cấu trúc thường bao gồm các bước: Tiếp nhận yêu cầu, Phân tích tác động của thay đổi (về kỹ thuật, chi phí, thời gian), Quyết định chấp nhận/từ chối, Lập kế hoạch cho việc hiện thực (nếu chấp nhận), Hiện thực thay đổi, Kiểm thử, và Phát hành."
+  },
+  {
+    "question": "45. Phân tích tác động (Impact Analysis) trong quy trình thay đổi nhằm mục đích gì?",
+    "a": "Ước tính chi phí và thời gian cần thiết để thực hiện thay đổi, xác định các phần khác của hệ thống có thể bị ảnh hưởng.",
+    "b": "Chỉ để xác định ai là người yêu cầu thay đổi.",
+    "c": "Để viết lại yêu cầu thay đổi.",
+    "d": "Để quyết định có nên sửa lỗi hay không.",
+    "answer": "A",
+    "theory": "Phân tích tác động là một bước quan trọng để đánh giá ảnh hưởng của một yêu cầu thay đổi. Nó giúp xác định những phần nào của hệ thống sẽ bị ảnh hưởng, mức độ phức tạp của thay đổi, chi phí và thời gian ước tính, và các rủi ro tiềm ẩn, từ đó giúp đưa ra quyết định có thực hiện thay đổi hay không."
+  },
+  {
+    "question": "46. Quy trình xử lý thay đổi khẩn cấp (Urgent Change Process) thường khác quy trình thông thường ở điểm nào?",
+    "a": "Bỏ qua hoàn toàn việc phân tích và kiểm thử.",
+    "b": "Quy trình được rút gọn hơn để có thể phát hành bản sửa lỗi nhanh chóng, có thể bỏ qua một số bước phê duyệt hoặc kiểm thử đầy đủ (nhưng vẫn cần kiểm thử cơ bản).",
+    "c": "Chỉ áp dụng cho thay đổi giao diện.",
+    "d": "Luôn tốn nhiều thời gian hơn quy trình thường.",
+    "answer": "B",
+    "theory": "Đối với các thay đổi khẩn cấp (ví dụ: sửa lỗi nghiêm trọng ảnh hưởng đến hoạt động kinh doanh), quy trình xử lý thường được rút gọn để có thể triển khai bản vá nhanh nhất có thể. Điều này có thể bao gồm việc bỏ qua một số bước phê duyệt hoặc giảm bớt phạm vi kiểm thử, nhưng vẫn cần đảm bảo tính ổn định cơ bản."
+  },
+  {
+    "question": "47. Bảo trì phần mềm (Software Maintenance) được định nghĩa là:",
+    "a": "Chỉ việc sửa lỗi sau khi phần mềm được phát hành.",
+    "b": "Mọi hoạt động sửa đổi phần mềm sau khi nó đã được bàn giao và đưa vào sử dụng.",
+    "c": "Chỉ việc thêm tính năng mới.",
+    "d": "Chỉ việc nâng cấp phần cứng.",
+    "answer": "B",
+    "theory": "Bảo trì phần mềm bao gồm tất cả các hoạt động sửa đổi được thực hiện trên một sản phẩm phần mềm sau khi nó đã được triển khai và đưa vào sử dụng. Điều này bao gồm sửa lỗi, cải tiến, thích ứng với môi trường mới, và thêm các chức năng nhỏ."
+  },
+  {
+    "question": "48. Loại bảo trì nào nhằm sửa các lỗi được phát hiện trong quá trình sử dụng?",
+    "a": "Bảo trì thích ứng (Adaptive Maintenance).",
+    "b": "Bảo trì hoàn thiện (Perfective Maintenance).",
+    "c": "Bảo trì phòng ngừa (Preventive Maintenance).",
+    "d": "Bảo trì sửa lỗi (Corrective Maintenance).",
+    "answer": "D",
+    "theory": "Bảo trì sửa lỗi (Corrective Maintenance) là loại bảo trì được thực hiện để sửa các lỗi (bugs) hoặc khiếm khuyết được phát hiện bởi người dùng hoặc trong quá trình vận hành phần mềm."
+  },
+  {
+    "question": "49. Loại bảo trì nào nhằm điều chỉnh phần mềm để hoạt động trong môi trường mới (ví dụ: hệ điều hành mới, CSDL mới)?",
+    "a": "Bảo trì sửa lỗi (Corrective Maintenance).",
+    "b": "Bảo trì thích ứng (Adaptive Maintenance).",
+    "c": "Bảo trì hoàn thiện (Perfective Maintenance).",
+    "d": "Bảo trì phòng ngừa (Preventive Maintenance).",
+    "answer": "B",
+    "theory": "Bảo trì thích ứng (Adaptive Maintenance) là loại bảo trì được thực hiện để điều chỉnh phần mềm cho phù hợp với những thay đổi trong môi trường hoạt động của nó, chẳng hạn như nâng cấp hệ điều hành, thay đổi cơ sở dữ liệu, hoặc tích hợp với các hệ thống mới."
+  },
+  {
+    "question": "50. Loại bảo trì nào nhằm cải thiện hiệu năng, khả năng bảo trì hoặc thêm các tính năng nhỏ mới theo yêu cầu người dùng?",
+    "a": "Bảo trì sửa lỗi (Corrective Maintenance).",
+    "b": "Bảo trì thích ứng (Adaptive Maintenance).",
+    "c": "Bảo trì hoàn thiện (Perfective Maintenance).",
+    "d": "Bảo trì phòng ngừa (Preventive Maintenance).",
+    "answer": "C",
+    "theory": "Bảo trì hoàn thiện (Perfective Maintenance) bao gồm các thay đổi nhằm cải thiện chất lượng của phần mềm (ví dụ: tăng hiệu năng, cải thiện khả năng bảo trì) hoặc thêm các tính năng nhỏ mới, thường dựa trên phản hồi hoặc yêu cầu từ người dùng."
+  },
+  {
+    "question": "51. Loại bảo trì nào nhằm thay đổi phần mềm để làm cho nó dễ bảo trì hơn trong tương lai, ngay cả khi chưa có lỗi hay yêu cầu thay đổi cụ thể?",
+    "a": "Bảo trì sửa lỗi (Corrective Maintenance).",
+    "b": "Bảo trì thích ứng (Adaptive Maintenance).",
+    "c": "Bảo trì hoàn thiện (Perfective Maintenance).",
+    "d": "Bảo trì phòng ngừa (Preventive Maintenance).",
+    "answer": "D",
+    "theory": "Bảo trì phòng ngừa (Preventive Maintenance) là các hoạt động được thực hiện để cải thiện cấu trúc hoặc thiết kế của phần mềm, làm cho nó dễ bảo trì hơn trong tương lai, giảm khả năng phát sinh lỗi, ngay cả khi hiện tại chưa có lỗi hoặc yêu cầu thay đổi cụ thể. Refactoring là một ví dụ."
+  },
+  {
+    "question": "52. Chi phí bảo trì thường bị ảnh hưởng bởi yếu tố nào?",
+    "a": "Chất lượng của thiết kế và mã nguồn ban đầu.",
+    "b": "Chất lượng của tài liệu đi kèm.",
+    "c": "Kinh nghiệm của đội ngũ bảo trì.",
+    "d": "Tất cả các yếu tố trên.",
+    "answer": "D",
+    "theory": "Chi phí bảo trì bị ảnh hưởng bởi nhiều yếu tố, bao gồm chất lượng của sản phẩm ban đầu (thiết kế tốt, code rõ ràng sẽ dễ bảo trì hơn), chất lượng của tài liệu, kinh nghiệm và kỹ năng của đội ngũ bảo trì, sự ổn định của môi trường, và tần suất thay đổi yêu cầu."
+  },
+  {
+    "question": "53. Tại sao việc dự đoán chi phí bảo trì lại khó khăn?",
+    "a": "Vì không thể biết trước được các yêu cầu thay đổi hoặc lỗi sẽ phát sinh.",
+    "b": "Vì thiếu dữ liệu lịch sử về các hệ thống tương tự.",
+    "c": "Vì sự thay đổi nhân sự trong đội bảo trì.",
+    "d": "Cả a và b đều đúng.",
+    "answer": "D",
+    "theory": "Dự đoán chi phí bảo trì rất khó khăn vì nó phụ thuộc vào nhiều yếu tố không chắc chắn, như số lượng và độ phức tạp của các yêu cầu thay đổi hoặc lỗi sẽ phát sinh trong tương lai. Việc thiếu dữ liệu lịch sử đáng tin cậy về các hệ thống tương tự cũng làm tăng độ khó."
+  },
+  {
+    "question": "54. Hệ thống kế thừa (Legacy System) là gì?",
+    "a": "Một hệ thống phần mềm hoàn toàn mới.",
+    "b": "Một hệ thống phần mềm cũ, thường lớn, quan trọng đối với hoạt động kinh doanh nhưng có thể khó bảo trì và thay đổi do công nghệ lỗi thời hoặc thiếu tài liệu.",
+    "c": "Một hệ thống phần mềm mã nguồn mở.",
+    "d": "Một hệ thống chỉ chạy trên máy mainframe.",
+    "answer": "B",
+    "theory": "Hệ thống kế thừa là các hệ thống phần mềm cũ đã tồn tại trong một thời gian dài, thường vẫn đóng vai trò quan trọng trong hoạt động kinh doanh nhưng đã trở nên khó bảo trì, khó thay đổi do sử dụng công nghệ cũ, thiếu tài liệu, hoặc cấu trúc phức tạp."
+  },
+  {
+    "question": "55. Khi đánh giá một hệ thống kế thừa, cần xem xét hai yếu tố chính nào để quyết định chiến lược (ví dụ: bỏ đi, bảo trì, tái cấu trúc, thay thế)?",
+    "a": "Giao diện người dùng và ngôn ngữ lập trình.",
+    "b": "Giá trị kinh doanh (Business Value) và Chất lượng kỹ thuật (Technical Quality).",
+    "c": "Kích thước mã nguồn và số lượng người dùng.",
+    "d": "Tuổi đời của hệ thống và chi phí phần cứng.",
+    "answer": "B",
+    "theory": "Khi quyết định chiến lược cho một hệ thống kế thừa, hai yếu tố quan trọng cần xem xét là Giá trị kinh doanh mà hệ thống đó vẫn còn mang lại (nó có còn quan trọng không?) và Chất lượng kỹ thuật của nó (nó có dễ bảo trì, ổn định không?). Sự kết hợp của hai yếu tố này sẽ giúp định hướng chiến lược phù hợp."
+  },
+  {
+    "question": "56. Tái cấu trúc hệ thống (System Re-engineering) là quá trình:",
+    "a": "Viết lại hoàn toàn hệ thống từ đầu.",
+    "b": "Phân tích hệ thống cũ và viết lại một phần hoặc toàn bộ để cải thiện cấu trúc, khả năng bảo trì mà thường giữ nguyên chức năng.",
+    "c": "Chỉ nâng cấp phần cứng.",
+    "d": "Chỉ sửa các lỗi nhỏ.",
+    "answer": "B",
+    "theory": "Tái cấu trúc hệ thống (System Re-engineering) là quá trình kiểm tra lại và thay đổi một hệ thống hiện có để cải thiện các thuộc tính như khả năng bảo trì, khả năng hiểu, hoặc hiệu năng, mà thường không làm thay đổi đáng kể chức năng bên ngoài của nó."
+  },
+  {
+    "question": "57. \"Reverse Engineering\" trong quá trình tái cấu trúc là gì?",
+    "a": "Viết mã nguồn từ thiết kế.",
+    "b": "Phân tích mã nguồn của hệ thống cũ để hiểu thiết kế và đặc tả của nó (thường khi thiếu tài liệu).",
+    "c": "Chạy chương trình ngược thời gian.",
+    "d": "Dịch mã nguồn sang ngôn ngữ khác.",
+    "answer": "B",
+    "theory": "Reverse Engineering (Kỹ thuật đảo ngược) là quá trình phân tích một hệ thống hiện có (thường là mã nguồn) để hiểu được cấu trúc, thiết kế, và hành vi của nó, đặc biệt khi tài liệu gốc bị thiếu hoặc không đầy đủ. Đây là một bước quan trọng trong tái cấu trúc."
+  },
+  {
+    "question": "58. \"Program Structure Improvement\" và \"Program Modularization\" nhằm mục đích gì?",
+    "a": "Làm cho mã nguồn phức tạp hơn.",
+    "b": "Cải thiện cấu trúc logic, chia nhỏ chương trình thành các module rõ ràng, dễ hiểu và dễ bảo trì hơn.",
+    "c": "Tăng sự phụ thuộc giữa các module.",
+    "d": "Chỉ để thay đổi tên biến.",
+    "answer": "B",
+    "theory": "Cải thiện cấu trúc chương trình (Program Structure Improvement) và module hóa chương trình (Program Modularization) là các kỹ thuật trong tái cấu trúc nhằm mục đích làm cho mã nguồn có cấu trúc logic tốt hơn, dễ hiểu hơn, và dễ bảo trì hơn bằng cách chia nhỏ thành các module có trách nhiệm rõ ràng và ít phụ thuộc lẫn nhau."
+  },
+  {
+    "question": "59. Sự khác biệt cơ bản giữa Refactoring và Re-engineering là gì?",
+    "a": "Refactoring là thay đổi nhỏ, liên tục trong quá trình phát triển/tiến hóa; Re-engineering là hoạt động lớn hơn, thường áp dụng cho hệ thống kế thừa để cải thiện cấu trúc tổng thể.",
+    "b": "Refactoring thay đổi chức năng, Re-engineering không thay đổi.",
+    "c": "Re-engineering luôn nhanh hơn Refactoring.",
+    "d": "Chỉ Re-engineering mới sử dụng công cụ tự động.",
+    "answer": "A",
+    "theory": "Refactoring là các thay đổi nhỏ, có tính cục bộ, được thực hiện liên tục để cải thiện cấu trúc mã mà không thay đổi hành vi. Re-engineering là một quá trình lớn hơn, có thể bao gồm việc viết lại đáng kể các phần của hệ thống để cải thiện cấu trúc và khả năng bảo trì, thường áp dụng cho các hệ thống kế thừa."
+  },
+  {
+    "question": "60. Kiểm thử đóng vai trò gì trong quá trình tiến hóa và bảo trì?",
+    "a": "Không có vai trò gì.",
+    "b": "Rất quan trọng, đặc biệt là kiểm thử hồi quy để đảm bảo các thay đổi không gây ra lỗi mới hoặc ảnh hưởng chức năng cũ.",
+    "c": "Chỉ cần kiểm thử các tính năng mới.",
+    "d": "Chỉ cần thiết nếu có tái cấu trúc lớn.",
+    "answer": "B",
+    "theory": "Kiểm thử, đặc biệt là kiểm thử hồi quy, đóng vai trò cực kỳ quan trọng trong quá trình tiến hóa và bảo trì. Mỗi khi có sự thay đổi (sửa lỗi, thêm tính năng, refactoring), cần phải kiểm thử lại để đảm bảo rằng thay đổi đó hoạt động đúng và không làm hỏng các phần khác của hệ thống."
+  },
+  {
+    "question": "61. Kiểm thử đơn vị tự động đặc biệt hữu ích cho việc:",
+    "a": "Kiểm thử giao diện người dùng.",
+    "b": "Kiểm thử hiệu năng hệ thống lớn.",
+    "c": "Hỗ trợ Refactoring và đảm bảo các thay đổi nhỏ không làm hỏng chức năng của đơn vị.",
+    "d": "Thay thế hoàn toàn kiểm thử hệ thống.",
+    "answer": "C",
+    "theory": "Khi thực hiện refactoring hoặc các thay đổi nhỏ trong mã, bộ kiểm thử đơn vị tự động cung cấp một mạng lưới an toàn, giúp nhanh chóng phát hiện nếu các thay đổi đó vô tình làm hỏng chức năng hiện có của đơn vị được kiểm thử."
+  },
+  {
+    "question": "62. Việc đo lường số liệu (metrics) trong kiểm thử và bảo trì giúp:",
+    "a": "Chỉ để báo cáo.",
+    "b": "Đánh giá chất lượng, theo dõi tiến độ, ước lượng nỗ lực và đưa ra quyết định dựa trên dữ liệu.",
+    "c": "Gây áp lực cho đội ngũ.",
+    "d": "Không có giá trị thực tiễn.",
+    "answer": "B",
+    "theory": "Các số liệu (metrics) như số lượng lỗi, mật độ lỗi, thời gian sửa lỗi, độ bao phủ kiểm thử, chi phí bảo trì, v.v., cung cấp dữ liệu khách quan để đánh giá chất lượng sản phẩm và quy trình, theo dõi tiến độ, ước lượng nỗ lực, và hỗ trợ việc ra quyết định cải tiến."
+  },
+  {
+    "question": "63. \"Testability\" (Khả năng kiểm thử) của phần mềm là một thuộc tính:",
+    "a": "Chức năng.",
+    "b": "Phi chức năng, liên quan đến việc thiết kế phần mềm sao cho dễ dàng kiểm tra được.",
+    "c": "Chỉ liên quan đến phần cứng.",
+    "d": "Chỉ quan trọng đối với tester.",
+    "answer": "B",
+    "theory": "Testability là một thuộc tính chất lượng phi chức năng, chỉ mức độ dễ dàng mà một hệ thống hoặc thành phần phần mềm có thể được kiểm thử. Thiết kế tốt (ví dụ: module hóa, giao diện rõ ràng, khả năng cô lập) sẽ làm tăng khả năng kiểm thử."
+  },
+  {
+    "question": "64. Thiết kế kiến trúc có ảnh hưởng lớn đến khả năng kiểm thử của hệ thống không?",
+    "a": "Không ảnh hưởng.",
+    "b": "Có, kiến trúc module hóa tốt, giao diện rõ ràng thường dễ kiểm thử hơn kiến trúc nguyên khối, phức tạp.",
+    "c": "Chỉ ảnh hưởng đến kiểm thử đơn vị.",
+    "d": "Chỉ ảnh hưởng đến tốc độ chạy test.",
+    "answer": "B",
+    "theory": "Các quyết định kiến trúc có ảnh hưởng lớn đến khả năng kiểm thử của hệ thống. Một kiến trúc được module hóa tốt, các thành phần có giao diện rõ ràng, và ít phụ thuộc lẫn nhau sẽ dễ dàng hơn cho việc thiết kế test case, cô lập lỗi, và thực hiện các loại kiểm thử khác nhau."
+  },
+  {
+    "question": "65. Mục tiêu của việc kiểm thử hiệu năng (Performance Testing) là gì?",
+    "a": "Tìm lỗi logic.",
+    "b": "Đảm bảo giao diện đẹp.",
+    "c": "Đánh giá các chỉ số như thời gian đáp ứng, thông lượng, mức sử dụng tài nguyên của hệ thống dưới các điều kiện tải khác nhau.",
+    "d": "Kiểm tra tính đúng đắn của thuật toán.",
+    "answer": "C",
+    "theory": "Kiểm thử hiệu năng nhằm đánh giá các thuộc tính liên quan đến tốc độ, sự ổn định, và khả năng mở rộng của hệ thống dưới các điều kiện tải trọng khác nhau, ví dụ như thời gian đáp ứng, thông lượng (số lượng giao dịch/giây), mức sử dụng CPU, bộ nhớ."
+  },
+  {
+    "question": "66. Tại sao cần có kế hoạch kiểm thử (Test Plan)?",
+    "a": "Để xác định phạm vi, chiến lược, tài nguyên, lịch trình và các hoạt động kiểm thử cần thực hiện.",
+    "b": "Chỉ để liệt kê các test case.",
+    "c": "Chỉ cần thiết cho kiểm thử thủ công.",
+    "d": "Để làm phức tạp thêm quy trình.",
+    "answer": "A",
+    "theory": "Kế hoạch kiểm thử (Test Plan) là một tài liệu quan trọng, định nghĩa mục tiêu, phạm vi, phương pháp, tài nguyên, và lịch trình của các hoạt động kiểm thử. Nó giúp đảm bảo rằng quá trình kiểm thử được thực hiện một cách có hệ thống và hiệu quả."
+  },
+  {
+    "question": "67. Một Test Case tốt cần có những yếu tố nào?",
+    "a": "Chỉ có các bước thực hiện.",
+    "b": "Mã định danh, mô tả, điều kiện tiên quyết, các bước thực hiện, dữ liệu đầu vào, kết quả mong đợi.",
+    "c": "Chỉ có kết quả mong đợi.",
+    "d": "Chỉ tên của người viết test case.",
+    "answer": "B",
+    "theory": "Một Test Case tốt cần được mô tả đầy đủ và rõ ràng, bao gồm: mã định danh duy nhất, mô tả mục tiêu kiểm thử, các điều kiện tiên quyết cần có, các bước thực hiện chi tiết, dữ liệu đầu vào cụ thể, và kết quả đầu ra mong đợi để so sánh."
+  },
+  {
+    "question": "68. \"Test Oracle\" là gì trong kiểm thử phần mềm?",
+    "a": "Một công cụ dự đoán lỗi.",
+    "b": "Một cơ chế hoặc nguồn thông tin (ví dụ: đặc tả, hệ thống cũ, tính toán thủ công) được sử dụng để xác định kết quả mong đợi của một test case.",
+    "c": "Tên của người thực hiện kiểm thử.",
+    "d": "Một loại cơ sở dữ liệu kiểm thử.",
+    "answer": "B",
+    "theory": "Test Oracle là một nguồn thông tin hoặc một cơ chế được sử dụng để xác định kết quả đúng (mong đợi) cho một test case. Nó có thể là đặc tả yêu cầu, tài liệu thiết kế, một phiên bản trước đó của hệ thống, tính toán thủ công, hoặc một chương trình khác đã được biết là đúng."
+  },
+  {
+    "question": "69. Kiểm thử thăm dò (Exploratory Testing) là gì?",
+    "a": "Kiểm thử theo kịch bản đã viết sẵn một cách nghiêm ngặt.",
+    "b": "Một cách tiếp cận kiểm thử ít trang trọng hơn, trong đó người kiểm thử đồng thời học hỏi về hệ thống, thiết kế và thực hiện kiểm thử dựa trên trực giác và khám phá.",
+    "c": "Chỉ kiểm thử giao diện người dùng.",
+    "d": "Tên gọi khác của kiểm thử tự động.",
+    "answer": "B",
+    "theory": "Kiểm thử thăm dò là một phong cách kiểm thử trong đó việc học hỏi về sản phẩm, thiết kế test case, thực thi test case, và báo cáo kết quả diễn ra đồng thời. Người kiểm thử sử dụng kinh nghiệm, trực giác và sự sáng tạo để khám phá các lỗi tiềm ẩn."
+  },
+  {
+    "question": "70. Khi nào kiểm thử thăm dò đặc biệt hữu ích?",
+    "a": "Khi đặc tả yêu cầu đầy đủ và chi tiết.",
+    "b": "Khi thời gian kiểm thử eo hẹp hoặc đặc tả không đầy đủ, giúp nhanh chóng khám phá các khu vực có vấn đề.",
+    "c": "Chỉ khi kiểm thử hồi quy.",
+    "d": "Khi hệ thống quá đơn giản.",
+    "answer": "B",
+    "theory": "Kiểm thử thăm dò đặc biệt hữu ích trong các tình huống có ít thời gian, tài liệu đặc tả không đầy đủ hoặc không rõ ràng. Nó cho phép tester nhanh chóng học hỏi và khám phá các khía cạnh của hệ thống để tìm lỗi mà không cần các test case được viết trước chi tiết."
+  },
+  {
+    "question": "71. Lập trình cặp (Pair Programming) có thể đóng góp vào chất lượng mã nguồn và giảm lỗi như thế nào?",
+    "a": "Hai người cùng viết code giúp phát hiện lỗi và thảo luận giải pháp thiết kế ngay lập tức (giống như code review liên tục).",
+    "b": "Làm chậm tiến độ gấp đôi.",
+    "c": "Chỉ phù hợp cho lập trình viên mới.",
+    "d": "Gây ra nhiều xung đột hơn.",
+    "answer": "A",
+    "theory": "Trong lập trình cặp, hai lập trình viên làm việc cùng nhau trên một máy tính. Một người viết code (driver) và người kia xem xét, suy nghĩ về chiến lược, và phát hiện lỗi (navigator). Điều này giống như một quá trình code review liên tục, giúp cải thiện chất lượng mã và giảm lỗi."
+  },
+  {
+    "question": "72. Phần lớn chi phí trong vòng đời phần mềm thường dành cho hoạt động nào?",
+    "a": "Phát triển ban đầu (thiết kế, hiện thực).",
+    "b": "Tiến hóa và bảo trì sau khi phát hành.",
+    "c": "Thu thập yêu cầu.",
+    "d": "Kiểm thử bản release.",
+    "answer": "B",
+    "theory": "Đối với nhiều hệ thống phần mềm, đặc biệt là những hệ thống tồn tại lâu dài, chi phí cho việc bảo trì (sửa lỗi, thích ứng) và tiến hóa (thêm tính năng, cải tiến) sau khi phát hành thường chiếm một tỷ lệ lớn (có thể lên đến 60-80%) trong tổng chi phí vòng đời."
+  },
+  {
+    "question": "73. Việc thiếu tài liệu hoặc tài liệu không cập nhật ảnh hưởng như thế nào đến bảo trì?",
+    "a": "Không ảnh hưởng gì.",
+    "b": "Làm cho việc hiểu hệ thống, phân tích tác động thay đổi và sửa lỗi trở nên khó khăn và tốn kém hơn nhiều.",
+    "c": "Giúp người bảo trì sáng tạo hơn.",
+    "d": "Chỉ ảnh hưởng đến việc đào tạo người mới.",
+    "answer": "B",
+    "theory": "Tài liệu đầy đủ và cập nhật là vô cùng quan trọng cho việc bảo trì. Nếu thiếu tài liệu hoặc tài liệu không còn phản ánh đúng hệ thống, người bảo trì sẽ mất nhiều thời gian và công sức để hiểu mã nguồn, phân tích tác động của thay đổi, và sửa lỗi, làm tăng chi phí và rủi ro."
+  },
+  {
+    "question": "74. Đâu là lý do chính khiến các hệ thống kế thừa vẫn tiếp tục được sử dụng dù khó bảo trì?",
+    "a": "Vì chúng luôn có hiệu năng tốt nhất.",
+    "b": "Vì chúng chứa đựng logic nghiệp vụ quan trọng, chi phí và rủi ro thay thế quá cao.",
+    "c": "Vì không có công nghệ mới nào tốt hơn.",
+    "d": "Vì người dùng không muốn thay đổi.",
+    "answer": "B",
+    "theory": "Nhiều hệ thống kế thừa vẫn được sử dụng vì chúng thực hiện các chức năng nghiệp vụ quan trọng mà tổ chức phụ thuộc vào. Việc thay thế chúng bằng một hệ thống mới có thể rất tốn kém, mất thời gian, và tiềm ẩn nhiều rủi ro, ngay cả khi việc bảo trì hệ thống cũ rất khó khăn."
+  },
+  {
+    "question": "75. Quản lý cấu hình phần mềm (Software Configuration Management - SCM) hỗ trợ tiến hóa và bảo trì như thế nào?",
+    "a": "Bằng cách quản lý các phiên bản của mã nguồn và tài liệu, kiểm soát thay đổi, và hỗ trợ việc tạo các bản build nhất quán.",
+    "b": "Bằng cách tự động sửa lỗi.",
+    "c": "Bằng cách viết tài liệu người dùng.",
+    "d": "Bằng cách tối ưu hóa CSDL.",
+    "answer": "A",
+    "theory": "SCM là một tập hợp các hoạt động nhằm kiểm soát sự thay đổi trong suốt vòng đời phần mềm. Nó bao gồm quản lý phiên bản (version control), quản lý thay đổi (change control), quản lý build, và quản lý release. Điều này rất quan trọng để hỗ trợ quá trình tiến hóa và bảo trì một cách có trật tự."
+  },
+  {
+    "question": "76. Công cụ SCM phổ biến hiện nay là gì?",
+    "a": "Microsoft Excel.",
+    "b": "Git, Subversion (SVN), Mercurial.",
+    "c": "JUnit.",
+    "d": "Jenkins.",
+    "answer": "B",
+    "theory": "Git, Subversion (SVN), và Mercurial là các hệ thống quản lý phiên bản (VCS) phổ biến, là một phần quan trọng của SCM. Chúng giúp theo dõi các thay đổi, quản lý các phiên bản, và hỗ trợ làm việc nhóm."
+  },
+  {
+    "question": "77. Khái niệm \"Build\" và \"Release\" khác nhau như thế nào?",
+    "a": "Build là quá trình tạo ra bản thực thi, Release là bản chính thức được phát hành cho người dùng. Một release thường dựa trên một bản build đã được kiểm thử kỹ lưỡng.",
+    "b": "Build chỉ dành cho môi trường phát triển, Release chỉ dành cho môi trường kiểm thử.",
+    "c": "Chúng là hai thuật ngữ đồng nghĩa.",
+    "d": "Build luôn chứa nhiều lỗi hơn Release.",
+    "answer": "A",
+    "theory": "Một \"Build\" là kết quả của quá trình biên dịch và đóng gói mã nguồn thành một phiên bản có thể thực thi hoặc triển khai. Một \"Release\" là một phiên bản cụ thể của phần mềm được phát hành chính thức cho người dùng hoặc khách hàng, thường sau khi đã trải qua các giai đoạn kiểm thử và đảm bảo chất lượng."
+  },
+  {
+    "question": "78. Hoạt động nào sau đây KHÔNG thuộc về tiến hóa phần mềm?",
+    "a": "Sửa lỗi được báo cáo bởi người dùng.",
+    "b": "Thêm một tính năng mới theo yêu cầu thị trường.",
+    "c": "Phát triển hệ thống hoàn toàn mới từ đầu.",
+    "d": "Điều chỉnh hệ thống để chạy trên phiên bản hệ điều hành mới.",
+    "answer": "C",
+    "theory": "Tiến hóa phần mềm là các thay đổi được thực hiện trên một hệ thống phần mềm hiện có. Việc phát triển một hệ thống hoàn toàn mới từ đầu là một dự án phát triển mới, không phải là tiến hóa của một hệ thống cũ."
+  },
+  {
+    "question": "79. Tại sao việc đánh giá chất lượng kỹ thuật của hệ thống kế thừa lại quan trọng?",
+    "a": "Để quyết định xem việc bảo trì, tái cấu trúc hay thay thế là phương án khả thi và hiệu quả nhất về mặt chi phí và rủi ro.",
+    "b": "Chỉ để xác định ngôn ngữ lập trình đã cũ hay chưa.",
+    "c": "Để tìm lý do đổ lỗi cho đội phát triển trước.",
+    "d": "Không quan trọng bằng giá trị kinh doanh.",
+    "answer": "A",
+    "theory": "Đánh giá chất lượng kỹ thuật (ví dụ: cấu trúc, khả năng bảo trì, tài liệu) của một hệ thống kế thừa, cùng với giá trị kinh doanh của nó, giúp đưa ra quyết định chiến lược về tương lai của hệ thống đó: liệu có nên tiếp tục bảo trì, đầu tư tái cấu trúc, hay thay thế bằng một hệ thống mới."
+  },
+  {
+    "question": "80. \"Code Clones\" (Mã nguồn trùng lặp) là một dấu hiệu xấu trong hiện thực vì sao?",
+    "a": "Tăng kích thước mã nguồn không cần thiết, khi cần sửa lỗi hoặc thay đổi logic phải thực hiện ở nhiều nơi, dễ gây thiếu sót và không nhất quán.",
+    "b": "Giúp mã nguồn dễ đọc hơn.",
+    "c": "Là một kỹ thuật tối ưu hóa hiệu năng.",
+    "d": "Không ảnh hưởng đến bảo trì.",
+    "answer": "A",
+    "theory": "Mã nguồn trùng lặp (Code Clones) là một \"code smell\" phổ biến. Nó làm tăng kích thước mã, gây khó khăn cho việc bảo trì (vì một thay đổi logic phải được áp dụng ở tất cả các bản sao), và tăng nguy cơ lỗi do sửa đổi không nhất quán."
+  },
+  {
+    "question": "81. Kỹ thuật nào thường được sử dụng để loại bỏ Code Clones?",
+    "a": "Thêm nhiều comment hơn.",
+    "b": "Refactoring (ví dụ: tạo hàm/phương thức chung - Extract Method).",
+    "c": "Viết lại toàn bộ module.",
+    "d": "Sử dụng nhiều biến toàn cục hơn.",
+    "answer": "B",
+    "theory": "Refactoring là kỹ thuật chính để loại bỏ code clones. Ví dụ, nếu một đoạn mã lặp lại ở nhiều nơi, có thể trích xuất nó thành một phương thức (Extract Method) hoặc một lớp chung để tái sử dụng, giảm sự trùng lặp."
+  },
+  {
+    "question": "82. Static Analysis Tools (Công cụ phân tích tĩnh) có thể giúp phát hiện loại vấn đề nào?",
+    "a": "Lỗi hiệu năng khi chạy chương trình.",
+    "b": "Các lỗi tiềm ẩn, code smell, không tuân thủ coding standard mà không cần thực thi mã nguồn.",
+    "c": "Lỗi trong yêu cầu người dùng.",
+    "d": "Vấn đề về giao diện người dùng.",
+    "answer": "B",
+    "theory": "Công cụ phân tích tĩnh (Static Analysis Tools) phân tích mã nguồn mà không cần chạy nó. Chúng có thể phát hiện các lỗi tiềm ẩn (như null pointer dereference), các \"code smells\" (như code trùng lặp, phương thức quá dài), và việc không tuân thủ các tiêu chuẩn mã hóa."
+  },
+  {
+    "question": "83. Đâu là ví dụ về công cụ phân tích tĩnh?",
+    "a": "JUnit.",
+    "b": "Jenkins.",
+    "c": "SonarQube, Checkstyle, PMD, FindBugs.",
+    "d": "Git.",
+    "answer": "C",
+    "theory": "SonarQube, Checkstyle, PMD, và FindBugs là các ví dụ về công cụ phân tích tĩnh phổ biến. JUnit là framework kiểm thử đơn vị. Jenkins là server CI. Git là hệ thống quản lý phiên bản."
+  },
+  {
+    "question": "84. Mối quan hệ giữa kiểm thử và đảm bảo chất lượng (Quality Assurance - QA) là gì?",
+    "a": "Testing là hoạt động chính, QA chỉ là tên gọi khác.",
+    "b": "QA là một quy trình rộng hơn bao gồm cả việc thiết lập tiêu chuẩn, quy trình và kiểm tra để đảm bảo chất lượng, trong đó Testing là một hoạt động quan trọng.",
+    "c": "QA thực hiện trước Testing.",
+    "d": "Testing không liên quan đến QA.",
+    "answer": "B",
+    "theory": "Đảm bảo chất lượng (QA) là một tập hợp các hoạt động và quy trình nhằm đảm bảo rằng sản phẩm hoặc dịch vụ đáp ứng các tiêu chuẩn chất lượng đã định. Kiểm thử (Testing) là một trong những hoạt động quan trọng nhất trong QA, nhưng QA còn bao gồm cả việc thiết lập quy trình, tiêu chuẩn, review, và các hoạt động khác."
+  },
+  {
+    "question": "85. Mục tiêu cuối cùng của mọi hoạt động kiểm thử và tiến hóa là gì?",
+    "a": "Viết được nhiều code nhất.",
+    "b": "Kéo dài thời gian dự án.",
+    "c": "Cung cấp giá trị cho người dùng và doanh nghiệp thông qua một phần mềm chất lượng, đáng tin cậy và đáp ứng nhu cầu thay đổi.",
+    "d": "Tìm ra lỗi của các lập trình viên khác.",
+    "answer": "C",
+    "theory": "Mục tiêu cuối cùng của việc kiểm thử và tiến hóa phần mềm là để đảm bảo rằng phần mềm mang lại giá trị cho người dùng và tổ chức, bằng cách cung cấp một sản phẩm chất lượng cao, hoạt động đáng tin cậy, và có khả năng thích ứng với các nhu cầu và môi trường thay đổi theo thời gian."
+  },
+  {
+    "question": "86. \"Test-Driven Development\" (TDD) là một quy trình phát triển trong đó:",
+    "a": "Kiểm thử được viết sau khi code đã hoàn thành.",
+    "b": "Kiểm thử đơn vị được viết trước khi viết mã nguồn chức năng, mã nguồn chỉ được viết đủ để vượt qua kiểm thử đó.",
+    "c": "Không cần viết kiểm thử đơn vị.",
+    "d": "Chỉ tập trung vào kiểm thử giao diện.",
+    "answer": "B",
+    "theory": "Trong TDD, chu trình phát triển ngắn bao gồm: viết một kiểm thử đơn vị thất bại (red), sau đó viết mã chức năng tối thiểu để kiểm thử đó thành công (green), và cuối cùng là tái cấu trúc mã (refactor). Điều này đảm bảo mã luôn có kiểm thử đi kèm và thiết kế được định hướng bởi kiểm thử."
+  },
+  {
+    "question": "87. Behavior-Driven Development (BDD) mở rộng TDD bằng cách:",
+    "a": "Tập trung vào kiểm thử hiệu năng.",
+    "b": "Viết các kiểm thử dưới dạng mô tả hành vi mong muốn của hệ thống bằng ngôn ngữ gần với tự nhiên, dễ hiểu cho cả người không chuyên về kỹ thuật.",
+    "c": "Chỉ sử dụng kiểm thử thủ công.",
+    "d": "Loại bỏ hoàn toàn kiểm thử đơn vị.",
+    "answer": "B",
+    "theory": "BDD là một mở rộng của TDD, tập trung vào việc mô tả hành vi mong muốn của hệ thống từ góc nhìn của người dùng hoặc các bên liên quan, thường sử dụng một ngôn ngữ cấu trúc (như Gherkin: Given-When-Then) dễ hiểu cho cả đội ngũ kỹ thuật và nghiệp vụ. Các mô tả hành vi này sau đó được tự động hóa thành các kiểm thử."
+  },
+  {
+    "question": "88. Công cụ như Cucumber, SpecFlow hỗ trợ phương pháp phát triển nào?",
+    "a": "Test-Driven Development (TDD).",
+    "b": "Behavior-Driven Development (BDD).",
+    "c": "Waterfall Model.",
+    "d": "Code Inspection.",
+    "answer": "B",
+    "theory": "Cucumber (cho Ruby, Java, và nhiều ngôn ngữ khác) và SpecFlow (cho .NET) là các công cụ phổ biến hỗ trợ BDD. Chúng cho phép viết các đặc tả hành vi bằng ngôn ngữ tự nhiên (ví dụ: Gherkin) và sau đó liên kết chúng với mã tự động hóa kiểm thử."
+  },
+  {
+    "question": "89. Trong ngữ cảnh tiến hóa, \"Technical Refresh\" thường ám chỉ việc gì?",
+    "a": "Thêm tính năng mới cho người dùng.",
+    "b": "Nâng cấp cơ sở hạ tầng (phần cứng, hệ điều hành, CSDL) mà hệ thống đang chạy trên đó, đòi hỏi phải điều chỉnh phần mềm để tương thích.",
+    "c": "Viết lại giao diện người dùng.",
+    "d": "Đào tạo lại đội ngũ bảo trì.",
+    "answer": "B",
+    "theory": "\"Technical Refresh\" là quá trình nâng cấp các thành phần cơ sở hạ tầng (phần cứng, hệ điều hành, CSDL, thư viện) mà hệ thống phần mềm phụ thuộc. Điều này thường đòi hỏi phải thực hiện các thay đổi (bảo trì thích ứng) trong phần mềm để đảm bảo nó vẫn hoạt động tương thích với môi trường mới."
+  },
+  {
+    "question": "90. Việc đo lường \"Mean Time Between Failures\" (MTBF) cung cấp thông tin về thuộc tính nào của phần mềm?",
+    "a": "Hiệu năng (Performance).",
+    "b": "Khả năng bảo trì (Maintainability).",
+    "c": "Độ tin cậy (Reliability).",
+    "d": "Tính dễ sử dụng (Usability).",
+    "answer": "C",
+    "theory": "MTBF (Thời gian trung bình giữa các lỗi) là một thước đo về độ tin cậy của một hệ thống hoặc thành phần. Nó cho biết khoảng thời gian trung bình mà hệ thống hoạt động không có lỗi trước khi một lỗi mới xảy ra."
+  },
+  {
+    "question": "91. Việc đo lường \"Mean Time To Repair\" (MTTR) cung cấp thông tin về thuộc tính nào của phần mềm/quy trình?",
+    "a": "Tốc độ xử lý giao dịch.",
+    "b": "Khả năng bảo trì và hiệu quả của quy trình sửa lỗi.",
+    "c": "Số lượng người dùng đồng thời.",
+    "d": "Mức độ bao phủ mã.",
+    "answer": "B",
+    "theory": "MTTR (Thời gian trung bình để sửa chữa) đo lường khoảng thời gian trung bình cần thiết để sửa một lỗi sau khi nó được phát hiện. Nó phản ánh khả năng bảo trì của phần mềm (mã dễ sửa không) và hiệu quả của quy trình sửa lỗi (quy trình có nhanh chóng không)."
+  },
+  {
+    "question": "92. Tại sao việc lập kế hoạch cho giai đoạn bảo trì ngay từ khi thiết kế lại quan trọng?",
+    "a": "Các quyết định thiết kế (ví dụ: kiến trúc, module hóa, tài liệu hóa) ảnh hưởng trực tiếp đến chi phí và nỗ lực bảo trì sau này.",
+    "b": "Chỉ để dự trù ngân sách.",
+    "c": "Không quan trọng, bảo trì là việc của đội khác.",
+    "d": "Để làm chậm giai đoạn thiết kế.",
+    "answer": "A",
+    "theory": "Tính dễ bảo trì (maintainability) là một thuộc tính chất lượng quan trọng cần được xem xét ngay từ giai đoạn thiết kế. Các quyết định về kiến trúc, cách module hóa, chất lượng mã nguồn, và tài liệu hóa đều ảnh hưởng trực tiếp đến việc bảo trì phần mềm sẽ dễ dàng hay khó khăn, tốn kém hay tiết kiệm trong tương lai."
+  },
+  {
+    "question": "93. Kiểm thử hiệu năng khác kiểm thử chức năng ở điểm nào?",
+    "a": "Kiểm thử chức năng kiểm tra \"hệ thống làm gì\", kiểm thử hiệu năng kiểm tra \"hệ thống làm tốt như thế nào\" (tốc độ, khả năng chịu tải,...).",
+    "b": "Kiểm thử hiệu năng dễ hơn kiểm thử chức năng.",
+    "c": "Chỉ hệ thống web mới cần kiểm thử hiệu năng.",
+    "d": "Kiểm thử chức năng không cần dữ liệu kiểm thử.",
+    "answer": "A",
+    "theory": "Kiểm thử chức năng tập trung vào việc xác minh xem hệ thống có thực hiện đúng các chức năng được yêu cầu hay không (\"what it does\"). Kiểm thử hiệu năng tập trung vào các thuộc tính phi chức năng liên quan đến tốc độ, sự ổn định, và khả năng mở rộng của hệ thống dưới các điều kiện tải khác nhau (\"how well it does it\")."
+  },
+  {
+    "question": "94. Đâu là một thách thức của việc kiểm thử các hệ thống phân tán (distributed systems)?",
+    "a": "Khó khăn trong việc tái tạo lỗi do tính không đồng bộ và điều kiện mạng thay đổi.",
+    "b": "Các hệ thống này thường đơn giản hơn.",
+    "c": "Không cần kiểm thử giao diện giữa các thành phần.",
+    "d": "Luôn dễ dàng gỡ lỗi hơn.",
+    "answer": "A",
+    "theory": "Kiểm thử hệ thống phân tán gặp nhiều thách thức do tính không đồng bộ của các tương tác, sự thay đổi của điều kiện mạng (độ trễ, mất gói), và sự phức tạp trong việc phối hợp và đồng bộ hóa trạng thái giữa nhiều thành phần. Việc tái tạo lỗi có thể rất khó khăn."
+  },
+  {
+    "question": "95. Log file (tệp nhật ký) đóng vai trò gì trong kiểm thử và gỡ lỗi?",
+    "a": "Không có vai trò gì.",
+    "b": "Cung cấp thông tin chi tiết về các sự kiện, lỗi, trạng thái hệ thống xảy ra trong quá trình thực thi, hỗ trợ việc chẩn đoán vấn đề.",
+    "c": "Chỉ dùng để lưu thông tin người dùng.",
+    "d": "Chỉ ghi lại lỗi nghiêm trọng.",
+    "answer": "B",
+    "theory": "Log file ghi lại các thông tin quan trọng về hoạt động của hệ thống, bao gồm các sự kiện, thông báo lỗi, giá trị biến, và trạng thái. Chúng là một nguồn thông tin vô giá cho việc kiểm thử (để theo dõi hành vi) và đặc biệt là gỡ lỗi (để chẩn đoán nguyên nhân của vấn đề)."
+  },
+  {
+    "question": "96. Tầm quan trọng của việc quản lý môi trường kiểm thử (Test Environment Management) là gì?",
+    "a": "Đảm bảo môi trường kiểm thử ổn định, nhất quán và tương tự môi trường production nhất có thể để kết quả kiểm thử đáng tin cậy.",
+    "b": "Không cần thiết, có thể kiểm thử trên máy của lập trình viên.",
+    "c": "Chỉ cần một máy tính duy nhất cho tất cả các loại kiểm thử.",
+    "d": "Chỉ áp dụng cho kiểm thử tự động.",
+    "answer": "A",
+    "theory": "Quản lý môi trường kiểm thử là rất quan trọng để đảm bảo rằng các kết quả kiểm thử là đáng tin cậy và có thể lặp lại. Môi trường kiểm thử cần được cấu hình đúng, ổn định, và càng giống với môi trường sản xuất (production) càng tốt để giảm thiểu các lỗi chỉ xảy ra trên một môi trường cụ thể."
+  },
+  {
+    "question": "97. Khi thiết kế kiến trúc, việc cân bằng giữa các thuộc tính chất lượng (quality attributes) thường đối mặt với thách thức nào?",
+    "a": "Các thuộc tính chất lượng luôn bổ trợ lẫn nhau một cách hoàn hảo.",
+    "b": "Thường phải có sự đánh đổi (trade-offs), vì việc tối ưu một thuộc tính (ví dụ: hiệu năng) có thể ảnh hưởng tiêu cực đến thuộc tính khác (ví dụ: bảo mật, khả năng bảo trì).",
+    "c": "Chỉ cần tập trung vào việc đáp ứng yêu cầu chức năng là đủ, các thuộc tính chất lượng không quan trọng bằng.",
+    "d": "Các thuộc tính chất lượng chỉ quan trọng đối với giao diện người dùng.",
+    "answer": "B",
+    "theory": "Đây là câu hỏi lặp lại từ chương 5, 6 và đầu chương 8. Trong thiết kế kiến trúc, việc cố gắng tối ưu một thuộc tính chất lượng (ví dụ: tăng hiệu năng) thường dẫn đến sự đánh đổi với các thuộc tính chất lượng khác (ví dụ: có thể làm tăng độ phức tạp, giảm khả năng bảo trì hoặc tăng chi phí). Các kiến trúc sư phải tìm cách cân bằng các đánh đổi này."
+  },
+  {
+    "question": "98. Việc đánh giá kiến trúc (Architectural Evaluation) nên được thực hiện vào thời điểm nào trong quá trình phát triển để mang lại hiệu quả cao nhất?",
+    "a": "Chỉ sau khi hệ thống đã hoàn thành và sẵn sàng triển khai.",
+    "b": "Chỉ trong giai đoạn kiểm thử cuối cùng.",
+    "c": "Càng sớm càng tốt trong chu trình thiết kế (ngay sau khi có bản phác thảo kiến trúc) và có thể lặp lại khi kiến trúc được tinh chỉnh.",
+    "d": "Chỉ khi có vấn đề nghiêm trọng xảy ra trong quá trình phát triển.",
+    "answer": "C",
+    "theory": "Đây là câu hỏi lặp lại từ chương 5, 6 và đầu chương 8. Đánh giá kiến trúc nên được thực hiện càng sớm càng tốt trong vòng đời phát triển, ngay khi có các bản phác thảo kiến trúc ban đầu. Việc phát hiện và sửa chữa các vấn đề kiến trúc sớm sẽ tốn ít chi phí hơn nhiều so với việc sửa chúng ở các giai đoạn sau."
+  },
+  {
+    "question": "99. Hiện tượng \"Architectural Drift\" (hay \"Architectural Erosion\" - Xói mòn kiến trúc) mô tả điều gì?",
+    "a": "Việc kiến trúc phần mềm trở nên quá phức tạp không cần thiết.",
+    "b": "Sự sai lệch dần dần của cấu trúc hệ thống thực tế so với thiết kế kiến trúc ban đầu theo thời gian, thường do các thay đổi cục bộ không tuân thủ nguyên tắc kiến trúc.",
+    "c": "Việc thay đổi hoàn toàn mẫu kiến trúc đã chọn giữa chừng dự án.",
+    "d": "Việc thiếu hoàn toàn tài liệu mô tả kiến trúc.",
+    "answer": "B",
+    "theory": "Đây là câu hỏi lặp lại từ chương 5, 6 và đầu chương 8. Xói mòn kiến trúc (Architectural Drift/Erosion) là hiện tượng cấu trúc thực tế của hệ thống ngày càng sai lệch so với thiết kế kiến trúc ban đầu qua thời gian. Điều này thường xảy ra do các thay đổi, sửa lỗi, hoặc bổ sung tính năng được thực hiện mà không tuân thủ chặt chẽ các nguyên tắc và ràng buộc của kiến trúc đã định."
+  },
+  {
+    "question": "100. \"Architectural Style\" (Kiểu kiến trúc) và \"Architectural Pattern\" (Mẫu kiến trúc) thường được phân biệt như thế nào?",
+    "a": "Style là một giải pháp cụ thể, Pattern là một vấn đề chung chung.",
+    "b": "Pattern mô tả một giải pháp đã được chứng minh cho một vấn đề thiết kế cụ thể, lặp đi lặp lại; Style mô tả một cách tiếp cận, một triết lý tổ chức hệ thống ở mức cao hơn, định hình cấu trúc tổng thể (ví dụ: Client-Server là một style, MVC là một pattern).",
+    "c": "Không có sự khác biệt rõ ràng, chúng thường được dùng thay thế cho nhau.",
+    "d": "Style chỉ áp dụng cho các hệ thống phân tán, Pattern áp dụng cho mọi hệ thống.",
+    "answer": "B",
+    "theory": "Đây là câu hỏi lặp lại từ chương 5, 6 và đầu chương 8. Architectural Style (Kiểu kiến trúc) là một tập hợp các nguyên tắc và ràng buộc về cách tổ chức hệ thống ở mức cao (ví dụ: Client-Server, Layered, Pipe-and-Filter). Architectural Pattern (Mẫu kiến trúc) là một giải pháp đã được kiểm chứng cho một vấn đề thiết kế cụ thể, thường có phạm vi nhỏ hơn Style (ví dụ: MVC, Repository). Một Style có thể được hiện thực hóa bằng nhiều Pattern khác nhau."
+  }
+]
