@@ -26,7 +26,7 @@
 ---
 
 ## 🛠 Cài đặt & chạy dự án
-
+Phiên bản node cài đặt trên máy node v16.17.1
 ```bash
 git clone https://github.com/NTriCuong/project_CNPM.git
 cd project_CNPM
